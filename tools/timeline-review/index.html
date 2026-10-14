@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#10131a" />
+    <title>《借月》时间轴校对台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">JIEYUE · LOCAL REVIEW</p>
+          <h1>《借月》时间轴校对台</h1>
+          <p class="lede">音频只在当前浏览器中读取，不会上传。</p>
+        </div>
+        <div class="header-actions">
+          <button id="load-audio" class="button primary" type="button">选择母带 MP3</button>
+          <input id="audio-file" type="file" accept="audio/mpeg,audio/mp3,audio/*" hidden />
+          <button id="export-json" class="button" type="button">导出 JSON</button>
+          <button id="reset-review" class="button subtle" type="button">重置进度</button>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-live="polite">
+        <div class="file-state">
+          <span id="file-dot" class="status-dot"></span>
+          <span id="file-status">尚未选择母带</span>
+        </div>
+        <div class="progress-copy">
+          <span id="review-count">0 / 72 已确认</span>
+          <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+        </div>
+      </section>
+
+      <main class="workspace">
+        <aside class="line-browser" aria-label="歌词列表">
+          <div class="browser-toolbar">
+            <label>
+              <span class="sr-only">筛选歌词</span>
+              <input id="search-lines" type="search" placeholder="搜索歌词或演唱者" />
+            </label>
+            <select id="review-filter" aria-label="审核状态筛选">
+              <option value="all">全部歌词</option>
+              <option value="pending">只看未确认</option>
+              <option value="flagged">只看需复核</option>
+              <option value="verified">只看已确认</option>
+            </select>
+          </div>
+          <div id="line-list" class="line-list"></div>
+        </aside>
+
+        <section class="review-panel">
+          <div class="now-card">
+            <div class="line-meta">
+              <span id="line-position" class="pill">第 1 / 72 句</span>
+              <span id="section-name" class="muted">清唱无伴奏</span>
+              <span id="performer-name" class="performer"></span>
+            </div>
+            <p id="previous-line" class="context-line previous"></p>
+            <h2 id="current-line"></h2>
+            <p id="next-line" class="context-line next"></p>
+          </div>
+
+          <section class="player-card" aria-label="音频校对播放器">
+            <canvas id="waveform" height="148" aria-label="当前歌词附近波形"></canvas>
+            <div class="time-ruler">
+              <span id="window-start">00:00.000</span>
+              <span id="playhead-time">00:00.000</span>
+              <span id="window-end">00:00.000</span>
+            </div>
+            <input id="scrubber" class="scrubber" type="range" min="0" max="1000" value="0" aria-label="音频进度" />
+            <div class="transport">
+              <button id="previous" class="icon-button" type="button" aria-label="上一句">←</button>
+              <button id="replay" class="button" type="button">重听本句</button>
+              <button id="play-pause" class="button primary transport-main" type="button">播放</button>
+              <button id="next" class="icon-button" type="button" aria-label="下一句">→</button>
+            </div>
+            <audio id="audio" preload="metadata"></audio>
+          </section>
+
+          <section class="timing-grid" aria-label="时间调整">
+            <div class="timing-card">
+              <div class="timing-heading">
+                <span>开始时间</span>
+                <output id="start-display">00:00.000</output>
+              </div>
+              <div class="nudge-row" data-boundary="start">
+                <button type="button" data-delta="-100">−100</button>
+                <button type="button" data-delta="-10">−10</button>
+                <input id="start-ms" type="number" min="0" step="10" aria-label="开始时间（毫秒）" />
+                <button type="button" data-delta="10">+10</button>
+                <button type="button" data-delta="100">+100</button>
+              </div>
+            </div>
+            <div class="timing-card">
+              <div class="timing-heading">
+                <span>结束时间</span>
+                <output id="end-display">00:00.000</output>
+              </div>
+              <div class="nudge-row" data-boundary="end">
+                <button type="button" data-delta="-100">−100</button>
+                <button type="button" data-delta="-10">−10</button>
+                <input id="end-ms" type="number" min="1" step="10" aria-label="结束时间（毫秒）" />
+                <button type="button" data-delta="10">+10</button>
+                <button type="button" data-delta="100">+100</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="review-actions">
+            <label class="notes-label" for="review-notes">校对备注</label>
+            <textarea id="review-notes" rows="2" placeholder="例如：尾音延长；和声进入；边界仍需复核"></textarea>
+            <div class="decision-row">
+              <button id="mark-flagged" class="button warning" type="button">标记需复核</button>
+              <button id="mark-verified" class="button success" type="button">确认并到下一句</button>
+            </div>
+          </section>
+
+          <details class="evidence-card">
+            <summary>查看自动对齐证据</summary>
+            <dl id="alignment-evidence"></dl>
+          </details>
+        </section>
+      </main>
+
+      <footer class="shortcut-bar">
+        <span><kbd>Space</kbd> 播放 / 暂停</span>
+        <span><kbd>R</kbd> 重听</span>
+        <span><kbd>J</kbd> 上一句</span>
+        <span><kbd>K</kbd> 下一句</span>
+        <span><kbd>V</kbd> 确认</span>
+        <span><kbd>⌘/Ctrl</kbd> + <kbd>←/→</kbd> 调整开始</span>
+        <span><kbd>Shift</kbd> + <kbd>←/→</kbd> 调整结束</span>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -14,3 +14,5 @@
 Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-assessment.md)，已确认素材见 [docs/asset-inventory.md](docs/asset-inventory.md)。
 
 歌词时间轴初稿位于 `data/songs/jieyue/timeline.draft.json`，人工校对表位于 [docs/timeline-review.md](docs/timeline-review.md)。所有自动时间戳在人工试听确认前均不得标记为正式数据。
+
+本地歌词时间轴校对器位于 [tools/timeline-review](tools/timeline-review/README.md)。它直接读取本机母带，在浏览器本地保存进度并导出带人工审核记录的 JSON；不会上传或提交音频文件。
