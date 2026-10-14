@@ -19,4 +19,6 @@ Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-asses
 
 本地歌词时间轴校对器位于 [tools/timeline-review](tools/timeline-review/README.md)。它直接读取本机母带，在浏览器本地保存进度并导出带人工审核记录的 JSON；不会上传或提交音频文件。
 
+本地音乐摘要校对器位于 [tools/summary-review](tools/summary-review/README.md)。它把人工歌词、演唱者和乐器粗标与自动声学测量并排展示，支持逐段循环试听、修改摘要、确认状态以及 JSON 导入导出。
+
 `/music` 人类端初版位于 [web/music](web/music/README.md)。页面使用浏览器原生视频控件，并从统一歌曲元数据生成作品署名、演唱者与段落跳转数据。

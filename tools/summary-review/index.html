@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0d1118" />
+    <title>《借月》音乐摘要校对台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">JIEYUE · SUMMARY REVIEW</p>
+          <h1>《借月》音乐摘要校对台</h1>
+          <p class="lede">一边听，一边把自动测量与人工资料整理成小机看得懂的音乐事实。</p>
+        </div>
+        <div class="header-actions">
+          <button id="load-audio" class="button primary" type="button">选择母带 MP3</button>
+          <input id="audio-file" type="file" accept="audio/mpeg,audio/mp3,audio/*" hidden />
+          <button id="import-json" class="button" type="button">载入校对稿</button>
+          <input id="review-file" type="file" accept="application/json,.json" hidden />
+          <button id="export-json" class="button" type="button">导出 JSON</button>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-live="polite">
+        <div class="file-state">
+          <span id="file-dot" class="status-dot"></span>
+          <span id="file-status">尚未选择母带；音频只在当前浏览器中读取</span>
+        </div>
+        <div class="progress-copy">
+          <span id="review-count">0 / 12 已确认</span>
+          <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+        </div>
+      </section>
+
+      <main class="workspace">
+        <aside class="segment-browser" aria-label="音乐段落列表">
+          <div class="browser-toolbar">
+            <label>
+              <span>显示</span>
+              <select id="review-filter" aria-label="审核状态筛选">
+                <option value="all">全部段落</option>
+                <option value="pending">只看未确认</option>
+                <option value="flagged">只看需复核</option>
+                <option value="verified">只看已确认</option>
+              </select>
+            </label>
+          </div>
+          <div id="segment-list" class="segment-list"></div>
+          <button id="reset-review" class="reset-button" type="button">重置本机校对进度</button>
+        </aside>
+
+        <section class="review-panel">
+          <div class="segment-heading">
+            <div>
+              <div class="heading-meta">
+                <span id="segment-position" class="pill">第 1 / 12 段</span>
+                <span id="segment-time" class="muted">00:00.000–00:23.300</span>
+                <span id="segment-status" class="status-label pending">待校对</span>
+              </div>
+              <h2 id="segment-title">清唱（无伴奏）</h2>
+            </div>
+            <div class="step-actions">
+              <button id="previous" class="icon-button" type="button" aria-label="上一段">←</button>
+              <button id="next" class="icon-button" type="button" aria-label="下一段">→</button>
+            </div>
+          </div>
+
+          <section class="player-card" aria-label="分段试听播放器">
+            <div class="transport">
+              <button id="replay" class="button" type="button">从本段开头重听</button>
+              <button id="play-pause" class="button primary transport-main" type="button">播放</button>
+              <label class="loop-control">
+                <input id="loop-segment" type="checkbox" checked />
+                <span>循环本段</span>
+              </label>
+            </div>
+            <div class="scrub-row">
+              <span id="playhead-time">00:00.000</span>
+              <input id="scrubber" type="range" min="0" max="1000" value="0" aria-label="当前段落进度" />
+              <span id="segment-end-time">00:23.300</span>
+            </div>
+            <audio id="audio" preload="metadata"></audio>
+          </section>
+
+          <section class="evidence-grid" aria-label="摘要证据">
+            <article class="evidence-card human-evidence">
+              <div class="card-heading">
+                <span class="source-badge human">人工资料</span>
+                <h3>谁在唱、标注了什么乐器</h3>
+              </div>
+              <dl id="human-evidence"></dl>
+            </article>
+            <article class="evidence-card automatic-evidence">
+              <div class="card-heading">
+                <span class="source-badge automatic">自动测量</span>
+                <h3>频谱、响度与动态</h3>
+              </div>
+              <div id="feature-list" class="feature-list"></div>
+              <p class="caveat">这些数字可以描述变化，不能单独证明某件乐器出现。</p>
+            </article>
+          </section>
+
+          <details class="lyrics-card" open>
+            <summary>本段歌词与演唱者</summary>
+            <div id="lyrics-list" class="lyrics-list"></div>
+          </details>
+
+          <section class="editor-card">
+            <div class="editor-heading">
+              <div>
+                <span class="source-badge draft">待人工确认</span>
+                <h3>给小机看的摘要</h3>
+              </div>
+              <button id="restore-draft" class="text-button" type="button">恢复最初草稿</button>
+            </div>
+            <label class="sr-only" for="summary-text">音乐摘要</label>
+            <textarea id="summary-text" rows="6" spellcheck="true"></textarea>
+            <div class="summary-footer">
+              <span id="summary-length" class="muted">0 字</span>
+              <span class="muted">修改会自动保存在当前浏览器</span>
+            </div>
+
+            <label class="notes-label" for="review-notes">校对备注（不会作为音乐摘要发给小机）</label>
+            <textarea id="review-notes" class="notes" rows="2" placeholder="例如：0:54 架子鼓进入仍需细听；“明亮”改为“通透”"></textarea>
+
+            <div class="decision-row">
+              <button id="mark-pending" class="button subtle" type="button">暂存为待校对</button>
+              <button id="mark-flagged" class="button warning" type="button">标记需复核</button>
+              <button id="mark-verified" class="button success" type="button">确认并到下一段</button>
+            </div>
+          </section>
+
+          <details class="method-card">
+            <summary>这份草稿是怎样生成的？</summary>
+            <p>演唱者、歌词与乐器来自现有人工时间轴；响度关系来自 MP3 母带的离线自动测量。草稿不声称模型直接听过原始音频，也不根据频谱擅自猜测乐器或情绪。</p>
+          </details>
+        </section>
+      </main>
+
+      <footer class="shortcut-bar">
+        <span><kbd>Space</kbd> 播放 / 暂停</span>
+        <span><kbd>R</kbd> 重听</span>
+        <span><kbd>J</kbd> 上一段</span>
+        <span><kbd>K</kbd> 下一段</span>
+        <span><kbd>V</kbd> 确认并前进</span>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
