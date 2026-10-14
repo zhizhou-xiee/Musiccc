@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.1.0",
+  "song_id": "jieyue",
+  "title": "借月",
+  "version": {
+    "id": "final-master",
+    "display_name": "正式版"
+  },
+  "duration_ms": 249594,
+  "credits": {
+    "lyrics": [
+      "谢之平",
+      "谢之舟"
+    ],
+    "composition": [
+      "Suno"
+    ],
+    "arrangement": [
+      "Suno"
+    ],
+    "mixing": [
+      "Simple Studio"
+    ],
+    "vocal_tuning": [
+      "Simple Studio"
+    ],
+    "mastering": [
+      "Simple Studio"
+    ],
+    "mv_production": [
+      "Claude"
+    ]
+  },
+  "media": {
+    "video": {
+      "asset_id": "jieyue-mv-720p",
+      "source_filename": "借月MV_小机们的中秋_预览720p.mp4",
+      "duration_ms": 255001,
+      "width": 1280,
+      "height": 720,
+      "fps": 30,
+      "public_use_approved": true,
+      "deployment_url": null
+    },
+    "audio": {
+      "asset_id": "jieyue-final-master-mp3",
+      "source_filename": "借月MMM.mp3",
+      "duration_ms": 249594,
+      "public_use_approved": null,
+      "deployment_url": null
+    }
+  },
+  "related_data": {
+    "timeline": "./timeline.reference.json",
+    "subtitle": "./subtitles/zh-CN.srt"
+  },
+  "provenance": {
+    "credits_source": {
+      "original_name": "《借月》歌词与分词.md",
+      "sha256": "a3350838cae04f2f58d7f15c9eb9e2cd8e65080e7a42df1d9e0fea15a0f289b4"
+    },
+    "mastering_and_mv_confirmation": "项目负责人于 2026-10-14 确认。"
+  }
+}

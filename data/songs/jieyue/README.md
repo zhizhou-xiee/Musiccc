@@ -1,5 +1,6 @@
 # 《借月》时间轴数据
 
+- `metadata.json`：网页与 MCP 共用的歌曲版本、媒体资产和正式制作署名。
 - `timeline.reference.json`：当前校对基准。包含人工波形标记的 72 个开口时间、估算唱完时间、字幕显示时间、主唱与和声角色、13 个段落、17 个 MV 分镜、9 个乐器事件和 380 个自动检测节拍。
 - `timeline.draft.json`：Whisper 自动对齐的旧初稿，用作来源对照，不再作为校对器默认输入。
 - `timeline.draft.lrc`：由自动对齐旧初稿生成的 LRC 预览。
