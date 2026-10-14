@@ -49,6 +49,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--source-dir", type=Path, required=True)
     parser.add_argument("--subtitle-output", type=Path, required=True)
+    parser.add_argument("--review-export", type=Path)
     return parser.parse_args()
 
 
@@ -58,6 +59,12 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def copy_if_needed(source: Path, destination: Path) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if source.resolve() != destination.resolve():
+        shutil.copyfile(source, destination)
 
 
 def ms(seconds: float) -> int:
@@ -174,6 +181,11 @@ def main() -> None:
                         "source": "editorial_subtitle_timing",
                         "status": "display_only",
                     },
+                    "subtitle_start": {
+                        "value_ms": subtitle["start_ms"],
+                        "source": "editorial_subtitle_timing",
+                        "status": "display_only",
+                    },
                     "start_frame": {
                         "value": raw_line["start_frame_30fps"],
                         "fps": 30,
@@ -220,21 +232,21 @@ def main() -> None:
 
     source_files = {
         "timing_json": {
-            "original_name": args.timing_json.name,
+            "original_name": "借月_分拍资料.json",
             "sha256": sha256(args.timing_json),
         },
         "subtitle_srt": {
-            "original_name": args.subtitle_srt.name,
+            "original_name": "借月_歌词字幕.srt",
             "sha256": sha256(args.subtitle_srt),
         },
         "reference_md": {
-            "original_name": args.reference_md.name,
+            "original_name": "借月_分拍资料.md",
             "sha256": sha256(args.reference_md),
         },
     }
 
     output = {
-        "schema_version": "0.2.0",
+        "schema_version": "0.2.1",
         "song_id": draft["song_id"],
         "title": draft["title"],
         "timeline_timebase": draft["timeline_timebase"],
@@ -288,14 +300,88 @@ def main() -> None:
         },
     }
 
+    if args.review_export:
+        review_export = json.loads(args.review_export.read_text(encoding="utf-8"))
+        if review_export["song_id"] != output["song_id"]:
+            raise ValueError("Review export belongs to a different song")
+        if review_export["timeline_timebase"]["sha256"] != output["timeline_timebase"]["sha256"]:
+            raise ValueError("Review export uses a different master")
+        if len(review_export["lines"]) != len(output["lines"]):
+            raise ValueError("Review export line count differs")
+
+        verified = 0
+        flagged = 0
+        for base_line, reviewed_line in zip(output["lines"], review_export["lines"], strict=True):
+            if base_line["id"] != reviewed_line["id"] or base_line["text"] != reviewed_line["text"]:
+                raise ValueError("Review export line identity differs")
+            review = reviewed_line.get("manual_review", {})
+            status = review.get("status", "pending")
+            if status == "pending":
+                continue
+            if review.get("candidate_start_ms") != base_line["start_ms"]:
+                raise ValueError(f"{base_line['id']}: review start candidate differs")
+            if review.get("candidate_end_ms") != base_line["end_ms"]:
+                raise ValueError(f"{base_line['id']}: review end candidate differs")
+
+            base_line["manual_review"] = review
+            if status == "verified":
+                verified += 1
+                base_line["start_ms"] = reviewed_line["start_ms"]
+                base_line["end_ms"] = reviewed_line["end_ms"]
+                base_line["timing"]["start"] = {
+                    "value_ms": reviewed_line["start_ms"],
+                    "source": "manual_listening_review",
+                    "status": "verified",
+                }
+                base_line["timing"]["vocal_end"] = {
+                    "value_ms": reviewed_line["end_ms"],
+                    "source": "manual_listening_review",
+                    "status": "verified",
+                }
+                base_line["timing"]["start_frame"] = {
+                    "value": round(reviewed_line["start_ms"] * raw["meta"]["video_fps"] / 1000),
+                    "fps": raw["meta"]["video_fps"],
+                    "source": "derived_from_verified_start",
+                }
+                if base_line["timing"].get("exception"):
+                    base_line["timing"]["exception"]["resolution"] = "manually_verified"
+            elif status == "flagged":
+                flagged += 1
+
+        pending = len(output["lines"]) - verified - flagged
+        output["manual_review"] = {
+            "status": "complete" if verified == len(output["lines"]) else "in_progress",
+            "summary": {
+                "verified_lines": verified,
+                "flagged_lines": flagged,
+                "pending_lines": pending,
+                "total_lines": len(output["lines"]),
+            },
+            "source": {
+                "original_name": "timeline.reviewed (2).json",
+                "stored_as": "manual-review-line-005.json",
+                "sha256": sha256(args.review_export),
+                "exported_at": review_export.get("alignment", {}).get("review_summary", {}).get("exported_at"),
+            },
+        }
+        output["provenance"]["source_files"]["manual_review_export"] = output["manual_review"]["source"]
+        if any(line["id"] == "line-005" and line.get("manual_review", {}).get("status") == "verified" for line in output["lines"]):
+            output["provenance"]["line_005_exception"] += " 之后已通过母带试听人工确认。"
+            output["alignment"]["review_scope"] = [
+                item for item in output["alignment"]["review_scope"] if "第 5 句" not in item
+            ]
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     args.source_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(args.timing_json, args.source_dir / "mv-timing-reference.json")
-    shutil.copyfile(args.reference_md, args.source_dir / "mv-timing-reference.md")
+    copy_if_needed(args.timing_json, args.source_dir / "mv-timing-reference.json")
+    copy_if_needed(args.reference_md, args.source_dir / "mv-timing-reference.md")
+    copy_if_needed(args.subtitle_srt, args.source_dir / "lyrics-subtitle-reference.srt")
+    if args.review_export:
+        copy_if_needed(args.review_export, args.source_dir / "manual-review-line-005.json")
     args.subtitle_output.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(args.subtitle_srt, args.subtitle_output)
+    copy_if_needed(args.subtitle_srt, args.subtitle_output)
 
     print(
         json.dumps(

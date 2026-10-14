@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.2.0",
+  "schema_version": "0.2.1",
   "song_id": "jieyue",
   "title": "借月",
   "timeline_timebase": {
@@ -17,7 +17,7 @@
   "provenance": {
     "primary_start_source": "舟舟于 2026-10-14 观察人声波形后逐句标记。",
     "vocal_end_source": "由分离人声估算；伴奏密集的副歌可靠性较低。",
-    "line_005_exception": "漏按的第 5 句开口参照第二段主歌对应位置补为 00:40.000。",
+    "line_005_exception": "漏按的第 5 句开口参照第二段主歌对应位置补为 00:40.000。 之后已通过母带试听人工确认。",
     "source_files": {
       "timing_json": {
         "original_name": "借月_分拍资料.json",
@@ -30,6 +30,12 @@
       "reference_md": {
         "original_name": "借月_分拍资料.md",
         "sha256": "9c39bc6f2586325e3d03216ad826a1d84418d69465df519c3d98482588d90936"
+      },
+      "manual_review_export": {
+        "original_name": "timeline.reviewed (2).json",
+        "stored_as": "manual-review-line-005.json",
+        "sha256": "30a96bf1ba82acdb25354c1fb18315f887401a36588d9eb971f3f0a750df523c",
+        "exported_at": "2026-10-14T18:10:09.951Z"
       }
     }
   },
@@ -45,7 +51,6 @@
     "recognized_syllables": 414,
     "expected_syllables": 414,
     "review_scope": [
-      "确认第 5 句补出的开口时间。",
       "复核估算的唱完时间，尤其是伴奏密集的副歌。",
       "不得把自动节拍当作已验证的工程速度网格。"
     ]
@@ -422,6 +427,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 3550,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 106,
           "fps": 30
@@ -464,6 +474,11 @@
         },
         "subtitle_end": {
           "value_ms": 22870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 13410,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -512,6 +527,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 34080,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 1022,
           "fps": 30
@@ -557,6 +577,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 38840,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 1165,
           "fps": 30
@@ -586,31 +611,38 @@
           "role": "lead"
         }
       ],
-      "start_ms": 40000,
-      "end_ms": 44460,
+      "start_ms": 40800,
+      "end_ms": 43160,
       "timing": {
         "start": {
-          "value_ms": 40000,
-          "source": "human_waveform_mark",
-          "status": "reference"
+          "value_ms": 40800,
+          "source": "manual_listening_review",
+          "status": "verified"
         },
         "vocal_end": {
-          "value_ms": 44460,
-          "source": "separated_vocal_estimate",
-          "status": "estimate"
+          "value_ms": 43160,
+          "source": "manual_listening_review",
+          "status": "verified"
         },
         "subtitle_end": {
           "value_ms": 44410,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 40000,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
-          "value": 1200,
-          "fps": 30
+          "value": 1224,
+          "fps": 30,
+          "source": "derived_from_verified_start"
         },
         "exception": {
           "kind": "reconstructed_onset",
-          "note": "原始打拍漏按；00:40.000 是参照第二段主歌对应位置补出的时间。"
+          "note": "原始打拍漏按；00:40.000 是参照第二段主歌对应位置补出的时间。",
+          "resolution": "manually_verified"
         }
       },
       "alignment": {
@@ -622,6 +654,15 @@
         "matched_syllables": 5,
         "expected_syllables": 5,
         "review_flags": []
+      },
+      "manual_review": {
+        "status": "verified",
+        "notes": "",
+        "candidate_start_ms": 40000,
+        "candidate_end_ms": 44460,
+        "adjusted": true,
+        "verified_at": "2026-10-14T18:09:59.791Z",
+        "updated_at": "2026-10-14T18:09:59.791Z"
       }
     },
     {
@@ -649,6 +690,11 @@
         },
         "subtitle_end": {
           "value_ms": 48110,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 44460,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -694,6 +740,11 @@
         },
         "subtitle_end": {
           "value_ms": 49700,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 48160,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -744,6 +795,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 49750,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 1492,
           "fps": 30
@@ -789,6 +845,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 54870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 1646,
           "fps": 30
@@ -831,6 +892,11 @@
         },
         "subtitle_end": {
           "value_ms": 60750,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 59290,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -881,6 +947,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 60800,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 1824,
           "fps": 30
@@ -926,6 +997,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 64870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 1946,
           "fps": 30
@@ -968,6 +1044,11 @@
         },
         "subtitle_end": {
           "value_ms": 70780,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 69190,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1018,6 +1099,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 70830,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 2125,
           "fps": 30
@@ -1062,6 +1148,11 @@
         },
         "subtitle_end": {
           "value_ms": 76540,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 74650,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1112,6 +1203,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 76590,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 2298,
           "fps": 30
@@ -1154,6 +1250,11 @@
         },
         "subtitle_end": {
           "value_ms": 82930,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 80330,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1202,6 +1303,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 82980,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 2489,
           "fps": 30
@@ -1244,6 +1350,11 @@
         },
         "subtitle_end": {
           "value_ms": 89380,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 87470,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1294,6 +1405,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 89430,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 2683,
           "fps": 30
@@ -1338,6 +1454,11 @@
         },
         "subtitle_end": {
           "value_ms": 95250,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 92130,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1388,6 +1509,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 95300,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 2859,
           "fps": 30
@@ -1435,6 +1561,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 97720,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 2932,
           "fps": 30
@@ -1479,6 +1610,11 @@
         },
         "subtitle_end": {
           "value_ms": 100560,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 99600,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1530,6 +1666,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 100610,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 3018,
           "fps": 30
@@ -1575,6 +1716,11 @@
         },
         "subtitle_end": {
           "value_ms": 103260,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 102190,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1626,6 +1772,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 103310,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 3099,
           "fps": 30
@@ -1670,6 +1821,11 @@
         },
         "subtitle_end": {
           "value_ms": 107470,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 105670,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1721,6 +1877,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 107520,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 3226,
           "fps": 30
@@ -1769,6 +1930,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 128700,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 3861,
           "fps": 30
@@ -1814,6 +1980,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 131690,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 3951,
           "fps": 30
@@ -1856,6 +2027,11 @@
         },
         "subtitle_end": {
           "value_ms": 135170,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 134000,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1906,6 +2082,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 135220,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 4057,
           "fps": 30
@@ -1950,6 +2131,11 @@
         },
         "subtitle_end": {
           "value_ms": 138990,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 136390,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -1998,6 +2184,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 139040,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 4171,
           "fps": 30
@@ -2040,6 +2231,11 @@
         },
         "subtitle_end": {
           "value_ms": 144120,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 141570,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2088,6 +2284,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 144170,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 4325,
           "fps": 30
@@ -2130,6 +2331,11 @@
         },
         "subtitle_end": {
           "value_ms": 149840,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 146540,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2183,6 +2389,11 @@
         },
         "subtitle_end": {
           "value_ms": 153680,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 149890,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2241,6 +2452,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 153730,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 4612,
           "fps": 30
@@ -2291,6 +2507,11 @@
         },
         "subtitle_end": {
           "value_ms": 160870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 159020,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2349,6 +2570,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 160920,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 4828,
           "fps": 30
@@ -2399,6 +2625,11 @@
         },
         "subtitle_end": {
           "value_ms": 166520,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 163050,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2455,6 +2686,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 166570,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 4997,
           "fps": 30
@@ -2505,6 +2741,11 @@
         },
         "subtitle_end": {
           "value_ms": 171260,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 168430,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2561,6 +2802,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 171310,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5139,
           "fps": 30
@@ -2611,6 +2857,11 @@
         },
         "subtitle_end": {
           "value_ms": 176630,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 174560,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2667,6 +2918,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 176680,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5300,
           "fps": 30
@@ -2717,6 +2973,11 @@
         },
         "subtitle_end": {
           "value_ms": 179590,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 178650,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2775,6 +3036,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 179640,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5389,
           "fps": 30
@@ -2827,6 +3093,11 @@
         },
         "subtitle_end": {
           "value_ms": 182360,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 181160,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2885,6 +3156,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 182410,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5472,
           "fps": 30
@@ -2935,6 +3211,11 @@
         },
         "subtitle_end": {
           "value_ms": 186070,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 184810,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -2993,6 +3274,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 186120,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5584,
           "fps": 30
@@ -3037,6 +3323,11 @@
         },
         "subtitle_end": {
           "value_ms": 191760,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 190860,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3087,6 +3378,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 191810,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5754,
           "fps": 30
@@ -3129,6 +3425,11 @@
         },
         "subtitle_end": {
           "value_ms": 197140,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 195950,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3179,6 +3480,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 197190,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 5916,
           "fps": 30
@@ -3224,6 +3530,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 200450,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6014,
           "fps": 30
@@ -3266,6 +3577,11 @@
         },
         "subtitle_end": {
           "value_ms": 207170,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 204550,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3316,6 +3632,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 207220,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6217,
           "fps": 30
@@ -3360,6 +3681,11 @@
         },
         "subtitle_end": {
           "value_ms": 212580,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 210250,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3410,6 +3736,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 212630,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6379,
           "fps": 30
@@ -3455,6 +3786,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 215510,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6465,
           "fps": 30
@@ -3497,6 +3833,11 @@
         },
         "subtitle_end": {
           "value_ms": 218970,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 218310,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3552,6 +3893,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 219020,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6571,
           "fps": 30
@@ -3594,6 +3940,11 @@
         },
         "subtitle_end": {
           "value_ms": 222050,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 220540,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3642,6 +3993,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 222100,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6663,
           "fps": 30
@@ -3686,6 +4042,11 @@
         },
         "subtitle_end": {
           "value_ms": 224630,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 223400,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3737,6 +4098,11 @@
         },
         "subtitle_end": {
           "value_ms": 229580,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 224680,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -3797,6 +4163,11 @@
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
+        "subtitle_start": {
+          "value_ms": 229630,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
         "start_frame": {
           "value": 6889,
           "fps": 30
@@ -3854,6 +4225,11 @@
         },
         "subtitle_end": {
           "value_ms": 235440,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "subtitle_start": {
+          "value_ms": 232480,
           "source": "editorial_subtitle_timing",
           "status": "display_only"
         },
@@ -4490,5 +4866,20 @@
     ],
     "source": "automatic_librosa_detection",
     "status": "unverified_reference_only"
+  },
+  "manual_review": {
+    "status": "in_progress",
+    "summary": {
+      "verified_lines": 1,
+      "flagged_lines": 0,
+      "pending_lines": 71,
+      "total_lines": 72
+    },
+    "source": {
+      "original_name": "timeline.reviewed (2).json",
+      "stored_as": "manual-review-line-005.json",
+      "sha256": "30a96bf1ba82acdb25354c1fb18315f887401a36588d9eb971f3f0a750df523c",
+      "exported_at": "2026-10-14T18:10:09.951Z"
+    }
   }
 }

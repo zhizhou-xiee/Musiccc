@@ -65,7 +65,15 @@ function activeLine() {
 }
 
 function reviewFor(line) {
-  return localReviews[line.id] || { status: "pending", notes: "" };
+  if (localReviews[line.id]) return localReviews[line.id];
+  if (line.manual_review) {
+    return {
+      ...line.manual_review,
+      start_ms: line.start_ms,
+      end_ms: line.end_ms,
+    };
+  }
+  return { status: "pending", notes: "" };
 }
 
 function storageKey() {
@@ -246,7 +254,7 @@ function selectLine(index, seek = false) {
 }
 
 function ensureReview(line) {
-  if (!localReviews[line.id]) localReviews[line.id] = { status: "pending", notes: "" };
+  if (!localReviews[line.id]) localReviews[line.id] = { ...reviewFor(line) };
   return localReviews[line.id];
 }
 
@@ -492,9 +500,9 @@ function exportTimeline() {
       manual_review: {
         status: review.status,
         notes: review.notes || "",
-        candidate_start_ms: line.start_ms,
-        candidate_end_ms: line.end_ms,
-        adjusted: times.start !== line.start_ms || times.end !== line.end_ms,
+        candidate_start_ms: line.manual_review?.candidate_start_ms ?? line.start_ms,
+        candidate_end_ms: line.manual_review?.candidate_end_ms ?? line.end_ms,
+        adjusted: line.manual_review?.adjusted || times.start !== line.start_ms || times.end !== line.end_ms,
         verified_at: review.verified_at || null,
         updated_at: review.updated_at || null,
       },
@@ -506,6 +514,16 @@ function exportTimeline() {
     manual_review_required: verified !== exported.lines.length,
     review_summary: {
       exported_at: new Date().toISOString(),
+      verified_lines: verified,
+      flagged_lines: flagged,
+      pending_lines: exported.lines.length - verified - flagged,
+      total_lines: exported.lines.length,
+    },
+  };
+  exported.manual_review = {
+    ...(exported.manual_review || {}),
+    status: verified === exported.lines.length ? "complete" : "in_progress",
+    summary: {
       verified_lines: verified,
       flagged_lines: flagged,
       pending_lines: exported.lines.length - verified - flagged,
