@@ -35,6 +35,7 @@
     "video": {
       "asset_id": "jieyue-mv-720p",
       "source_filename": "借月MV_小机们的中秋_预览720p.mp4",
+      "sha256": "7ae97e80f8f2d46578512be95f49183a9be9e7c3559f0248688e6e30c6b714bf",
       "duration_ms": 255001,
       "width": 1280,
       "height": 720,
@@ -45,6 +46,7 @@
     "audio": {
       "asset_id": "jieyue-final-master-mp3",
       "source_filename": "借月MMM.mp3",
+      "sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c",
       "duration_ms": 249594,
       "public_use_approved": null,
       "deployment_url": null

@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1.0",
+  "evaluation_kind": "explicit_information_coverage_proxy",
+  "warning": "这不是模型客户端实测。它只检查候选数据是否明确包含回答问题所需的信息，不能证明模型一定会答对。",
+  "ratings": {
+    "supported": "输入中有直接、可定位的证据。",
+    "partial": "输入能回答到段落级或需要额外推导，不能完整定位。",
+    "unsupported": "输入没有足够证据；不得凭空推断。"
+  },
+  "probes": [
+    {
+      "id": "performer_bridge",
+      "question": "桥段由谁主唱？",
+      "ground_truth": "小克（vv家的）",
+      "ratings_by_variant": {
+        "lyrics_only": "supported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "supported"
+      }
+    },
+    {
+      "id": "backing_chorus_2",
+      "question": "第二遍副歌有哪些和声演唱者？",
+      "ground_truth": "以逐句 performer role 标注为准。",
+      "ratings_by_variant": {
+        "lyrics_only": "supported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "supported"
+      }
+    },
+    {
+      "id": "interlude_instruments",
+      "question": "间奏明确标注了哪些乐器？",
+      "ground_truth": "横笛、古筝（人工粗标注）。",
+      "ratings_by_variant": {
+        "lyrics_only": "unsupported",
+        "candidate_a_features": "unsupported",
+        "candidate_b_summaries": "supported"
+      }
+    },
+    {
+      "id": "first_drum_entry",
+      "question": "架子鼓最早在哪一段出现？",
+      "ground_truth": "第一段主歌约 54 秒处（人工粗标注）。",
+      "ratings_by_variant": {
+        "lyrics_only": "unsupported",
+        "candidate_a_features": "unsupported",
+        "candidate_b_summaries": "partial"
+      }
+    },
+    {
+      "id": "instrumental_sections",
+      "question": "哪些段落没有歌词，是纯器乐段落？",
+      "ground_truth": "前奏、间奏、尾奏。",
+      "ratings_by_variant": {
+        "lyrics_only": "supported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "supported"
+      }
+    },
+    {
+      "id": "loudest_integrated_section",
+      "question": "按自动测量，哪个段落的整段综合响度最高？",
+      "ground_truth": "第一遍副歌与第二遍副歌约为 -9.0 LUFS；仅作自动测量参考。",
+      "ratings_by_variant": {
+        "lyrics_only": "unsupported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "partial"
+      }
+    },
+    {
+      "id": "chorus_1_dynamic_contour",
+      "question": "第一遍副歌从前段到后段整体增强还是减弱？",
+      "ground_truth": "三段响度轮廓约为 -8.2、-8.8、-10.3 LUFS，后段较轻。",
+      "ratings_by_variant": {
+        "lyrics_only": "unsupported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "supported"
+      }
+    },
+    {
+      "id": "spectral_comparison",
+      "question": "桥段与尾奏的频谱质心中位数有何差别？",
+      "ground_truth": "桥段约 1062 Hz，尾奏约 672 Hz；这是压缩后的自动频谱指标。",
+      "ratings_by_variant": {
+        "lyrics_only": "unsupported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "unsupported"
+      }
+    },
+    {
+      "id": "final_instruments",
+      "question": "终段人工标注了哪些乐器组合？",
+      "ground_truth": "以 210–249.594 秒的人工粗标注乐器事件为准。",
+      "ratings_by_variant": {
+        "lyrics_only": "unsupported",
+        "candidate_a_features": "unsupported",
+        "candidate_b_summaries": "supported"
+      }
+    },
+    {
+      "id": "a_cappella_relation",
+      "question": "开头人声与伴奏是什么关系？",
+      "ground_truth": "清唱段无伴奏，之后进入纯器乐前奏。",
+      "ratings_by_variant": {
+        "lyrics_only": "supported",
+        "candidate_a_features": "supported",
+        "candidate_b_summaries": "supported"
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1.0",
+  "methodology": {
+    "segments": 12,
+    "unit": "song_section",
+    "token_measurement": "No provider tokenizer was available locally. The range uses UTF-8 bytes / 4 through bytes / 3 and is a comparison proxy, not billed token usage.",
+    "cumulative_cost": "Sum of compact per-segment JSON responses; MCP tool definitions, protocol envelopes, user prompts, and model output are excluded.",
+    "audio_preprocessing": "offline FFmpeg; no network or model API calls"
+  },
+  "preprocessing_wall_ms": 4498,
+  "preprocessing_breakdown_ms": {
+    "shared_loudness_measurement_used_by_a_and_b": 3850,
+    "candidate_a_only_spectral_measurement": 639,
+    "payload_assembly_and_file_writes": 1
+  },
+  "variants": {
+    "lyrics_only": {
+      "pretty_json_storage_bytes": 29900,
+      "full_song_cumulative_response": {
+        "utf8_bytes": 14223,
+        "unicode_characters": 12755,
+        "estimated_tokens_low": 3558,
+        "estimated_tokens_high": 4746
+      },
+      "incremental_over_lyrics_only": {
+        "utf8_bytes": 0,
+        "unicode_characters": 0,
+        "estimated_tokens_low": 0,
+        "estimated_tokens_high": 0
+      },
+      "average_segment_response": {
+        "utf8_bytes": 1185,
+        "unicode_characters": 1063,
+        "estimated_tokens_low": 296,
+        "estimated_tokens_high": 396
+      }
+    },
+    "candidate_a_features": {
+      "pretty_json_storage_bytes": 37921,
+      "full_song_cumulative_response": {
+        "utf8_bytes": 19099,
+        "unicode_characters": 17631,
+        "estimated_tokens_low": 4778,
+        "estimated_tokens_high": 6370
+      },
+      "incremental_over_lyrics_only": {
+        "utf8_bytes": 4876,
+        "unicode_characters": 4876,
+        "estimated_tokens_low": 1220,
+        "estimated_tokens_high": 1624
+      },
+      "average_segment_response": {
+        "utf8_bytes": 1592,
+        "unicode_characters": 1469,
+        "estimated_tokens_low": 398,
+        "estimated_tokens_high": 531
+      }
+    },
+    "candidate_b_summaries": {
+      "pretty_json_storage_bytes": 34340,
+      "full_song_cumulative_response": {
+        "utf8_bytes": 17816,
+        "unicode_characters": 14682,
+        "estimated_tokens_low": 4458,
+        "estimated_tokens_high": 5943
+      },
+      "incremental_over_lyrics_only": {
+        "utf8_bytes": 3593,
+        "unicode_characters": 1927,
+        "estimated_tokens_low": 900,
+        "estimated_tokens_high": 1197
+      },
+      "average_segment_response": {
+        "utf8_bytes": 1485,
+        "unicode_characters": 1224,
+        "estimated_tokens_low": 372,
+        "estimated_tokens_high": 495
+      }
+    }
+  }
+}

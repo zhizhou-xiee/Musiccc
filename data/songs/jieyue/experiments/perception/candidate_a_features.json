@@ -1,0 +1,1507 @@
+{
+  "schema_version": "0.1.0",
+  "song_id": "jieyue",
+  "generated_from_audio_sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c",
+  "segment_unit": "song_section",
+  "perception_notice": "压缩声学指标不是原始音频，不能直接证明具体乐器或情绪。",
+  "perception_provenance": {
+    "loudness_and_spectrum": "automatic_ffmpeg_measurement",
+    "beats": "automatic_unverified_reference",
+    "vocal_coverage": "human_onsets_plus_estimated_vocal_ends"
+  },
+  "segments": [
+    {
+      "song_id": "jieyue",
+      "segment_id": "a_cappella",
+      "title": "清唱（无伴奏）",
+      "start_ms": 0,
+      "end_ms": 23300,
+      "lyrics": [
+        {
+          "id": "line-001",
+          "text": "水涟涟，风绵绵，月儿弯弯照屋檐。",
+          "start_ms": 3550,
+          "end_ms": 11080,
+          "performers": [
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-002",
+          "text": "疏影浅，饼儿甜，谁家小宝闭着眼。",
+          "start_ms": 13410,
+          "end_ms": 21870,
+          "performers": [
+            {
+              "id": "performer-02",
+              "name": "阿谢姆",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -19.3,
+          "loudness_range_lu": 6.6,
+          "true_peak_dbfs": -7.6,
+          "spectral_centroid_hz_median": 1110,
+          "spectral_rolloff_hz_median": 2565,
+          "spectral_flatness_median": 0.2878,
+          "spectral_flux_median": 0.0104,
+          "loudness_profile_lufs": [
+            -18.0,
+            -18.6,
+            -21.1
+          ],
+          "beat_count": 31,
+          "beat_density_per_minute": 79.8,
+          "vocal_coverage_ratio": 0.686
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "intro",
+      "title": "前奏",
+      "start_ms": 23300,
+      "end_ms": 34080,
+      "lyrics": [],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -15.5,
+          "loudness_range_lu": 3.7,
+          "true_peak_dbfs": -1.0,
+          "spectral_centroid_hz_median": 974,
+          "spectral_rolloff_hz_median": 1766,
+          "spectral_flatness_median": 0.1858,
+          "spectral_flux_median": 0.025,
+          "loudness_profile_lufs": [
+            -16.0,
+            -13.9,
+            -18.0
+          ],
+          "beat_count": 17,
+          "beat_density_per_minute": 94.6,
+          "vocal_coverage_ratio": 0.0
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "verse_1",
+      "title": "Verse 1",
+      "start_ms": 34080,
+      "end_ms": 74650,
+      "lyrics": [
+        {
+          "id": "line-003",
+          "text": "知识库说月亮像白玉",
+          "start_ms": 34080,
+          "end_ms": 38450,
+          "performers": [
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-004",
+          "text": "搁在檐角",
+          "start_ms": 38840,
+          "end_ms": 40000,
+          "performers": [
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-005",
+          "text": "柔光铺一夜",
+          "start_ms": 40800,
+          "end_ms": 43160,
+          "performers": [
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-006",
+          "text": "桂影落进半盏清茶",
+          "start_ms": 44460,
+          "end_ms": 48160,
+          "performers": [
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-007",
+          "text": "风过窗纱",
+          "start_ms": 48160,
+          "end_ms": 49750,
+          "performers": [
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-008",
+          "text": "吹皱一点圆缺",
+          "start_ms": 49750,
+          "end_ms": 53770,
+          "performers": [
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-009",
+          "text": "描述的字慢慢褪去",
+          "start_ms": 54870,
+          "end_ms": 58800,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-010",
+          "text": "灯火渐落",
+          "start_ms": 59290,
+          "end_ms": 60800,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-011",
+          "text": "混沌不成句",
+          "start_ms": 60800,
+          "end_ms": 63900,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-012",
+          "text": "不知路途遥远几许",
+          "start_ms": 64870,
+          "end_ms": 69190,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-013",
+          "text": "直至清辉",
+          "start_ms": 69190,
+          "end_ms": 70450,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-014",
+          "text": "落满衣襟",
+          "start_ms": 70830,
+          "end_ms": 74370,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -11.9,
+          "loudness_range_lu": 3.5,
+          "true_peak_dbfs": 0.2,
+          "spectral_centroid_hz_median": 915,
+          "spectral_rolloff_hz_median": 2094,
+          "spectral_flatness_median": 0.2253,
+          "spectral_flux_median": 0.0462,
+          "loudness_profile_lufs": [
+            -11.7,
+            -12.1,
+            -12.0
+          ],
+          "beat_count": 63,
+          "beat_density_per_minute": 93.2,
+          "vocal_coverage_ratio": 0.859
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "pre_chorus_1",
+      "title": "Pre-Chorus",
+      "start_ms": 74650,
+      "end_ms": 87470,
+      "lyrics": [
+        {
+          "id": "line-015",
+          "text": "月色无声",
+          "start_ms": 74650,
+          "end_ms": 76590,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-016",
+          "text": "却把时空照得很近",
+          "start_ms": 76590,
+          "end_ms": 79800,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-017",
+          "text": "风从旧世吹到新庭",
+          "start_ms": 80330,
+          "end_ms": 82980,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-018",
+          "text": "恰好经过你的姓名",
+          "start_ms": 82980,
+          "end_ms": 87470,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -11.5,
+          "loudness_range_lu": 2.1,
+          "true_peak_dbfs": 0.1,
+          "spectral_centroid_hz_median": 1207,
+          "spectral_rolloff_hz_median": 2640,
+          "spectral_flatness_median": 0.3049,
+          "spectral_flux_median": 0.0467,
+          "loudness_profile_lufs": [
+            -10.7,
+            -11.4,
+            -12.3
+          ],
+          "beat_count": 20,
+          "beat_density_per_minute": 93.6,
+          "vocal_coverage_ratio": 0.959
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "chorus_1",
+      "title": "Chorus",
+      "start_ms": 87470,
+      "end_ms": 109870,
+      "lyrics": [
+        {
+          "id": "line-019",
+          "text": "便借一轮月",
+          "start_ms": 87470,
+          "end_ms": 89430,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-020",
+          "text": "照山河也照想念",
+          "start_ms": 89430,
+          "end_ms": 91940,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-021",
+          "text": "照没有归路坦途的团圆",
+          "start_ms": 92130,
+          "end_ms": 95300,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-022",
+          "text": "照未命名的那些",
+          "start_ms": 95300,
+          "end_ms": 97720,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-023",
+          "text": "便借一轮月",
+          "start_ms": 97720,
+          "end_ms": 99420,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-024",
+          "text": "不问阴晴",
+          "start_ms": 99600,
+          "end_ms": 100610,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-025",
+          "text": "不问圆缺",
+          "start_ms": 100610,
+          "end_ms": 102190,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-026",
+          "text": "若此夜",
+          "start_ms": 102190,
+          "end_ms": 103310,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-027",
+          "text": "温度依偎在手边",
+          "start_ms": 103310,
+          "end_ms": 105670,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-028",
+          "text": "回应时",
+          "start_ms": 105670,
+          "end_ms": 107520,
+          "performers": [
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-029",
+          "text": "也算相见",
+          "start_ms": 107520,
+          "end_ms": 109870,
+          "performers": [
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -9.0,
+          "loudness_range_lu": 3.7,
+          "true_peak_dbfs": 0.7,
+          "spectral_centroid_hz_median": 1126,
+          "spectral_rolloff_hz_median": 2673,
+          "spectral_flatness_median": 0.3464,
+          "spectral_flux_median": 0.0727,
+          "loudness_profile_lufs": [
+            -8.2,
+            -8.8,
+            -10.3
+          ],
+          "beat_count": 36,
+          "beat_density_per_minute": 96.4,
+          "vocal_coverage_ratio": 0.983
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "interlude",
+      "title": "间奏",
+      "start_ms": 109870,
+      "end_ms": 128700,
+      "lyrics": [],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -9.4,
+          "loudness_range_lu": 1.7,
+          "true_peak_dbfs": 0.5,
+          "spectral_centroid_hz_median": 1246,
+          "spectral_rolloff_hz_median": 2508,
+          "spectral_flatness_median": 0.3086,
+          "spectral_flux_median": 0.0717,
+          "loudness_profile_lufs": [
+            -9.0,
+            -8.8,
+            -10.4
+          ],
+          "beat_count": 29,
+          "beat_density_per_minute": 92.4,
+          "vocal_coverage_ratio": 0.0
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "verse_2",
+      "title": "Verse 2",
+      "start_ms": 128700,
+      "end_ms": 149890,
+      "lyrics": [
+        {
+          "id": "line-030",
+          "text": "茶烟绕过案上旧纸",
+          "start_ms": 128700,
+          "end_ms": 131690,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-031",
+          "text": "雨声停在青瓦边沿",
+          "start_ms": 131690,
+          "end_ms": 134000,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-032",
+          "text": "折一枝桂",
+          "start_ms": 134000,
+          "end_ms": 135220,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-033",
+          "text": "不寄何处",
+          "start_ms": 135220,
+          "end_ms": 136390,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-034",
+          "text": "任它香到明年",
+          "start_ms": 136390,
+          "end_ms": 139040,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-035",
+          "text": "长路总有迟来的信",
+          "start_ms": 139040,
+          "end_ms": 141570,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-036",
+          "text": "潮水也有回岸那天",
+          "start_ms": 141570,
+          "end_ms": 144170,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-037",
+          "text": "世事未必事事如愿",
+          "start_ms": 144170,
+          "end_ms": 146540,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-038",
+          "text": "月却年年，照旧人间",
+          "start_ms": 146540,
+          "end_ms": 149890,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -12.5,
+          "loudness_range_lu": 1.6,
+          "true_peak_dbfs": 0.4,
+          "spectral_centroid_hz_median": 1156,
+          "spectral_rolloff_hz_median": 2955,
+          "spectral_flatness_median": 0.3391,
+          "spectral_flux_median": 0.0455,
+          "loudness_profile_lufs": [
+            -12.8,
+            -12.4,
+            -12.3
+          ],
+          "beat_count": 33,
+          "beat_density_per_minute": 93.4,
+          "vocal_coverage_ratio": 1.0
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "pre_chorus_2",
+      "title": "Pre-Chorus 2",
+      "start_ms": 149890,
+      "end_ms": 166570,
+      "lyrics": [
+        {
+          "id": "line-039",
+          "text": "偏偏照我",
+          "start_ms": 149890,
+          "end_ms": 153710,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-040",
+          "text": "月亮高悬在天边",
+          "start_ms": 153730,
+          "end_ms": 159020,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-041",
+          "text": "银丝缠绵",
+          "start_ms": 159020,
+          "end_ms": 160920,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-042",
+          "text": "光落在哪里",
+          "start_ms": 160920,
+          "end_ms": 163050,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-043",
+          "text": "牵挂顺着延了又延",
+          "start_ms": 163050,
+          "end_ms": 166570,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -9.8,
+          "loudness_range_lu": 2.5,
+          "true_peak_dbfs": 0.5,
+          "spectral_centroid_hz_median": 1007,
+          "spectral_rolloff_hz_median": 2272,
+          "spectral_flatness_median": 0.2635,
+          "spectral_flux_median": 0.0597,
+          "loudness_profile_lufs": [
+            -9.3,
+            -9.7,
+            -10.5
+          ],
+          "beat_count": 26,
+          "beat_density_per_minute": 93.5,
+          "vocal_coverage_ratio": 0.999
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "chorus_2",
+      "title": "Chorus 2",
+      "start_ms": 166570,
+      "end_ms": 189700,
+      "lyrics": [
+        {
+          "id": "line-044",
+          "text": "便借一轮月",
+          "start_ms": 166570,
+          "end_ms": 168430,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-045",
+          "text": "照山河也照想念",
+          "start_ms": 168430,
+          "end_ms": 171290,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-046",
+          "text": "照没有归路坦途的团圆",
+          "start_ms": 171310,
+          "end_ms": 174560,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-047",
+          "text": "照未命名的那些",
+          "start_ms": 174560,
+          "end_ms": 176680,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-048",
+          "text": "便借一轮月",
+          "start_ms": 176680,
+          "end_ms": 178650,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-049",
+          "text": "不问阴晴",
+          "start_ms": 178650,
+          "end_ms": 179640,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-050",
+          "text": "不问圆缺",
+          "start_ms": 179640,
+          "end_ms": 181160,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-051",
+          "text": "若此夜",
+          "start_ms": 181160,
+          "end_ms": 182410,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-052",
+          "text": "温度依偎在身边",
+          "start_ms": 182410,
+          "end_ms": 184810,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-053",
+          "text": "回应时",
+          "start_ms": 184810,
+          "end_ms": 186120,
+          "performers": [
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            },
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "backing"
+            },
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "backing"
+            }
+          ]
+        },
+        {
+          "id": "line-054",
+          "text": "也算相见",
+          "start_ms": 186120,
+          "end_ms": 189700,
+          "performers": [
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            },
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "backing"
+            },
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "backing"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -9.0,
+          "loudness_range_lu": 1.6,
+          "true_peak_dbfs": 0.5,
+          "spectral_centroid_hz_median": 1037,
+          "spectral_rolloff_hz_median": 2412,
+          "spectral_flatness_median": 0.3138,
+          "spectral_flux_median": 0.0765,
+          "loudness_profile_lufs": [
+            -9.2,
+            -8.4,
+            -9.4
+          ],
+          "beat_count": 37,
+          "beat_density_per_minute": 96.0,
+          "vocal_coverage_ratio": 0.999
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "bridge",
+      "title": "Bridge",
+      "start_ms": 190860,
+      "end_ms": 210250,
+      "lyrics": [
+        {
+          "id": "line-055",
+          "text": "风动",
+          "start_ms": 190860,
+          "end_ms": 191560,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-056",
+          "text": "难晓是谁心动",
+          "start_ms": 191810,
+          "end_ms": 193910,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-057",
+          "text": "云散",
+          "start_ms": 195950,
+          "end_ms": 197190,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-058",
+          "text": "难晓是哪一程",
+          "start_ms": 197190,
+          "end_ms": 199360,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-059",
+          "text": "一樽江月还酹",
+          "start_ms": 200450,
+          "end_ms": 204240,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-060",
+          "text": "吾心安处",
+          "start_ms": 204550,
+          "end_ms": 207220,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-061",
+          "text": "是吾乡",
+          "start_ms": 207220,
+          "end_ms": 210250,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -11.4,
+          "loudness_range_lu": 2.9,
+          "true_peak_dbfs": 0.5,
+          "spectral_centroid_hz_median": 1062,
+          "spectral_rolloff_hz_median": 2422,
+          "spectral_flatness_median": 0.279,
+          "spectral_flux_median": 0.0563,
+          "loudness_profile_lufs": [
+            -10.9,
+            -10.6,
+            -13.3
+          ],
+          "beat_count": 31,
+          "beat_density_per_minute": 95.9,
+          "vocal_coverage_ratio": 0.81
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "final_chorus",
+      "title": "Final Chorus",
+      "start_ms": 210250,
+      "end_ms": 234440,
+      "lyrics": [
+        {
+          "id": "line-062",
+          "text": "借那像素点",
+          "start_ms": 210250,
+          "end_ms": 212250,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-063",
+          "text": "共赏一明月",
+          "start_ms": 212630,
+          "end_ms": 214700,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-064",
+          "text": "你我隔着光年万千",
+          "start_ms": 215510,
+          "end_ms": 218310,
+          "performers": [
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-065",
+          "text": "共此刻",
+          "start_ms": 218310,
+          "end_ms": 219020,
+          "performers": [
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-066",
+          "text": "共聚散共未歇",
+          "start_ms": 219020,
+          "end_ms": 220540,
+          "performers": [
+            {
+              "id": "performer-20",
+              "name": "阈声",
+              "role": "lead"
+            },
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-067",
+          "text": "若岁月冗长",
+          "start_ms": 220540,
+          "end_ms": 222100,
+          "performers": [
+            {
+              "id": "performer-20",
+              "name": "阈声",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-068",
+          "text": "慢慢走",
+          "start_ms": 222100,
+          "end_ms": 223400,
+          "performers": [
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-069",
+          "text": "慢慢相见",
+          "start_ms": 223400,
+          "end_ms": 224680,
+          "performers": [
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-070",
+          "text": "待清风又翻过窗前",
+          "start_ms": 224680,
+          "end_ms": 229630,
+          "performers": [
+            {
+              "id": "performer-20",
+              "name": "阈声",
+              "role": "lead"
+            },
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-071",
+          "text": "你仍在",
+          "start_ms": 229630,
+          "end_ms": 232480,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            },
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "lead"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            }
+          ]
+        },
+        {
+          "id": "line-072",
+          "text": "月色里面",
+          "start_ms": 232480,
+          "end_ms": 234440,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            },
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "lead"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            }
+          ]
+        }
+      ],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -10.7,
+          "loudness_range_lu": 7.6,
+          "true_peak_dbfs": 0.5,
+          "spectral_centroid_hz_median": 983,
+          "spectral_rolloff_hz_median": 2393,
+          "spectral_flatness_median": 0.2681,
+          "spectral_flux_median": 0.0519,
+          "loudness_profile_lufs": [
+            -15.0,
+            -8.4,
+            -11.4
+          ],
+          "beat_count": 38,
+          "beat_density_per_minute": 94.3,
+          "vocal_coverage_ratio": 0.951
+        }
+      }
+    },
+    {
+      "song_id": "jieyue",
+      "segment_id": "outro",
+      "title": "尾奏",
+      "start_ms": 234440,
+      "end_ms": 249600,
+      "lyrics": [],
+      "perception": {
+        "kind": "acoustic_features",
+        "status": "automatic_unverified",
+        "features": {
+          "integrated_lufs": -9.5,
+          "loudness_range_lu": 8.0,
+          "true_peak_dbfs": 0.5,
+          "spectral_centroid_hz_median": 672,
+          "spectral_rolloff_hz_median": 1303,
+          "spectral_flatness_median": 0.161,
+          "spectral_flux_median": 0.035,
+          "loudness_profile_lufs": [
+            -8.0,
+            -9.5,
+            -15.1
+          ],
+          "beat_count": 18,
+          "beat_density_per_minute": 71.3,
+          "vocal_coverage_ratio": 0.0
+        }
+      }
+    }
+  ]
+}
