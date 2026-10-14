@@ -74,18 +74,22 @@ class RangeRequestHandler(SimpleHTTPRequestHandler):
         return source
 
     def copyfile(self, source, outputfile) -> None:  # noqa: ANN001
-        if self.range_to_send is None:
-            super().copyfile(source, outputfile)
-            return
+        try:
+            if self.range_to_send is None:
+                super().copyfile(source, outputfile)
+                return
 
-        start, end = self.range_to_send
-        remaining = end - start + 1
-        while remaining > 0:
-            chunk = source.read(min(64 * 1024, remaining))
-            if not chunk:
-                break
-            outputfile.write(chunk)
-            remaining -= len(chunk)
+            start, end = self.range_to_send
+            remaining = end - start + 1
+            while remaining > 0:
+                chunk = source.read(min(64 * 1024, remaining))
+                if not chunk:
+                    break
+                outputfile.write(chunk)
+                remaining -= len(chunk)
+        except (BrokenPipeError, ConnectionResetError):
+            # Browsers routinely cancel superseded media ranges while seeking.
+            return
 
 
 def main() -> None:
