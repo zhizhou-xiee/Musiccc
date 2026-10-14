@@ -11,4 +11,4 @@
 - `crotown.app/music` 的正式路径接入必须另行审批；在此之前使用独立临时域名验收。
 - 音频分析只允许离线执行，网页与 MCP 请求不得触发实时音频分析。
 
-Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-assessment.md)。
+Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-assessment.md)，已确认素材见 [docs/asset-inventory.md](docs/asset-inventory.md)。
