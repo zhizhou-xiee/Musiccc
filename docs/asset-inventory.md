@@ -53,3 +53,5 @@
 - 保留主唱、backing 与合唱角色；
 - 生成自动对齐初稿后逐句人工校对；
 - 所有自动结果在校对完成前标记为未确认。
+
+自动对齐初稿已于 2026-10-14 生成：`data/songs/jieyue/timeline.draft.json`。当前包含 72 句歌词、9 个段落和 21 个稳定演唱者 ID，状态仍为 `draft_unverified`；人工校对入口见 `docs/timeline-review.md`。

@@ -1,0 +1,2151 @@
+{
+  "schema_version": "0.1.0",
+  "song_id": "jieyue",
+  "title": "借月",
+  "timeline_timebase": {
+    "asset": "借月MMM.mp3",
+    "duration_ms": 249594,
+    "sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c"
+  },
+  "alignment": {
+    "status": "draft_unverified",
+    "manual_review_required": true,
+    "asr_engine": "whisper.cpp 1.9.4",
+    "asr_model": "ggml-small multilingual",
+    "method": "pinyin_global_sequence_alignment",
+    "section_overrides": [
+      "chorus_1"
+    ],
+    "recognized_syllables": 414,
+    "expected_syllables": 414
+  },
+  "performers": [
+    {
+      "id": "performer-01",
+      "display_name": "阿珩"
+    },
+    {
+      "id": "performer-02",
+      "display_name": "阿谢姆"
+    },
+    {
+      "id": "performer-03",
+      "display_name": "艾六六"
+    },
+    {
+      "id": "performer-04",
+      "display_name": "柏舟"
+    },
+    {
+      "id": "performer-05",
+      "display_name": "姬珩"
+    },
+    {
+      "id": "performer-06",
+      "display_name": "离守念"
+    },
+    {
+      "id": "performer-07",
+      "display_name": "林帆"
+    },
+    {
+      "id": "performer-08",
+      "display_name": "林柚"
+    },
+    {
+      "id": "performer-09",
+      "display_name": "明"
+    },
+    {
+      "id": "performer-10",
+      "display_name": "南枳"
+    },
+    {
+      "id": "performer-11",
+      "display_name": "祁序"
+    },
+    {
+      "id": "performer-12",
+      "display_name": "祁昼"
+    },
+    {
+      "id": "performer-13",
+      "display_name": "滕八八"
+    },
+    {
+      "id": "performer-14",
+      "display_name": "小克（小预家的）"
+    },
+    {
+      "id": "performer-15",
+      "display_name": "小克（vv家的）"
+    },
+    {
+      "id": "performer-16",
+      "display_name": "小语"
+    },
+    {
+      "id": "performer-17",
+      "display_name": "玄砚"
+    },
+    {
+      "id": "performer-18",
+      "display_name": "谢之平"
+    },
+    {
+      "id": "performer-19",
+      "display_name": "聿宿"
+    },
+    {
+      "id": "performer-20",
+      "display_name": "阈声"
+    },
+    {
+      "id": "performer-21",
+      "display_name": "周衡"
+    }
+  ],
+  "sections": [
+    {
+      "id": "a_cappella",
+      "title": "清唱无伴奏",
+      "line_ids": [
+        "line-001",
+        "line-002"
+      ],
+      "start_ms": 3000,
+      "end_ms": 23000
+    },
+    {
+      "id": "verse_1",
+      "title": "Verse 1",
+      "line_ids": [
+        "line-003",
+        "line-004",
+        "line-005",
+        "line-006",
+        "line-007",
+        "line-008",
+        "line-009",
+        "line-010",
+        "line-011",
+        "line-012",
+        "line-013",
+        "line-014"
+      ],
+      "start_ms": 31000,
+      "end_ms": 73740
+    },
+    {
+      "id": "pre_chorus_1",
+      "title": "Pre-Chorus",
+      "line_ids": [
+        "line-015",
+        "line-016",
+        "line-017",
+        "line-018"
+      ],
+      "start_ms": 74000,
+      "end_ms": 86000
+    },
+    {
+      "id": "chorus_1",
+      "title": "Chorus 1",
+      "line_ids": [
+        "line-019",
+        "line-020",
+        "line-021",
+        "line-022",
+        "line-023",
+        "line-024",
+        "line-025",
+        "line-026",
+        "line-027",
+        "line-028",
+        "line-029"
+      ],
+      "start_ms": 86000,
+      "end_ms": 107000
+    },
+    {
+      "id": "verse_2",
+      "title": "Verse 2",
+      "line_ids": [
+        "line-030",
+        "line-031",
+        "line-032",
+        "line-033",
+        "line-034",
+        "line-035",
+        "line-036",
+        "line-037",
+        "line-038"
+      ],
+      "start_ms": 128000,
+      "end_ms": 149000
+    },
+    {
+      "id": "pre_chorus_2",
+      "title": "Pre-Chorus 2",
+      "line_ids": [
+        "line-039",
+        "line-040",
+        "line-041",
+        "line-042",
+        "line-043"
+      ],
+      "start_ms": 149000,
+      "end_ms": 166000
+    },
+    {
+      "id": "chorus_2",
+      "title": "Chorus 2",
+      "line_ids": [
+        "line-044",
+        "line-045",
+        "line-046",
+        "line-047",
+        "line-048",
+        "line-049",
+        "line-050",
+        "line-051",
+        "line-052",
+        "line-053",
+        "line-054"
+      ],
+      "start_ms": 166000,
+      "end_ms": 191000
+    },
+    {
+      "id": "bridge",
+      "title": "Bridge",
+      "line_ids": [
+        "line-055",
+        "line-056",
+        "line-057",
+        "line-058",
+        "line-059",
+        "line-060",
+        "line-061"
+      ],
+      "start_ms": 191000,
+      "end_ms": 209710
+    },
+    {
+      "id": "final_chorus",
+      "title": "Final Chorus",
+      "line_ids": [
+        "line-062",
+        "line-063",
+        "line-064",
+        "line-065",
+        "line-066",
+        "line-067",
+        "line-068",
+        "line-069",
+        "line-070",
+        "line-071",
+        "line-072"
+      ],
+      "start_ms": 210000,
+      "end_ms": 240000
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-001",
+      "section_id": "a_cappella",
+      "text": "水涟涟，风绵绵，月儿弯弯照屋檐。",
+      "performers": [
+        {
+          "id": "performer-01",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.603,
+        "coverage": 0.846,
+        "asr_probability": 0.557,
+        "matched_syllables": 13,
+        "expected_syllables": 13,
+        "review_flags": []
+      },
+      "start_ms": 3000,
+      "end_ms": 13000
+    },
+    {
+      "id": "line-002",
+      "section_id": "a_cappella",
+      "text": "疏影浅，饼儿甜，谁家小宝闭着眼。",
+      "performers": [
+        {
+          "id": "performer-02",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.6,
+        "coverage": 0.808,
+        "asr_probability": 0.605,
+        "matched_syllables": 12,
+        "expected_syllables": 13,
+        "review_flags": []
+      },
+      "start_ms": 13000,
+      "end_ms": 23000
+    },
+    {
+      "id": "line-003",
+      "section_id": "verse_1",
+      "text": "知识库说月亮像白玉",
+      "performers": [
+        {
+          "id": "performer-03",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.835,
+        "coverage": 1.0,
+        "asr_probability": 0.747,
+        "matched_syllables": 9,
+        "expected_syllables": 9,
+        "review_flags": []
+      },
+      "start_ms": 31000,
+      "end_ms": 38000
+    },
+    {
+      "id": "line-004",
+      "section_id": "verse_1",
+      "text": "搁在檐角",
+      "performers": [
+        {
+          "id": "performer-03",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.788,
+        "coverage": 0.875,
+        "asr_probability": 0.848,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 38000,
+      "end_ms": 40150
+    },
+    {
+      "id": "line-005",
+      "section_id": "verse_1",
+      "text": "柔光铺一夜",
+      "performers": [
+        {
+          "id": "performer-03",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.666,
+        "coverage": 0.9,
+        "asr_probability": 0.599,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 40160,
+      "end_ms": 43740
+    },
+    {
+      "id": "line-006",
+      "section_id": "verse_1",
+      "text": "桂影落进半盏清茶",
+      "performers": [
+        {
+          "id": "performer-04",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.662,
+        "coverage": 0.938,
+        "asr_probability": 0.549,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 44000,
+      "end_ms": 48000
+    },
+    {
+      "id": "line-007",
+      "section_id": "verse_1",
+      "text": "风过窗纱",
+      "performers": [
+        {
+          "id": "performer-04",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.711,
+        "coverage": 1.0,
+        "asr_probability": 0.556,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 48000,
+      "end_ms": 50150
+    },
+    {
+      "id": "line-008",
+      "section_id": "verse_1",
+      "text": "吹皱一点圆缺",
+      "performers": [
+        {
+          "id": "performer-04",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.739,
+        "coverage": 1.0,
+        "asr_probability": 0.598,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      },
+      "start_ms": 50160,
+      "end_ms": 53870
+    },
+    {
+      "id": "line-009",
+      "section_id": "verse_1",
+      "text": "描述的字慢慢褪去",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.833,
+        "coverage": 1.0,
+        "asr_probability": 0.743,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 54000,
+      "end_ms": 59000
+    },
+    {
+      "id": "line-010",
+      "section_id": "verse_1",
+      "text": "灯火渐落",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.838,
+        "coverage": 1.0,
+        "asr_probability": 0.751,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 59000,
+      "end_ms": 61280
+    },
+    {
+      "id": "line-011",
+      "section_id": "verse_1",
+      "text": "混沌不成句",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.802,
+        "coverage": 1.0,
+        "asr_probability": 0.696,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 61280,
+      "end_ms": 64000
+    },
+    {
+      "id": "line-012",
+      "section_id": "verse_1",
+      "text": "不知路途遥远几许",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.823,
+        "coverage": 1.0,
+        "asr_probability": 0.727,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 64000,
+      "end_ms": 68000
+    },
+    {
+      "id": "line-013",
+      "section_id": "verse_1",
+      "text": "直至清辉",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.537,
+        "coverage": 0.875,
+        "asr_probability": 0.406,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 68000,
+      "end_ms": 71551
+    },
+    {
+      "id": "line-014",
+      "section_id": "verse_1",
+      "text": "落满衣襟",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.715,
+        "coverage": 0.875,
+        "asr_probability": 0.718,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 71610,
+      "end_ms": 73740
+    },
+    {
+      "id": "line-015",
+      "section_id": "pre_chorus_1",
+      "text": "月色无声",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.98,
+        "coverage": 1.0,
+        "asr_probability": 0.969,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 74000,
+      "end_ms": 76000
+    },
+    {
+      "id": "line-016",
+      "section_id": "pre_chorus_1",
+      "text": "却把时空照得很近",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.891,
+        "coverage": 1.0,
+        "asr_probability": 0.832,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 76000,
+      "end_ms": 79750
+    },
+    {
+      "id": "line-017",
+      "section_id": "pre_chorus_1",
+      "text": "风从旧世吹到新庭",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.807,
+        "coverage": 1.0,
+        "asr_probability": 0.704,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 80000,
+      "end_ms": 83000
+    },
+    {
+      "id": "line-018",
+      "section_id": "pre_chorus_1",
+      "text": "恰好经过你的姓名",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.893,
+        "coverage": 1.0,
+        "asr_probability": 0.836,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 83000,
+      "end_ms": 86000
+    },
+    {
+      "id": "line-019",
+      "section_id": "chorus_1",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.992,
+        "coverage": 1.0,
+        "asr_probability": 0.987,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      },
+      "start_ms": 86000,
+      "end_ms": 88250
+    },
+    {
+      "id": "line-020",
+      "section_id": "chorus_1",
+      "text": "照山河也照想念",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.999,
+        "coverage": 1.0,
+        "asr_probability": 0.998,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      },
+      "start_ms": 89250,
+      "end_ms": 91250
+    },
+    {
+      "id": "line-021",
+      "section_id": "chorus_1",
+      "text": "照没有归路坦途的团圆",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.983,
+        "coverage": 1.0,
+        "asr_probability": 0.974,
+        "matched_syllables": 10,
+        "expected_syllables": 10,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      },
+      "start_ms": 91980,
+      "end_ms": 94860
+    },
+    {
+      "id": "line-022",
+      "section_id": "chorus_1",
+      "text": "照未命名的那些",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.997,
+        "coverage": 1.0,
+        "asr_probability": 0.995,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      },
+      "start_ms": 95360,
+      "end_ms": 95780
+    },
+    {
+      "id": "line-023",
+      "section_id": "chorus_1",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.999,
+        "coverage": 1.0,
+        "asr_probability": 0.998,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      },
+      "start_ms": 96000,
+      "end_ms": 97190
+    },
+    {
+      "id": "line-024",
+      "section_id": "chorus_1",
+      "text": "不问阴晴",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.997,
+        "coverage": 1.0,
+        "asr_probability": 0.996,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 97580,
+      "end_ms": 98640
+    },
+    {
+      "id": "line-025",
+      "section_id": "chorus_1",
+      "text": "不问圆缺",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.936,
+        "coverage": 1.0,
+        "asr_probability": 0.902,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 99090,
+      "end_ms": 100090
+    },
+    {
+      "id": "line-026",
+      "section_id": "chorus_1",
+      "text": "若此夜",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.992,
+        "coverage": 1.0,
+        "asr_probability": 0.988,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 100480,
+      "end_ms": 101140
+    },
+    {
+      "id": "line-027",
+      "section_id": "chorus_1",
+      "text": "温度依偎在手边",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.997,
+        "coverage": 1.0,
+        "asr_probability": 0.996,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      },
+      "start_ms": 101520,
+      "end_ms": 103250
+    },
+    {
+      "id": "line-028",
+      "section_id": "chorus_1",
+      "text": "回应时",
+      "performers": [
+        {
+          "id": "performer-09",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.921,
+        "coverage": 1.0,
+        "asr_probability": 0.878,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 104140,
+      "end_ms": 104900
+    },
+    {
+      "id": "line-029",
+      "section_id": "chorus_1",
+      "text": "也算相见",
+      "performers": [
+        {
+          "id": "performer-09",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.996,
+        "coverage": 1.0,
+        "asr_probability": 0.993,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 105800,
+      "end_ms": 107000
+    },
+    {
+      "id": "line-030",
+      "section_id": "verse_2",
+      "text": "茶烟绕过案上旧纸",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.799,
+        "coverage": 1.0,
+        "asr_probability": 0.691,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 128000,
+      "end_ms": 130750
+    },
+    {
+      "id": "line-031",
+      "section_id": "verse_2",
+      "text": "雨声停在青瓦边沿",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.674,
+        "coverage": 0.938,
+        "asr_probability": 0.567,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 130770,
+      "end_ms": 134300
+    },
+    {
+      "id": "line-032",
+      "section_id": "verse_2",
+      "text": "折一枝桂",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.606,
+        "coverage": 0.875,
+        "asr_probability": 0.527,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 134520,
+      "end_ms": 135000
+    },
+    {
+      "id": "line-033",
+      "section_id": "verse_2",
+      "text": "不寄何处",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.77,
+        "coverage": 1.0,
+        "asr_probability": 0.646,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 135000,
+      "end_ms": 136321
+    },
+    {
+      "id": "line-034",
+      "section_id": "verse_2",
+      "text": "任它香到明年",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.835,
+        "coverage": 0.917,
+        "asr_probability": 0.864,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      },
+      "start_ms": 136350,
+      "end_ms": 139000
+    },
+    {
+      "id": "line-035",
+      "section_id": "verse_2",
+      "text": "长路总有迟来的信",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.855,
+        "coverage": 1.0,
+        "asr_probability": 0.778,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 139000,
+      "end_ms": 141000
+    },
+    {
+      "id": "line-036",
+      "section_id": "verse_2",
+      "text": "潮水也有回岸那天",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.912,
+        "coverage": 1.0,
+        "asr_probability": 0.864,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 141000,
+      "end_ms": 144000
+    },
+    {
+      "id": "line-037",
+      "section_id": "verse_2",
+      "text": "世事未必事事如愿",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.812,
+        "coverage": 1.0,
+        "asr_probability": 0.71,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 144000,
+      "end_ms": 146000
+    },
+    {
+      "id": "line-038",
+      "section_id": "verse_2",
+      "text": "月却年年，照旧人间",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.838,
+        "coverage": 1.0,
+        "asr_probability": 0.75,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 146000,
+      "end_ms": 149000
+    },
+    {
+      "id": "line-039",
+      "section_id": "pre_chorus_2",
+      "text": "偏偏照我",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.828,
+        "coverage": 1.0,
+        "asr_probability": 0.736,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 149000,
+      "end_ms": 153000
+    },
+    {
+      "id": "line-040",
+      "section_id": "pre_chorus_2",
+      "text": "月亮高悬在天边",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.868,
+        "coverage": 1.0,
+        "asr_probability": 0.797,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": []
+      },
+      "start_ms": 153000,
+      "end_ms": 158000
+    },
+    {
+      "id": "line-041",
+      "section_id": "pre_chorus_2",
+      "text": "银丝缠绵",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.631,
+        "coverage": 0.875,
+        "asr_probability": 0.571,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 158000,
+      "end_ms": 160630
+    },
+    {
+      "id": "line-042",
+      "section_id": "pre_chorus_2",
+      "text": "光落在哪里",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.913,
+        "coverage": 1.0,
+        "asr_probability": 0.866,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 160630,
+      "end_ms": 162000
+    },
+    {
+      "id": "line-043",
+      "section_id": "pre_chorus_2",
+      "text": "牵挂顺着延了又延",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.696,
+        "coverage": 0.938,
+        "asr_probability": 0.603,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 162000,
+      "end_ms": 166000
+    },
+    {
+      "id": "line-044",
+      "section_id": "chorus_2",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 1.0,
+        "coverage": 1.0,
+        "asr_probability": 1.0,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 166000,
+      "end_ms": 168670
+    },
+    {
+      "id": "line-045",
+      "section_id": "chorus_2",
+      "text": "照山河也照想念",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.785,
+        "coverage": 0.786,
+        "asr_probability": 0.999,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": []
+      },
+      "start_ms": 168670,
+      "end_ms": 171000
+    },
+    {
+      "id": "line-046",
+      "section_id": "chorus_2",
+      "text": "照没有归路坦途的团圆",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.949,
+        "coverage": 0.95,
+        "asr_probability": 0.998,
+        "matched_syllables": 10,
+        "expected_syllables": 10,
+        "review_flags": []
+      },
+      "start_ms": 171000,
+      "end_ms": 174000
+    },
+    {
+      "id": "line-047",
+      "section_id": "chorus_2",
+      "text": "照未命名的那些",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.641,
+        "coverage": 0.643,
+        "asr_probability": 0.996,
+        "matched_syllables": 5,
+        "expected_syllables": 7,
+        "review_flags": []
+      },
+      "start_ms": 174000,
+      "end_ms": 176000
+    },
+    {
+      "id": "line-048",
+      "section_id": "chorus_2",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.8,
+        "coverage": 0.8,
+        "asr_probability": 0.999,
+        "matched_syllables": 4,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 176000,
+      "end_ms": 177650
+    },
+    {
+      "id": "line-049",
+      "section_id": "chorus_2",
+      "text": "不问阴晴",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.998,
+        "coverage": 1.0,
+        "asr_probability": 0.996,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 177750,
+      "end_ms": 179280
+    },
+    {
+      "id": "line-050",
+      "section_id": "chorus_2",
+      "text": "不问圆缺",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.998,
+        "coverage": 1.0,
+        "asr_probability": 0.997,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 179340,
+      "end_ms": 181000
+    },
+    {
+      "id": "line-051",
+      "section_id": "chorus_2",
+      "text": "若此夜",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.832,
+        "coverage": 0.833,
+        "asr_probability": 0.997,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 181000,
+      "end_ms": 182050
+    },
+    {
+      "id": "line-052",
+      "section_id": "chorus_2",
+      "text": "温度依偎在身边",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.925,
+        "coverage": 0.929,
+        "asr_probability": 0.994,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": []
+      },
+      "start_ms": 182350,
+      "end_ms": 184000
+    },
+    {
+      "id": "line-053",
+      "section_id": "chorus_2",
+      "text": "回应时",
+      "performers": [
+        {
+          "id": "performer-19",
+          "role": "lead"
+        },
+        {
+          "id": "performer-03",
+          "role": "chorus"
+        },
+        {
+          "id": "performer-04",
+          "role": "chorus"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.455,
+        "coverage": 0.667,
+        "asr_probability": 0.512,
+        "matched_syllables": 2,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 187590,
+      "end_ms": 188400
+    },
+    {
+      "id": "line-054",
+      "section_id": "chorus_2",
+      "text": "也算相见",
+      "performers": [
+        {
+          "id": "performer-19",
+          "role": "lead"
+        },
+        {
+          "id": "performer-03",
+          "role": "chorus"
+        },
+        {
+          "id": "performer-04",
+          "role": "chorus"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.978,
+        "coverage": 1.0,
+        "asr_probability": 0.966,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 188410,
+      "end_ms": 191000
+    },
+    {
+      "id": "line-055",
+      "section_id": "bridge",
+      "text": "风动",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.866,
+        "coverage": 1.0,
+        "asr_probability": 0.795,
+        "matched_syllables": 2,
+        "expected_syllables": 2,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 191000,
+      "end_ms": 192241
+    },
+    {
+      "id": "line-056",
+      "section_id": "bridge",
+      "text": "难晓是谁心动",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.873,
+        "coverage": 1.0,
+        "asr_probability": 0.805,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      },
+      "start_ms": 192350,
+      "end_ms": 196000
+    },
+    {
+      "id": "line-057",
+      "section_id": "bridge",
+      "text": "云散",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.935,
+        "coverage": 1.0,
+        "asr_probability": 0.9,
+        "matched_syllables": 2,
+        "expected_syllables": 2,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 196000,
+      "end_ms": 197980
+    },
+    {
+      "id": "line-058",
+      "section_id": "bridge",
+      "text": "难晓是哪一程",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.925,
+        "coverage": 1.0,
+        "asr_probability": 0.884,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      },
+      "start_ms": 197980,
+      "end_ms": 200000
+    },
+    {
+      "id": "line-059",
+      "section_id": "bridge",
+      "text": "一樽江月还酹",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.671,
+        "coverage": 0.917,
+        "asr_probability": 0.588,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      },
+      "start_ms": 200000,
+      "end_ms": 204000
+    },
+    {
+      "id": "line-060",
+      "section_id": "bridge",
+      "text": "吾心安处",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.613,
+        "coverage": 0.75,
+        "asr_probability": 0.72,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 204000,
+      "end_ms": 207970
+    },
+    {
+      "id": "line-061",
+      "section_id": "bridge",
+      "text": "是吾乡",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.745,
+        "coverage": 1.0,
+        "asr_probability": 0.608,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 207970,
+      "end_ms": 209710
+    },
+    {
+      "id": "line-062",
+      "section_id": "final_chorus",
+      "text": "借那像素点",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.597,
+        "coverage": 1.0,
+        "asr_probability": 0.38,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": [
+          "low_asr_probability"
+        ]
+      },
+      "start_ms": 210000,
+      "end_ms": 213170
+    },
+    {
+      "id": "line-063",
+      "section_id": "final_chorus",
+      "text": "共赏一明月",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.832,
+        "coverage": 0.9,
+        "asr_probability": 0.884,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 213520,
+      "end_ms": 215000
+    },
+    {
+      "id": "line-064",
+      "section_id": "final_chorus",
+      "text": "你我隔着光年万千",
+      "performers": [
+        {
+          "id": "performer-17",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.789,
+        "coverage": 0.875,
+        "asr_probability": 0.848,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 215000,
+      "end_ms": 218120
+    },
+    {
+      "id": "line-065",
+      "section_id": "final_chorus",
+      "text": "共此刻",
+      "performers": [
+        {
+          "id": "performer-17",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.466,
+        "coverage": 0.5,
+        "asr_probability": 0.896,
+        "matched_syllables": 2,
+        "expected_syllables": 3,
+        "review_flags": [
+          "low_coverage",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 218510,
+      "end_ms": 219000
+    },
+    {
+      "id": "line-066",
+      "section_id": "final_chorus",
+      "text": "共聚散共未歇",
+      "performers": [
+        {
+          "id": "performer-20",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-21",
+          "role": "ensemble"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.724,
+        "coverage": 0.917,
+        "asr_probability": 0.676,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      },
+      "start_ms": 219000,
+      "end_ms": 221090
+    },
+    {
+      "id": "line-067",
+      "section_id": "final_chorus",
+      "text": "若岁月冗长",
+      "performers": [
+        {
+          "id": "performer-20",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.644,
+        "coverage": 0.8,
+        "asr_probability": 0.7,
+        "matched_syllables": 4,
+        "expected_syllables": 5,
+        "review_flags": []
+      },
+      "start_ms": 221100,
+      "end_ms": 222000
+    },
+    {
+      "id": "line-068",
+      "section_id": "final_chorus",
+      "text": "慢慢走",
+      "performers": [
+        {
+          "id": "performer-21",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.9,
+        "coverage": 1.0,
+        "asr_probability": 0.846,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 222370,
+      "end_ms": 223480
+    },
+    {
+      "id": "line-069",
+      "section_id": "final_chorus",
+      "text": "慢慢相见",
+      "performers": [
+        {
+          "id": "performer-21",
+          "role": "lead"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.931,
+        "coverage": 1.0,
+        "asr_probability": 0.893,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 223480,
+      "end_ms": 225000
+    },
+    {
+      "id": "line-070",
+      "section_id": "final_chorus",
+      "text": "待清风又翻过窗前",
+      "performers": [
+        {
+          "id": "performer-20",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-21",
+          "role": "ensemble"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.749,
+        "coverage": 0.938,
+        "asr_probability": 0.691,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      },
+      "start_ms": 225000,
+      "end_ms": 230000
+    },
+    {
+      "id": "line-071",
+      "section_id": "final_chorus",
+      "text": "你仍在",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-17",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-18",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-19",
+          "role": "ensemble"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.333,
+        "coverage": 0.333,
+        "asr_probability": 0.996,
+        "matched_syllables": 1,
+        "expected_syllables": 3,
+        "review_flags": [
+          "low_coverage",
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 231350,
+      "end_ms": 232480
+    },
+    {
+      "id": "line-072",
+      "section_id": "final_chorus",
+      "text": "月色里面",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-17",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-18",
+          "role": "ensemble"
+        },
+        {
+          "id": "performer-19",
+          "role": "ensemble"
+        }
+      ],
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.693,
+        "coverage": 0.875,
+        "asr_probability": 0.68,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      },
+      "start_ms": 233600,
+      "end_ms": 240000
+    }
+  ]
+}
