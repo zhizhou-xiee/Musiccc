@@ -1,0 +1,229 @@
+{
+  "schema_version": "0.1.0",
+  "song": {
+    "id": "jieyue",
+    "title": "借月",
+    "version_id": "final-master",
+    "version_name": "正式版",
+    "duration_ms": 249594
+  },
+  "media": {
+    "video_url": "./media/jieyue-mv-720p.mp4",
+    "poster_url": "./assets/poster.jpg",
+    "video_duration_ms": 255001,
+    "width": 1280,
+    "height": 720,
+    "fps": 30
+  },
+  "credits": [
+    {
+      "label": "作词",
+      "names": [
+        "谢之平",
+        "谢之舟"
+      ]
+    },
+    {
+      "label": "作曲",
+      "names": [
+        "Suno"
+      ]
+    },
+    {
+      "label": "编曲",
+      "names": [
+        "Suno"
+      ]
+    },
+    {
+      "label": "混音",
+      "names": [
+        "Simple Studio"
+      ]
+    },
+    {
+      "label": "修音",
+      "names": [
+        "Simple Studio"
+      ]
+    },
+    {
+      "label": "母带",
+      "names": [
+        "Simple Studio"
+      ]
+    },
+    {
+      "label": "MV 制作",
+      "names": [
+        "Claude"
+      ]
+    }
+  ],
+  "performers": [
+    {
+      "id": "performer-01",
+      "display_name": "阿珩"
+    },
+    {
+      "id": "performer-02",
+      "display_name": "阿谢姆"
+    },
+    {
+      "id": "performer-03",
+      "display_name": "艾六六"
+    },
+    {
+      "id": "performer-04",
+      "display_name": "柏舟"
+    },
+    {
+      "id": "performer-05",
+      "display_name": "姬珩"
+    },
+    {
+      "id": "performer-06",
+      "display_name": "离守念"
+    },
+    {
+      "id": "performer-07",
+      "display_name": "林帆"
+    },
+    {
+      "id": "performer-08",
+      "display_name": "林柚"
+    },
+    {
+      "id": "performer-09",
+      "display_name": "明"
+    },
+    {
+      "id": "performer-10",
+      "display_name": "南枳"
+    },
+    {
+      "id": "performer-11",
+      "display_name": "祁序"
+    },
+    {
+      "id": "performer-12",
+      "display_name": "祁昼"
+    },
+    {
+      "id": "performer-13",
+      "display_name": "滕八八"
+    },
+    {
+      "id": "performer-14",
+      "display_name": "小克（小预家的）"
+    },
+    {
+      "id": "performer-15",
+      "display_name": "小克（vv家的）"
+    },
+    {
+      "id": "performer-16",
+      "display_name": "小语"
+    },
+    {
+      "id": "performer-17",
+      "display_name": "玄砚"
+    },
+    {
+      "id": "performer-18",
+      "display_name": "谢之平"
+    },
+    {
+      "id": "performer-19",
+      "display_name": "聿宿"
+    },
+    {
+      "id": "performer-20",
+      "display_name": "阈声"
+    },
+    {
+      "id": "performer-21",
+      "display_name": "周衡"
+    }
+  ],
+  "sections": [
+    {
+      "id": "a_cappella",
+      "title": "清唱（无伴奏）",
+      "start_ms": 0,
+      "end_ms": 23300
+    },
+    {
+      "id": "intro",
+      "title": "前奏",
+      "start_ms": 23300,
+      "end_ms": 34080
+    },
+    {
+      "id": "verse_1",
+      "title": "Verse 1",
+      "start_ms": 34080,
+      "end_ms": 74650
+    },
+    {
+      "id": "pre_chorus_1",
+      "title": "Pre-Chorus",
+      "start_ms": 74650,
+      "end_ms": 87470
+    },
+    {
+      "id": "chorus_1",
+      "title": "Chorus",
+      "start_ms": 87470,
+      "end_ms": 109870
+    },
+    {
+      "id": "interlude",
+      "title": "间奏",
+      "start_ms": 109870,
+      "end_ms": 128700
+    },
+    {
+      "id": "verse_2",
+      "title": "Verse 2",
+      "start_ms": 128700,
+      "end_ms": 149890
+    },
+    {
+      "id": "pre_chorus_2",
+      "title": "Pre-Chorus 2",
+      "start_ms": 149890,
+      "end_ms": 166570
+    },
+    {
+      "id": "chorus_2",
+      "title": "Chorus 2",
+      "start_ms": 166570,
+      "end_ms": 189700
+    },
+    {
+      "id": "bridge",
+      "title": "Bridge",
+      "start_ms": 190860,
+      "end_ms": 210250
+    },
+    {
+      "id": "final_chorus",
+      "title": "Final Chorus",
+      "start_ms": 210250,
+      "end_ms": 234440
+    },
+    {
+      "id": "outro",
+      "title": "尾奏",
+      "start_ms": 234440,
+      "end_ms": 249600
+    },
+    {
+      "id": "mv_credits",
+      "title": "片尾字幕（仅 MV）",
+      "start_ms": 249600,
+      "end_ms": 255000
+    }
+  ]
+}

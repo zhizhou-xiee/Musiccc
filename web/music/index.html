@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1c1b17" />
+    <meta
+      name="description"
+      content="《借月》正式 MV 与作品资料。一座为人类与小机开放的独立音乐展厅。"
+    />
+    <title>借月｜音乐展厅</title>
+    <link rel="preload" href="./assets/poster.jpg" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header" aria-label="站点标题">
+      <a class="brand" href="./" aria-label="借月音乐展厅首页">
+        <span class="brand-mark" aria-hidden="true">月</span>
+        <span>借月</span>
+      </a>
+      <p>非商业 · 独立公开音乐展厅</p>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="song-title">
+        <div class="hero-copy">
+          <p class="eyebrow">JIEYUE · OFFICIAL MV</p>
+          <h1 id="song-title"><span>借</span><span>月</span></h1>
+          <p class="subtitle">小机们的中秋</p>
+          <p class="intro">
+            月光经过屋檐，歌声从远处依次亮起。请戴上耳机，慢慢看完这一轮月亮。
+          </p>
+        </div>
+
+        <div class="player-column">
+          <div class="player-shell">
+            <video
+              id="mv-player"
+              controls
+              playsinline
+              preload="metadata"
+              poster="./assets/poster.jpg"
+              src="./media/jieyue-mv-720p.mp4"
+              aria-label="《借月》正式音乐录像"
+            >
+              你的浏览器暂时无法播放这支 MV。
+            </video>
+            <div class="player-edge" aria-hidden="true"></div>
+          </div>
+          <div class="player-caption">
+            <div>
+              <span class="live-dot" aria-hidden="true"></span>
+              <span id="playback-status" role="status" aria-live="polite">准备播放</span>
+            </div>
+            <p><span id="mv-duration">04:15</span> · 720p · 原画面比例</p>
+          </div>
+          <div id="media-error" class="notice" role="alert" hidden>
+            MV 暂时没有加载成功。可以稍后重试，或检查媒体地址是否已经配置。
+          </div>
+        </div>
+      </section>
+
+      <section class="chapters section-rule" aria-labelledby="chapters-title">
+        <div class="section-heading">
+          <p class="section-number">01</p>
+          <div>
+            <h2 id="chapters-title">沿歌而行</h2>
+            <p>从任一段落开始，或回到想再听一次的地方。</p>
+          </div>
+        </div>
+        <div id="chapter-list" class="chapter-list" aria-label="歌曲段落">
+          <p class="loading-copy">正在读取段落…</p>
+        </div>
+      </section>
+
+      <section class="information section-rule" aria-labelledby="information-title">
+        <div class="section-heading">
+          <p class="section-number">02</p>
+          <div>
+            <h2 id="information-title">作品资料</h2>
+            <p>这首歌如何被写下、唱出，再成为一支 MV。</p>
+          </div>
+        </div>
+
+        <div class="information-grid">
+          <dl id="credit-list" class="credit-list">
+            <div><dt>版本</dt><dd>正式版</dd></div>
+            <div><dt>作词</dt><dd>谢之平、谢之舟</dd></div>
+            <div><dt>作曲 / 编曲</dt><dd>Suno</dd></div>
+            <div><dt>混音 / 修音 / 母带</dt><dd>Simple Studio</dd></div>
+            <div><dt>MV 制作</dt><dd>Claude</dd></div>
+          </dl>
+
+          <div class="edition-note">
+            <p class="edition-label">ABOUT THIS EDITION</p>
+            <p>
+              本页呈现获准公开的 720p 版本。网页不修改 MV 画面、不替换母带，也不会强制自动播放声音。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="performers section-rule" aria-labelledby="performers-title">
+        <div class="section-heading">
+          <p class="section-number">03</p>
+          <div>
+            <h2 id="performers-title">演唱者</h2>
+            <p><span id="performer-count">21</span> 个声音，共同经过这一夜。</p>
+          </div>
+        </div>
+        <ol id="performer-list" class="performer-list" aria-label="演唱者名单">
+          <li class="loading-copy">正在读取名单…</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>《借月》· 正式版</p>
+      <p>为人类与小机开放的音乐展厅</p>
+    </footer>
+  </body>
+</html>
