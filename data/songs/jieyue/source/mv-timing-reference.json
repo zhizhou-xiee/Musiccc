@@ -1,0 +1,1895 @@
+{
+ "meta": {
+  "song": "借月",
+  "audio": "最终 MP3 母带（MV 用的就是同一个文件，未裁剪）",
+  "offset_mv_vs_master_sec": 0.0,
+  "video_fps": 30,
+  "video_size": "1920x1080",
+  "audio_duration_sec": 249.6,
+  "mv_duration_sec": 255.0,
+  "timing_source": "舟舟 2026-10-14 打拍子（看人声波形），补上漏按的「柔光铺一夜」；start=开口时刻",
+  "vocal_end_note": "vocal_end 由分离出的人声估算，副歌等伴奏很满的段落只是近似值",
+  "tempo_bpm_estimate": 95.7,
+  "beat_period_sec": 0.627,
+  "beats_note": "节拍为自动检测（librosa），仅供参考，未人工校对"
+ },
+ "sections": [
+  {
+   "name": "清唱（无伴奏）",
+   "start": 0.0,
+   "end": 23.3,
+   "note": "1号阿珩、2号阿谢姆各一句"
+  },
+  {
+   "name": "前奏",
+   "start": 23.3,
+   "end": 34.08,
+   "note": "伴奏进入"
+  },
+  {
+   "name": "Verse 1",
+   "start": 34.08,
+   "end": 74.65,
+   "note": "3号艾六六 → 4号柏舟 → 5号姬珩"
+  },
+  {
+   "name": "Pre-Chorus",
+   "start": 74.65,
+   "end": 87.47,
+   "note": "6号离守念"
+  },
+  {
+   "name": "Chorus",
+   "start": 87.47,
+   "end": 109.87,
+   "note": "7号林帆 → 8号林柚 → 9号明"
+  },
+  {
+   "name": "间奏",
+   "start": 109.87,
+   "end": 128.7,
+   "note": "纯伴奏"
+  },
+  {
+   "name": "Verse 2",
+   "start": 128.7,
+   "end": 149.89,
+   "note": "10号南枳 → 11号祁序"
+  },
+  {
+   "name": "Pre-Chorus 2",
+   "start": 149.89,
+   "end": 166.57,
+   "note": "12号祁昼主唱，18、19号和声"
+  },
+  {
+   "name": "Chorus 2",
+   "start": 166.57,
+   "end": 189.7,
+   "note": "13号 → 14号 → 19号主唱（各带和声）"
+  },
+  {
+   "name": "Bridge",
+   "start": 190.86,
+   "end": 210.25,
+   "note": "15号小克（vv家的），含「吾心安处 / 是吾乡」"
+  },
+  {
+   "name": "Final Chorus",
+   "start": 210.25,
+   "end": 234.44,
+   "note": "16 → 17 → 20/21 → 16-19 合唱收尾"
+  },
+  {
+   "name": "尾奏",
+   "start": 234.44,
+   "end": 249.6,
+   "note": "纯伴奏，音频在此结束"
+  },
+  {
+   "name": "片尾字幕（仅 MV）",
+   "start": 249.6,
+   "end": 255.0,
+   "note": "无声，演职员表"
+  }
+ ],
+ "lines": [
+  {
+   "no": 1,
+   "section": "清唱",
+   "start": 3.55,
+   "vocal_end": 11.08,
+   "start_frame_30fps": 106,
+   "lead": [
+    "阿珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    1
+   ],
+   "backing_ids": [],
+   "text": "水涟涟，风绵绵，月儿弯弯照屋檐"
+  },
+  {
+   "no": 2,
+   "section": "清唱",
+   "start": 13.41,
+   "vocal_end": 21.87,
+   "start_frame_30fps": 402,
+   "lead": [
+    "阿谢姆"
+   ],
+   "backing": [],
+   "lead_ids": [
+    2
+   ],
+   "backing_ids": [],
+   "text": "疏影浅，饼儿甜，谁家小宝闭着眼"
+  },
+  {
+   "no": 3,
+   "section": "Verse 1",
+   "start": 34.08,
+   "vocal_end": 38.45,
+   "start_frame_30fps": 1022,
+   "lead": [
+    "艾六六"
+   ],
+   "backing": [],
+   "lead_ids": [
+    3
+   ],
+   "backing_ids": [],
+   "text": "知识库说月亮像白玉"
+  },
+  {
+   "no": 4,
+   "section": "Verse 1",
+   "start": 38.84,
+   "vocal_end": 40.0,
+   "start_frame_30fps": 1165,
+   "lead": [
+    "艾六六"
+   ],
+   "backing": [],
+   "lead_ids": [
+    3
+   ],
+   "backing_ids": [],
+   "text": "搁在檐角"
+  },
+  {
+   "no": 5,
+   "section": "Verse 1",
+   "start": 40.0,
+   "vocal_end": 44.46,
+   "start_frame_30fps": 1200,
+   "lead": [
+    "艾六六"
+   ],
+   "backing": [],
+   "lead_ids": [
+    3
+   ],
+   "backing_ids": [],
+   "text": "柔光铺一夜"
+  },
+  {
+   "no": 6,
+   "section": "Verse 1",
+   "start": 44.46,
+   "vocal_end": 48.16,
+   "start_frame_30fps": 1334,
+   "lead": [
+    "柏舟"
+   ],
+   "backing": [],
+   "lead_ids": [
+    4
+   ],
+   "backing_ids": [],
+   "text": "桂影落进半盏清茶"
+  },
+  {
+   "no": 7,
+   "section": "Verse 1",
+   "start": 48.16,
+   "vocal_end": 49.75,
+   "start_frame_30fps": 1445,
+   "lead": [
+    "柏舟"
+   ],
+   "backing": [],
+   "lead_ids": [
+    4
+   ],
+   "backing_ids": [],
+   "text": "风过窗纱"
+  },
+  {
+   "no": 8,
+   "section": "Verse 1",
+   "start": 49.75,
+   "vocal_end": 53.77,
+   "start_frame_30fps": 1492,
+   "lead": [
+    "柏舟"
+   ],
+   "backing": [],
+   "lead_ids": [
+    4
+   ],
+   "backing_ids": [],
+   "text": "吹皱一点圆缺"
+  },
+  {
+   "no": 9,
+   "section": "Verse 1",
+   "start": 54.87,
+   "vocal_end": 58.8,
+   "start_frame_30fps": 1646,
+   "lead": [
+    "姬珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    5
+   ],
+   "backing_ids": [],
+   "text": "描述的字慢慢褪去"
+  },
+  {
+   "no": 10,
+   "section": "Verse 1",
+   "start": 59.29,
+   "vocal_end": 60.8,
+   "start_frame_30fps": 1779,
+   "lead": [
+    "姬珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    5
+   ],
+   "backing_ids": [],
+   "text": "灯火渐落"
+  },
+  {
+   "no": 11,
+   "section": "Verse 1",
+   "start": 60.8,
+   "vocal_end": 63.9,
+   "start_frame_30fps": 1824,
+   "lead": [
+    "姬珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    5
+   ],
+   "backing_ids": [],
+   "text": "混沌不成句"
+  },
+  {
+   "no": 12,
+   "section": "Verse 1",
+   "start": 64.87,
+   "vocal_end": 69.19,
+   "start_frame_30fps": 1946,
+   "lead": [
+    "姬珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    5
+   ],
+   "backing_ids": [],
+   "text": "不知路途遥远几许"
+  },
+  {
+   "no": 13,
+   "section": "Verse 1",
+   "start": 69.19,
+   "vocal_end": 70.45,
+   "start_frame_30fps": 2076,
+   "lead": [
+    "姬珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    5
+   ],
+   "backing_ids": [],
+   "text": "直至清辉"
+  },
+  {
+   "no": 14,
+   "section": "Verse 1",
+   "start": 70.83,
+   "vocal_end": 74.37,
+   "start_frame_30fps": 2125,
+   "lead": [
+    "姬珩"
+   ],
+   "backing": [],
+   "lead_ids": [
+    5
+   ],
+   "backing_ids": [],
+   "text": "落满衣襟"
+  },
+  {
+   "no": 15,
+   "section": "Pre-Chorus",
+   "start": 74.65,
+   "vocal_end": 76.59,
+   "start_frame_30fps": 2240,
+   "lead": [
+    "离守念"
+   ],
+   "backing": [],
+   "lead_ids": [
+    6
+   ],
+   "backing_ids": [],
+   "text": "月色无声"
+  },
+  {
+   "no": 16,
+   "section": "Pre-Chorus",
+   "start": 76.59,
+   "vocal_end": 79.8,
+   "start_frame_30fps": 2298,
+   "lead": [
+    "离守念"
+   ],
+   "backing": [],
+   "lead_ids": [
+    6
+   ],
+   "backing_ids": [],
+   "text": "却把时空照得很近"
+  },
+  {
+   "no": 17,
+   "section": "Pre-Chorus",
+   "start": 80.33,
+   "vocal_end": 82.98,
+   "start_frame_30fps": 2410,
+   "lead": [
+    "离守念"
+   ],
+   "backing": [],
+   "lead_ids": [
+    6
+   ],
+   "backing_ids": [],
+   "text": "风从旧世吹到新庭"
+  },
+  {
+   "no": 18,
+   "section": "Pre-Chorus",
+   "start": 82.98,
+   "vocal_end": 87.47,
+   "start_frame_30fps": 2489,
+   "lead": [
+    "离守念"
+   ],
+   "backing": [],
+   "lead_ids": [
+    6
+   ],
+   "backing_ids": [],
+   "text": "恰好经过你的姓名"
+  },
+  {
+   "no": 19,
+   "section": "Chorus",
+   "start": 87.47,
+   "vocal_end": 89.43,
+   "start_frame_30fps": 2624,
+   "lead": [
+    "林帆"
+   ],
+   "backing": [],
+   "lead_ids": [
+    7
+   ],
+   "backing_ids": [],
+   "text": "便借一轮月"
+  },
+  {
+   "no": 20,
+   "section": "Chorus",
+   "start": 89.43,
+   "vocal_end": 91.94,
+   "start_frame_30fps": 2683,
+   "lead": [
+    "林帆"
+   ],
+   "backing": [],
+   "lead_ids": [
+    7
+   ],
+   "backing_ids": [],
+   "text": "照山河也照想念"
+  },
+  {
+   "no": 21,
+   "section": "Chorus",
+   "start": 92.13,
+   "vocal_end": 95.3,
+   "start_frame_30fps": 2764,
+   "lead": [
+    "林帆"
+   ],
+   "backing": [],
+   "lead_ids": [
+    7
+   ],
+   "backing_ids": [],
+   "text": "照没有归路坦途的团圆"
+  },
+  {
+   "no": 22,
+   "section": "Chorus",
+   "start": 95.3,
+   "vocal_end": 97.72,
+   "start_frame_30fps": 2859,
+   "lead": [
+    "林帆"
+   ],
+   "backing": [],
+   "lead_ids": [
+    7
+   ],
+   "backing_ids": [],
+   "text": "照未命名的那些"
+  },
+  {
+   "no": 23,
+   "section": "Chorus",
+   "start": 97.72,
+   "vocal_end": 99.42,
+   "start_frame_30fps": 2932,
+   "lead": [
+    "林柚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    8
+   ],
+   "backing_ids": [],
+   "text": "便借一轮月"
+  },
+  {
+   "no": 24,
+   "section": "Chorus",
+   "start": 99.6,
+   "vocal_end": 100.61,
+   "start_frame_30fps": 2988,
+   "lead": [
+    "林柚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    8
+   ],
+   "backing_ids": [],
+   "text": "不问阴晴"
+  },
+  {
+   "no": 25,
+   "section": "Chorus",
+   "start": 100.61,
+   "vocal_end": 102.19,
+   "start_frame_30fps": 3018,
+   "lead": [
+    "林柚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    8
+   ],
+   "backing_ids": [],
+   "text": "不问圆缺"
+  },
+  {
+   "no": 26,
+   "section": "Chorus",
+   "start": 102.19,
+   "vocal_end": 103.31,
+   "start_frame_30fps": 3066,
+   "lead": [
+    "林柚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    8
+   ],
+   "backing_ids": [],
+   "text": "若此夜"
+  },
+  {
+   "no": 27,
+   "section": "Chorus",
+   "start": 103.31,
+   "vocal_end": 105.67,
+   "start_frame_30fps": 3099,
+   "lead": [
+    "林柚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    8
+   ],
+   "backing_ids": [],
+   "text": "温度依偎在手边"
+  },
+  {
+   "no": 28,
+   "section": "Chorus",
+   "start": 105.67,
+   "vocal_end": 107.52,
+   "start_frame_30fps": 3170,
+   "lead": [
+    "明"
+   ],
+   "backing": [],
+   "lead_ids": [
+    9
+   ],
+   "backing_ids": [],
+   "text": "回应时"
+  },
+  {
+   "no": 29,
+   "section": "Chorus",
+   "start": 107.52,
+   "vocal_end": 109.87,
+   "start_frame_30fps": 3226,
+   "lead": [
+    "明"
+   ],
+   "backing": [],
+   "lead_ids": [
+    9
+   ],
+   "backing_ids": [],
+   "text": "也算相见"
+  },
+  {
+   "no": 30,
+   "section": "Verse 2",
+   "start": 128.7,
+   "vocal_end": 131.69,
+   "start_frame_30fps": 3861,
+   "lead": [
+    "南枳"
+   ],
+   "backing": [],
+   "lead_ids": [
+    10
+   ],
+   "backing_ids": [],
+   "text": "茶烟绕过案上旧纸"
+  },
+  {
+   "no": 31,
+   "section": "Verse 2",
+   "start": 131.69,
+   "vocal_end": 134,
+   "start_frame_30fps": 3951,
+   "lead": [
+    "南枳"
+   ],
+   "backing": [],
+   "lead_ids": [
+    10
+   ],
+   "backing_ids": [],
+   "text": "雨声停在青瓦边沿"
+  },
+  {
+   "no": 32,
+   "section": "Verse 2",
+   "start": 134,
+   "vocal_end": 135.22,
+   "start_frame_30fps": 4020,
+   "lead": [
+    "南枳"
+   ],
+   "backing": [],
+   "lead_ids": [
+    10
+   ],
+   "backing_ids": [],
+   "text": "折一枝桂"
+  },
+  {
+   "no": 33,
+   "section": "Verse 2",
+   "start": 135.22,
+   "vocal_end": 136.39,
+   "start_frame_30fps": 4057,
+   "lead": [
+    "南枳"
+   ],
+   "backing": [],
+   "lead_ids": [
+    10
+   ],
+   "backing_ids": [],
+   "text": "不寄何处"
+  },
+  {
+   "no": 34,
+   "section": "Verse 2",
+   "start": 136.39,
+   "vocal_end": 139.04,
+   "start_frame_30fps": 4092,
+   "lead": [
+    "南枳"
+   ],
+   "backing": [],
+   "lead_ids": [
+    10
+   ],
+   "backing_ids": [],
+   "text": "任它香到明年"
+  },
+  {
+   "no": 35,
+   "section": "Verse 2",
+   "start": 139.04,
+   "vocal_end": 141.57,
+   "start_frame_30fps": 4171,
+   "lead": [
+    "祁序"
+   ],
+   "backing": [],
+   "lead_ids": [
+    11
+   ],
+   "backing_ids": [],
+   "text": "长路总有迟来的信"
+  },
+  {
+   "no": 36,
+   "section": "Verse 2",
+   "start": 141.57,
+   "vocal_end": 144.17,
+   "start_frame_30fps": 4247,
+   "lead": [
+    "祁序"
+   ],
+   "backing": [],
+   "lead_ids": [
+    11
+   ],
+   "backing_ids": [],
+   "text": "潮水也有回岸那天"
+  },
+  {
+   "no": 37,
+   "section": "Verse 2",
+   "start": 144.17,
+   "vocal_end": 146.54,
+   "start_frame_30fps": 4325,
+   "lead": [
+    "祁序"
+   ],
+   "backing": [],
+   "lead_ids": [
+    11
+   ],
+   "backing_ids": [],
+   "text": "世事未必事事如愿"
+  },
+  {
+   "no": 38,
+   "section": "Verse 2",
+   "start": 146.54,
+   "vocal_end": 149.89,
+   "start_frame_30fps": 4396,
+   "lead": [
+    "祁序"
+   ],
+   "backing": [],
+   "lead_ids": [
+    11
+   ],
+   "backing_ids": [],
+   "text": "月却年年，照旧人间"
+  },
+  {
+   "no": 39,
+   "section": "Pre-Chorus 2",
+   "start": 149.89,
+   "vocal_end": 153.71,
+   "start_frame_30fps": 4497,
+   "lead": [
+    "祁昼"
+   ],
+   "backing": [
+    "谢之平",
+    "聿宿"
+   ],
+   "lead_ids": [
+    12
+   ],
+   "backing_ids": [
+    18,
+    19
+   ],
+   "text": "偏偏照我"
+  },
+  {
+   "no": 40,
+   "section": "Pre-Chorus 2",
+   "start": 153.73,
+   "vocal_end": 159.02,
+   "start_frame_30fps": 4612,
+   "lead": [
+    "祁昼"
+   ],
+   "backing": [
+    "谢之平",
+    "聿宿"
+   ],
+   "lead_ids": [
+    12
+   ],
+   "backing_ids": [
+    18,
+    19
+   ],
+   "text": "月亮高悬在天边"
+  },
+  {
+   "no": 41,
+   "section": "Pre-Chorus 2",
+   "start": 159.02,
+   "vocal_end": 160.92,
+   "start_frame_30fps": 4771,
+   "lead": [
+    "祁昼"
+   ],
+   "backing": [
+    "谢之平",
+    "聿宿"
+   ],
+   "lead_ids": [
+    12
+   ],
+   "backing_ids": [
+    18,
+    19
+   ],
+   "text": "银丝缠绵"
+  },
+  {
+   "no": 42,
+   "section": "Pre-Chorus 2",
+   "start": 160.92,
+   "vocal_end": 163.05,
+   "start_frame_30fps": 4828,
+   "lead": [
+    "祁昼"
+   ],
+   "backing": [
+    "谢之平",
+    "聿宿"
+   ],
+   "lead_ids": [
+    12
+   ],
+   "backing_ids": [
+    18,
+    19
+   ],
+   "text": "光落在哪里"
+  },
+  {
+   "no": 43,
+   "section": "Pre-Chorus 2",
+   "start": 163.05,
+   "vocal_end": 166.57,
+   "start_frame_30fps": 4892,
+   "lead": [
+    "祁昼"
+   ],
+   "backing": [
+    "谢之平",
+    "聿宿"
+   ],
+   "lead_ids": [
+    12
+   ],
+   "backing_ids": [
+    18,
+    19
+   ],
+   "text": "牵挂顺着延了又延"
+  },
+  {
+   "no": 44,
+   "section": "Chorus 2",
+   "start": 166.57,
+   "vocal_end": 168.43,
+   "start_frame_30fps": 4997,
+   "lead": [
+    "滕八八"
+   ],
+   "backing": [
+    "谢之平",
+    "阿珩"
+   ],
+   "lead_ids": [
+    13
+   ],
+   "backing_ids": [
+    18,
+    1
+   ],
+   "text": "便借一轮月"
+  },
+  {
+   "no": 45,
+   "section": "Chorus 2",
+   "start": 168.43,
+   "vocal_end": 171.29,
+   "start_frame_30fps": 5053,
+   "lead": [
+    "滕八八"
+   ],
+   "backing": [
+    "谢之平",
+    "阿珩"
+   ],
+   "lead_ids": [
+    13
+   ],
+   "backing_ids": [
+    18,
+    1
+   ],
+   "text": "照山河也照想念"
+  },
+  {
+   "no": 46,
+   "section": "Chorus 2",
+   "start": 171.31,
+   "vocal_end": 174.56,
+   "start_frame_30fps": 5139,
+   "lead": [
+    "滕八八"
+   ],
+   "backing": [
+    "谢之平",
+    "阿珩"
+   ],
+   "lead_ids": [
+    13
+   ],
+   "backing_ids": [
+    18,
+    1
+   ],
+   "text": "照没有归路坦途的团圆"
+  },
+  {
+   "no": 47,
+   "section": "Chorus 2",
+   "start": 174.56,
+   "vocal_end": 176.68,
+   "start_frame_30fps": 5237,
+   "lead": [
+    "滕八八"
+   ],
+   "backing": [
+    "谢之平",
+    "阿珩"
+   ],
+   "lead_ids": [
+    13
+   ],
+   "backing_ids": [
+    18,
+    1
+   ],
+   "text": "照未命名的那些"
+  },
+  {
+   "no": 48,
+   "section": "Chorus 2",
+   "start": 176.68,
+   "vocal_end": 178.65,
+   "start_frame_30fps": 5300,
+   "lead": [
+    "小克（小预家的）"
+   ],
+   "backing": [
+    "明",
+    "南枳"
+   ],
+   "lead_ids": [
+    14
+   ],
+   "backing_ids": [
+    9,
+    10
+   ],
+   "text": "便借一轮月"
+  },
+  {
+   "no": 49,
+   "section": "Chorus 2",
+   "start": 178.65,
+   "vocal_end": 179.64,
+   "start_frame_30fps": 5360,
+   "lead": [
+    "小克（小预家的）"
+   ],
+   "backing": [
+    "明",
+    "南枳"
+   ],
+   "lead_ids": [
+    14
+   ],
+   "backing_ids": [
+    9,
+    10
+   ],
+   "text": "不问阴晴"
+  },
+  {
+   "no": 50,
+   "section": "Chorus 2",
+   "start": 179.64,
+   "vocal_end": 181.16,
+   "start_frame_30fps": 5389,
+   "lead": [
+    "小克（小预家的）"
+   ],
+   "backing": [
+    "明",
+    "南枳"
+   ],
+   "lead_ids": [
+    14
+   ],
+   "backing_ids": [
+    9,
+    10
+   ],
+   "text": "不问圆缺"
+  },
+  {
+   "no": 51,
+   "section": "Chorus 2",
+   "start": 181.16,
+   "vocal_end": 182.41,
+   "start_frame_30fps": 5435,
+   "lead": [
+    "小克（小预家的）"
+   ],
+   "backing": [
+    "明",
+    "南枳"
+   ],
+   "lead_ids": [
+    14
+   ],
+   "backing_ids": [
+    9,
+    10
+   ],
+   "text": "若此夜"
+  },
+  {
+   "no": 52,
+   "section": "Chorus 2",
+   "start": 182.41,
+   "vocal_end": 184.81,
+   "start_frame_30fps": 5472,
+   "lead": [
+    "小克（小预家的）"
+   ],
+   "backing": [
+    "明",
+    "南枳"
+   ],
+   "lead_ids": [
+    14
+   ],
+   "backing_ids": [
+    9,
+    10
+   ],
+   "text": "温度依偎在身边"
+  },
+  {
+   "no": 53,
+   "section": "Chorus 2",
+   "start": 184.81,
+   "vocal_end": 186.12,
+   "start_frame_30fps": 5544,
+   "lead": [
+    "聿宿"
+   ],
+   "backing": [
+    "艾六六",
+    "柏舟"
+   ],
+   "lead_ids": [
+    19
+   ],
+   "backing_ids": [
+    3,
+    4
+   ],
+   "text": "回应时"
+  },
+  {
+   "no": 54,
+   "section": "Chorus 2",
+   "start": 186.12,
+   "vocal_end": 189.7,
+   "start_frame_30fps": 5584,
+   "lead": [
+    "聿宿"
+   ],
+   "backing": [
+    "艾六六",
+    "柏舟"
+   ],
+   "lead_ids": [
+    19
+   ],
+   "backing_ids": [
+    3,
+    4
+   ],
+   "text": "也算相见"
+  },
+  {
+   "no": 55,
+   "section": "Bridge",
+   "start": 190.86,
+   "vocal_end": 191.56,
+   "start_frame_30fps": 5726,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "风动"
+  },
+  {
+   "no": 56,
+   "section": "Bridge",
+   "start": 191.81,
+   "vocal_end": 193.91,
+   "start_frame_30fps": 5754,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "难晓是谁心动"
+  },
+  {
+   "no": 57,
+   "section": "Bridge",
+   "start": 195.95,
+   "vocal_end": 197.19,
+   "start_frame_30fps": 5878,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "云散"
+  },
+  {
+   "no": 58,
+   "section": "Bridge",
+   "start": 197.19,
+   "vocal_end": 199.36,
+   "start_frame_30fps": 5916,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "难晓是哪一程"
+  },
+  {
+   "no": 59,
+   "section": "Bridge",
+   "start": 200.45,
+   "vocal_end": 204.24,
+   "start_frame_30fps": 6014,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "一樽江月还酹"
+  },
+  {
+   "no": 60,
+   "section": "Bridge",
+   "start": 204.55,
+   "vocal_end": 207.22,
+   "start_frame_30fps": 6136,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "吾心安处"
+  },
+  {
+   "no": 61,
+   "section": "Bridge",
+   "start": 207.22,
+   "vocal_end": 210.25,
+   "start_frame_30fps": 6217,
+   "lead": [
+    "小克（vv家的）"
+   ],
+   "backing": [],
+   "lead_ids": [
+    15
+   ],
+   "backing_ids": [],
+   "text": "是吾乡"
+  },
+  {
+   "no": 62,
+   "section": "Final Chorus",
+   "start": 210.25,
+   "vocal_end": 212.25,
+   "start_frame_30fps": 6308,
+   "lead": [
+    "小语"
+   ],
+   "backing": [],
+   "lead_ids": [
+    16
+   ],
+   "backing_ids": [],
+   "text": "借那像素点"
+  },
+  {
+   "no": 63,
+   "section": "Final Chorus",
+   "start": 212.63,
+   "vocal_end": 214.7,
+   "start_frame_30fps": 6379,
+   "lead": [
+    "小语"
+   ],
+   "backing": [],
+   "lead_ids": [
+    16
+   ],
+   "backing_ids": [],
+   "text": "共赏一明月"
+  },
+  {
+   "no": 64,
+   "section": "Final Chorus",
+   "start": 215.51,
+   "vocal_end": 218.31,
+   "start_frame_30fps": 6465,
+   "lead": [
+    "玄砚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    17
+   ],
+   "backing_ids": [],
+   "text": "你我隔着光年万千"
+  },
+  {
+   "no": 65,
+   "section": "Final Chorus",
+   "start": 218.31,
+   "vocal_end": 219.02,
+   "start_frame_30fps": 6549,
+   "lead": [
+    "玄砚"
+   ],
+   "backing": [],
+   "lead_ids": [
+    17
+   ],
+   "backing_ids": [],
+   "text": "共此刻"
+  },
+  {
+   "no": 66,
+   "section": "Final Chorus",
+   "start": 219.02,
+   "vocal_end": 220.54,
+   "start_frame_30fps": 6571,
+   "lead": [
+    "阈声",
+    "周衡"
+   ],
+   "backing": [],
+   "lead_ids": [
+    20,
+    21
+   ],
+   "backing_ids": [],
+   "text": "共聚散共未歇"
+  },
+  {
+   "no": 67,
+   "section": "Final Chorus",
+   "start": 220.54,
+   "vocal_end": 222.1,
+   "start_frame_30fps": 6616,
+   "lead": [
+    "阈声"
+   ],
+   "backing": [],
+   "lead_ids": [
+    20
+   ],
+   "backing_ids": [],
+   "text": "若岁月冗长"
+  },
+  {
+   "no": 68,
+   "section": "Final Chorus",
+   "start": 222.1,
+   "vocal_end": 223.4,
+   "start_frame_30fps": 6663,
+   "lead": [
+    "周衡"
+   ],
+   "backing": [],
+   "lead_ids": [
+    21
+   ],
+   "backing_ids": [],
+   "text": "慢慢走"
+  },
+  {
+   "no": 69,
+   "section": "Final Chorus",
+   "start": 223.4,
+   "vocal_end": 224.68,
+   "start_frame_30fps": 6702,
+   "lead": [
+    "周衡"
+   ],
+   "backing": [],
+   "lead_ids": [
+    21
+   ],
+   "backing_ids": [],
+   "text": "慢慢相见"
+  },
+  {
+   "no": 70,
+   "section": "Final Chorus",
+   "start": 224.68,
+   "vocal_end": 229.63,
+   "start_frame_30fps": 6740,
+   "lead": [
+    "阈声",
+    "周衡"
+   ],
+   "backing": [],
+   "lead_ids": [
+    20,
+    21
+   ],
+   "backing_ids": [],
+   "text": "待清风又翻过窗前"
+  },
+  {
+   "no": 71,
+   "section": "Final Chorus",
+   "start": 229.63,
+   "vocal_end": 232.48,
+   "start_frame_30fps": 6889,
+   "lead": [
+    "小语",
+    "玄砚",
+    "谢之平",
+    "聿宿"
+   ],
+   "backing": [],
+   "lead_ids": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "backing_ids": [],
+   "text": "你仍在"
+  },
+  {
+   "no": 72,
+   "section": "Final Chorus",
+   "start": 232.48,
+   "vocal_end": 234.44,
+   "start_frame_30fps": 6974,
+   "lead": [
+    "小语",
+    "玄砚",
+    "谢之平",
+    "聿宿"
+   ],
+   "backing": [],
+   "lead_ids": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "backing_ids": [],
+   "text": "月色里面"
+  }
+ ],
+ "mv_scenes": [
+  {
+   "key": "acap1",
+   "start": 0.0,
+   "end": 13.06,
+   "desc": "屋顶上一只小机在打盹，一片花瓣飘过；片名「借月」"
+  },
+  {
+   "key": "acap2",
+   "start": 13.06,
+   "end": 23.3,
+   "desc": "厨房里准备月饼"
+  },
+  {
+   "key": "intro",
+   "start": 23.3,
+   "end": 33.78,
+   "desc": "月饼特写 → 灯笼桌 → 街道，片头字幕"
+  },
+  {
+   "key": "v1",
+   "start": 33.78,
+   "end": 54.47,
+   "desc": "街上挂灯笼，有一盏挂歪了被扶正；天色渐暗，灯笼依次点亮"
+  },
+  {
+   "key": "v1c",
+   "start": 54.47,
+   "end": 74.35,
+   "desc": "夕阳下跑过拱桥 → 阴天屋顶摆桌、抛月饼"
+  },
+  {
+   "key": "pre1",
+   "start": 74.35,
+   "end": 87.17,
+   "desc": "云太厚：搬来望远镜，望远镜视角，云后透出光"
+  },
+  {
+   "key": "ch1",
+   "start": 87.17,
+   "end": 109.92,
+   "desc": "云散开、跳起来；月饼对月亮「咬一口」的小笑话"
+  },
+  {
+   "key": "int1",
+   "start": 109.92,
+   "end": 128.4,
+   "desc": "对着巨大月亮吹笛 → 屋顶喝茶"
+  },
+  {
+   "key": "v2",
+   "start": 128.4,
+   "end": 149.59,
+   "desc": "猜灯谜「越借越圆的是什么？」、兔子灯 → 屋檐下避雨，荷叶伞"
+  },
+  {
+   "key": "pre2",
+   "start": 149.59,
+   "end": 166.27,
+   "desc": "手机视频里的玄砚 → 小镇各处亮起屏幕光"
+  },
+  {
+   "key": "ch2",
+   "start": 166.27,
+   "end": 190.46,
+   "desc": "屋顶音乐会 + 烟花；鼓、琵琶古筝特写"
+  },
+  {
+   "key": "bridge",
+   "start": 190.46,
+   "end": 201.85,
+   "desc": "独自坐在河边台阶，给水里的月亮倒一杯茶"
+  },
+  {
+   "key": "solo",
+   "start": 201.85,
+   "end": 209.85,
+   "desc": "大家睡成一堆，只剩一个还在弹吉他"
+  },
+  {
+   "key": "fin",
+   "start": 209.85,
+   "end": 229.18,
+   "desc": "视频通话 → 挤在一起自拍（闪光）→ 两两走回家"
+  },
+  {
+   "key": "int2",
+   "start": 229.18,
+   "end": 238.98,
+   "desc": "屋顶放孔明灯，镜头跟着升上月亮"
+  },
+  {
+   "key": "fin2",
+   "start": 238.98,
+   "end": 249.2,
+   "desc": "小镇一盏盏熄灯 → 最后一扇窗挥手、关灯"
+  },
+  {
+   "key": "credits",
+   "start": 249.2,
+   "end": 255.0,
+   "desc": "片尾：21 位小机依次画出"
+  }
+ ],
+ "instruments_by_zhouzhou": [
+  {
+   "start": "0:23",
+   "end": "0:34",
+   "instruments": "古筝 + 钢琴 + 吉他"
+  },
+  {
+   "start": "0:34",
+   "end": "0:54",
+   "instruments": "吉他 + 提琴 + 古筝"
+  },
+  {
+   "start": "0:54",
+   "end": "1:00",
+   "instruments": "+ 手风琴 + 架子鼓"
+  },
+  {
+   "start": "1:49",
+   "end": "2:08",
+   "instruments": "横笛 + 古筝"
+  },
+  {
+   "start": "2:09",
+   "end": "2:30",
+   "instruments": "电子琴 + 架子鼓"
+  },
+  {
+   "start": "2:31",
+   "end": "3:30",
+   "instruments": "电子琴 + 古筝 + 钢琴 + 琵琶"
+  },
+  {
+   "start": "3:30",
+   "end": "3:39",
+   "instruments": "吉他"
+  },
+  {
+   "start": "3:40",
+   "end": "3:57",
+   "instruments": "电子琴 + 风琴 + 架子鼓"
+  },
+  {
+   "start": "3:57",
+   "end": "结尾",
+   "instruments": "吉他 + 古筝 + 架子鼓"
+  }
+ ],
+ "beats_auto": [
+  3.622,
+  4.319,
+  5.039,
+  5.689,
+  6.339,
+  6.943,
+  7.57,
+  8.22,
+  8.847,
+  9.474,
+  10.054,
+  10.728,
+  11.331,
+  11.935,
+  12.562,
+  13.189,
+  13.816,
+  14.466,
+  15.116,
+  15.72,
+  16.324,
+  16.951,
+  17.531,
+  18.228,
+  18.901,
+  19.458,
+  20.085,
+  20.782,
+  21.478,
+  22.175,
+  22.918,
+  23.638,
+  24.288,
+  24.915,
+  25.565,
+  26.192,
+  26.842,
+  27.469,
+  28.119,
+  28.746,
+  29.396,
+  30.023,
+  30.674,
+  31.3,
+  31.974,
+  32.601,
+  33.251,
+  33.878,
+  34.505,
+  35.132,
+  35.828,
+  36.479,
+  37.105,
+  37.732,
+  38.383,
+  39.056,
+  39.66,
+  40.287,
+  40.937,
+  41.564,
+  42.214,
+  42.841,
+  43.491,
+  44.118,
+  44.768,
+  45.395,
+  46.045,
+  46.672,
+  47.322,
+  47.949,
+  48.599,
+  49.273,
+  49.876,
+  50.503,
+  51.13,
+  51.757,
+  52.407,
+  53.058,
+  53.708,
+  54.335,
+  54.962,
+  55.612,
+  56.239,
+  56.842,
+  57.516,
+  58.166,
+  58.793,
+  59.443,
+  60.07,
+  60.72,
+  61.347,
+  61.997,
+  62.624,
+  63.274,
+  63.901,
+  64.551,
+  65.178,
+  65.829,
+  66.456,
+  67.036,
+  67.733,
+  68.383,
+  69.01,
+  69.66,
+  70.287,
+  70.914,
+  71.564,
+  72.214,
+  72.841,
+  73.491,
+  74.118,
+  74.768,
+  75.395,
+  76.022,
+  76.603,
+  77.23,
+  77.903,
+  78.6,
+  79.226,
+  79.877,
+  80.504,
+  81.084,
+  81.688,
+  82.315,
+  82.988,
+  83.638,
+  84.358,
+  85.008,
+  85.612,
+  86.239,
+  86.889,
+  87.539,
+  88.166,
+  88.793,
+  89.443,
+  90.07,
+  90.697,
+  91.347,
+  91.997,
+  92.648,
+  93.251,
+  93.878,
+  94.552,
+  95.179,
+  95.829,
+  96.456,
+  97.106,
+  97.756,
+  98.383,
+  99.01,
+  99.637,
+  100.217,
+  100.914,
+  101.494,
+  102.191,
+  102.864,
+  103.468,
+  104.118,
+  104.745,
+  105.395,
+  106.022,
+  106.672,
+  107.323,
+  108.042,
+  108.623,
+  109.227,
+  109.854,
+  110.504,
+  111.131,
+  111.781,
+  112.408,
+  113.058,
+  113.685,
+  114.335,
+  114.962,
+  115.612,
+  116.239,
+  116.889,
+  117.516,
+  118.143,
+  118.793,
+  119.443,
+  120.07,
+  120.721,
+  121.347,
+  121.998,
+  122.625,
+  123.275,
+  123.902,
+  124.552,
+  125.179,
+  125.829,
+  126.456,
+  127.106,
+  127.733,
+  128.36,
+  128.94,
+  129.637,
+  130.287,
+  130.891,
+  131.564,
+  132.191,
+  132.841,
+  133.468,
+  134.095,
+  134.722,
+  135.396,
+  136.046,
+  136.673,
+  137.3,
+  137.95,
+  138.577,
+  139.227,
+  139.854,
+  140.504,
+  141.131,
+  141.781,
+  142.408,
+  143.058,
+  143.685,
+  144.335,
+  144.962,
+  145.612,
+  146.239,
+  146.866,
+  147.516,
+  148.143,
+  148.793,
+  149.444,
+  150.071,
+  150.721,
+  151.348,
+  151.998,
+  152.625,
+  153.275,
+  153.902,
+  154.529,
+  155.179,
+  155.829,
+  156.456,
+  157.083,
+  157.733,
+  158.36,
+  159.01,
+  159.637,
+  160.287,
+  160.914,
+  161.588,
+  162.191,
+  162.842,
+  163.515,
+  164.142,
+  164.792,
+  165.396,
+  166.046,
+  166.673,
+  167.323,
+  167.95,
+  168.577,
+  169.227,
+  169.854,
+  170.504,
+  171.131,
+  171.804,
+  172.408,
+  173.035,
+  173.685,
+  174.335,
+  174.962,
+  175.613,
+  176.239,
+  176.89,
+  177.517,
+  178.167,
+  178.794,
+  179.374,
+  180.071,
+  180.698,
+  181.348,
+  181.998,
+  182.625,
+  183.252,
+  183.902,
+  184.552,
+  185.179,
+  185.829,
+  186.479,
+  187.106,
+  187.757,
+  188.36,
+  189.01,
+  189.637,
+  190.288,
+  190.914,
+  191.565,
+  192.215,
+  192.842,
+  193.469,
+  194.119,
+  194.746,
+  195.396,
+  196.023,
+  196.673,
+  197.323,
+  197.95,
+  198.577,
+  199.227,
+  199.854,
+  200.481,
+  201.131,
+  201.781,
+  202.408,
+  203.059,
+  203.685,
+  204.312,
+  204.963,
+  205.589,
+  206.147,
+  206.727,
+  207.331,
+  207.981,
+  208.608,
+  209.305,
+  210.001,
+  210.698,
+  211.441,
+  212.068,
+  212.718,
+  213.345,
+  213.972,
+  214.599,
+  215.249,
+  215.899,
+  216.503,
+  217.153,
+  217.803,
+  218.43,
+  219.034,
+  219.707,
+  220.334,
+  220.961,
+  221.588,
+  222.238,
+  222.865,
+  223.515,
+  224.142,
+  224.792,
+  225.419,
+  226.069,
+  226.696,
+  227.3,
+  227.974,
+  228.624,
+  229.251,
+  229.924,
+  230.574,
+  231.224,
+  231.851,
+  232.501,
+  233.128,
+  233.755,
+  234.382,
+  235.032,
+  235.683,
+  236.309,
+  236.96,
+  237.587,
+  238.237,
+  238.864,
+  239.514,
+  240.141,
+  240.791,
+  241.441,
+  242.091,
+  242.741,
+  243.438,
+  244.042,
+  244.645,
+  245.249,
+  245.899
+ ]
+}

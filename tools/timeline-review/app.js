@@ -1,4 +1,4 @@
-const TIMELINE_URL = "../../data/songs/jieyue/timeline.draft.json";
+const TIMELINE_URL = "../../data/songs/jieyue/timeline.reference.json";
 const STORAGE_PREFIX = "jieyue-timeline-review";
 const PLAYBACK_PADDING_MS = 450;
 const MIN_LINE_MS = 50;
@@ -69,7 +69,7 @@ function reviewFor(line) {
 }
 
 function storageKey() {
-  return `${STORAGE_PREFIX}:${timeline.song_id}:${timeline.timeline_timebase.sha256}`;
+  return `${STORAGE_PREFIX}:${timeline.schema_version}:${timeline.song_id}:${timeline.timeline_timebase.sha256}`;
 }
 
 function saveLocal() {
@@ -97,7 +97,22 @@ function getTimes(line) {
 
 function performerText(line) {
   const lookup = new Map(timeline.performers.map((person) => [person.id, person.display_name]));
-  return line.performers.map((person) => lookup.get(person.id) || person.id).join("、");
+  const leads = line.performers
+    .filter((person) => person.role === "lead")
+    .map((person) => lookup.get(person.id) || person.id);
+  const backing = line.performers
+    .filter((person) => person.role === "backing")
+    .map((person) => lookup.get(person.id) || person.id);
+  const leadText = leads.join("、");
+  return backing.length ? `${leadText}（和声：${backing.join("、")}）` : leadText;
+}
+
+function timingSourceText(source) {
+  return ({
+    human_waveform_mark: "人工观察人声波形",
+    separated_vocal_estimate: "分离人声估算",
+    editorial_subtitle_timing: "字幕显示时间",
+  })[source] || source || "—";
 }
 
 function sectionText(line) {
@@ -179,13 +194,19 @@ function evidenceItem(label, value) {
 
 function renderEvidence(line) {
   const data = line.alignment;
+  const timing = line.timing;
   elements.evidence.replaceChildren(
+    evidenceItem("开口来源", timingSourceText(timing?.start?.source)),
+    evidenceItem("唱完来源", timingSourceText(timing?.vocal_end?.source)),
+    evidenceItem("字幕显示结束", timing?.subtitle_end ? formatTime(timing.subtitle_end.value_ms) : "—"),
+    evidenceItem("起始帧", timing?.start_frame ? `${timing.start_frame.value} @ ${timing.start_frame.fps} fps` : "—"),
     evidenceItem("候选方法", data.method),
     evidenceItem("置信度", String(data.confidence ?? "—")),
     evidenceItem("覆盖率", String(data.coverage ?? "—")),
     evidenceItem("ASR 概率", String(data.asr_probability ?? "—")),
     evidenceItem("匹配音节", `${data.matched_syllables ?? "—"} / ${data.expected_syllables ?? "—"}`),
     evidenceItem("自动标记", data.review_flags?.join(" · ") || "无"),
+    evidenceItem("人工例外", timing?.exception?.note || "无"),
   );
 }
 

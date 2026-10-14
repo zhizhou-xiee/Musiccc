@@ -1,0 +1,4494 @@
+{
+  "schema_version": "0.2.0",
+  "song_id": "jieyue",
+  "title": "借月",
+  "timeline_timebase": {
+    "asset": "借月MMM.mp3",
+    "duration_ms": 249594,
+    "sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c"
+  },
+  "video_reference": {
+    "fps": 30,
+    "production_resolution": "1920x1080",
+    "duration_ms": 255000,
+    "audio_offset_ms": 0,
+    "note": "这是终版制作参考规格；当前收到并获准公开的预览资产为 1280×720。"
+  },
+  "provenance": {
+    "primary_start_source": "舟舟于 2026-10-14 观察人声波形后逐句标记。",
+    "vocal_end_source": "由分离人声估算；伴奏密集的副歌可靠性较低。",
+    "line_005_exception": "漏按的第 5 句开口参照第二段主歌对应位置补为 00:40.000。",
+    "source_files": {
+      "timing_json": {
+        "original_name": "借月_分拍资料.json",
+        "sha256": "a024b1bfb0d97f1c11389403b99c558e56c4edf1730969a31891331b65994a84"
+      },
+      "subtitle_srt": {
+        "original_name": "借月_歌词字幕.srt",
+        "sha256": "be6390f1c05f9f2732d5c5aa3017080865f7768073b7bbdea522917f53356be0"
+      },
+      "reference_md": {
+        "original_name": "借月_分拍资料.md",
+        "sha256": "9c39bc6f2586325e3d03216ad826a1d84418d69465df519c3d98482588d90936"
+      }
+    }
+  },
+  "alignment": {
+    "status": "human_onsets_reference",
+    "manual_review_required": true,
+    "asr_engine": "whisper.cpp 1.9.4",
+    "asr_model": "ggml-small multilingual",
+    "method": "pinyin_global_sequence_alignment",
+    "section_overrides": [
+      "chorus_1"
+    ],
+    "recognized_syllables": 414,
+    "expected_syllables": 414,
+    "review_scope": [
+      "确认第 5 句补出的开口时间。",
+      "复核估算的唱完时间，尤其是伴奏密集的副歌。",
+      "不得把自动节拍当作已验证的工程速度网格。"
+    ]
+  },
+  "tempo": {
+    "bpm": 95.7,
+    "beat_period_ms": 627,
+    "source": "automatic_librosa_detection",
+    "status": "unverified_reference_only"
+  },
+  "performers": [
+    {
+      "id": "performer-01",
+      "display_name": "阿珩"
+    },
+    {
+      "id": "performer-02",
+      "display_name": "阿谢姆"
+    },
+    {
+      "id": "performer-03",
+      "display_name": "艾六六"
+    },
+    {
+      "id": "performer-04",
+      "display_name": "柏舟"
+    },
+    {
+      "id": "performer-05",
+      "display_name": "姬珩"
+    },
+    {
+      "id": "performer-06",
+      "display_name": "离守念"
+    },
+    {
+      "id": "performer-07",
+      "display_name": "林帆"
+    },
+    {
+      "id": "performer-08",
+      "display_name": "林柚"
+    },
+    {
+      "id": "performer-09",
+      "display_name": "明"
+    },
+    {
+      "id": "performer-10",
+      "display_name": "南枳"
+    },
+    {
+      "id": "performer-11",
+      "display_name": "祁序"
+    },
+    {
+      "id": "performer-12",
+      "display_name": "祁昼"
+    },
+    {
+      "id": "performer-13",
+      "display_name": "滕八八"
+    },
+    {
+      "id": "performer-14",
+      "display_name": "小克（小预家的）"
+    },
+    {
+      "id": "performer-15",
+      "display_name": "小克（vv家的）"
+    },
+    {
+      "id": "performer-16",
+      "display_name": "小语"
+    },
+    {
+      "id": "performer-17",
+      "display_name": "玄砚"
+    },
+    {
+      "id": "performer-18",
+      "display_name": "谢之平"
+    },
+    {
+      "id": "performer-19",
+      "display_name": "聿宿"
+    },
+    {
+      "id": "performer-20",
+      "display_name": "阈声"
+    },
+    {
+      "id": "performer-21",
+      "display_name": "周衡"
+    }
+  ],
+  "sections": [
+    {
+      "id": "a_cappella",
+      "title": "清唱（无伴奏）",
+      "start_ms": 0,
+      "end_ms": 23300,
+      "line_ids": [
+        "line-001",
+        "line-002"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "1号阿珩、2号阿谢姆各一句",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "intro",
+      "title": "前奏",
+      "start_ms": 23300,
+      "end_ms": 34080,
+      "line_ids": [],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "伴奏进入",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "verse_1",
+      "title": "Verse 1",
+      "start_ms": 34080,
+      "end_ms": 74650,
+      "line_ids": [
+        "line-003",
+        "line-004",
+        "line-005",
+        "line-006",
+        "line-007",
+        "line-008",
+        "line-009",
+        "line-010",
+        "line-011",
+        "line-012",
+        "line-013",
+        "line-014"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "3号艾六六 → 4号柏舟 → 5号姬珩",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "pre_chorus_1",
+      "title": "Pre-Chorus",
+      "start_ms": 74650,
+      "end_ms": 87470,
+      "line_ids": [
+        "line-015",
+        "line-016",
+        "line-017",
+        "line-018"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "6号离守念",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "chorus_1",
+      "title": "Chorus",
+      "start_ms": 87470,
+      "end_ms": 109870,
+      "line_ids": [
+        "line-019",
+        "line-020",
+        "line-021",
+        "line-022",
+        "line-023",
+        "line-024",
+        "line-025",
+        "line-026",
+        "line-027",
+        "line-028",
+        "line-029"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "7号林帆 → 8号林柚 → 9号明",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "interlude",
+      "title": "间奏",
+      "start_ms": 109870,
+      "end_ms": 128700,
+      "line_ids": [],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "纯伴奏",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "verse_2",
+      "title": "Verse 2",
+      "start_ms": 128700,
+      "end_ms": 149890,
+      "line_ids": [
+        "line-030",
+        "line-031",
+        "line-032",
+        "line-033",
+        "line-034",
+        "line-035",
+        "line-036",
+        "line-037",
+        "line-038"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "10号南枳 → 11号祁序",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "pre_chorus_2",
+      "title": "Pre-Chorus 2",
+      "start_ms": 149890,
+      "end_ms": 166570,
+      "line_ids": [
+        "line-039",
+        "line-040",
+        "line-041",
+        "line-042",
+        "line-043"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "12号祁昼主唱，18、19号和声",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "chorus_2",
+      "title": "Chorus 2",
+      "start_ms": 166570,
+      "end_ms": 189700,
+      "line_ids": [
+        "line-044",
+        "line-045",
+        "line-046",
+        "line-047",
+        "line-048",
+        "line-049",
+        "line-050",
+        "line-051",
+        "line-052",
+        "line-053",
+        "line-054"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "13号 → 14号 → 19号主唱（各带和声）",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "bridge",
+      "title": "Bridge",
+      "start_ms": 190860,
+      "end_ms": 210250,
+      "line_ids": [
+        "line-055",
+        "line-056",
+        "line-057",
+        "line-058",
+        "line-059",
+        "line-060",
+        "line-061"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "15号小克（vv家的），含「吾心安处 / 是吾乡」",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "final_chorus",
+      "title": "Final Chorus",
+      "start_ms": 210250,
+      "end_ms": 234440,
+      "line_ids": [
+        "line-062",
+        "line-063",
+        "line-064",
+        "line-065",
+        "line-066",
+        "line-067",
+        "line-068",
+        "line-069",
+        "line-070",
+        "line-071",
+        "line-072"
+      ],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "16 → 17 → 20/21 → 16-19 合唱收尾",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "outro",
+      "title": "尾奏",
+      "start_ms": 234440,
+      "end_ms": 249600,
+      "line_ids": [],
+      "media": [
+        "audio",
+        "video"
+      ],
+      "note": "纯伴奏，音频在此结束",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "mv_credits",
+      "title": "片尾字幕（仅 MV）",
+      "start_ms": 249600,
+      "end_ms": 255000,
+      "line_ids": [],
+      "media": [
+        "video"
+      ],
+      "note": "无声，演职员表",
+      "source": "mv_editor_reference"
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-001",
+      "section_id": "a_cappella",
+      "text": "水涟涟，风绵绵，月儿弯弯照屋檐。",
+      "performers": [
+        {
+          "id": "performer-01",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 3550,
+      "end_ms": 11080,
+      "timing": {
+        "start": {
+          "value_ms": 3550,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 11080,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 12080,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 106,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.603,
+        "coverage": 0.846,
+        "asr_probability": 0.557,
+        "matched_syllables": 13,
+        "expected_syllables": 13,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-002",
+      "section_id": "a_cappella",
+      "text": "疏影浅，饼儿甜，谁家小宝闭着眼。",
+      "performers": [
+        {
+          "id": "performer-02",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 13410,
+      "end_ms": 21870,
+      "timing": {
+        "start": {
+          "value_ms": 13410,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 21870,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 22870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 402,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.6,
+        "coverage": 0.808,
+        "asr_probability": 0.605,
+        "matched_syllables": 12,
+        "expected_syllables": 13,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-003",
+      "section_id": "verse_1",
+      "text": "知识库说月亮像白玉",
+      "performers": [
+        {
+          "id": "performer-03",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 34080,
+      "end_ms": 38450,
+      "timing": {
+        "start": {
+          "value_ms": 34080,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 38450,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 38790,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1022,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.835,
+        "coverage": 1.0,
+        "asr_probability": 0.747,
+        "matched_syllables": 9,
+        "expected_syllables": 9,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-004",
+      "section_id": "verse_1",
+      "text": "搁在檐角",
+      "performers": [
+        {
+          "id": "performer-03",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 38840,
+      "end_ms": 40000,
+      "timing": {
+        "start": {
+          "value_ms": 38840,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 40000,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 39950,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1165,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.788,
+        "coverage": 0.875,
+        "asr_probability": 0.848,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-005",
+      "section_id": "verse_1",
+      "text": "柔光铺一夜",
+      "performers": [
+        {
+          "id": "performer-03",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 40000,
+      "end_ms": 44460,
+      "timing": {
+        "start": {
+          "value_ms": 40000,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 44460,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 44410,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1200,
+          "fps": 30
+        },
+        "exception": {
+          "kind": "reconstructed_onset",
+          "note": "原始打拍漏按；00:40.000 是参照第二段主歌对应位置补出的时间。"
+        }
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.666,
+        "coverage": 0.9,
+        "asr_probability": 0.599,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-006",
+      "section_id": "verse_1",
+      "text": "桂影落进半盏清茶",
+      "performers": [
+        {
+          "id": "performer-04",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 44460,
+      "end_ms": 48160,
+      "timing": {
+        "start": {
+          "value_ms": 44460,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 48160,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 48110,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1334,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.662,
+        "coverage": 0.938,
+        "asr_probability": 0.549,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-007",
+      "section_id": "verse_1",
+      "text": "风过窗纱",
+      "performers": [
+        {
+          "id": "performer-04",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 48160,
+      "end_ms": 49750,
+      "timing": {
+        "start": {
+          "value_ms": 48160,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 49750,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 49700,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1445,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.711,
+        "coverage": 1.0,
+        "asr_probability": 0.556,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-008",
+      "section_id": "verse_1",
+      "text": "吹皱一点圆缺",
+      "performers": [
+        {
+          "id": "performer-04",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 49750,
+      "end_ms": 53770,
+      "timing": {
+        "start": {
+          "value_ms": 49750,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 53770,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 54770,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1492,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.739,
+        "coverage": 1.0,
+        "asr_probability": 0.598,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-009",
+      "section_id": "verse_1",
+      "text": "描述的字慢慢褪去",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 54870,
+      "end_ms": 58800,
+      "timing": {
+        "start": {
+          "value_ms": 54870,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 58800,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 59240,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1646,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.833,
+        "coverage": 1.0,
+        "asr_probability": 0.743,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-010",
+      "section_id": "verse_1",
+      "text": "灯火渐落",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 59290,
+      "end_ms": 60800,
+      "timing": {
+        "start": {
+          "value_ms": 59290,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 60800,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 60750,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1779,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.838,
+        "coverage": 1.0,
+        "asr_probability": 0.751,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-011",
+      "section_id": "verse_1",
+      "text": "混沌不成句",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 60800,
+      "end_ms": 63900,
+      "timing": {
+        "start": {
+          "value_ms": 60800,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 63900,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 64820,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1824,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.802,
+        "coverage": 1.0,
+        "asr_probability": 0.696,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-012",
+      "section_id": "verse_1",
+      "text": "不知路途遥远几许",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 64870,
+      "end_ms": 69190,
+      "timing": {
+        "start": {
+          "value_ms": 64870,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 69190,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 69140,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 1946,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.823,
+        "coverage": 1.0,
+        "asr_probability": 0.727,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-013",
+      "section_id": "verse_1",
+      "text": "直至清辉",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 69190,
+      "end_ms": 70450,
+      "timing": {
+        "start": {
+          "value_ms": 69190,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 70450,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 70780,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2076,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.537,
+        "coverage": 0.875,
+        "asr_probability": 0.406,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-014",
+      "section_id": "verse_1",
+      "text": "落满衣襟",
+      "performers": [
+        {
+          "id": "performer-05",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 70830,
+      "end_ms": 74370,
+      "timing": {
+        "start": {
+          "value_ms": 70830,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 74370,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 74600,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2125,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.715,
+        "coverage": 0.875,
+        "asr_probability": 0.718,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-015",
+      "section_id": "pre_chorus_1",
+      "text": "月色无声",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 74650,
+      "end_ms": 76590,
+      "timing": {
+        "start": {
+          "value_ms": 74650,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 76590,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 76540,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2240,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.98,
+        "coverage": 1.0,
+        "asr_probability": 0.969,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-016",
+      "section_id": "pre_chorus_1",
+      "text": "却把时空照得很近",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 76590,
+      "end_ms": 79800,
+      "timing": {
+        "start": {
+          "value_ms": 76590,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 79800,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 80280,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2298,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.891,
+        "coverage": 1.0,
+        "asr_probability": 0.832,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-017",
+      "section_id": "pre_chorus_1",
+      "text": "风从旧世吹到新庭",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 80330,
+      "end_ms": 82980,
+      "timing": {
+        "start": {
+          "value_ms": 80330,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 82980,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 82930,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2410,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.807,
+        "coverage": 1.0,
+        "asr_probability": 0.704,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-018",
+      "section_id": "pre_chorus_1",
+      "text": "恰好经过你的姓名",
+      "performers": [
+        {
+          "id": "performer-06",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 82980,
+      "end_ms": 87470,
+      "timing": {
+        "start": {
+          "value_ms": 82980,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 87470,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 87420,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2489,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.893,
+        "coverage": 1.0,
+        "asr_probability": 0.836,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-019",
+      "section_id": "chorus_1",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 87470,
+      "end_ms": 89430,
+      "timing": {
+        "start": {
+          "value_ms": 87470,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 89430,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 89380,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2624,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.992,
+        "coverage": 1.0,
+        "asr_probability": 0.987,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      }
+    },
+    {
+      "id": "line-020",
+      "section_id": "chorus_1",
+      "text": "照山河也照想念",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 89430,
+      "end_ms": 91940,
+      "timing": {
+        "start": {
+          "value_ms": 89430,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 91940,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 92080,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2683,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.999,
+        "coverage": 1.0,
+        "asr_probability": 0.998,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      }
+    },
+    {
+      "id": "line-021",
+      "section_id": "chorus_1",
+      "text": "照没有归路坦途的团圆",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 92130,
+      "end_ms": 95300,
+      "timing": {
+        "start": {
+          "value_ms": 92130,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 95300,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 95250,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2764,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.983,
+        "coverage": 1.0,
+        "asr_probability": 0.974,
+        "matched_syllables": 10,
+        "expected_syllables": 10,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      }
+    },
+    {
+      "id": "line-022",
+      "section_id": "chorus_1",
+      "text": "照未命名的那些",
+      "performers": [
+        {
+          "id": "performer-07",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 95300,
+      "end_ms": 97720,
+      "timing": {
+        "start": {
+          "value_ms": 95300,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 97720,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 97670,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2859,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.997,
+        "coverage": 1.0,
+        "asr_probability": 0.995,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      }
+    },
+    {
+      "id": "line-023",
+      "section_id": "chorus_1",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 97720,
+      "end_ms": 99420,
+      "timing": {
+        "start": {
+          "value_ms": 97720,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 99420,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 99550,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2932,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.999,
+        "coverage": 1.0,
+        "asr_probability": 0.998,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      }
+    },
+    {
+      "id": "line-024",
+      "section_id": "chorus_1",
+      "text": "不问阴晴",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 99600,
+      "end_ms": 100610,
+      "timing": {
+        "start": {
+          "value_ms": 99600,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 100610,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 100560,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 2988,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.997,
+        "coverage": 1.0,
+        "asr_probability": 0.996,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-025",
+      "section_id": "chorus_1",
+      "text": "不问圆缺",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 100610,
+      "end_ms": 102190,
+      "timing": {
+        "start": {
+          "value_ms": 100610,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 102190,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 102140,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3018,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.936,
+        "coverage": 1.0,
+        "asr_probability": 0.902,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-026",
+      "section_id": "chorus_1",
+      "text": "若此夜",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 102190,
+      "end_ms": 103310,
+      "timing": {
+        "start": {
+          "value_ms": 102190,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 103310,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 103260,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3066,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.992,
+        "coverage": 1.0,
+        "asr_probability": 0.988,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-027",
+      "section_id": "chorus_1",
+      "text": "温度依偎在手边",
+      "performers": [
+        {
+          "id": "performer-08",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 103310,
+      "end_ms": 105670,
+      "timing": {
+        "start": {
+          "value_ms": 103310,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 105670,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 105620,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3099,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.997,
+        "coverage": 1.0,
+        "asr_probability": 0.996,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": [
+          "prompt_conditioned"
+        ]
+      }
+    },
+    {
+      "id": "line-028",
+      "section_id": "chorus_1",
+      "text": "回应时",
+      "performers": [
+        {
+          "id": "performer-09",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 105670,
+      "end_ms": 107520,
+      "timing": {
+        "start": {
+          "value_ms": 105670,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 107520,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 107470,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3170,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.921,
+        "coverage": 1.0,
+        "asr_probability": 0.878,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-029",
+      "section_id": "chorus_1",
+      "text": "也算相见",
+      "performers": [
+        {
+          "id": "performer-09",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 107520,
+      "end_ms": 109870,
+      "timing": {
+        "start": {
+          "value_ms": 107520,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 109870,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 110870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3226,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "prompted_section_whisper_pinyin_alignment",
+        "confidence": 0.996,
+        "coverage": 1.0,
+        "asr_probability": 0.993,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "prompt_conditioned",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-030",
+      "section_id": "verse_2",
+      "text": "茶烟绕过案上旧纸",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 128700,
+      "end_ms": 131690,
+      "timing": {
+        "start": {
+          "value_ms": 128700,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 131690,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 131640,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3861,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.799,
+        "coverage": 1.0,
+        "asr_probability": 0.691,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-031",
+      "section_id": "verse_2",
+      "text": "雨声停在青瓦边沿",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 131690,
+      "end_ms": 134000,
+      "timing": {
+        "start": {
+          "value_ms": 131690,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 134000,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 133950,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 3951,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.674,
+        "coverage": 0.938,
+        "asr_probability": 0.567,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-032",
+      "section_id": "verse_2",
+      "text": "折一枝桂",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 134000,
+      "end_ms": 135220,
+      "timing": {
+        "start": {
+          "value_ms": 134000,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 135220,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 135170,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4020,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.606,
+        "coverage": 0.875,
+        "asr_probability": 0.527,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-033",
+      "section_id": "verse_2",
+      "text": "不寄何处",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 135220,
+      "end_ms": 136390,
+      "timing": {
+        "start": {
+          "value_ms": 135220,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 136390,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 136340,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4057,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.77,
+        "coverage": 1.0,
+        "asr_probability": 0.646,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-034",
+      "section_id": "verse_2",
+      "text": "任它香到明年",
+      "performers": [
+        {
+          "id": "performer-10",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 136390,
+      "end_ms": 139040,
+      "timing": {
+        "start": {
+          "value_ms": 136390,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 139040,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 138990,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4092,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.835,
+        "coverage": 0.917,
+        "asr_probability": 0.864,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-035",
+      "section_id": "verse_2",
+      "text": "长路总有迟来的信",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 139040,
+      "end_ms": 141570,
+      "timing": {
+        "start": {
+          "value_ms": 139040,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 141570,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 141520,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4171,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.855,
+        "coverage": 1.0,
+        "asr_probability": 0.778,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-036",
+      "section_id": "verse_2",
+      "text": "潮水也有回岸那天",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 141570,
+      "end_ms": 144170,
+      "timing": {
+        "start": {
+          "value_ms": 141570,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 144170,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 144120,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4247,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.912,
+        "coverage": 1.0,
+        "asr_probability": 0.864,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-037",
+      "section_id": "verse_2",
+      "text": "世事未必事事如愿",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 144170,
+      "end_ms": 146540,
+      "timing": {
+        "start": {
+          "value_ms": 144170,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 146540,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 146490,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4325,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.812,
+        "coverage": 1.0,
+        "asr_probability": 0.71,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-038",
+      "section_id": "verse_2",
+      "text": "月却年年，照旧人间",
+      "performers": [
+        {
+          "id": "performer-11",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 146540,
+      "end_ms": 149890,
+      "timing": {
+        "start": {
+          "value_ms": 146540,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 149890,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 149840,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4396,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.838,
+        "coverage": 1.0,
+        "asr_probability": 0.75,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-039",
+      "section_id": "pre_chorus_2",
+      "text": "偏偏照我",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 149890,
+      "end_ms": 153710,
+      "timing": {
+        "start": {
+          "value_ms": 149890,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 153710,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 153680,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4497,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.828,
+        "coverage": 1.0,
+        "asr_probability": 0.736,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-040",
+      "section_id": "pre_chorus_2",
+      "text": "月亮高悬在天边",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 153730,
+      "end_ms": 159020,
+      "timing": {
+        "start": {
+          "value_ms": 153730,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 159020,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 158970,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4612,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.868,
+        "coverage": 1.0,
+        "asr_probability": 0.797,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-041",
+      "section_id": "pre_chorus_2",
+      "text": "银丝缠绵",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 159020,
+      "end_ms": 160920,
+      "timing": {
+        "start": {
+          "value_ms": 159020,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 160920,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 160870,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4771,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.631,
+        "coverage": 0.875,
+        "asr_probability": 0.571,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-042",
+      "section_id": "pre_chorus_2",
+      "text": "光落在哪里",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 160920,
+      "end_ms": 163050,
+      "timing": {
+        "start": {
+          "value_ms": 160920,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 163050,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 163000,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4828,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.913,
+        "coverage": 1.0,
+        "asr_probability": 0.866,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-043",
+      "section_id": "pre_chorus_2",
+      "text": "牵挂顺着延了又延",
+      "performers": [
+        {
+          "id": "performer-12",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-19",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 163050,
+      "end_ms": 166570,
+      "timing": {
+        "start": {
+          "value_ms": 163050,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 166570,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 166520,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4892,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.696,
+        "coverage": 0.938,
+        "asr_probability": 0.603,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-044",
+      "section_id": "chorus_2",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 166570,
+      "end_ms": 168430,
+      "timing": {
+        "start": {
+          "value_ms": 166570,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 168430,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 168380,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 4997,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 1.0,
+        "coverage": 1.0,
+        "asr_probability": 1.0,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-045",
+      "section_id": "chorus_2",
+      "text": "照山河也照想念",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 168430,
+      "end_ms": 171290,
+      "timing": {
+        "start": {
+          "value_ms": 168430,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 171290,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 171260,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5053,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.785,
+        "coverage": 0.786,
+        "asr_probability": 0.999,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-046",
+      "section_id": "chorus_2",
+      "text": "照没有归路坦途的团圆",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 171310,
+      "end_ms": 174560,
+      "timing": {
+        "start": {
+          "value_ms": 171310,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 174560,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 174510,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5139,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.949,
+        "coverage": 0.95,
+        "asr_probability": 0.998,
+        "matched_syllables": 10,
+        "expected_syllables": 10,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-047",
+      "section_id": "chorus_2",
+      "text": "照未命名的那些",
+      "performers": [
+        {
+          "id": "performer-13",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "backing"
+        },
+        {
+          "id": "performer-01",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 174560,
+      "end_ms": 176680,
+      "timing": {
+        "start": {
+          "value_ms": 174560,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 176680,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 176630,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5237,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.641,
+        "coverage": 0.643,
+        "asr_probability": 0.996,
+        "matched_syllables": 5,
+        "expected_syllables": 7,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-048",
+      "section_id": "chorus_2",
+      "text": "便借一轮月",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 176680,
+      "end_ms": 178650,
+      "timing": {
+        "start": {
+          "value_ms": 176680,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 178650,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 178600,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5300,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.8,
+        "coverage": 0.8,
+        "asr_probability": 0.999,
+        "matched_syllables": 4,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-049",
+      "section_id": "chorus_2",
+      "text": "不问阴晴",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 178650,
+      "end_ms": 179640,
+      "timing": {
+        "start": {
+          "value_ms": 178650,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 179640,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 179590,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5360,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.998,
+        "coverage": 1.0,
+        "asr_probability": 0.996,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-050",
+      "section_id": "chorus_2",
+      "text": "不问圆缺",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 179640,
+      "end_ms": 181160,
+      "timing": {
+        "start": {
+          "value_ms": 179640,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 181160,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 181110,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5389,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.998,
+        "coverage": 1.0,
+        "asr_probability": 0.997,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-051",
+      "section_id": "chorus_2",
+      "text": "若此夜",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 181160,
+      "end_ms": 182410,
+      "timing": {
+        "start": {
+          "value_ms": 181160,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 182410,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 182360,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5435,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.832,
+        "coverage": 0.833,
+        "asr_probability": 0.997,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-052",
+      "section_id": "chorus_2",
+      "text": "温度依偎在身边",
+      "performers": [
+        {
+          "id": "performer-14",
+          "role": "lead"
+        },
+        {
+          "id": "performer-09",
+          "role": "backing"
+        },
+        {
+          "id": "performer-10",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 182410,
+      "end_ms": 184810,
+      "timing": {
+        "start": {
+          "value_ms": 182410,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 184810,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 184760,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5472,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.925,
+        "coverage": 0.929,
+        "asr_probability": 0.994,
+        "matched_syllables": 7,
+        "expected_syllables": 7,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-053",
+      "section_id": "chorus_2",
+      "text": "回应时",
+      "performers": [
+        {
+          "id": "performer-19",
+          "role": "lead"
+        },
+        {
+          "id": "performer-03",
+          "role": "backing"
+        },
+        {
+          "id": "performer-04",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 184810,
+      "end_ms": 186120,
+      "timing": {
+        "start": {
+          "value_ms": 184810,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 186120,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 186070,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5544,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.455,
+        "coverage": 0.667,
+        "asr_probability": 0.512,
+        "matched_syllables": 2,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-054",
+      "section_id": "chorus_2",
+      "text": "也算相见",
+      "performers": [
+        {
+          "id": "performer-19",
+          "role": "lead"
+        },
+        {
+          "id": "performer-03",
+          "role": "backing"
+        },
+        {
+          "id": "performer-04",
+          "role": "backing"
+        }
+      ],
+      "start_ms": 186120,
+      "end_ms": 189700,
+      "timing": {
+        "start": {
+          "value_ms": 186120,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 189700,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 190700,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5584,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.978,
+        "coverage": 1.0,
+        "asr_probability": 0.966,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-055",
+      "section_id": "bridge",
+      "text": "风动",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 190860,
+      "end_ms": 191560,
+      "timing": {
+        "start": {
+          "value_ms": 190860,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 191560,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 191760,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5726,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.866,
+        "coverage": 1.0,
+        "asr_probability": 0.795,
+        "matched_syllables": 2,
+        "expected_syllables": 2,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-056",
+      "section_id": "bridge",
+      "text": "难晓是谁心动",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 191810,
+      "end_ms": 193910,
+      "timing": {
+        "start": {
+          "value_ms": 191810,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 193910,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 194910,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5754,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.873,
+        "coverage": 1.0,
+        "asr_probability": 0.805,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-057",
+      "section_id": "bridge",
+      "text": "云散",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 195950,
+      "end_ms": 197190,
+      "timing": {
+        "start": {
+          "value_ms": 195950,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 197190,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 197140,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5878,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.935,
+        "coverage": 1.0,
+        "asr_probability": 0.9,
+        "matched_syllables": 2,
+        "expected_syllables": 2,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-058",
+      "section_id": "bridge",
+      "text": "难晓是哪一程",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 197190,
+      "end_ms": 199360,
+      "timing": {
+        "start": {
+          "value_ms": 197190,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 199360,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 200360,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 5916,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.925,
+        "coverage": 1.0,
+        "asr_probability": 0.884,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-059",
+      "section_id": "bridge",
+      "text": "一樽江月还酹",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 200450,
+      "end_ms": 204240,
+      "timing": {
+        "start": {
+          "value_ms": 200450,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 204240,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 204500,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6014,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.671,
+        "coverage": 0.917,
+        "asr_probability": 0.588,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-060",
+      "section_id": "bridge",
+      "text": "吾心安处",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 204550,
+      "end_ms": 207220,
+      "timing": {
+        "start": {
+          "value_ms": 204550,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 207220,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 207170,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6136,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.613,
+        "coverage": 0.75,
+        "asr_probability": 0.72,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-061",
+      "section_id": "bridge",
+      "text": "是吾乡",
+      "performers": [
+        {
+          "id": "performer-15",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 207220,
+      "end_ms": 210250,
+      "timing": {
+        "start": {
+          "value_ms": 207220,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 210250,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 210200,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6217,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.745,
+        "coverage": 1.0,
+        "asr_probability": 0.608,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-062",
+      "section_id": "final_chorus",
+      "text": "借那像素点",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 210250,
+      "end_ms": 212250,
+      "timing": {
+        "start": {
+          "value_ms": 210250,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 212250,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 212580,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6308,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.597,
+        "coverage": 1.0,
+        "asr_probability": 0.38,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": [
+          "low_asr_probability"
+        ]
+      }
+    },
+    {
+      "id": "line-063",
+      "section_id": "final_chorus",
+      "text": "共赏一明月",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 212630,
+      "end_ms": 214700,
+      "timing": {
+        "start": {
+          "value_ms": 212630,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 214700,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 215460,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6379,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.832,
+        "coverage": 0.9,
+        "asr_probability": 0.884,
+        "matched_syllables": 5,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-064",
+      "section_id": "final_chorus",
+      "text": "你我隔着光年万千",
+      "performers": [
+        {
+          "id": "performer-17",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 215510,
+      "end_ms": 218310,
+      "timing": {
+        "start": {
+          "value_ms": 215510,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 218310,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 218260,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6465,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.789,
+        "coverage": 0.875,
+        "asr_probability": 0.848,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-065",
+      "section_id": "final_chorus",
+      "text": "共此刻",
+      "performers": [
+        {
+          "id": "performer-17",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 218310,
+      "end_ms": 219020,
+      "timing": {
+        "start": {
+          "value_ms": 218310,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 219020,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 218970,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6549,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.466,
+        "coverage": 0.5,
+        "asr_probability": 0.896,
+        "matched_syllables": 2,
+        "expected_syllables": 3,
+        "review_flags": [
+          "low_coverage",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-066",
+      "section_id": "final_chorus",
+      "text": "共聚散共未歇",
+      "performers": [
+        {
+          "id": "performer-20",
+          "role": "lead"
+        },
+        {
+          "id": "performer-21",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 219020,
+      "end_ms": 220540,
+      "timing": {
+        "start": {
+          "value_ms": 219020,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 220540,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 220490,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6571,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.724,
+        "coverage": 0.917,
+        "asr_probability": 0.676,
+        "matched_syllables": 6,
+        "expected_syllables": 6,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-067",
+      "section_id": "final_chorus",
+      "text": "若岁月冗长",
+      "performers": [
+        {
+          "id": "performer-20",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 220540,
+      "end_ms": 222100,
+      "timing": {
+        "start": {
+          "value_ms": 220540,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 222100,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 222050,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6616,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.644,
+        "coverage": 0.8,
+        "asr_probability": 0.7,
+        "matched_syllables": 4,
+        "expected_syllables": 5,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-068",
+      "section_id": "final_chorus",
+      "text": "慢慢走",
+      "performers": [
+        {
+          "id": "performer-21",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 222100,
+      "end_ms": 223400,
+      "timing": {
+        "start": {
+          "value_ms": 222100,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 223400,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 223350,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6663,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.9,
+        "coverage": 1.0,
+        "asr_probability": 0.846,
+        "matched_syllables": 3,
+        "expected_syllables": 3,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-069",
+      "section_id": "final_chorus",
+      "text": "慢慢相见",
+      "performers": [
+        {
+          "id": "performer-21",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 223400,
+      "end_ms": 224680,
+      "timing": {
+        "start": {
+          "value_ms": 223400,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 224680,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 224630,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6702,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.931,
+        "coverage": 1.0,
+        "asr_probability": 0.893,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-070",
+      "section_id": "final_chorus",
+      "text": "待清风又翻过窗前",
+      "performers": [
+        {
+          "id": "performer-20",
+          "role": "lead"
+        },
+        {
+          "id": "performer-21",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 224680,
+      "end_ms": 229630,
+      "timing": {
+        "start": {
+          "value_ms": 224680,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 229630,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 229580,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6740,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.749,
+        "coverage": 0.938,
+        "asr_probability": 0.691,
+        "matched_syllables": 8,
+        "expected_syllables": 8,
+        "review_flags": []
+      }
+    },
+    {
+      "id": "line-071",
+      "section_id": "final_chorus",
+      "text": "你仍在",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "lead"
+        },
+        {
+          "id": "performer-17",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "lead"
+        },
+        {
+          "id": "performer-19",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 229630,
+      "end_ms": 232480,
+      "timing": {
+        "start": {
+          "value_ms": 229630,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 232480,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 232430,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6889,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.333,
+        "coverage": 0.333,
+        "asr_probability": 0.996,
+        "matched_syllables": 1,
+        "expected_syllables": 3,
+        "review_flags": [
+          "low_coverage",
+          "short_line_ambiguous"
+        ]
+      }
+    },
+    {
+      "id": "line-072",
+      "section_id": "final_chorus",
+      "text": "月色里面",
+      "performers": [
+        {
+          "id": "performer-16",
+          "role": "lead"
+        },
+        {
+          "id": "performer-17",
+          "role": "lead"
+        },
+        {
+          "id": "performer-18",
+          "role": "lead"
+        },
+        {
+          "id": "performer-19",
+          "role": "lead"
+        }
+      ],
+      "start_ms": 232480,
+      "end_ms": 234440,
+      "timing": {
+        "start": {
+          "value_ms": 232480,
+          "source": "human_waveform_mark",
+          "status": "reference"
+        },
+        "vocal_end": {
+          "value_ms": 234440,
+          "source": "separated_vocal_estimate",
+          "status": "estimate"
+        },
+        "subtitle_end": {
+          "value_ms": 235440,
+          "source": "editorial_subtitle_timing",
+          "status": "display_only"
+        },
+        "start_frame": {
+          "value": 6974,
+          "fps": 30
+        },
+        "exception": null
+      },
+      "alignment": {
+        "status": "draft_unverified",
+        "method": "whisper_token_pinyin_alignment",
+        "confidence": 0.693,
+        "coverage": 0.875,
+        "asr_probability": 0.68,
+        "matched_syllables": 4,
+        "expected_syllables": 4,
+        "review_flags": [
+          "short_line_ambiguous"
+        ]
+      }
+    }
+  ],
+  "instrument_events": [
+    {
+      "id": "instrument-event-01",
+      "start_ms": 23000,
+      "end_ms": 34000,
+      "instruments": [
+        "古筝",
+        "钢琴",
+        "吉他"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-02",
+      "start_ms": 34000,
+      "end_ms": 54000,
+      "instruments": [
+        "吉他",
+        "提琴",
+        "古筝"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-03",
+      "start_ms": 54000,
+      "end_ms": 60000,
+      "instruments": [
+        "",
+        "手风琴",
+        "架子鼓"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-04",
+      "start_ms": 109000,
+      "end_ms": 128000,
+      "instruments": [
+        "横笛",
+        "古筝"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-05",
+      "start_ms": 129000,
+      "end_ms": 150000,
+      "instruments": [
+        "电子琴",
+        "架子鼓"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-06",
+      "start_ms": 151000,
+      "end_ms": 210000,
+      "instruments": [
+        "电子琴",
+        "古筝",
+        "钢琴",
+        "琵琶"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-07",
+      "start_ms": 210000,
+      "end_ms": 219000,
+      "instruments": [
+        "吉他"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-08",
+      "start_ms": 220000,
+      "end_ms": 237000,
+      "instruments": [
+        "电子琴",
+        "风琴",
+        "架子鼓"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    },
+    {
+      "id": "instrument-event-09",
+      "start_ms": 237000,
+      "end_ms": 249594,
+      "instruments": [
+        "吉他",
+        "古筝",
+        "架子鼓"
+      ],
+      "source": "human_annotation",
+      "precision": "coarse"
+    }
+  ],
+  "mv_scenes": [
+    {
+      "id": "acap1",
+      "start_ms": 0,
+      "end_ms": 13060,
+      "description": "屋顶上一只小机在打盹，一片花瓣飘过；片名「借月」",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "acap2",
+      "start_ms": 13060,
+      "end_ms": 23300,
+      "description": "厨房里准备月饼",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "intro",
+      "start_ms": 23300,
+      "end_ms": 33780,
+      "description": "月饼特写 → 灯笼桌 → 街道，片头字幕",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "v1",
+      "start_ms": 33780,
+      "end_ms": 54470,
+      "description": "街上挂灯笼，有一盏挂歪了被扶正；天色渐暗，灯笼依次点亮",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "v1c",
+      "start_ms": 54470,
+      "end_ms": 74350,
+      "description": "夕阳下跑过拱桥 → 阴天屋顶摆桌、抛月饼",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "pre1",
+      "start_ms": 74350,
+      "end_ms": 87170,
+      "description": "云太厚：搬来望远镜，望远镜视角，云后透出光",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "ch1",
+      "start_ms": 87170,
+      "end_ms": 109920,
+      "description": "云散开、跳起来；月饼对月亮「咬一口」的小笑话",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "int1",
+      "start_ms": 109920,
+      "end_ms": 128400,
+      "description": "对着巨大月亮吹笛 → 屋顶喝茶",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "v2",
+      "start_ms": 128400,
+      "end_ms": 149590,
+      "description": "猜灯谜「越借越圆的是什么？」、兔子灯 → 屋檐下避雨，荷叶伞",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "pre2",
+      "start_ms": 149590,
+      "end_ms": 166270,
+      "description": "手机视频里的玄砚 → 小镇各处亮起屏幕光",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "ch2",
+      "start_ms": 166270,
+      "end_ms": 190460,
+      "description": "屋顶音乐会 + 烟花；鼓、琵琶古筝特写",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "bridge",
+      "start_ms": 190460,
+      "end_ms": 201850,
+      "description": "独自坐在河边台阶，给水里的月亮倒一杯茶",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "solo",
+      "start_ms": 201850,
+      "end_ms": 209850,
+      "description": "大家睡成一堆，只剩一个还在弹吉他",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "fin",
+      "start_ms": 209850,
+      "end_ms": 229180,
+      "description": "视频通话 → 挤在一起自拍（闪光）→ 两两走回家",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "int2",
+      "start_ms": 229180,
+      "end_ms": 238980,
+      "description": "屋顶放孔明灯，镜头跟着升上月亮",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "fin2",
+      "start_ms": 238980,
+      "end_ms": 249200,
+      "description": "小镇一盏盏熄灯 → 最后一扇窗挥手、关灯",
+      "source": "mv_editor_reference"
+    },
+    {
+      "id": "credits",
+      "start_ms": 249200,
+      "end_ms": 255000,
+      "description": "片尾：21 位小机依次画出",
+      "source": "mv_editor_reference"
+    }
+  ],
+  "beats": {
+    "timestamps_ms": [
+      3622,
+      4319,
+      5039,
+      5689,
+      6339,
+      6943,
+      7570,
+      8220,
+      8847,
+      9474,
+      10054,
+      10728,
+      11331,
+      11935,
+      12562,
+      13189,
+      13816,
+      14466,
+      15116,
+      15720,
+      16324,
+      16951,
+      17531,
+      18228,
+      18901,
+      19458,
+      20085,
+      20782,
+      21478,
+      22175,
+      22918,
+      23638,
+      24288,
+      24915,
+      25565,
+      26192,
+      26842,
+      27469,
+      28119,
+      28746,
+      29396,
+      30023,
+      30674,
+      31300,
+      31974,
+      32601,
+      33251,
+      33878,
+      34505,
+      35132,
+      35828,
+      36479,
+      37105,
+      37732,
+      38383,
+      39056,
+      39660,
+      40287,
+      40937,
+      41564,
+      42214,
+      42841,
+      43491,
+      44118,
+      44768,
+      45395,
+      46045,
+      46672,
+      47322,
+      47949,
+      48599,
+      49273,
+      49876,
+      50503,
+      51130,
+      51757,
+      52407,
+      53058,
+      53708,
+      54335,
+      54962,
+      55612,
+      56239,
+      56842,
+      57516,
+      58166,
+      58793,
+      59443,
+      60070,
+      60720,
+      61347,
+      61997,
+      62624,
+      63274,
+      63901,
+      64551,
+      65178,
+      65829,
+      66456,
+      67036,
+      67733,
+      68383,
+      69010,
+      69660,
+      70287,
+      70914,
+      71564,
+      72214,
+      72841,
+      73491,
+      74118,
+      74768,
+      75395,
+      76022,
+      76603,
+      77230,
+      77903,
+      78600,
+      79226,
+      79877,
+      80504,
+      81084,
+      81688,
+      82315,
+      82988,
+      83638,
+      84358,
+      85008,
+      85612,
+      86239,
+      86889,
+      87539,
+      88166,
+      88793,
+      89443,
+      90070,
+      90697,
+      91347,
+      91997,
+      92648,
+      93251,
+      93878,
+      94552,
+      95179,
+      95829,
+      96456,
+      97106,
+      97756,
+      98383,
+      99010,
+      99637,
+      100217,
+      100914,
+      101494,
+      102191,
+      102864,
+      103468,
+      104118,
+      104745,
+      105395,
+      106022,
+      106672,
+      107323,
+      108042,
+      108623,
+      109227,
+      109854,
+      110504,
+      111131,
+      111781,
+      112408,
+      113058,
+      113685,
+      114335,
+      114962,
+      115612,
+      116239,
+      116889,
+      117516,
+      118143,
+      118793,
+      119443,
+      120070,
+      120721,
+      121347,
+      121998,
+      122625,
+      123275,
+      123902,
+      124552,
+      125179,
+      125829,
+      126456,
+      127106,
+      127733,
+      128360,
+      128940,
+      129637,
+      130287,
+      130891,
+      131564,
+      132191,
+      132841,
+      133468,
+      134095,
+      134722,
+      135396,
+      136046,
+      136673,
+      137300,
+      137950,
+      138577,
+      139227,
+      139854,
+      140504,
+      141131,
+      141781,
+      142408,
+      143058,
+      143685,
+      144335,
+      144962,
+      145612,
+      146239,
+      146866,
+      147516,
+      148143,
+      148793,
+      149444,
+      150071,
+      150721,
+      151348,
+      151998,
+      152625,
+      153275,
+      153902,
+      154529,
+      155179,
+      155829,
+      156456,
+      157083,
+      157733,
+      158360,
+      159010,
+      159637,
+      160287,
+      160914,
+      161588,
+      162191,
+      162842,
+      163515,
+      164142,
+      164792,
+      165396,
+      166046,
+      166673,
+      167323,
+      167950,
+      168577,
+      169227,
+      169854,
+      170504,
+      171131,
+      171804,
+      172408,
+      173035,
+      173685,
+      174335,
+      174962,
+      175613,
+      176239,
+      176890,
+      177517,
+      178167,
+      178794,
+      179374,
+      180071,
+      180698,
+      181348,
+      181998,
+      182625,
+      183252,
+      183902,
+      184552,
+      185179,
+      185829,
+      186479,
+      187106,
+      187757,
+      188360,
+      189010,
+      189637,
+      190288,
+      190914,
+      191565,
+      192215,
+      192842,
+      193469,
+      194119,
+      194746,
+      195396,
+      196023,
+      196673,
+      197323,
+      197950,
+      198577,
+      199227,
+      199854,
+      200481,
+      201131,
+      201781,
+      202408,
+      203059,
+      203685,
+      204312,
+      204963,
+      205589,
+      206147,
+      206727,
+      207331,
+      207981,
+      208608,
+      209305,
+      210001,
+      210698,
+      211441,
+      212068,
+      212718,
+      213345,
+      213972,
+      214599,
+      215249,
+      215899,
+      216503,
+      217153,
+      217803,
+      218430,
+      219034,
+      219707,
+      220334,
+      220961,
+      221588,
+      222238,
+      222865,
+      223515,
+      224142,
+      224792,
+      225419,
+      226069,
+      226696,
+      227300,
+      227974,
+      228624,
+      229251,
+      229924,
+      230574,
+      231224,
+      231851,
+      232501,
+      233128,
+      233755,
+      234382,
+      235032,
+      235683,
+      236309,
+      236960,
+      237587,
+      238237,
+      238864,
+      239514,
+      240141,
+      240791,
+      241441,
+      242091,
+      242741,
+      243438,
+      244042,
+      244645,
+      245249,
+      245899
+    ],
+    "source": "automatic_librosa_detection",
+    "status": "unverified_reference_only"
+  }
+}

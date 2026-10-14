@@ -2,7 +2,7 @@
 
 《借月》人机双端音乐展厅的独立仓库。
 
-当前状态：Phase 0 技术验证与音乐时间轴初稿。GitHub 独立仓库已创建；已生成待人工校对的歌词时间轴；尚未创建或连接任何 Railway、对象存储、生产域名或付费资源。
+当前状态：Phase 0 技术验证与音乐时间轴校对。GitHub 独立仓库已创建；终版 MV 使用的人工开口时间已导入为校对基准；尚未创建或连接任何 Railway、对象存储、生产域名或付费资源。
 
 ## 隔离原则
 
@@ -13,6 +13,6 @@
 
 Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-assessment.md)，已确认素材见 [docs/asset-inventory.md](docs/asset-inventory.md)。
 
-歌词时间轴初稿位于 `data/songs/jieyue/timeline.draft.json`，人工校对表位于 [docs/timeline-review.md](docs/timeline-review.md)。所有自动时间戳在人工试听确认前均不得标记为正式数据。
+当前校对基准位于 `data/songs/jieyue/timeline.reference.json`，Whisper 旧初稿保留在 `data/songs/jieyue/timeline.draft.json` 作为对照。人工开口、估算唱完、字幕显示边界和自动节拍在数据中分别标注，不会混作同一种精度。
 
 本地歌词时间轴校对器位于 [tools/timeline-review](tools/timeline-review/README.md)。它直接读取本机母带，在浏览器本地保存进度并导出带人工审核记录的 JSON；不会上传或提交音频文件。
