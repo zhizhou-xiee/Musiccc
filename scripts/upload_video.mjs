@@ -14,7 +14,7 @@ function first(...names) {
   throw new Error(`Missing ${names.join(" or ")}. Run this command through Railway with Bucket variable references.`);
 }
 
-const input = process.argv[2];
+const input = process.argv.slice(2).find((argument) => argument !== "--");
 if (!input) {
   throw new Error("Usage: pnpm upload:video -- /absolute/path/to/video.mp4");
 }
