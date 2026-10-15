@@ -32,7 +32,7 @@ const contentTypes: Record<string, string> = {
 };
 
 function allowedHostnames(): string[] {
-  const values = new Set(["localhost", "127.0.0.1", "[::1]"]);
+  const values = new Set(["localhost", "127.0.0.1", "[::1]", "crotown.app"]);
   for (const value of (process.env.ALLOWED_HOSTS ?? "").split(",")) {
     if (value.trim()) values.add(value.trim());
   }

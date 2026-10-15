@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "musiccc-path-router",
+  "main": "worker.ts",
+  "compatibility_date": "2026-10-15",
+  "routes": [
+    {
+      "pattern": "crotown.app/music*",
+      "zone_name": "crotown.app"
+    }
+  ]
+}

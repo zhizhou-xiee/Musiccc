@@ -37,6 +37,11 @@ test("/music uses prefix-safe absolute asset paths", async () => {
     assert.equal(song.media.video_url, "/music/media/jieyue-mv-720p.mp4");
     assert.equal(song.media.poster_url, "/music/assets/poster.jpg");
 
+    const formalDomainPage = await fetch(`${base}/music`, {
+      headers: { host: "crotown.app", origin: "https://crotown.app" },
+    });
+    assert.equal(formalDomainPage.status, 200);
+
     process.env.JIEYUE_VIDEO_URL = "https://media.example/jieyue.mp4";
     const configuredSong = (await (await fetch(`${base}/music/data/song.json`)).json()) as {
       media: { video_url: string };
