@@ -4,6 +4,8 @@
 
 当前状态：Phase 0 技术路线已锁定，Phase 1 人类网页与 Phase 3 MCP 初版已部署到独立 Railway 临时域名；音乐时间轴仍保留逐项人工校对状态。GitHub 与 Railway 均独立于迎风小镇；对象存储和正式域名尚未连接。
 
+Railway 的授权隔离边界与媒体上传方案见 [docs/railway-media.md](docs/railway-media.md)。Musiccc 可以与 Readdd 共享 Railway Project，但保持独立 Service 与资源；迎风小镇位于另一 Project，禁止引用。
+
 ## 隔离原则
 
 - 本仓库必须独立于迎风小镇主仓库、数据库、内部 API 和现有 MCP 服务运行。

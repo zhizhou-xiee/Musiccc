@@ -6,6 +6,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { hostHeaderValidation, originValidation, toNodeHandler } from "@modelcontextprotocol/node";
 
 import { musicMcpHandler } from "./mcp.js";
+import { signedBucketVideoUrl } from "./bucket-media.js";
 import { createRateLimiter } from "./rate-limit.js";
 
 const projectRoot = fileURLToPath(new URL("../..", import.meta.url));
@@ -177,6 +178,25 @@ export function createMusicHttpServer() {
     if (request.method !== "GET" && request.method !== "HEAD") {
       response.setHeader("Allow", "GET, HEAD");
       sendJson(response, 405, { error: "method_not_allowed" });
+      return;
+    }
+    if (pathname === "/music/media/jieyue-mv-720p.mp4") {
+      void signedBucketVideoUrl()
+        .then((url) => {
+          if (url) {
+            response.writeHead(307, {
+              Location: url,
+              "Cache-Control": "private, max-age=300",
+            });
+            response.end();
+            return;
+          }
+          serveFile(request, response, resolve(webRoot, "media", "jieyue-mv-720p.mp4"));
+        })
+        .catch((error: unknown) => {
+          console.error("Bucket video URL failed:", error instanceof Error ? error.message : "unknown error");
+          if (!response.headersSent) sendJson(response, 503, { error: "video_temporarily_unavailable" });
+        });
       return;
     }
     if (pathname === "/music/data/song.json") {

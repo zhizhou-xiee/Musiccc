@@ -1,0 +1,33 @@
+# Railway 媒体部署
+
+## 已确认边界
+
+负责人已确认：Musiccc 可以与 Readdd 位于同一 Railway Project；“独立”的本意是不得混入迎风小镇。Musiccc 仍使用独立 Service、Bucket、变量、部署和日志，不引用 CRO-TOWN 的数据库、变量、内部网络或 API。
+
+本机 Railway CLI 旧链接仍指向 CRO-TOWN。在执行任何写操作前，必须显式重新链接并核对 Project 与 Service；不得依赖当前目录遗留状态。
+
+## 推荐媒体路径
+
+720p MV 存入 Musiccc 专属的 Railway Bucket `jieyue-media`。Bucket 为私有；应用访问 `/music/media/jieyue-mv-720p.mp4` 时生成六小时有效的签名 GET URL，并以 307 跳转，让浏览器直接从 Bucket 获取视频。这样保留 Range 请求能力，也不让视频流经过应用进程。
+
+Railway 当前 Bucket 价格为 `$0.015 / GB-month`，API 操作和 Bucket egress 免费。27 MB 文件的月度用量会参与 Workspace 总量计算并按官方规则取整。未经负责人明确批准，不创建 Bucket。
+
+## Bucket 创建后的配置
+
+在 Musiccc Service 的 Variables 中使用 Railway 的 Bucket 自动注入功能。服务兼容 Railway 原生变量名：
+
+- `ENDPOINT`
+- `ACCESS_KEY_ID`
+- `SECRET_ACCESS_KEY`
+- `BUCKET`
+- `REGION`
+
+也支持带 `JIEYUE_BUCKET_` 前缀的同义变量，以避免未来同一 Service 接入多个 Bucket。凭据只保存在 Railway 变量中，不写入 Git、文档或日志。
+
+上传命令必须在确认 CLI 已链接到 Musiccc Service 后执行：
+
+```bash
+railway run pnpm upload:video -- "/Users/htc/Desktop/借月MV_小机们的中秋_预览720p.mp4"
+```
+
+脚本上传为 `jieyue-mv-720p.mp4`，设置 `video/mp4` 和一天缓存，并用 `HeadObject` 校验远端大小。上传完成后的验收还必须检查 307 跳转、200/206 Range、Content-Type、拖动、桌面浏览器与真机 iPhone Safari。

@@ -48,6 +48,51 @@ test("/music uses prefix-safe absolute asset paths", async () => {
   }
 });
 
+test("private Bucket media redirects to a short-lived signed URL", async () => {
+  const names = [
+    "JIEYUE_BUCKET_ENDPOINT",
+    "JIEYUE_BUCKET_ACCESS_KEY_ID",
+    "JIEYUE_BUCKET_SECRET_ACCESS_KEY",
+    "JIEYUE_BUCKET_NAME",
+    "JIEYUE_BUCKET_REGION",
+    "JIEYUE_BUCKET_URL_STYLE",
+    "JIEYUE_BUCKET_KEY",
+  ] as const;
+  const previous = Object.fromEntries(names.map((name) => [name, process.env[name]]));
+  Object.assign(process.env, {
+    JIEYUE_BUCKET_ENDPOINT: "https://storage.example",
+    JIEYUE_BUCKET_ACCESS_KEY_ID: "test-access-key",
+    JIEYUE_BUCKET_SECRET_ACCESS_KEY: "test-secret-key",
+    JIEYUE_BUCKET_NAME: "jieyue-media-test",
+    JIEYUE_BUCKET_REGION: "auto",
+    JIEYUE_BUCKET_URL_STYLE: "virtual",
+    JIEYUE_BUCKET_KEY: "jieyue-mv-720p.mp4",
+  });
+  const server = createMusicHttpServer();
+  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const address = server.address() as AddressInfo;
+  try {
+    const response = await fetch(
+      `http://127.0.0.1:${address.port}/music/media/jieyue-mv-720p.mp4`,
+      { redirect: "manual" },
+    );
+    assert.equal(response.status, 307);
+    const location = response.headers.get("location") ?? "";
+    assert.match(location, /^https:\/\/jieyue-media-test\.storage\.example\/jieyue-mv-720p\.mp4\?/);
+    assert.match(location, /X-Amz-Algorithm=AWS4-HMAC-SHA256/);
+    assert.doesNotMatch(location, /test-secret-key/);
+  } finally {
+    for (const name of names) {
+      const value = previous[name];
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+    await new Promise<void>((resolve, reject) =>
+      server.close((error) => (error ? reject(error) : resolve())),
+    );
+  }
+});
+
 test("Streamable HTTP initializes, discovers and calls all four tools", async () => {
   const server = createMusicHttpServer();
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));

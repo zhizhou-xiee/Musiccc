@@ -17,6 +17,8 @@ python3 scripts/build_web_data.py
 
 部署时可以用 `JIEYUE_VIDEO_URL` 指定对象存储/CDN 的 HTTPS 地址，服务会在运行时将它写入网页数据；未设置时使用 `/music/media/jieyue-mv-720p.mp4`。
 
+Railway 私有 Bucket 模式无需公开 URL。将 Bucket 变量自动注入 Service 后，媒体路径会 307 跳转到短期签名 URL；本地上传使用根目录的 `pnpm upload:video -- /absolute/path/video.mp4`。
+
 ## 本地媒体
 
 源 MP4 不进入普通 Git 历史。本地预览时，将获准公开的文件复制为：
