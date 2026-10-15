@@ -1,0 +1,19 @@
+{
+  "mss_version": "0.3",
+  "source": "data/songs/jieyue/experiments/mss-curve-poc/outputs/mss.curves.json",
+  "network_calls": 0,
+  "model_api_calls": 0,
+  "event_count": 33,
+  "curve_keypoints": 8,
+  "compact": {
+    "utf8_bytes": 1009,
+    "unicode_characters": 727,
+    "estimated_tokens_low": 253,
+    "estimated_tokens_high": 337
+  },
+  "acceptance_targets": {
+    "actual_music_payload_tokens_max": 800,
+    "objective_mean_min": 9.1667,
+    "unsupported_factual_claims_max": 1
+  }
+}

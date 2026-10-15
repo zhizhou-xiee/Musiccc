@@ -1,0 +1,39 @@
+{
+  "model": "openai/gpt-6-luna",
+  "family": "GPT",
+  "repetition": 1,
+  "seed": 17,
+  "condition": "d_mss_v03",
+  "status": "ok",
+  "elapsed_ms": 4059,
+  "response_id": "gen-1792049053-bGoUhXaqrFFWbvlfFBcw",
+  "resolved_model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "usage": {
+    "prompt_tokens": 2556,
+    "completion_tokens": 16,
+    "total_tokens": 2572,
+    "cost": 0.000327425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 2553,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000327425,
+      "upstream_inference_prompt_cost": 0.000319425,
+      "upstream_inference_completions_cost": 8e-06
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "candidate_token_delta": 597,
+  "finish_reason": "length",
+  "native_finish_reason": "max_output_tokens",
+  "content": "## 客观题\n\n1. **事实：**53."
+}

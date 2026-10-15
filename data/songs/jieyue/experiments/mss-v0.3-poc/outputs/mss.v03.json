@@ -1,0 +1,791 @@
+{
+  "mss_version": "0.3",
+  "track": {
+    "song_id": "jieyue",
+    "title": "借月",
+    "duration_ms": 249594,
+    "audio_sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c"
+  },
+  "policy": {
+    "facts_only": true,
+    "emotion_labels": false,
+    "metaphors": false,
+    "audio_heard_by_receiver": false,
+    "automatic_curves_verified": false
+  },
+  "events": [
+    {
+      "id": "detail-event-001",
+      "start_ms": 23851,
+      "section": "in",
+      "background": [
+        "piano"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 25718
+    },
+    {
+      "id": "detail-event-002",
+      "start_ms": 25718,
+      "section": "in",
+      "background": [
+        "guitar"
+      ],
+      "foreground": [
+        "piano"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [
+        "guitar"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 28490
+    },
+    {
+      "id": "detail-event-003",
+      "start_ms": 28490,
+      "section": "in",
+      "background": [
+        "guitar"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [
+        "guzheng"
+      ],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 34080
+    },
+    {
+      "id": "detail-event-004",
+      "start_ms": 35379,
+      "section": "v1",
+      "background": [
+        "guitar"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [
+        "guitar"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 53285
+    },
+    {
+      "id": "detail-event-005",
+      "start_ms": 53285,
+      "section": "v1",
+      "background": [
+        "guitar"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-006",
+      "start_ms": 55593,
+      "section": "v1",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 74316
+    },
+    {
+      "id": "detail-event-007",
+      "start_ms": 58795,
+      "section": "v1",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-008",
+      "start_ms": 64100,
+      "section": "v1",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard",
+        "shaker?",
+        "drums"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [
+        "shaker?",
+        "drums"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [
+        "brief_harmony"
+      ]
+    },
+    {
+      "id": "detail-event-009",
+      "start_ms": 74316,
+      "section": "v1",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-010",
+      "start_ms": 75640,
+      "section": "p1",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [
+        "drums"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 86243
+    },
+    {
+      "id": "detail-event-011",
+      "start_ms": 86243,
+      "section": "p1",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-012",
+      "start_ms": 87470,
+      "section": "c1",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard",
+        "shaker?",
+        "drums",
+        "gong_percussion?"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 106764
+    },
+    {
+      "id": "detail-event-013",
+      "start_ms": 106764,
+      "section": "c1",
+      "background": [],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [
+        "all"
+      ],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-014",
+      "start_ms": 109358,
+      "section": "it",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [
+        "dizi"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [
+        "dizi"
+      ],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 119138
+    },
+    {
+      "id": "detail-event-015",
+      "start_ms": 119138,
+      "section": "it",
+      "background": [
+        "low_wind?",
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [],
+      "foreground_candidates": [
+        "guzheng",
+        "pipa"
+      ],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [
+        "guzheng",
+        "pipa"
+      ],
+      "foreground_exit": [
+        "dizi"
+      ],
+      "tags": [],
+      "end_ms": 127558
+    },
+    {
+      "id": "detail-event-016",
+      "start_ms": 127558,
+      "section": "it",
+      "background": [],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [
+        "other_instruments"
+      ],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 128700
+    },
+    {
+      "id": "detail-event-017",
+      "start_ms": 129712,
+      "section": "v2",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums",
+        "shaker?"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [
+        "drums"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 149890
+    },
+    {
+      "id": "detail-event-018",
+      "start_ms": 149917,
+      "section": "p2",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 163708
+    },
+    {
+      "id": "detail-event-019",
+      "start_ms": 152761,
+      "section": "p2",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-020",
+      "start_ms": 158631,
+      "section": "p2",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-021",
+      "start_ms": 163708,
+      "section": "p2",
+      "background": [],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [
+        "all"
+      ],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-022",
+      "start_ms": 166734,
+      "section": "c2",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [
+        "drums"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 186815
+    },
+    {
+      "id": "detail-event-023",
+      "start_ms": 186815,
+      "section": "c2",
+      "background": [],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [
+        "all"
+      ],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-024",
+      "start_ms": 190860,
+      "section": "br",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [
+        "keyboard"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 210250
+    },
+    {
+      "id": "detail-event-025",
+      "start_ms": 193668,
+      "section": "br",
+      "background": [
+        "low_strings_or_bass?",
+        "drums"
+      ],
+      "foreground": [
+        "keyboard"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-026",
+      "start_ms": 195413,
+      "section": "br",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [
+        "brief_harmony"
+      ]
+    },
+    {
+      "id": "detail-event-033",
+      "start_ms": 199360,
+      "section": "br",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [
+        "brief_rise"
+      ],
+      "end_ms": 200450
+    },
+    {
+      "id": "detail-event-027",
+      "start_ms": 210250,
+      "section": "br",
+      "background": [],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [
+        "all"
+      ],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": []
+    },
+    {
+      "id": "detail-event-028",
+      "start_ms": 210738,
+      "section": "fc",
+      "background": [
+        "guitar"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 219117
+    },
+    {
+      "id": "detail-event-029",
+      "start_ms": 219117,
+      "section": "fc",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [
+        "drums"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 234440
+    },
+    {
+      "id": "detail-event-030",
+      "start_ms": 234440,
+      "section": "ou",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 249594
+    },
+    {
+      "id": "detail-event-031",
+      "start_ms": 235060,
+      "section": "ou",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [
+        "guzheng"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [],
+      "tags": [],
+      "end_ms": 242489
+    },
+    {
+      "id": "detail-event-032",
+      "start_ms": 242489,
+      "section": "ou",
+      "background": [
+        "low_strings_or_bass?",
+        "keyboard",
+        "drums"
+      ],
+      "foreground": [
+        "guitar"
+      ],
+      "foreground_candidates": [],
+      "background_enter": [
+        "guitar"
+      ],
+      "background_exit": [],
+      "foreground_enter": [],
+      "foreground_exit": [
+        "guzheng"
+      ],
+      "tags": [],
+      "end_ms": 249594
+    }
+  ],
+  "curves": [
+    {
+      "id": "loudness",
+      "status": "automatic_unverified",
+      "quantization": "song_percentile_2_98_to_0_63",
+      "keypoints": [
+        [
+          1750,
+          0
+        ],
+        [
+          50750,
+          62
+        ],
+        [
+          215250,
+          27
+        ],
+        [
+          225250,
+          63
+        ],
+        [
+          231750,
+          24
+        ],
+        [
+          242250,
+          63
+        ],
+        [
+          249594,
+          12
+        ]
+      ]
+    },
+    {
+      "id": "centroid",
+      "status": "automatic_unverified",
+      "quantization": "song_percentile_2_98_to_0_63",
+      "keypoints": [
+        [
+          3750,
+          63
+        ],
+        [
+          6750,
+          0
+        ],
+        [
+          13750,
+          63
+        ],
+        [
+          37750,
+          1
+        ],
+        [
+          131750,
+          63
+        ],
+        [
+          132250,
+          3
+        ],
+        [
+          191750,
+          63
+        ],
+        [
+          249594,
+          9
+        ]
+      ]
+    },
+    {
+      "id": "flux",
+      "status": "automatic_unverified",
+      "quantization": "song_percentile_2_98_to_0_63",
+      "keypoints": [
+        [
+          3750,
+          5
+        ],
+        [
+          228750,
+          63
+        ],
+        [
+          249594,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "onset_energy",
+      "status": "automatic_unverified",
+      "quantization": "song_percentile_2_98_to_0_63",
+      "keypoints": [
+        [
+          1750,
+          0
+        ],
+        [
+          3750,
+          63
+        ],
+        [
+          21750,
+          0
+        ],
+        [
+          23750,
+          63
+        ],
+        [
+          25250,
+          2
+        ],
+        [
+          150250,
+          63
+        ],
+        [
+          249594,
+          3
+        ]
+      ]
+    }
+  ],
+  "unknown": [
+    "melody_contour",
+    "key",
+    "meter"
+  ],
+  "source_ids": [
+    "project_lead_listening_notes",
+    "final_mp3_offline_measurement"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "repetition": 1,
+  "seed": 17,
+  "condition": "d_mss_v03",
+  "status": "ok",
+  "elapsed_ms": 1311,
+  "response_id": "gen-1792049052-EpolgIMYw2e4cJjWOVgY",
+  "resolved_model": "google/gemini-3.8-flash",
+  "provider": "Google",
+  "usage": {},
+  "candidate_token_delta": -2437,
+  "finish_reason": "length",
+  "native_finish_reason": "MAX_TOKENS",
+  "content": null
+}

@@ -1,0 +1,48 @@
+{
+  "run_id": "20261015T072504Z",
+  "started_at": "2026-10-15T07:25:04.087582+00:00",
+  "plan": {
+    "mode": "execute",
+    "run_type": "token-check",
+    "inference_calls": 3,
+    "candidate_utf8_bytes": 1207,
+    "worst_case_estimated_usd": 0.004826,
+    "approved_cap_usd": 0.01
+  },
+  "baseline_prompt_tokens": {
+    "GPT": 1959,
+    "Gemini": 2437,
+    "Claude": 2449
+  },
+  "jobs": [
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "repetition": 1,
+      "seed": 17,
+      "condition": "d_mss_v03",
+      "file": "20261015T072504Z.01.claude.d_mss_v03.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "repetition": 1,
+      "seed": 17,
+      "condition": "d_mss_v03",
+      "file": "20261015T072504Z.02.gemini.d_mss_v03.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "repetition": 1,
+      "seed": 17,
+      "condition": "d_mss_v03",
+      "file": "20261015T072504Z.03.gpt.d_mss_v03.r1.json",
+      "status": "ok"
+    }
+  ],
+  "actual_cost_usd": 0.003181475,
+  "finished_at": "2026-10-15T07:25:08.626000+00:00"
+}

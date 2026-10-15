@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-haiku-5.5",
+  "family": "Claude",
+  "repetition": 1,
+  "seed": 17,
+  "condition": "d_mss_v03",
+  "status": "ok",
+  "elapsed_ms": 1314,
+  "response_id": "gen-1792049420-zI71B63gJAjG96gzxsTS",
+  "resolved_model": "anthropic/claude-haiku-5.5",
+  "provider": "Claude Platform on AWS",
+  "usage": {
+    "prompt_tokens": 3091,
+    "completion_tokens": 16,
+    "total_tokens": 3107,
+    "cost": 0.0003171,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0003171,
+      "upstream_inference_prompt_cost": 0.0003091,
+      "upstream_inference_completions_cost": 8e-06
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "candidate_token_delta": 642,
+  "finish_reason": "length",
+  "native_finish_reason": "max_tokens",
+  "content": "客观题\n\n1. 53.285 秒：持续"
+}

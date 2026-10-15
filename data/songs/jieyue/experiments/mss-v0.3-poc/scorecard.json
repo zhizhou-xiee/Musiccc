@@ -1,0 +1,92 @@
+{
+  "evaluation_version": "mss-v0.3-r3",
+  "final_formal_run_id": "20261015T073027Z",
+  "models": [
+    "openai/gpt-6-luna",
+    "anthropic/claude-haiku-5.5",
+    "google/gemini-3.8-flash"
+  ],
+  "acceptance_targets": {
+    "actual_music_payload_tokens_max": 800,
+    "objective_mean_min": 9.1667,
+    "objective_unsupported_factual_claims_max": 1
+  },
+  "iterations": [
+    {
+      "run_id": "20261015T072542Z",
+      "change": "Readable codes, repeated complete backgrounds, grouped time points",
+      "by_model": {
+        "GPT": {"scores": [10.0, 9.5, 9.5], "mean": 9.6667},
+        "Claude": {"scores": [9.5, 8.5, 9.5], "mean": 9.1667},
+        "Gemini": {"scores": [10.0, 10.0, 10.0], "mean": 10.0}
+      },
+      "aggregate_mean": 9.6111,
+      "objective_unsupported_factual_claims": 4,
+      "result": "fail"
+    },
+    {
+      "run_id": "20261015T072836Z",
+      "change": "One complete state per tested timestamp; explicit fg_exit and fg_enter fields",
+      "by_model": {
+        "GPT": {"scores": [10.0, 10.0, 10.0], "mean": 10.0},
+        "Claude": {"scores": [9.5, 9.5, 9.5], "mean": 9.5},
+        "Gemini": {"scores": [10.0, 10.0, 10.0], "mean": 10.0}
+      },
+      "aggregate_mean": 9.8333,
+      "objective_unsupported_factual_claims": 3,
+      "result": "fail"
+    },
+    {
+      "run_id": "20261015T073027Z",
+      "change": "Critical handoffs stated as direct Chinese facts",
+      "actual_music_payload_tokens": {
+        "GPT": 480,
+        "Claude": 642,
+        "Gemini": 642,
+        "maximum": 642
+      },
+      "by_model": {
+        "GPT": {"scores": [10.0, 10.0, 10.0], "mean": 10.0},
+        "Claude": {"scores": [9.5, 9.5, 10.0], "mean": 9.6667},
+        "Gemini": {"scores": [10.0, 10.0, 10.0], "mean": 10.0}
+      },
+      "aggregate": {
+        "mean_score_out_of_10": 9.8889,
+        "full": 88,
+        "partial": 2,
+        "zero": 0,
+        "objective_unsupported_factual_claims": 2
+      },
+      "response_integrity": {
+        "successful": 9,
+        "expected": 9,
+        "finish_reason_stop": 9,
+        "empty_content": 0
+      },
+      "usage": {
+        "prompt_tokens": 25827,
+        "completion_tokens": 7448,
+        "total_tokens": 33275,
+        "reported_cost_usd": 0.01921253
+      },
+      "gates": {
+        "token_budget": "pass",
+        "objective_mean": "pass",
+        "objective_unsupported_factual_claims": "fail"
+      },
+      "result": "fail"
+    }
+  ],
+  "all_v03_openrouter_cost_usd": 0.07460088,
+  "decision": {
+    "default_route": "pre_generated_objective_music_summary_plus_numeric_curves",
+    "mss_v03_status": "research_artifact_not_default",
+    "reason": "MSS/0.3 met the real token and mean-score gates but produced two explicit objective direction contradictions, above the fixed maximum of one. The previously tested natural-language-plus-curves baseline met that safety gate with one contradiction."
+  },
+  "scoring": {
+    "full": 1.0,
+    "partial": 0.5,
+    "wrong_or_unavailable": 0.0,
+    "method": "Manual comparison against the fixed ten-question ground truth; open responses were separately checked for fact/interpretation separation."
+  }
+}

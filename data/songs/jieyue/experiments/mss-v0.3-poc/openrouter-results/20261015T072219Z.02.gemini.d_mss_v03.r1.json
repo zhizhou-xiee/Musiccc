@@ -1,0 +1,9 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "repetition": 1,
+  "seed": 17,
+  "condition": "d_mss_v03",
+  "status": "error",
+  "error": "HTTP 400: {\"error\":{\"message\":\"Reasoning is mandatory for this endpoint and cannot be disabled.\",\"code\":400,\"metadata\":{\"provider_name\":null}}}"
+}

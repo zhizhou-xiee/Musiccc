@@ -1,0 +1,39 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "repetition": 1,
+  "seed": 17,
+  "condition": "d_mss_v03",
+  "status": "ok",
+  "elapsed_ms": 1842,
+  "response_id": "gen-1792049308-sVIcxoouJQTct3ZwxnQG",
+  "resolved_model": "google/gemini-3.8-flash",
+  "provider": "Google",
+  "usage": {
+    "prompt_tokens": 3089,
+    "completion_tokens": 12,
+    "total_tokens": 3101,
+    "cost": 0.00236175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00236175,
+      "upstream_inference_prompt_cost": 0.00231675,
+      "upstream_inference_completions_cost": 4.5e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "candidate_token_delta": 652,
+  "finish_reason": "length",
+  "native_finish_reason": "MAX_TOKENS",
+  "content": "**客观题**\n\n1. [layer_05"
+}

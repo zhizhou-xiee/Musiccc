@@ -1,0 +1,102 @@
+{
+  "run_id": "20261015T072542Z",
+  "started_at": "2026-10-15T07:25:42.708154+00:00",
+  "plan": {
+    "mode": "execute",
+    "run_type": "full",
+    "inference_calls": 9,
+    "candidate_utf8_bytes": 1105,
+    "worst_case_estimated_usd": 0.0399,
+    "approved_cap_usd": 0.08
+  },
+  "baseline_prompt_tokens": {
+    "GPT": 1959,
+    "Gemini": 2437,
+    "Claude": 2449
+  },
+  "jobs": [
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "repetition": 2,
+      "seed": 43,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.01.gpt.d_mss_v03.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "repetition": 3,
+      "seed": 91,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.02.gpt.d_mss_v03.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "repetition": 3,
+      "seed": 91,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.03.claude.d_mss_v03.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "repetition": 2,
+      "seed": 43,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.04.claude.d_mss_v03.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "repetition": 1,
+      "seed": 17,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.05.gpt.d_mss_v03.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "repetition": 1,
+      "seed": 17,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.06.gemini.d_mss_v03.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "repetition": 2,
+      "seed": 43,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.07.gemini.d_mss_v03.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "repetition": 3,
+      "seed": 91,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.08.gemini.d_mss_v03.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "repetition": 1,
+      "seed": 17,
+      "condition": "d_mss_v03",
+      "file": "20261015T072542Z.09.claude.d_mss_v03.r1.json",
+      "status": "ok"
+    }
+  ],
+  "actual_cost_usd": 0.01927729,
+  "finished_at": "2026-10-15T07:26:48.851086+00:00"
+}
