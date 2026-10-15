@@ -55,6 +55,8 @@ pnpm start
 - `RAILWAY_PUBLIC_DOMAIN`：Railway 提供时自动加入 Host/Origin 白名单。
 - `JIEYUE_VIDEO_URL`：对象存储/CDN 上的 MP4 HTTPS 地址，运行时注入网页数据。
 
+仓库根目录的 `railway.json` 将 `/healthz` 配置为部署期健康检查。Railway 只有在新容器返回 `2xx` 后才切换流量，避免单副本发布期间把尚未就绪的容器暴露给网页与 MCP 客户端。
+
 ## 安全与资源边界
 
 - Host 与 Origin 白名单防止 DNS rebinding；无 Origin 的服务器端 MCP 客户端允许通过。
