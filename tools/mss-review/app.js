@@ -1,6 +1,7 @@
 const EVENT_URL = "../../data/songs/jieyue/source/detailed-listening-annotations.json";
 const FEATURE_URL = "../../data/songs/jieyue/experiments/perception/candidate_a_features.json";
 const TIMELINE_URL = "../../data/songs/jieyue/timeline.reference.json";
+const CURVE_URL = "../../data/songs/jieyue/experiments/mss-curve-poc/outputs/mss.curves.json";
 const STORAGE_PREFIX = "jieyue-mss-event-review";
 const ARRAY_FIELDS = ["instruments", "instrument_candidates", "actions", "articulation", "timbre"];
 
@@ -19,11 +20,13 @@ const elements = {
   motion: $("#motion"), timbre: $("#timbre"), description: $("#description"), descriptionLength: $("#description-length"),
   notes: $("#review-notes"), restoreDraft: $("#restore-draft"), markPending: $("#mark-pending"), markFlagged: $("#mark-flagged"),
   markVerified: $("#mark-verified"), lyricsList: $("#lyrics-list"), featureList: $("#feature-list"), toast: $("#toast"),
+  curveChart: $("#curve-chart"), curveValues: $("#curve-values"), guzhengCount: $("#guzheng-count"),
 };
 
 let sourceData;
 let featureData;
 let timeline;
+let curveData;
 let activeIndex = 0;
 let reviews = {};
 let audioUrl;
@@ -46,6 +49,9 @@ function sourceEvent() { return sourceData.events[activeIndex]; }
 function sourceSection(id) { return timeline.sections.find((section) => section.id === id); }
 function sectionTitle(id) { return sourceSection(id)?.title || id; }
 function statusCopy(status) { return ({ pending: "待校对", flagged: "需复核", verified: "已确认" })[status] || "待校对"; }
+function isGuzhengRelated(event) {
+  return event.instruments?.includes("guzheng") || event.instrument_candidates?.includes("guzheng") || event.actions?.includes("guzheng_exit");
+}
 
 function editableFrom(event) {
   return {
@@ -110,7 +116,7 @@ function renderEventList() {
   let matches = 0;
   sourceData.events.forEach((event, index) => {
     const review = reviewFor(event);
-    if (filter !== "all" && review.status !== filter) return;
+    if (filter === "guzheng" ? !isGuzhengRelated(event) : filter !== "all" && review.status !== filter) return;
     if (event.section_id !== lastSection) {
       const label = document.createElement("p");
       label.className = "section-label";
@@ -183,6 +189,97 @@ function renderFeatures() {
     featureItem("前 / 中 / 后响度", features.loudness_profile_lufs.map((value) => value.toFixed(1)).join(" / ")),
     featureItem("人声时间覆盖", `${Math.round(features.vocal_coverage_ratio * 100)}%`),
   );
+}
+
+function svgElement(name, attributes = {}) {
+  const element = document.createElementNS("http://www.w3.org/2000/svg", name);
+  Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, String(value)));
+  return element;
+}
+
+function curveAtTime(curve, timeMs) {
+  const times = curveData.sampling.sample_times_ms;
+  let index = Math.floor(timeMs / curveData.sampling.hop_ms);
+  index = Math.max(0, Math.min(times.length - 1, index));
+  return { physical: curve.values[index], quantized: curve.quantized[index] };
+}
+
+function renderCurves() {
+  if (!curveData) return;
+  const width = 1000;
+  const rowHeight = 54;
+  const top = 15;
+  const labelWidth = 72;
+  const plotWidth = width - labelWidth - 12;
+  const height = top + rowHeight * curveData.curves.length + 14;
+  const duration = curveData.track.duration_ms;
+  const colors = ["#ead79f", "#86c4d9", "#d99c70", "#9ed5b7"];
+  const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, preserveAspectRatio: "none", "aria-hidden": "true" });
+  const review = reviewFor(sourceEvent());
+  const activeEnd = review.end_ms ?? Math.min(duration, review.start_ms + 500);
+  const activeX = labelWidth + (review.start_ms / duration) * plotWidth;
+  const activeWidth = Math.max(2, ((activeEnd - review.start_ms) / duration) * plotWidth);
+  svg.append(svgElement("rect", { x: activeX, y: 0, width: activeWidth, height, fill: "rgba(244,240,231,.12)" }));
+
+  timeline.sections.filter((section) => section.start_ms < duration).forEach((section) => {
+    const x = labelWidth + (section.start_ms / duration) * plotWidth;
+    svg.append(svgElement("line", { x1: x, x2: x, y1: 0, y2: height, stroke: "rgba(255,255,255,.08)", "stroke-width": 1 }));
+  });
+
+  const guzhengEvents = sourceData.events.filter(isGuzhengRelated);
+  elements.guzhengCount.textContent = `${guzhengEvents.length} 条古筝相关事件`;
+  guzhengEvents.forEach((event) => {
+    const x = labelWidth + (event.start_ms / duration) * plotWidth;
+    svg.append(svgElement("line", { x1: x, x2: x, y1: 0, y2: 10, stroke: "#ffdc79", "stroke-width": 2 }));
+  });
+
+  curveData.curves.forEach((curve, curveIndex) => {
+    const yTop = top + curveIndex * rowHeight;
+    const baseline = yTop + rowHeight - 9;
+    const label = svgElement("text", { x: 8, y: yTop + 23, fill: colors[curveIndex], "font-size": 11, "font-family": "system-ui" });
+    label.textContent = curve.label_zh;
+    svg.append(label);
+    svg.append(svgElement("line", { x1: labelWidth, x2: width - 12, y1: baseline, y2: baseline, stroke: "rgba(255,255,255,.08)", "stroke-width": 1 }));
+    let path = "";
+    let drawing = false;
+    curve.quantized.forEach((value, index) => {
+      if (value == null) { drawing = false; return; }
+      const timeMs = curveData.sampling.sample_times_ms[index];
+      const x = labelWidth + (timeMs / duration) * plotWidth;
+      const y = baseline - (value / 63) * (rowHeight - 16);
+      path += `${drawing ? "L" : "M"}${x.toFixed(2)},${y.toFixed(2)}`;
+      drawing = true;
+    });
+    svg.append(svgElement("path", { d: path, fill: "none", stroke: colors[curveIndex], "stroke-width": 1.4, "vector-effect": "non-scaling-stroke" }));
+  });
+
+  svg.addEventListener("click", (event) => {
+    const rect = svg.getBoundingClientRect();
+    const relativeX = Math.max(0, Math.min(1, (event.clientX - rect.left - (labelWidth / width) * rect.width) / ((plotWidth / width) * rect.width)));
+    const timeMs = relativeX * duration;
+    let nearestIndex = 0;
+    let nearestDistance = Infinity;
+    sourceData.events.forEach((item, index) => {
+      const distance = Math.abs(item.start_ms - timeMs);
+      if (distance < nearestDistance) { nearestDistance = distance; nearestIndex = index; }
+    });
+    selectEvent(nearestIndex, true);
+  });
+  elements.curveChart.replaceChildren(svg);
+
+  const values = document.createDocumentFragment();
+  curveData.curves.forEach((curve) => {
+    const value = curveAtTime(curve, review.start_ms);
+    const chip = document.createElement("span");
+    chip.className = "curve-value";
+    const key = document.createElement("b");
+    const copy = document.createElement("span");
+    key.textContent = curve.label_zh;
+    copy.textContent = value.physical == null ? "无有效值" : `${value.physical} ${curve.unit} · q${value.quantized}`;
+    chip.append(key, copy);
+    values.append(chip);
+  });
+  elements.curveValues.replaceChildren(values);
 }
 
 function performerNames(line) {
@@ -259,6 +356,7 @@ function renderActive({ scroll = false } = {}) {
   updateTimeDisplay();
   renderFeatures();
   renderLyrics();
+  renderCurves();
   renderEventList();
   if (scroll) elements.eventList.querySelector(".event-item.active")?.scrollIntoView({ block: "center" });
 }
@@ -303,6 +401,7 @@ function saveEditor() {
   elements.eventTitle.textContent = `${formatTime(review.start_ms)} · ${review.type}`;
   updateTimeDisplay();
   renderLyrics();
+  renderCurves();
   renderEventList();
   updateProgress();
 }
@@ -432,6 +531,12 @@ function exportReview() {
     timebase: { unit: "milliseconds", audio_asset: timeline.timeline_timebase.asset, audio_sha256: timeline.timeline_timebase.sha256, duration_ms: timeline.timeline_timebase.duration_ms },
     perception_kind: "music_semantic_score_events",
     perception_notice: "这些事件向不能直接接收音频的模型提供经人工复核的符号化音乐事实，不表示模型听到了原始音频。",
+    curve_reference: {
+      mss_version: curveData.mss_version,
+      source: "data/songs/jieyue/experiments/mss-curve-poc/outputs/mss.curves.json",
+      status: "automatic_unverified",
+      interpretation_policy: curveData.interpretation_policy,
+    },
     source_annotation_schema_version: sourceData.schema_version,
     source: sourceData.source,
     vocabulary: sourceData.vocabulary,
@@ -530,9 +635,9 @@ function bindEvents() {
 
 async function init() {
   try {
-    const responses = await Promise.all([fetch(EVENT_URL, { cache: "no-store" }), fetch(FEATURE_URL, { cache: "no-store" }), fetch(TIMELINE_URL, { cache: "no-store" })]);
+    const responses = await Promise.all([fetch(EVENT_URL, { cache: "no-store" }), fetch(FEATURE_URL, { cache: "no-store" }), fetch(TIMELINE_URL, { cache: "no-store" }), fetch(CURVE_URL, { cache: "no-store" })]);
     if (responses.some((response) => !response.ok)) throw new Error(`HTTP ${responses.map((response) => response.status).join(" / ")}`);
-    [sourceData, featureData, timeline] = await Promise.all(responses.map((response) => response.json()));
+    [sourceData, featureData, timeline, curveData] = await Promise.all(responses.map((response) => response.json()));
     restoreLocal();
     bindEvents();
     updateProgress();

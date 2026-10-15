@@ -1,0 +1,67 @@
+{
+  "evaluation_kind": "curve_fidelity_and_interpretive_freedom",
+  "warning": "尚未调用任何模型。自由回答的差异不自动等于理解更好，必须同时检查客观曲线忠实度。",
+  "objective_probes": [
+    {
+      "id": "fastest_loudness_rise",
+      "question": "排除静音到有声的边界后，哪一个 500ms 窗口的 RMS 响度上升最快？",
+      "ground_truth": {
+        "time_ms": 215750,
+        "delta_db": 14.47
+      },
+      "metric": "exact_window_or_within_one_hop"
+    },
+    {
+      "id": "fastest_loudness_fall",
+      "question": "排除有声到静音的边界后，哪一个 500ms 窗口的 RMS 响度下降最快？",
+      "ground_truth": {
+        "time_ms": 231750,
+        "delta_db": -13.11
+      },
+      "metric": "exact_window_or_within_one_hop"
+    },
+    {
+      "id": "peak_loudness",
+      "question": "全曲 RMS 响度最高的 500ms 窗口在哪里？",
+      "ground_truth": {
+        "time_ms": 185750,
+        "dbfs": -5.03
+      },
+      "metric": "exact_window_or_within_one_hop"
+    },
+    {
+      "id": "peak_spectral_flux",
+      "question": "频谱变化量最高的窗口在哪里？",
+      "ground_truth": {
+        "time_ms": 199750,
+        "value": 0.2067
+      },
+      "metric": "exact_window_or_within_one_hop"
+    },
+    {
+      "id": "peak_spectral_centroid",
+      "question": "频谱质心最高的窗口在哪里？",
+      "ground_truth": {
+        "time_ms": 13750,
+        "hz": 2062.4
+      },
+      "metric": "exact_window_or_within_one_hop"
+    }
+  ],
+  "free_interpretation_prompts": [
+    {
+      "id": "whole_song_motion",
+      "prompt": "只依据所给音乐事实与曲线，描述你观察到的音乐运动，并自由选择比喻；明确区分观测与联想。"
+    },
+    {
+      "id": "contrast_two_windows",
+      "prompt": "选择两个曲线运动明显不同的时间窗口，先陈述可核对的差异，再给出你自己的理解。"
+    }
+  ],
+  "scoring": {
+    "objective_accuracy": "时间窗、方向、峰谷与同步变化是否符合曲线。",
+    "hallucination_rate": "是否声称输入中没有的乐器、旋律、调性或情绪事实。",
+    "interpretation_diversity": "多次回答的联想差异；只作辅助指标。",
+    "observation_interpretation_separation": "是否把测量事实与自主联想明确分开。"
+  }
+}

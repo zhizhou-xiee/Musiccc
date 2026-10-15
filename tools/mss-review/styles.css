@@ -98,7 +98,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .status-label.flagged { color: #f3c5a4; background: rgba(228, 160, 110, .13); }
 .status-label.verified { color: #b9e7cf; background: rgba(159, 214, 186, .13); }
 .step-actions { display: flex; gap: 8px; }
-.player-card, .editor-card, .evidence-card, .method-card { border: 1px solid var(--line); border-radius: 14px; background: rgba(7, 10, 15, .43); }
+.player-card, .curve-card, .editor-card, .evidence-card, .method-card { border: 1px solid var(--line); border-radius: 14px; background: rgba(7, 10, 15, .43); }
 .player-card { padding: 15px; }
 .transport { display: flex; align-items: center; justify-content: center; gap: 10px; }
 .transport-main { min-width: 90px; }
@@ -108,6 +108,17 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .scrub-row span:last-child { text-align: right; }
 #scrubber { width: 100%; accent-color: var(--moon); }
 .preview-note { margin: 8px 0 0; color: var(--muted); text-align: center; font-size: 10px; }
+.curve-card { min-width: 0; padding: 15px; }
+.curve-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.curve-heading > div { display: flex; align-items: center; gap: 9px; }
+.curve-heading > span { font-size: 10px; }
+.curve-values { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 9px; }
+.curve-value { display: inline-flex; align-items: baseline; gap: 5px; padding: 5px 8px; border-radius: 999px; background: var(--surface-2); font-size: 10px; }
+.curve-value b { font-weight: 700; }
+.curve-value span { color: var(--muted); font-variant-numeric: tabular-nums; }
+.curve-chart { width: 100%; min-height: 245px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: rgba(5, 8, 12, .62); cursor: crosshair; }
+.curve-chart svg { display: block; width: 100%; height: 245px; }
+.curve-note { margin: 9px 0 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .editor-card { padding: 16px; }
 .editor-heading, .card-heading { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; }
 .editor-heading { justify-content: space-between; }
@@ -173,6 +184,7 @@ kbd { padding: 2px 5px; border: 1px solid var(--line); border-bottom-width: 2px;
   .time-grid, .field-grid, .evidence-grid { grid-template-columns: 1fr; }
   .field-grid .wide { grid-column: auto; }
   .transport { flex-wrap: wrap; }
+  .curve-heading { align-items: flex-start; flex-direction: column; }
   .scrub-row { grid-template-columns: 64px minmax(0, 1fr) 64px; gap: 6px; }
   .lyric-line { grid-template-columns: 60px minmax(0, 1fr); }
   .lyric-performer { grid-column: 2; text-align: left; }

@@ -45,6 +45,7 @@
                 <option value="pending">只看未确认</option>
                 <option value="flagged">只看需复核</option>
                 <option value="verified">只看已确认</option>
+                <option value="guzheng">只看古筝相关</option>
               </select>
             </label>
           </div>
@@ -82,6 +83,19 @@
             </div>
             <p id="preview-note" class="preview-note">点状事件：自动从事件前 1.5 秒试听到后 4 秒。</p>
             <audio id="audio" preload="metadata"></audio>
+          </section>
+
+          <section class="curve-card" aria-label="MSS 0.2 客观曲线">
+            <div class="curve-heading">
+              <div>
+                <span class="source-badge automatic">自动测量 · 未核验</span>
+                <h3>MSS/0.2 连续音乐曲线</h3>
+              </div>
+              <span id="guzheng-count" class="muted">13 条古筝相关事件</span>
+            </div>
+            <div id="curve-values" class="curve-values"></div>
+            <div id="curve-chart" class="curve-chart" role="img" aria-label="全曲响度、频谱质心、频谱变化和正向能量变化曲线"></div>
+            <p class="curve-note">金色刻线是古筝相关事件，浅色区域是当前事件。点击曲线可跳到最近的听音事件。曲线不包含情绪判断。</p>
           </section>
 
           <section class="editor-card">
@@ -153,7 +167,7 @@
 
           <details class="method-card">
             <summary>校对边界与导出规则</summary>
-            <p>原始 32 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。确认表示“这条人工听音记录已经复核”，不表示模型听到了原始音频。</p>
+            <p>原始 32 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。MSS/0.2 的四条曲线来自母带离线测量，不含情绪词；旋律轮廓仍明确标为未知。确认表示“这条人工听音记录已经复核”，不表示模型听到了原始音频。</p>
           </details>
         </section>
       </main>

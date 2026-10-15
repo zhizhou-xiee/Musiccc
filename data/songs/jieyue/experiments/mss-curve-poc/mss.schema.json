@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crotown.app/schemas/mss/0.2.json",
+  "title": "Music Semantic Score 0.2",
+  "description": "以客观事件、多变量时间序列与显式未知项保留音乐运动；核心层不预设情绪解释。",
+  "type": "object",
+  "required": [
+    "mss_version",
+    "representation_kind",
+    "interpretation_policy",
+    "track",
+    "sampling",
+    "sections",
+    "lyrics",
+    "performers",
+    "instrument_vocabulary",
+    "events",
+    "curves",
+    "gesture_proxy",
+    "unknowns",
+    "sources"
+  ],
+  "properties": {
+    "mss_version": {"const": "0.2"},
+    "representation_kind": {"const": "objective_events_plus_multivariate_time_series"},
+    "interpretation_policy": {
+      "type": "object",
+      "required": ["default_layer", "excluded_from_core", "reason"],
+      "properties": {
+        "default_layer": {"const": "absent"},
+        "excluded_from_core": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "track": {
+      "type": "object",
+      "required": ["song_id", "title", "duration_ms", "audio_sha256"],
+      "properties": {
+        "song_id": {"type": "string"},
+        "title": {"type": "string"},
+        "duration_ms": {"type": "integer", "minimum": 1},
+        "audio_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "sampling": {
+      "type": "object",
+      "required": ["sample_times_ms", "window_ms", "hop_ms", "short_energy_frame_ms"],
+      "properties": {
+        "sample_times_ms": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+        "window_ms": {"type": "integer", "minimum": 1},
+        "hop_ms": {"type": "integer", "minimum": 1},
+        "short_energy_frame_ms": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "sections": {"type": "array", "items": {"type": "object"}},
+    "lyrics": {"type": "array", "items": {"type": "object"}},
+    "performers": {"type": "array", "items": {"type": "object"}},
+    "instrument_vocabulary": {"type": "object"},
+    "events": {"type": "array", "items": {"type": "object"}},
+    "curves": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label_zh", "status", "unit", "window_ms", "hop_ms", "measurement", "values", "quantized", "normalization", "sparse_keypoints", "source_ids"],
+        "properties": {
+          "id": {"type": "string"},
+          "label_zh": {"type": "string"},
+          "status": {"const": "automatic_unverified"},
+          "unit": {"type": "string"},
+          "window_ms": {"type": "integer", "minimum": 1},
+          "hop_ms": {"type": "integer", "minimum": 1},
+          "measurement": {"type": "string"},
+          "values": {"type": "array", "items": {"type": ["number", "null"]}},
+          "quantized": {"type": "array", "items": {"type": ["integer", "null"], "minimum": 0, "maximum": 63}},
+          "normalization": {
+            "type": "object",
+            "required": ["method", "levels", "physical_low", "physical_high", "missing"],
+            "properties": {
+              "method": {"type": "string"},
+              "levels": {"const": 64},
+              "physical_low": {"type": "number"},
+              "physical_high": {"type": "number"},
+              "missing": {"type": "null"}
+            },
+            "additionalProperties": false
+          },
+          "sparse_keypoints": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0, "maximum": 63}],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "source_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "gesture_proxy": {"type": "object"},
+    "unknowns": {"type": "array", "items": {"type": "object"}},
+    "sources": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

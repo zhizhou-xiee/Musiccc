@@ -17,6 +17,8 @@ Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-asses
 
 候选 C「Music Semantic Score」的单曲 PoC 见 [docs/mss-poc-report.md](docs/mss-poc-report.md) 与 [MSS 实验目录](data/songs/jieyue/experiments/mss-poc/README.md)。MSS/0.1 已能表示 12 个段落和 32 个可溯源听音事件；同证据、同约 800 Token 的自然语言与 MSS 当前显式信息覆盖打平，仍需真实模型盲测，尚未替换候选 B。
 
+MSS/0.2 的 curve-first 实验见 [docs/mss-v0.2-curve-report.md](docs/mss-v0.2-curve-report.md) 与 [曲线实验目录](data/songs/jieyue/experiments/mss-curve-poc/README.md)。这一版将情绪和比喻排除在核心层之外，用四条离线测量曲线、32 条客观事件和显式未知项保留音乐运动；自然语言摘要降为对照基线，尚未进行付费模型测试。
+
 统一歌曲资料位于 `data/songs/jieyue/metadata.json`，当前校对基准位于 `data/songs/jieyue/timeline.reference.json`。Whisper 旧初稿保留在 `data/songs/jieyue/timeline.draft.json` 作为对照；人工开口、估算唱完、字幕显示边界和自动节拍在数据中分别标注，不会混作同一种精度。
 
 本地歌词时间轴校对器位于 [tools/timeline-review](tools/timeline-review/README.md)。它直接读取本机母带，在浏览器本地保存进度并导出带人工审核记录的 JSON；不会上传或提交音频文件。

@@ -47,6 +47,7 @@ h1 { margin: 0; font-size: clamp(27px, 4vw, 42px); }
 h2 { margin: 9px 0 0; font-size: clamp(27px, 3.8vw, 40px); }
 h3 { margin: 0; font-size: 14px; font-weight: 700; }
 .lede { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+.lede a { color: var(--moon); text-underline-offset: 3px; }
 .header-actions { display: flex; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
 
 .button, .icon-button, .reset-button, .text-button {
