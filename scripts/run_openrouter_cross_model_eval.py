@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EVAL_DIR = ROOT / "data" / "songs" / "jieyue" / "experiments" / "layered-mss-eval"
 PLAN_PATH = EVAL_DIR / "openrouter-plan.json"
 RESULTS_DIR = EVAL_DIR / "cross-model-results"
+LOCAL_KEY_PATH = ROOT / ".secrets" / "openrouter_api_key"
 CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL_URL = "https://openrouter.ai/api/v1/model/{model_id}"
 SYSTEM_PROMPT = """你正在参加音乐表示盲测。你只能依据用户给出的材料回答。
@@ -44,6 +45,22 @@ class Price:
 
 def read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_api_key() -> str:
+    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if key:
+        return key
+    if LOCAL_KEY_PATH.exists():
+        if LOCAL_KEY_PATH.stat().st_mode & 0o077:
+            raise SystemExit(f"Secret file permissions are too broad: {LOCAL_KEY_PATH}; expected 0600")
+        key = LOCAL_KEY_PATH.read_text(encoding="utf-8").strip()
+        if key:
+            return key
+    raise SystemExit(
+        "OPENROUTER_API_KEY is not set and .secrets/openrouter_api_key does not exist. "
+        "Run: python3 scripts/configure_openrouter_key.py"
+    )
 
 
 def write_json(path: Path, value: Any) -> None:
@@ -176,9 +193,7 @@ def main() -> int:
             raise SystemExit("--execute requires --approved-cap-usd")
         if args.approved_cap_usd > configured_cap:
             raise SystemExit(f"Approved cap ${args.approved_cap_usd} exceeds repository cap ${configured_cap}")
-        api_key = os.environ.get("OPENROUTER_API_KEY")
-        if not api_key:
-            raise SystemExit("OPENROUTER_API_KEY is not set")
+        api_key = load_api_key()
         prices = {model["id"]: live_price(model["id"], api_key) for model in plan["models"]}
     else:
         api_key = ""

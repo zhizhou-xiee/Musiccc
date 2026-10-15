@@ -22,7 +22,15 @@
 python3 scripts/run_openrouter_cross_model_eval.py
 ```
 
-只有同时提供 `--execute`、明确批准的美元上限和环境变量 `OPENROUTER_API_KEY` 才会发送推理请求。执行前会读取 OpenRouter 实时价格，最坏情况估算超过批准上限时拒绝运行。API 密钥不会写入仓库、请求结果或日志。
+只有同时提供 `--execute`、明确批准的美元上限和 API 密钥才会发送推理请求。执行前会读取 OpenRouter 实时价格，最坏情况估算超过批准上限时拒绝运行。API 密钥不会写入仓库、请求结果或日志。
+
+推荐先使用隐藏输入配置本机密钥。密钥只写入权限为 `0600`、且被 Git 忽略的 `.secrets/openrouter_api_key`：
+
+```bash
+python3 scripts/configure_openrouter_key.py
+```
+
+也可以改用环境变量 `OPENROUTER_API_KEY`；环境变量优先于本机密钥文件。
 
 ```bash
 OPENROUTER_API_KEY=... python3 scripts/run_openrouter_cross_model_eval.py \
