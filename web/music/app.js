@@ -1,13 +1,10 @@
 const player = document.querySelector("#mv-player");
 const playbackStatus = document.querySelector("#playback-status");
 const mediaError = document.querySelector("#media-error");
-const chapterList = document.querySelector("#chapter-list");
 const creditList = document.querySelector("#credit-list");
 const performerList = document.querySelector("#performer-list");
 const performerCount = document.querySelector("#performer-count");
 const mvDuration = document.querySelector("#mv-duration");
-
-let chapters = [];
 
 const formatTime = (milliseconds) => {
   const totalSeconds = Math.round(milliseconds / 1000);
@@ -52,59 +49,6 @@ const renderPerformers = (performers) => {
   );
 };
 
-const seekToChapter = (chapter) => {
-  const seek = () => {
-    player.currentTime = chapter.start_ms / 1000;
-    player.focus({ preventScroll: true });
-    document.querySelector(".player-shell")?.scrollIntoView({ behavior: "smooth", block: "center" });
-    setStatus(`已跳到：${chapter.title}`);
-  };
-
-  if (player.readyState >= HTMLMediaElement.HAVE_METADATA) {
-    seek();
-  } else {
-    player.addEventListener("loadedmetadata", seek, { once: true });
-    player.load();
-  }
-};
-
-const renderChapters = (sectionData) => {
-  chapters = sectionData;
-  chapterList.replaceChildren(
-    ...chapters.map((chapter) => {
-      const button = document.createElement("button");
-      const time = document.createElement("span");
-      const title = document.createElement("span");
-      button.className = "chapter-button";
-      button.type = "button";
-      button.dataset.chapterId = chapter.id;
-      button.setAttribute("aria-label", `跳到 ${formatTime(chapter.start_ms)} ${chapter.title}`);
-      time.className = "chapter-time";
-      time.textContent = formatTime(chapter.start_ms);
-      title.className = "chapter-title";
-      title.textContent = chapter.title;
-      button.append(time, title);
-      button.addEventListener("click", () => seekToChapter(chapter));
-      return button;
-    }),
-  );
-};
-
-const updateCurrentChapter = () => {
-  const currentMs = player.currentTime * 1000;
-  const active = chapters.find(
-    (chapter) => currentMs >= chapter.start_ms && currentMs < chapter.end_ms,
-  );
-  document.querySelectorAll(".chapter-button").forEach((button) => {
-    const isCurrent = button.dataset.chapterId === active?.id;
-    if (isCurrent) {
-      button.setAttribute("aria-current", "true");
-    } else {
-      button.removeAttribute("aria-current");
-    }
-  });
-};
-
 const wirePlayerEvents = () => {
   player.addEventListener("play", () => setStatus("正在播放"));
   player.addEventListener("pause", () => {
@@ -115,7 +59,6 @@ const wirePlayerEvents = () => {
   player.addEventListener("seeking", () => setStatus("正在跳转…"));
   player.addEventListener("seeked", () => setStatus(player.paused ? "已定位" : "正在播放"));
   player.addEventListener("ended", () => setStatus("播放完毕"));
-  player.addEventListener("timeupdate", updateCurrentChapter);
   player.addEventListener("loadedmetadata", () => {
     if (Number.isFinite(player.duration)) mvDuration.textContent = formatTime(player.duration * 1000);
   });
@@ -138,7 +81,6 @@ const loadSong = async () => {
   if (data.media.poster_url) player.poster = data.media.poster_url;
   renderCredits(data.credits, data.song.version_name);
   renderPerformers(data.performers);
-  renderChapters(data.sections);
 };
 
 wirePlayerEvents();

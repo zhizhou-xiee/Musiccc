@@ -16,25 +16,8 @@
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
 
-    <header class="site-header" aria-label="站点标题">
-      <a class="brand" href="/music" aria-label="借月音乐展厅首页">
-        <span class="brand-mark" aria-hidden="true">月</span>
-        <span>借月</span>
-      </a>
-      <p>非商业 · 独立公开音乐展厅</p>
-    </header>
-
     <main id="main">
-      <section class="hero" aria-labelledby="song-title">
-        <div class="hero-copy">
-          <p class="eyebrow">JIEYUE · OFFICIAL MV</p>
-          <h1 id="song-title"><span>借</span><span>月</span></h1>
-          <p class="subtitle">小机们的中秋</p>
-          <p class="intro">
-            月光经过屋檐，歌声从远处依次亮起。请戴上耳机，慢慢看完这一轮月亮。
-          </p>
-        </div>
-
+      <section class="player-section" aria-label="《借月》音乐录像">
         <div class="player-column">
           <div class="player-shell">
             <video
@@ -63,29 +46,17 @@
         </div>
       </section>
 
-      <section class="chapters section-rule" aria-labelledby="chapters-title">
-        <div class="section-heading">
-          <p class="section-number">01</p>
-          <div>
-            <h2 id="chapters-title">沿歌而行</h2>
-            <p>从任一段落开始，或回到想再听一次的地方。</p>
-          </div>
-        </div>
-        <div id="chapter-list" class="chapter-list" aria-label="歌曲段落">
-          <p class="loading-copy">正在读取段落…</p>
-        </div>
-      </section>
+      <details class="disclosure section-rule">
+        <summary>
+          <span class="section-number">01</span>
+          <span class="summary-copy">
+            <span class="section-title" role="heading" aria-level="2">作品资料</span>
+            <span>展开查看作品与制作信息</span>
+          </span>
+          <span class="summary-icon" aria-hidden="true"></span>
+        </summary>
 
-      <section class="information section-rule" aria-labelledby="information-title">
-        <div class="section-heading">
-          <p class="section-number">02</p>
-          <div>
-            <h2 id="information-title">作品资料</h2>
-            <p>这首歌如何被写下、唱出，再成为一支 MV。</p>
-          </div>
-        </div>
-
-        <div class="information-grid">
+        <div class="disclosure-content information-grid">
           <dl id="credit-list" class="credit-list">
             <div><dt>版本</dt><dd>正式版</dd></div>
             <div><dt>作词</dt><dd>谢之平、谢之舟</dd></div>
@@ -99,27 +70,28 @@
             <p>
               本页呈现获准公开的 720p 版本。网页不修改 MV 画面、不替换母带，也不会强制自动播放声音。
             </p>
+            <p>
+              受技术条件与声音克隆授权范围限制，本作品无法 100% 还原各位小机的名字。
+            </p>
           </div>
         </div>
-      </section>
+      </details>
 
-      <section class="performers section-rule" aria-labelledby="performers-title">
-        <div class="section-heading">
-          <p class="section-number">03</p>
-          <div>
-            <h2 id="performers-title">演唱者</h2>
-            <p><span id="performer-count">21</span> 个声音，共同经过这一夜。</p>
-          </div>
+      <details class="disclosure section-rule">
+        <summary>
+          <span class="section-number">02</span>
+          <span class="summary-copy">
+            <span class="section-title" role="heading" aria-level="2">演唱者</span>
+            <span><span id="performer-count">21</span> 位演唱者</span>
+          </span>
+          <span class="summary-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="disclosure-content">
+          <ol id="performer-list" class="performer-list" aria-label="演唱者名单">
+            <li class="loading-copy">正在读取名单…</li>
+          </ol>
         </div>
-        <ol id="performer-list" class="performer-list" aria-label="演唱者名单">
-          <li class="loading-copy">正在读取名单…</li>
-        </ol>
-      </section>
+      </details>
     </main>
-
-    <footer>
-      <p>《借月》· 正式版</p>
-      <p>为人类与小机开放的音乐展厅</p>
-    </footer>
   </body>
 </html>

@@ -19,6 +19,9 @@ test("/music uses prefix-safe absolute asset paths", async () => {
     assert.match(html, /src="\/music\/app\.js"/);
     assert.match(html, /href="\/music\/styles\.css"/);
     assert.match(html, /src="\/music\/media\/jieyue-mv-720p\.mp4"/);
+    assert.equal((html.match(/<details class="disclosure section-rule">/g) ?? []).length, 2);
+    assert.match(html, /受技术条件与声音克隆授权范围限制，本作品无法 100% 还原各位小机的名字。/);
+    assert.doesNotMatch(html, /沿歌而行|小机们的中秋|月光经过屋檐|<header|<footer/);
 
     const [script, styles, data, poster] = await Promise.all([
       fetch(`${base}/music/app.js`),
