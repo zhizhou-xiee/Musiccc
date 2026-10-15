@@ -59,6 +59,16 @@ test("project-owner timing correction assigns 也 to line 029", () => {
   assert.equal(corrected?.timing_status.start, "verified");
 });
 
+test("project-owner timing correction assigns 雨声 to line 031", () => {
+  const verse = musicSeek("jieyue", { kind: "line_id", value: "line-031" }).segment;
+  const previous = verse?.lyrics.find((line) => line.id === "line-030");
+  const corrected = verse?.lyrics.find((line) => line.id === "line-031");
+  assert.equal(previous?.end_ms, 131_421);
+  assert.equal(previous?.timing_status.end, "verified");
+  assert.equal(corrected?.start_ms, 131_421);
+  assert.equal(corrected?.timing_status.start, "verified");
+});
+
 test("invalid or stale cursors are rejected", () => {
   assert.throws(() => decodeCursor("not-a-cursor"), /Invalid cursor|current song revision/);
   const stale = Buffer.from(JSON.stringify({ v: "old", song: "jieyue", index: 0 })).toString("base64url");

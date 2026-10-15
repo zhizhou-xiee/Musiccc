@@ -2212,7 +2212,7 @@
         }
       ],
       "start_ms": 128700,
-      "end_ms": 131690,
+      "end_ms": 131421,
       "timing": {
         "start": {
           "value_ms": 128700,
@@ -2220,9 +2220,10 @@
           "status": "reference"
         },
         "vocal_end": {
-          "value_ms": 131690,
-          "source": "separated_vocal_estimate",
-          "status": "estimate"
+          "value_ms": 131421,
+          "source": "project_owner_master_listening",
+          "status": "verified",
+          "note": "131.421–131.690 秒已经是下一句“雨声停在青瓦边沿”的“雨声”，因此“茶烟绕过案上旧纸”在 131.421 秒结束。"
         },
         "subtitle_end": {
           "value_ms": 131640,
@@ -2261,13 +2262,14 @@
           "role": "lead"
         }
       ],
-      "start_ms": 131690,
+      "start_ms": 131421,
       "end_ms": 134000,
       "timing": {
         "start": {
-          "value_ms": 131690,
-          "source": "human_waveform_mark",
-          "status": "reference"
+          "value_ms": 131421,
+          "source": "project_owner_master_listening",
+          "status": "verified",
+          "note": "“雨声停在青瓦边沿”的“雨声”从 131.421 秒开始；原 131.690 秒开口漏掉前两个字。"
         },
         "vocal_end": {
           "value_ms": 134000,
@@ -2285,8 +2287,9 @@
           "status": "display_only"
         },
         "start_frame": {
-          "value": 3951,
-          "fps": 30
+          "value": 3943,
+          "fps": 30,
+          "source": "derived_from_verified_start"
         },
         "exception": null
       },

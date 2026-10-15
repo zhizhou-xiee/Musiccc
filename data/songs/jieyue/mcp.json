@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "revision": "jieyue-timeline-0.2.3-perception-1.0.0",
+  "revision": "jieyue-timeline-0.2.4-perception-1.0.0",
   "perception_route": "pre_generated_objective_music_summary_plus_numeric_curves",
   "perception_notice": "返回内容来自人工听音标注与离线自动测量，不代表接收模型直接听见了原始音频。",
   "song": {
@@ -1505,7 +1505,7 @@
           "id": "line-030",
           "text": "茶烟绕过案上旧纸",
           "start_ms": 128700,
-          "end_ms": 131690,
+          "end_ms": 131421,
           "performers": [
             {
               "id": "performer-10",
@@ -1515,13 +1515,13 @@
           ],
           "timing_status": {
             "start": "reference",
-            "end": "estimate"
+            "end": "verified"
           }
         },
         {
           "id": "line-031",
           "text": "雨声停在青瓦边沿",
-          "start_ms": 131690,
+          "start_ms": 131421,
           "end_ms": 134000,
           "performers": [
             {
@@ -1531,7 +1531,7 @@
             }
           ],
           "timing_status": {
-            "start": "reference",
+            "start": "verified",
             "end": "estimate"
           }
         },

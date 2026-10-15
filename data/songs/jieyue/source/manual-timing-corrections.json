@@ -36,6 +36,22 @@
       "status": "verified",
       "source": "project_owner_master_listening",
       "note": "“也算相见”的“也”从 107.154 秒开始；原 107.520 秒开口漏掉首字。"
+    },
+    {
+      "line_id": "line-030",
+      "field": "vocal_end",
+      "value_ms": 131421,
+      "status": "verified",
+      "source": "project_owner_master_listening",
+      "note": "131.421–131.690 秒已经是下一句“雨声停在青瓦边沿”的“雨声”，因此“茶烟绕过案上旧纸”在 131.421 秒结束。"
+    },
+    {
+      "line_id": "line-031",
+      "field": "start",
+      "value_ms": 131421,
+      "status": "verified",
+      "source": "project_owner_master_listening",
+      "note": "“雨声停在青瓦边沿”的“雨声”从 131.421 秒开始；原 131.690 秒开口漏掉前两个字。"
     }
   ]
 }

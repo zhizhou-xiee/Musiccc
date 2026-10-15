@@ -1,6 +1,6 @@
 {
   "schema_version": "melody-harmony-poc/0.1.1",
-  "generated_at": "2026-10-15T13:58:48.265581+00:00",
+  "generated_at": "2026-10-15T14:05:51.520529+00:00",
   "song_id": "jieyue",
   "production_integration": "none_review_only",
   "perception_notice": "所有旋律、调性、速度与和弦内容均为离线自动候选，未经人工校对；不代表接收模型直接听见原始音频。",
@@ -19,7 +19,7 @@
       "repository_copy": false,
       "separation": "demucs_htdemucs_two_stems"
     },
-    "timeline_revision": "jieyue-timeline-0.2.3-perception-1.0.0",
+    "timeline_revision": "jieyue-timeline-0.2.4-perception-1.0.0",
     "manual_review_source": "manual-melody-review-observations.json"
   },
   "analysis": {
@@ -4916,9 +4916,9 @@
       "section_title": "Verse 2",
       "text": "茶烟绕过案上旧纸",
       "start_ms": 128700,
-      "end_ms": 131690,
+      "end_ms": 131421,
       "analysis_start_ms": 128700,
-      "analysis_end_ms": 131690,
+      "analysis_end_ms": 131421,
       "performers": [
         {
           "id": "performer-10",
@@ -4931,136 +4931,140 @@
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
       "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.377,
+      "voiced_coverage": 0.376,
       "baseline_midi": 50.0,
       "candidate_range": {
-        "lowest_note": "A2",
+        "lowest_note": "B2",
         "highest_note": "D3"
       },
       "contour_points": [
         {
-          "time_ms": 128793,
+          "time_ms": 128785,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 128980,
+          "time_ms": 128955,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 129167,
+          "time_ms": 129125,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 129354,
-          "midi": 47.2,
-          "relative_semitones": -2.8,
+          "time_ms": 129295,
+          "midi": 47.3,
+          "relative_semitones": -2.7,
           "note": "B2",
-          "confidence": 0.686
+          "confidence": 0.616
         },
         {
-          "time_ms": 129541,
-          "midi": 46.95,
-          "relative_semitones": -3.05,
+          "time_ms": 129465,
+          "midi": 47.05,
+          "relative_semitones": -2.95,
           "note": "B2",
-          "confidence": 0.827
+          "confidence": 0.757
         },
         {
-          "time_ms": 129728,
-          "midi": 50.1,
-          "relative_semitones": 0.1,
+          "time_ms": 129635,
+          "midi": 50.2,
+          "relative_semitones": 0.2,
+          "note": "D3",
+          "confidence": 0.722
+        },
+        {
+          "time_ms": 129805,
+          "midi": 50.0,
+          "relative_semitones": 0.0,
           "note": "D3",
           "confidence": 0.757
         },
         {
-          "time_ms": 129915,
-          "midi": 50.2,
-          "relative_semitones": 0.2,
+          "time_ms": 129975,
+          "midi": 50.1,
+          "relative_semitones": 0.1,
           "note": "D3",
-          "confidence": 0.686
+          "confidence": 0.891
         },
         {
-          "time_ms": 130102,
+          "time_ms": 130146,
+          "midi": 50.0,
+          "relative_semitones": 0.0,
+          "note": "D3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 130316,
           "midi": 50.0,
           "relative_semitones": 0.0,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 130288,
-          "midi": 50.1,
-          "relative_semitones": 0.1,
-          "note": "D3",
-          "confidence": 0.859
-        },
-        {
-          "time_ms": 130475,
-          "midi": 50.1,
-          "relative_semitones": 0.1,
-          "note": "D3",
-          "confidence": 0.756
-        },
-        {
-          "time_ms": 130662,
+          "time_ms": 130486,
           "midi": 50.2,
           "relative_semitones": 0.2,
           "note": "D3",
+          "confidence": 0.686
+        },
+        {
+          "time_ms": 130656,
+          "midi": 50.2,
+          "relative_semitones": 0.2,
+          "note": "D3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 130826,
+          "midi": 50.25,
+          "relative_semitones": 0.25,
+          "note": "D3",
           "confidence": 0.859
         },
         {
-          "time_ms": 130849,
-          "midi": 50.35,
-          "relative_semitones": 0.35,
-          "note": "D3",
-          "confidence": 0.754
-        },
-        {
-          "time_ms": 131036,
-          "midi": 50.05,
-          "relative_semitones": 0.05,
+          "time_ms": 130996,
+          "midi": 50.1,
+          "relative_semitones": 0.1,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 131223,
-          "midi": 47.15,
-          "relative_semitones": -2.85,
-          "note": "B2",
-          "confidence": 0.651
-        },
-        {
-          "time_ms": 131410,
+          "time_ms": 131166,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 131597,
-          "midi": 45.4,
-          "relative_semitones": -4.6,
-          "note": "A2",
-          "confidence": 0.757
+          "time_ms": 131336,
+          "midi": 47.15,
+          "relative_semitones": -2.85,
+          "note": "B2",
+          "confidence": 0.651
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "pending",
+        "observation": "原候选把下一句“雨声停在青瓦边沿”的“雨声”并入了“茶烟绕过案上旧纸”。",
+        "resolution": "统一时间轴已将 line-030 结束和 line-031 开始共同修订为 131.421 秒。"
+      }
     },
     {
       "line_id": "line-031",
       "section_id": "verse_2",
       "section_title": "Verse 2",
       "text": "雨声停在青瓦边沿",
-      "start_ms": 131690,
+      "start_ms": 131421,
       "end_ms": 134000,
-      "analysis_start_ms": 131690,
+      "analysis_start_ms": 131421,
       "analysis_end_ms": 134000,
       "performers": [
         {
@@ -5074,7 +5078,7 @@
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
       "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.588,
+      "voiced_coverage": 0.568,
       "baseline_midi": 49.1,
       "candidate_range": {
         "lowest_note": "A2",
@@ -5082,119 +5086,123 @@
       },
       "contour_points": [
         {
-          "time_ms": 131762,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
-        },
-        {
-          "time_ms": 131907,
-          "midi": 47.0,
-          "relative_semitones": -2.1,
-          "note": "B2",
+          "time_ms": 131502,
+          "midi": 45.4,
+          "relative_semitones": -3.7,
+          "note": "A2",
           "confidence": 0.757
         },
         {
-          "time_ms": 132051,
-          "midi": 47.1,
-          "relative_semitones": -2.0,
-          "note": "B2",
-          "confidence": 0.891
-        },
-        {
-          "time_ms": 132195,
-          "midi": 49.6,
-          "relative_semitones": 0.5,
-          "note": "D3",
-          "confidence": 0.859
-        },
-        {
-          "time_ms": 132340,
-          "midi": 49.35,
-          "relative_semitones": 0.25,
-          "note": "C#3",
-          "confidence": 0.891
-        },
-        {
-          "time_ms": 132484,
-          "midi": 48.8,
-          "relative_semitones": -0.3,
-          "note": "C#3",
-          "confidence": 0.686
-        },
-        {
-          "time_ms": 132628,
-          "midi": 48.8,
-          "relative_semitones": -0.3,
-          "note": "C#3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 132773,
-          "midi": 49.5,
-          "relative_semitones": 0.4,
-          "note": "D3",
-          "confidence": 0.686
-        },
-        {
-          "time_ms": 132917,
-          "midi": 49.3,
-          "relative_semitones": 0.2,
-          "note": "C#3",
-          "confidence": 0.891
-        },
-        {
-          "time_ms": 133062,
-          "midi": 49.3,
-          "relative_semitones": 0.2,
-          "note": "C#3",
+          "time_ms": 131663,
+          "midi": 45.4,
+          "relative_semitones": -3.7,
+          "note": "A2",
           "confidence": 0.827
         },
         {
-          "time_ms": 133206,
-          "midi": 49.05,
-          "relative_semitones": -0.05,
-          "note": "C#3",
-          "confidence": 0.722
+          "time_ms": 131824,
+          "midi": 47.3,
+          "relative_semitones": -1.8,
+          "note": "B2",
+          "confidence": 0.616
         },
         {
-          "time_ms": 133350,
-          "midi": 49.05,
-          "relative_semitones": -0.05,
-          "note": "C#3",
+          "time_ms": 131985,
+          "midi": 47.05,
+          "relative_semitones": -2.05,
+          "note": "B2",
+          "confidence": 0.859
+        },
+        {
+          "time_ms": 132146,
+          "midi": 49.65,
+          "relative_semitones": 0.55,
+          "note": "D3",
           "confidence": 0.792
         },
         {
-          "time_ms": 133495,
-          "midi": 49.1,
-          "relative_semitones": 0.0,
+          "time_ms": 132308,
+          "midi": 49.4,
+          "relative_semitones": 0.3,
           "note": "C#3",
           "confidence": 0.891
         },
         {
-          "time_ms": 133639,
-          "midi": 49.3,
-          "relative_semitones": 0.2,
-          "note": "C#3",
-          "confidence": 0.891
-        },
-        {
-          "time_ms": 133783,
+          "time_ms": 132469,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 133928,
+          "time_ms": 132630,
+          "midi": 48.8,
+          "relative_semitones": -0.3,
+          "note": "C#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 132791,
+          "midi": 49.4,
+          "relative_semitones": 0.3,
+          "note": "C#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 132952,
+          "midi": 49.3,
+          "relative_semitones": 0.2,
+          "note": "C#3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 133113,
+          "midi": 49.3,
+          "relative_semitones": 0.2,
+          "note": "C#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 133275,
+          "midi": 49.0,
+          "relative_semitones": -0.1,
+          "note": "C#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 133436,
+          "midi": 49.2,
+          "relative_semitones": 0.1,
+          "note": "C#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 133597,
+          "midi": 49.2,
+          "relative_semitones": 0.1,
+          "note": "C#3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 133758,
+          "midi": 49.1,
+          "relative_semitones": 0.0,
+          "note": "C#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 133919,
           "midi": 45.05,
           "relative_semitones": -4.05,
           "note": "A2",
           "confidence": 0.686
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "pending",
+        "observation": "原 131.690 秒开口吞掉了“雨声停在青瓦边沿”的“雨声”。",
+        "resolution": "母带人工确认开口为 131.421 秒。"
+      }
     },
     {
       "line_id": "line-032",
@@ -5490,7 +5498,7 @@
       "start_ms": 136390,
       "end_ms": 139040,
       "analysis_start_ms": 136390,
-      "analysis_end_ms": 139040,
+      "analysis_end_ms": 139100,
       "performers": [
         {
           "id": "performer-10",
@@ -5502,128 +5510,249 @@
       "representation_status": "monophonic_candidate",
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
-      "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.539,
-      "baseline_midi": 49.0,
+      "pitch_probability_floor": 0.15,
+      "voiced_coverage": 0.714,
+      "baseline_midi": 48.8,
       "candidate_range": {
         "lowest_note": "A2",
         "highest_note": "E3"
       },
       "contour_points": [
         {
-          "time_ms": 136473,
+          "time_ms": 136432,
           "midi": 50.1,
-          "relative_semitones": 1.1,
+          "relative_semitones": 1.3,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 136638,
+          "time_ms": 136517,
+          "midi": 50.05,
+          "relative_semitones": 1.25,
+          "note": "D3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 136602,
           "midi": 50.1,
-          "relative_semitones": 1.1,
+          "relative_semitones": 1.3,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 136804,
-          "midi": 50.5,
+          "time_ms": 136686,
+          "midi": 50.1,
+          "relative_semitones": 1.3,
+          "note": "D3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 136771,
+          "midi": 50.3,
           "relative_semitones": 1.5,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 136970,
+          "time_ms": 136856,
+          "midi": 50.6,
+          "relative_semitones": 1.8,
+          "note": "D#3",
+          "confidence": 0.946
+        },
+        {
+          "time_ms": 136940,
+          "midi": 52.1,
+          "relative_semitones": 3.3,
+          "note": "E3",
+          "confidence": 0.207
+        },
+        {
+          "time_ms": 137025,
+          "midi": 52.2,
+          "relative_semitones": 3.4,
+          "note": "E3",
+          "confidence": 0.517
+        },
+        {
+          "time_ms": 137110,
+          "midi": 52.2,
+          "relative_semitones": 3.4,
+          "note": "E3",
+          "confidence": 0.47
+        },
+        {
+          "time_ms": 137195,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 137135,
-          "midi": 52.2,
-          "relative_semitones": 3.2,
-          "note": "E3",
-          "confidence": 0.616
-        },
-        {
-          "time_ms": 137301,
-          "midi": 49.1,
-          "relative_semitones": 0.1,
+          "time_ms": 137279,
+          "midi": 49.3,
+          "relative_semitones": 0.5,
           "note": "C#3",
-          "confidence": 0.757
+          "confidence": 0.323
         },
         {
-          "time_ms": 137467,
+          "time_ms": 137364,
+          "midi": 49.1,
+          "relative_semitones": 0.3,
+          "note": "C#3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 137449,
           "midi": 49.2,
-          "relative_semitones": 0.2,
+          "relative_semitones": 0.4,
           "note": "C#3",
           "confidence": 0.891
         },
         {
-          "time_ms": 137632,
-          "midi": 48.95,
-          "relative_semitones": -0.05,
+          "time_ms": 137533,
+          "midi": 49.1,
+          "relative_semitones": 0.3,
           "note": "C#3",
-          "confidence": 0.919
+          "confidence": 0.946
         },
         {
-          "time_ms": 137798,
+          "time_ms": 137618,
+          "midi": 48.85,
+          "relative_semitones": 0.05,
+          "note": "C#3",
+          "confidence": 0.653
+        },
+        {
+          "time_ms": 137703,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 137963,
+          "time_ms": 137787,
           "midi": 44.7,
-          "relative_semitones": -4.3,
+          "relative_semitones": -4.1,
           "note": "A2",
-          "confidence": 0.686
+          "confidence": 0.15
         },
         {
-          "time_ms": 138129,
+          "time_ms": 137872,
           "midi": 44.7,
-          "relative_semitones": -4.3,
+          "relative_semitones": -4.1,
+          "note": "A2",
+          "confidence": 0.323
+        },
+        {
+          "time_ms": 137957,
+          "midi": 44.7,
+          "relative_semitones": -4.1,
+          "note": "A2",
+          "confidence": 0.651
+        },
+        {
+          "time_ms": 138041,
+          "midi": 44.8,
+          "relative_semitones": -4.0,
           "note": "A2",
           "confidence": 0.757
         },
         {
+          "time_ms": 138126,
+          "midi": 44.7,
+          "relative_semitones": -4.1,
+          "note": "A2",
+          "confidence": 0.485
+        },
+        {
+          "time_ms": 138211,
+          "midi": 47.4,
+          "relative_semitones": -1.4,
+          "note": "B2",
+          "confidence": 0.426
+        },
+        {
           "time_ms": 138295,
           "midi": 47.4,
+          "relative_semitones": -1.4,
+          "note": "B2",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 138380,
+          "midi": 47.2,
           "relative_semitones": -1.6,
           "note": "B2",
           "confidence": 0.757
         },
         {
-          "time_ms": 138460,
+          "time_ms": 138465,
           "midi": 47.3,
-          "relative_semitones": -1.7,
+          "relative_semitones": -1.5,
           "note": "B2",
-          "confidence": 0.827
+          "confidence": 0.792
         },
         {
-          "time_ms": 138626,
-          "midi": 47.15,
-          "relative_semitones": -1.85,
+          "time_ms": 138550,
+          "midi": 47.3,
+          "relative_semitones": -1.5,
           "note": "B2",
-          "confidence": 0.946
+          "confidence": 0.891
         },
         {
-          "time_ms": 138792,
+          "time_ms": 138634,
+          "midi": 47.0,
+          "relative_semitones": -1.8,
+          "note": "B2",
+          "confidence": 0.985
+        },
+        {
+          "time_ms": 138719,
+          "midi": 46.6,
+          "relative_semitones": -2.2,
+          "note": "B2",
+          "confidence": 0.586
+        },
+        {
+          "time_ms": 138804,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 138957,
+          "time_ms": 138888,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
+        },
+        {
+          "time_ms": 138973,
+          "midi": 44.9,
+          "relative_semitones": -3.9,
+          "note": "A2",
+          "confidence": 0.228
+        },
+        {
+          "time_ms": 139058,
+          "midi": 44.9,
+          "relative_semitones": -3.9,
+          "note": "A2",
+          "confidence": 0.372
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "needs_correction",
+        "observation": "“任它香到明年”的末字“年”在候选试听中完全缺失。",
+        "analysis_window_override": {
+          "end_ms": 139100,
+          "basis": "listener_flag_plus_low_confidence_A2_tail_at_138950_to_139064_before_next_onset_near_139169"
+        },
+        "pitch_probability_floor": 0.15,
+        "contour_bins": 32
+      }
     },
     {
       "line_id": "line-035",
@@ -8216,128 +8345,245 @@
       "representation_status": "monophonic_candidate",
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
-      "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.44,
-      "baseline_midi": 52.1,
+      "pitch_probability_floor": 0.15,
+      "voiced_coverage": 0.725,
+      "baseline_midi": 51.45,
       "candidate_range": {
         "lowest_note": "B2",
         "highest_note": "F#3"
       },
       "contour_points": [
         {
-          "time_ms": 182485,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
+          "time_ms": 182448,
+          "midi": 50.2,
+          "relative_semitones": -1.25,
+          "note": "D3",
+          "confidence": 0.15
         },
         {
-          "time_ms": 182635,
+          "time_ms": 182522,
+          "midi": 50.9,
+          "relative_semitones": -0.55,
+          "note": "D#3",
+          "confidence": 0.177
+        },
+        {
+          "time_ms": 182598,
+          "midi": 51.5,
+          "relative_semitones": 0.05,
+          "note": "D#3",
+          "confidence": 0.517
+        },
+        {
+          "time_ms": 182672,
           "midi": 51.8,
-          "relative_semitones": -0.3,
+          "relative_semitones": 0.35,
           "note": "E3",
-          "confidence": 0.827
-        },
-        {
-          "time_ms": 182785,
-          "midi": 53.85,
-          "relative_semitones": 1.75,
-          "note": "F#3",
           "confidence": 0.891
         },
         {
-          "time_ms": 182935,
-          "midi": 54.15,
-          "relative_semitones": 2.05,
-          "note": "F#3",
-          "confidence": 0.757
+          "time_ms": 182748,
+          "midi": 53.25,
+          "relative_semitones": 1.8,
+          "note": "F3",
+          "confidence": 0.616
         },
         {
-          "time_ms": 183085,
+          "time_ms": 182822,
+          "midi": 54.0,
+          "relative_semitones": 2.55,
+          "note": "F#3",
+          "confidence": 0.946
+        },
+        {
+          "time_ms": 182898,
+          "midi": 54.05,
+          "relative_semitones": 2.6,
+          "note": "F#3",
+          "confidence": 0.582
+        },
+        {
+          "time_ms": 182972,
+          "midi": 54.2,
+          "relative_semitones": 2.75,
+          "note": "F#3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 183048,
+          "midi": 53.2,
+          "relative_semitones": 1.75,
+          "note": "F3",
+          "confidence": 0.426
+        },
+        {
+          "time_ms": 183122,
           "midi": 52.1,
-          "relative_semitones": 0.0,
+          "relative_semitones": 0.65,
           "note": "E3",
           "confidence": 0.686
         },
         {
-          "time_ms": 183235,
+          "time_ms": 183198,
           "midi": 52.1,
-          "relative_semitones": 0.0,
+          "relative_semitones": 0.65,
           "note": "E3",
           "confidence": 0.891
         },
         {
-          "time_ms": 183385,
+          "time_ms": 183272,
+          "midi": 52.1,
+          "relative_semitones": 0.65,
+          "note": "E3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 183348,
           "midi": 52.15,
-          "relative_semitones": 0.05,
+          "relative_semitones": 0.7,
+          "note": "E3",
+          "confidence": 0.792
+        },
+        {
+          "time_ms": 183422,
+          "midi": 52.1,
+          "relative_semitones": 0.65,
           "note": "E3",
           "confidence": 0.757
         },
         {
-          "time_ms": 183535,
+          "time_ms": 183498,
+          "midi": 50.05,
+          "relative_semitones": -1.4,
+          "note": "D3",
+          "confidence": 0.301
+        },
+        {
+          "time_ms": 183572,
+          "midi": 50.3,
+          "relative_semitones": -1.15,
+          "note": "D3",
+          "confidence": 0.282
+        },
+        {
+          "time_ms": 183648,
+          "midi": 50.25,
+          "relative_semitones": -1.2,
+          "note": "D3",
+          "confidence": 0.289
+        },
+        {
+          "time_ms": 183722,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 183685,
+          "time_ms": 183798,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 183835,
+          "time_ms": 183872,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 183985,
+          "time_ms": 183948,
+          "midi": 47.0,
+          "relative_semitones": -4.45,
+          "note": "B2",
+          "confidence": 0.399
+        },
+        {
+          "time_ms": 184022,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 184135,
+          "time_ms": 184098,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 184285,
+          "time_ms": 184172,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 184248,
           "midi": 47.3,
-          "relative_semitones": -4.8,
+          "relative_semitones": -4.15,
+          "note": "B2",
+          "confidence": 0.517
+        },
+        {
+          "time_ms": 184322,
+          "midi": 47.3,
+          "relative_semitones": -4.15,
           "note": "B2",
           "confidence": 0.757
         },
         {
-          "time_ms": 184435,
+          "time_ms": 184398,
           "midi": 47.0,
-          "relative_semitones": -5.1,
+          "relative_semitones": -4.45,
           "note": "B2",
           "confidence": 0.919
         },
         {
-          "time_ms": 184585,
-          "midi": 50.2,
-          "relative_semitones": -1.9,
+          "time_ms": 184472,
+          "midi": 50.1,
+          "relative_semitones": -1.35,
+          "note": "D3",
+          "confidence": 0.323
+        },
+        {
+          "time_ms": 184548,
+          "midi": 50.75,
+          "relative_semitones": -0.7,
+          "note": "D#3",
+          "confidence": 0.582
+        },
+        {
+          "time_ms": 184622,
+          "midi": 50.0,
+          "relative_semitones": -1.45,
           "note": "D3",
           "confidence": 0.757
         },
         {
-          "time_ms": 184735,
-          "midi": 50.25,
-          "relative_semitones": -1.85,
+          "time_ms": 184698,
+          "midi": 50.6,
+          "relative_semitones": -0.85,
+          "note": "D#3",
+          "confidence": 0.28
+        },
+        {
+          "time_ms": 184772,
+          "midi": 50.1,
+          "relative_semitones": -1.35,
           "note": "D3",
-          "confidence": 0.722
+          "confidence": 0.616
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "needs_correction",
+        "observation": "“温度依偎在身边”的“依偎”在候选试听中不自然地断开。",
+        "pitch_probability_floor": 0.15,
+        "contour_bins": 32
+      }
     },
     {
       "line_id": "line-053",
@@ -8369,128 +8615,245 @@
       "representation_status": "monophonic_candidate",
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
-      "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.496,
-      "baseline_midi": 56.85,
+      "pitch_probability_floor": 0.15,
+      "voiced_coverage": 0.779,
+      "baseline_midi": 55.55,
       "candidate_range": {
         "lowest_note": "B2",
         "highest_note": "A3"
       },
       "contour_points": [
         {
-          "time_ms": 184851,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
+          "time_ms": 184830,
+          "midi": 50.0,
+          "relative_semitones": -5.55,
+          "note": "D3",
+          "confidence": 0.207
         },
         {
-          "time_ms": 184933,
+          "time_ms": 184871,
+          "midi": 50.1,
+          "relative_semitones": -5.45,
+          "note": "D3",
+          "confidence": 0.372
+        },
+        {
+          "time_ms": 184912,
           "midi": 50.2,
-          "relative_semitones": -6.65,
+          "relative_semitones": -5.35,
+          "note": "D3",
+          "confidence": 0.485
+        },
+        {
+          "time_ms": 184953,
+          "midi": 50.2,
+          "relative_semitones": -5.35,
           "note": "D3",
           "confidence": 0.722
         },
         {
-          "time_ms": 185015,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
+          "time_ms": 184994,
+          "midi": 50.2,
+          "relative_semitones": -5.35,
+          "note": "D3",
+          "confidence": 0.323
         },
         {
-          "time_ms": 185097,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
+          "time_ms": 185035,
+          "midi": 50.15,
+          "relative_semitones": -5.4,
+          "note": "D3",
+          "confidence": 0.192
         },
         {
-          "time_ms": 185178,
-          "midi": 46.7,
-          "relative_semitones": -10.15,
+          "time_ms": 185076,
+          "midi": 49.8,
+          "relative_semitones": -5.75,
+          "note": "D3",
+          "confidence": 0.15
+        },
+        {
+          "time_ms": 185117,
+          "midi": 46.9,
+          "relative_semitones": -8.65,
           "note": "B2",
+          "confidence": 0.207
+        },
+        {
+          "time_ms": 185158,
+          "midi": 46.7,
+          "relative_semitones": -8.85,
+          "note": "B2",
+          "confidence": 0.549
+        },
+        {
+          "time_ms": 185199,
+          "midi": 46.7,
+          "relative_semitones": -8.85,
+          "note": "B2",
+          "confidence": 0.549
+        },
+        {
+          "time_ms": 185240,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 185281,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 185322,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 185363,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 185404,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 185445,
+          "midi": 53.8,
+          "relative_semitones": -1.75,
+          "note": "F#3",
+          "confidence": 0.301
+        },
+        {
+          "time_ms": 185485,
+          "midi": 53.9,
+          "relative_semitones": -1.65,
+          "note": "F#3",
+          "confidence": 0.722
+        },
+        {
+          "time_ms": 185526,
+          "midi": 54.0,
+          "relative_semitones": -1.55,
+          "note": "F#3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 185567,
+          "midi": 54.15,
+          "relative_semitones": -1.4,
+          "note": "F#3",
+          "confidence": 0.687
+        },
+        {
+          "time_ms": 185608,
+          "midi": 55.4,
+          "relative_semitones": -0.15,
+          "note": "G3",
+          "confidence": 0.426
+        },
+        {
+          "time_ms": 185649,
+          "midi": 56.9,
+          "relative_semitones": 1.35,
+          "note": "A3",
+          "confidence": 0.586
+        },
+        {
+          "time_ms": 185690,
+          "midi": 56.8,
+          "relative_semitones": 1.25,
+          "note": "A3",
           "confidence": 0.686
         },
         {
-          "time_ms": 185260,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
-        },
-        {
-          "time_ms": 185342,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
-        },
-        {
-          "time_ms": 185424,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
-        },
-        {
-          "time_ms": 185506,
-          "midi": 53.9,
-          "relative_semitones": -2.95,
-          "note": "F#3",
+          "time_ms": 185731,
+          "midi": 56.6,
+          "relative_semitones": 1.05,
+          "note": "A3",
           "confidence": 0.792
         },
         {
-          "time_ms": 185588,
-          "midi": 54.1,
-          "relative_semitones": -2.75,
-          "note": "F#3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 185670,
-          "midi": 56.9,
-          "relative_semitones": 0.05,
+          "time_ms": 185772,
+          "midi": 57.1,
+          "relative_semitones": 1.55,
           "note": "A3",
           "confidence": 0.686
         },
         {
-          "time_ms": 185752,
-          "midi": 56.7,
-          "relative_semitones": -0.15,
-          "note": "A3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 185833,
-          "midi": 57.2,
-          "relative_semitones": 0.35,
+          "time_ms": 185813,
+          "midi": 57.25,
+          "relative_semitones": 1.7,
           "note": "A3",
           "confidence": 0.827
         },
         {
-          "time_ms": 185915,
-          "midi": 56.8,
-          "relative_semitones": -0.05,
+          "time_ms": 185854,
+          "midi": 57.0,
+          "relative_semitones": 1.45,
+          "note": "A3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 185895,
+          "midi": 56.7,
+          "relative_semitones": 1.15,
+          "note": "A3",
+          "confidence": 0.946
+        },
+        {
+          "time_ms": 185936,
+          "midi": 56.9,
+          "relative_semitones": 1.35,
+          "note": "A3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 185977,
+          "midi": 57.1,
+          "relative_semitones": 1.55,
+          "note": "A3",
+          "confidence": 0.792
+        },
+        {
+          "time_ms": 186018,
+          "midi": 57.0,
+          "relative_semitones": 1.45,
+          "note": "A3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 186059,
+          "midi": 56.85,
+          "relative_semitones": 1.3,
           "note": "A3",
           "confidence": 0.891
         },
         {
-          "time_ms": 185997,
-          "midi": 57.1,
-          "relative_semitones": 0.25,
+          "time_ms": 186100,
+          "midi": 56.95,
+          "relative_semitones": 1.4,
           "note": "A3",
           "confidence": 0.757
-        },
-        {
-          "time_ms": 186079,
-          "midi": 56.9,
-          "relative_semitones": 0.05,
-          "note": "A3",
-          "confidence": 0.827
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "needs_correction",
+        "observation": "03:04.810 的“回应时”中，“回应”只剩孤立点音，没有形成可听的连续旋律。",
+        "pitch_probability_floor": 0.15,
+        "contour_bins": 32
+      }
     },
     {
       "line_id": "line-054",

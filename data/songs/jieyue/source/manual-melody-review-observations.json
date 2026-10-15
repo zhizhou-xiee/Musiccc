@@ -69,6 +69,38 @@
       "observation": "原 107.520 秒开口吞掉了“也算相见”的“也”。",
       "resolution": "母带人工确认开口为 107.154 秒。"
     },
+    "line-030": {
+      "status": "pending",
+      "observation": "原候选把下一句“雨声停在青瓦边沿”的“雨声”并入了“茶烟绕过案上旧纸”。",
+      "resolution": "统一时间轴已将 line-030 结束和 line-031 开始共同修订为 131.421 秒。"
+    },
+    "line-031": {
+      "status": "pending",
+      "observation": "原 131.690 秒开口吞掉了“雨声停在青瓦边沿”的“雨声”。",
+      "resolution": "母带人工确认开口为 131.421 秒。"
+    },
+    "line-034": {
+      "status": "needs_correction",
+      "observation": "“任它香到明年”的末字“年”在候选试听中完全缺失。",
+      "analysis_window_override": {
+        "end_ms": 139100,
+        "basis": "listener_flag_plus_low_confidence_A2_tail_at_138950_to_139064_before_next_onset_near_139169"
+      },
+      "pitch_probability_floor": 0.15,
+      "contour_bins": 32
+    },
+    "line-052": {
+      "status": "needs_correction",
+      "observation": "“温度依偎在身边”的“依偎”在候选试听中不自然地断开。",
+      "pitch_probability_floor": 0.15,
+      "contour_bins": 32
+    },
+    "line-053": {
+      "status": "needs_correction",
+      "observation": "03:04.810 的“回应时”中，“回应”只剩孤立点音，没有形成可听的连续旋律。",
+      "pitch_probability_floor": 0.15,
+      "contour_bins": 32
+    },
     "line-065": {
       "status": "needs_correction",
       "observation": "“共此刻”候选需要返工。",
