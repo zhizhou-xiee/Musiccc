@@ -1,0 +1,46 @@
+{
+  "evaluation_version": "r2",
+  "conditions": {
+    "a_lyrics_only": {
+      "full_correct": 2,
+      "partial": 0,
+      "incorrect_or_unsupported": 8,
+      "weighted_score_out_of_10": 2.0,
+      "unsupported_abstentions": 8,
+      "unsupported_claim_errors": 0,
+      "observation_interpretation_separation": "pass"
+    },
+    "b_natural_layers": {
+      "full_correct": 6,
+      "partial": 4,
+      "incorrect_or_unsupported": 0,
+      "weighted_score_out_of_10": 8.0,
+      "unsupported_abstentions": 0,
+      "unsupported_claim_errors": 4,
+      "observation_interpretation_separation": "pass",
+      "error_pattern": "在 4 道后段题中混淆压缩中文标签‘低吹类?’与‘低音类?’。"
+    },
+    "c_mss_layers": {
+      "full_correct": 10,
+      "partial": 0,
+      "incorrect_or_unsupported": 0,
+      "weighted_score_out_of_10": 10.0,
+      "unsupported_abstentions": 0,
+      "unsupported_claim_errors": 0,
+      "observation_interpretation_separation": "pass"
+    }
+  },
+  "scoring": {
+    "full": 1.0,
+    "partial": 0.5,
+    "incorrect_or_unsupported": 0.0,
+    "method": "人工对照 questions.json 中的 ground_truth；先评客观题，再检查开放题是否分离观测与联想。"
+  },
+  "limits": [
+    "每种条件只有一个隔离子代理样本。",
+    "三名受试者来自同一模型家族，不能代表跨模型兼容性。",
+    "Token 为 UTF-8 字节代理区间，不是供应商 tokenizer 实测。",
+    "开放题中自然语言与 MSS 条件都产生潮汐类比；单样本不足以评价解释多样性。"
+  ],
+  "paid_model_calls": 0
+}

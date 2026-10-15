@@ -1,0 +1,43 @@
+{
+  "notice": "Token ranges are UTF-8 byte proxies, not provider tokenizer counts.",
+  "shared_lyrics": {
+    "utf8_bytes": 3665,
+    "estimated_tokens_low": 917,
+    "estimated_tokens_high": 1222
+  },
+  "music_payloads": {
+    "a_lyrics_only": {
+      "utf8_bytes": 0,
+      "estimated_tokens_low": 0,
+      "estimated_tokens_high": 0
+    },
+    "b_natural_layers": {
+      "utf8_bytes": 2378,
+      "estimated_tokens_low": 595,
+      "estimated_tokens_high": 793
+    },
+    "c_mss_layers": {
+      "utf8_bytes": 2332,
+      "estimated_tokens_low": 583,
+      "estimated_tokens_high": 778
+    }
+  },
+  "complete_packets": {
+    "a_lyrics_only": {
+      "utf8_bytes": 3837,
+      "estimated_tokens_low": 960,
+      "estimated_tokens_high": 1279
+    },
+    "b_natural_layers": {
+      "utf8_bytes": 6272,
+      "estimated_tokens_low": 1568,
+      "estimated_tokens_high": 2091
+    },
+    "c_mss_layers": {
+      "utf8_bytes": 6218,
+      "estimated_tokens_low": 1555,
+      "estimated_tokens_high": 2073
+    }
+  },
+  "paid_model_calls": 0
+}
