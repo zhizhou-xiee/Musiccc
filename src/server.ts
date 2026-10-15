@@ -230,12 +230,32 @@ async function main(): Promise<void> {
   const host = process.env.HOST ?? "0.0.0.0";
   const server = createMusicHttpServer();
   server.listen(port, host, () => console.log(`JieYue Music listening on http://${host}:${port}/music`));
-  const shutdown = async () => {
-    server.close();
-    await musicMcpHandler.close();
+  let shuttingDown = false;
+  const shutdown = async (signal: NodeJS.Signals) => {
+    if (shuttingDown) return;
+    shuttingDown = true;
+    console.log(`Received ${signal}; draining JieYue Music`);
+
+    const forceClose = setTimeout(() => server.closeAllConnections(), 10_000);
+    forceClose.unref();
+    try {
+      await Promise.all([
+        new Promise<void>((resolveClose, rejectClose) => {
+          server.close((error) => (error ? rejectClose(error) : resolveClose()));
+          server.closeIdleConnections();
+        }),
+        musicMcpHandler.close(),
+      ]);
+      console.log("JieYue Music stopped cleanly");
+    } catch (error) {
+      process.exitCode = 1;
+      console.error("JieYue Music shutdown failed:", error);
+    } finally {
+      clearTimeout(forceClose);
+    }
   };
-  process.once("SIGINT", () => void shutdown());
-  process.once("SIGTERM", () => void shutdown());
+  process.once("SIGINT", () => void shutdown("SIGINT"));
+  process.once("SIGTERM", () => void shutdown("SIGTERM"));
 }
 
 const entry = process.argv[1] ? pathToFileURL(resolve(process.argv[1])).href : "";

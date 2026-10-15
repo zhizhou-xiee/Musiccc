@@ -1,7 +1,10 @@
 {
   "$schema": "https://railway.com/railway.schema.json",
   "deploy": {
+    "startCommand": "node dist/src/server.js",
     "healthcheckPath": "/healthz",
-    "healthcheckTimeout": 60
+    "healthcheckTimeout": 60,
+    "overlapSeconds": "10",
+    "drainingSeconds": "15"
   }
 }

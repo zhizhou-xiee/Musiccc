@@ -164,7 +164,7 @@ export function createMusicMcpServer(): McpServer {
 
 export const musicMcpHandler = createMcpHandler(() => createMusicMcpServer(), {
   legacy: "stateless",
-  responseMode: "json",
+  responseMode: "auto",
   maxRequestBodySize: 64 * 1024,
   maxSubscriptions: 8,
   keepAliveMs: 15_000,

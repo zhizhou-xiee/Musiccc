@@ -6,6 +6,12 @@
 
 本机 Railway CLI 旧链接仍指向 CRO-TOWN。在执行任何写操作前，必须显式重新链接并核对 Project 与 Service；不得依赖当前目录遗留状态。
 
+## 部署换班
+
+Musiccc 的运行时数据均来自镜像与专属 Bucket，不依赖持久卷。2026-10-15 核对确认原 `musiccc-volume` 仅含文件系统自动生成的 `lost+found`，且代码没有 `/data` 读写；该卷已从 Musiccc Service 解绑但未删除。
+
+`railway.json` 配置 `/healthz` 部署健康检查、新旧实例 10 秒重叠与 15 秒退出缓冲。应用直接以 Node 启动，并在 `SIGTERM` / `SIGINT` 时停止接受新请求、关闭空闲连接、等待 HTTP 与 MCP 处理器结束；最长 10 秒后关闭遗留连接，避免正常部署换班被误判成异常退出。
+
 ## 推荐媒体路径
 
 720p MV 存入 Musiccc 专属的 Railway Bucket `jieyue-media`。Bucket 为私有；应用访问 `/music/media/jieyue-mv-720p.mp4` 时生成六小时有效的签名 GET URL，并以 307 跳转，让浏览器直接从 Bucket 获取视频。这样保留 Range 请求能力，也不让视频流经过应用进程。
