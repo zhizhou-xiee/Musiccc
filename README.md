@@ -2,7 +2,7 @@
 
 《借月》人机双端音乐展厅的独立仓库。
 
-当前状态：Phase 0 技术路线已锁定，Phase 1 人类网页与 Phase 3 MCP 初版已部署到独立 Railway 临时域名；音乐时间轴仍保留逐项人工校对状态。GitHub 与 Railway 均独立于迎风小镇；Musiccc 专属 Railway Bucket 已连接，正式域名尚未接入。
+当前状态：Phase 0 技术路线已锁定，Phase 1 人类网页与 Phase 3 MCP 初版已部署；音乐时间轴仍保留逐项人工校对状态。GitHub 与 Railway 均独立于迎风小镇；Musiccc 专属 Railway Bucket 已连接。正式入口为 [`https://crotown.app/music`](https://crotown.app/music)，MCP 入口为 `https://crotown.app/music/mcp`。
 
 Railway 的授权隔离边界与媒体上传方案见 [docs/railway-media.md](docs/railway-media.md)。Musiccc 可以与 Readdd 共享 Railway Project，但保持独立 Service 与资源；迎风小镇位于另一 Project，禁止引用。
 
@@ -10,7 +10,7 @@ Railway 的授权隔离边界与媒体上传方案见 [docs/railway-media.md](do
 
 - 本仓库必须独立于迎风小镇主仓库、数据库、内部 API 和现有 MCP 服务运行。
 - Railway Project、Service、环境变量、构建、日志和静态媒体存储均应独立管理。
-- `crotown.app/music` 的正式路径接入必须另行审批；在此之前使用独立临时域名验收。
+- `crotown.app/music*` 只通过独立 Cloudflare Worker 路由到 Musiccc；不得扩大路由范围或修改迎风小镇仓库。部署与回滚记录见 [docs/domain-routing.md](docs/domain-routing.md)。
 - 音频分析只允许离线执行，网页与 MCP 请求不得触发实时音频分析。
 
 Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-assessment.md)，已确认素材见 [docs/asset-inventory.md](docs/asset-inventory.md)。

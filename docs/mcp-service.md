@@ -81,6 +81,8 @@ pnpm start
 
 2026-10-15 在独立 Railway 临时端点 `https://musiccc-production.up.railway.app/music/mcp` 完成公网冒烟测试：legacy 与 modern era 均可初始化并发现四个工具；开始、推进、三类跳转、两客户端隔离、重复游标幂等和 8 路并发目录调用均通过。抽样最大工具结果为 6,945 UTF-8 字节。恶意 Origin 返回 403。
 
+同日经批准接入正式端点 `https://crotown.app/music/mcp`。通过独立 Cloudflare Worker 实测 modern era 初始化、四工具发现、`music_catalog` 与 `music_start` 调用均成功；详细隔离与回滚方式见 [domain-routing.md](domain-routing.md)。
+
 人类网页、脚本、样式、歌曲数据、海报和私有 Bucket 中的 MP4 均已从公网成功加载；视频 Range 请求、播放、暂停和拖动已验证。
 
 Claude 移动端产品客户端已经连接匿名 MCP，并实际完成 `music_start` 与 `music_seek` 调用。截图暴露出的正文过度工程化和文本 `content` 未包含游标问题已在听觉线索谱格式中修正。GPT 与 Gemini 的具体产品客户端尚未验证；服务器通过协议测试不等于客户端把音频传给模型，也不等于模型听到了声音。

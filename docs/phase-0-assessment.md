@@ -72,7 +72,7 @@ DNS 只能把主机名指向服务，不能按 URL path 分流。因此不能仅
 1. 验收阶段：使用 Railway 临时域名，或经批准后使用独立子域名 `music.crotown.app`。该地址让项目在完全脱离迎风小镇主系统时仍可独立运行。
 2. 正式阶段：由 `crotown.app` 当前入口层添加一条最小范围的反向代理规则，仅将 `/music` 和 `/music/*` 转发到独立服务；其他路径保持原样。代理必须保留方法与请求体，允许 MCP POST/GET 与流式响应，关闭不必要的响应缓冲，并把 `/music/mcp` 原样送达。
 
-这条正式路由属于生产入口变更，必须先确认当前入口技术、回滚方式、超时和流式代理支持，再单独审批执行。本仓库不会自行修改现有 DNS、代理或生产路由。
+这条正式路由属于生产入口变更，必须先确认当前入口技术、回滚方式、超时和流式代理支持，再单独审批执行。该变更已于 2026-10-15 获批，并以仅匹配 `crotown.app/music*` 的独立 Cloudflare Worker 落地；实现、验收和回滚记录见 [domain-routing.md](domain-routing.md)。
 
 Railway 官方文档说明自定义域名通过 DNS CNAME/TXT 接入，未将 URL path 作为 DNS 分流能力：https://docs.railway.com/networking/public-networking
 
