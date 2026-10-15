@@ -178,7 +178,11 @@ export function createMusicHttpServer() {
 
 async function main(): Promise<void> {
   const port = Number(process.env.PORT ?? 3000);
-  const host = process.env.HOST ?? "127.0.0.1";
+  // Railway and other container platforms route traffic to the container's
+  // network interface. Binding only to loopback makes a healthy process look
+  // unreachable to the platform edge, so default to all interfaces. Local
+  // development remains reachable at localhost as usual.
+  const host = process.env.HOST ?? "0.0.0.0";
   const server = createMusicHttpServer();
   server.listen(port, host, () => console.log(`JieYue Music listening on http://${host}:${port}/music`));
   const shutdown = async () => {
