@@ -79,18 +79,20 @@
             <audio id="audio" preload="metadata"></audio>
             <div class="transport">
               <button id="play-original" class="button primary" type="button">播放母带原句</button>
-              <button id="play-contour" class="button" type="button">听合成轮廓</button>
+              <button id="play-contour" class="button" type="button">听连续哼唱</button>
+              <button id="play-diagnostic" class="button subtle" type="button">听诊断点音</button>
               <button id="stop" class="button subtle" type="button">停止</button>
               <label><input id="loop" type="checkbox" /> 循环原句</label>
             </div>
             <div class="scrub"><span id="playhead">00:00.000</span><input id="scrubber" type="range" min="0" max="1000" value="0" /><span id="line-end">00:00.000</span></div>
-            <p>“合成轮廓”只是把 pYIN 候选音高哼成纯音，方便发现八度跳错、伴奏串音和断句问题；它不是歌声重建。</p>
+            <p>连续哼唱会在同一有声片段内平滑连接音高，休止处断开；诊断点音保留原始“电报机”模式。两者都不是歌声重建。</p>
           </section>
 
           <section class="chart-card card">
             <div class="card-title"><div><span class="badge automatic">自动测量 · 未校对</span><h3>逐句旋律候选</h3></div><div id="coverage" class="metric"></div></div>
             <div id="melody-chart" class="chart" role="img" aria-label="相对半音与候选音高曲线"></div>
             <div id="note-strip" class="note-strip"></div>
+            <p id="manual-observation" class="manual-observation" hidden></p>
             <p class="caveat">纵轴是相对本句中位音的半音差；空白是休止或置信度不足。多人合唱、和声、滑音和分轨残留都可能让候选失真。</p>
           </section>
 

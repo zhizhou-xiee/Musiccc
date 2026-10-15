@@ -1,0 +1,50 @@
+{
+  "schema_version": "melody-listening-observations/0.1",
+  "song_id": "jieyue",
+  "recorded_at": "2026-10-15",
+  "reviewer_role": "project_owner_listener",
+  "scope": "targeted_spot_check_not_full_pitch_verification",
+  "line_observations": {
+    "line-001": {
+      "status": "needs_correction",
+      "observation": "末字“檐”在候选播放中似乎缺失。",
+      "analysis_window_override": {
+        "end_ms": 12450,
+        "basis": "listener_flag_plus_continuous_pyin_tail_before_next_line"
+      },
+      "pitch_probability_floor": 0.45,
+      "contour_bins": 24
+    },
+    "line-065": {
+      "status": "needs_correction",
+      "observation": "“共此刻”候选需要返工。",
+      "pitch_probability_floor": 0.35,
+      "contour_bins": 24
+    },
+    "line-066": {
+      "status": "needs_correction",
+      "observation": "“共聚散共未歇”的“未歇”在候选播放中似乎没有呈现。",
+      "representation_note": "双主唱片段；单基频曲线只能表示主导音高，不能表示两条声部。",
+      "pitch_probability_floor": 0.30,
+      "contour_bins": 24
+    },
+    "line-069": {
+      "status": "needs_correction",
+      "observation": "“慢慢相见”的两个“慢”在候选播放中似乎被并在一起。",
+      "pitch_probability_floor": 0.45,
+      "contour_bins": 24
+    },
+    "line-070": {
+      "status": "needs_correction",
+      "observation": "“待清风又翻过窗前”的“又翻过窗前”听起来似乎跑调。",
+      "representation_note": "双主唱片段；单基频曲线只能表示主导音高，不能表示两条声部。"
+    }
+  },
+  "relation_observations": [
+    {
+      "line_ids": ["line-024", "line-049"],
+      "status": "listener_spot_check_ok",
+      "observation": "两次“不问阴晴”听感没有明显问题；低自动相关值不应解释为旋律不同。"
+    }
+  ]
+}

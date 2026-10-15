@@ -25,6 +25,7 @@ DEFAULT_OUTPUT = (
     ROOT
     / "data/songs/jieyue/experiments/melody-harmony-poc/outputs/candidates.json"
 )
+DEFAULT_MANUAL_REVIEW = ROOT / "data/songs/jieyue/source/manual-melody-review-observations.json"
 ANALYSIS_SR = 22_050
 HOP_LENGTH = 256
 FMIN = float(librosa.note_to_hz("C2"))
@@ -43,6 +44,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--vocals", type=Path, required=True)
     parser.add_argument("--accompaniment", type=Path, required=True)
     parser.add_argument("--timeline", type=Path, default=DEFAULT_TIMELINE)
+    parser.add_argument("--manual-review", type=Path, default=DEFAULT_MANUAL_REVIEW)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     return parser.parse_args()
 
@@ -88,10 +90,11 @@ def bin_pitch_points(
     start_ms: int,
     end_ms: int,
     bins: int = CONTOUR_BINS,
+    probability_floor: float = PITCH_PROBABILITY_FLOOR,
 ) -> tuple[list[dict[str, Any]], float | None, float]:
     edges = np.linspace(start_ms, end_ms, bins + 1)
     valid_line = frame_slice(times, start_ms, end_ms)
-    valid_pitch = valid_line & np.isfinite(midi) & (probability >= PITCH_PROBABILITY_FLOOR)
+    valid_pitch = valid_line & np.isfinite(midi) & (probability >= probability_floor)
     baseline = float(np.nanmedian(midi[valid_pitch])) if np.any(valid_pitch) else None
     coverage = float(np.sum(valid_pitch) / max(1, np.sum(valid_line)))
     points: list[dict[str, Any]] = []
@@ -101,7 +104,7 @@ def bin_pitch_points(
             (times * 1000 >= left)
             & (times * 1000 < right)
             & np.isfinite(midi)
-            & (probability >= PITCH_PROBABILITY_FLOOR)
+            & (probability >= probability_floor)
         )
         center_ms = int(round((left + right) / 2))
         if not np.any(mask) or baseline is None:
@@ -209,6 +212,8 @@ def main() -> None:
             raise SystemExit(f"Missing input: {source}")
 
     timeline = json.loads(args.timeline.read_text(encoding="utf-8"))
+    manual_review = json.loads(args.manual_review.read_text(encoding="utf-8")) if args.manual_review.exists() else {"line_observations": {}, "relation_observations": []}
+    manual_lines = manual_review.get("line_observations", {})
     lines, sections = flatten_timeline(timeline)
 
     master, _ = librosa.load(args.master, sr=ANALYSIS_SR, mono=True)
@@ -230,14 +235,24 @@ def main() -> None:
     melody_lines: list[dict[str, Any]] = []
     line_lookup: dict[str, dict[str, Any]] = {}
     for line in lines:
+        observation = manual_lines.get(line["id"], {})
+        window_override = observation.get("analysis_window_override", {})
+        analysis_start_ms = int(window_override.get("start_ms", line["start_ms"]))
+        analysis_end_ms = int(window_override.get("end_ms", line["end_ms"]))
+        probability_floor = float(observation.get("pitch_probability_floor", PITCH_PROBABILITY_FLOOR))
+        contour_bins = int(observation.get("contour_bins", CONTOUR_BINS))
         points, baseline, coverage = bin_pitch_points(
             frame_times,
             midi,
             probability,
-            line["start_ms"],
-            line["end_ms"],
+            analysis_start_ms,
+            analysis_end_ms,
+            bins=contour_bins,
+            probability_floor=probability_floor,
         )
         voiced_values = [point["midi"] for point in points if point["midi"] is not None]
+        lead_count = sum(performer.get("role") == "lead" for performer in line["performers"])
+        representation_status = "unsupported_polyphonic_unresolved" if lead_count > 1 else "monophonic_candidate"
         item = {
             "line_id": line["id"],
             "section_id": line["section_id"],
@@ -245,9 +260,14 @@ def main() -> None:
             "text": line["text"],
             "start_ms": line["start_ms"],
             "end_ms": line["end_ms"],
+            "analysis_start_ms": analysis_start_ms,
+            "analysis_end_ms": analysis_end_ms,
             "performers": line["performers"],
             "status": "automatic_unverified",
+            "representation_status": representation_status,
+            "lead_voice_count": lead_count,
             "method": "demucs_htdemucs_vocals_then_librosa_pyin",
+            "pitch_probability_floor": probability_floor,
             "voiced_coverage": round(coverage, 3),
             "baseline_midi": finite_float(baseline, 2) if baseline is not None else None,
             "candidate_range": {
@@ -255,6 +275,7 @@ def main() -> None:
                 "highest_note": note_name(max(voiced_values)) if voiced_values else None,
             },
             "contour_points": points,
+            "manual_observation": observation or None,
         }
         melody_lines.append(item)
         line_lookup[line["id"]] = line
@@ -282,6 +303,12 @@ def main() -> None:
             }
         )
 
+    for relation_observation in manual_review.get("relation_observations", []):
+        observed_ids = set(relation_observation.get("line_ids", []))
+        for relation in relations:
+            if {relation["source_line_id"], relation["target_line_id"]} == observed_ids:
+                relation["manual_observation"] = relation_observation
+
     harmonic_master = librosa.effects.harmonic(master)
     master_chroma = librosa.feature.chroma_cqt(y=harmonic_master, sr=ANALYSIS_SR, hop_length=512)
     keys = key_candidates(master_chroma)
@@ -296,7 +323,7 @@ def main() -> None:
     chords = harmony_windows(accompaniment_chroma, chroma_times, beat_times)
 
     output = {
-        "schema_version": "melody-harmony-poc/0.1",
+        "schema_version": "melody-harmony-poc/0.1.1",
         "generated_at": datetime.now(UTC).isoformat(),
         "song_id": timeline["song"]["id"],
         "production_integration": "none_review_only",
@@ -306,10 +333,11 @@ def main() -> None:
             "vocals_stem": {"basename": args.vocals.name, "repository_copy": False, "separation": "demucs_htdemucs_two_stems"},
             "accompaniment_stem": {"basename": args.accompaniment.name, "repository_copy": False, "separation": "demucs_htdemucs_two_stems"},
             "timeline_revision": timeline["revision"],
+            "manual_review_source": args.manual_review.name if args.manual_review.exists() else None,
         },
         "analysis": {
             "sample_rate_hz": ANALYSIS_SR,
-            "pitch": {"method": "librosa.pyin", "range": "C2-C6", "probability_floor": PITCH_PROBABILITY_FLOOR, "contour_bins_per_line": CONTOUR_BINS},
+            "pitch": {"method": "librosa.pyin", "range": "C2-C6", "default_probability_floor": PITCH_PROBABILITY_FLOOR, "default_contour_bins_per_line": CONTOUR_BINS, "manual_overrides_are_explicit": True},
             "key": {"method": "mean_cqt_chroma_krumhansl_profile_correlation", "status": "automatic_unverified", "candidates": keys},
             "tempo": {
                 "method": "librosa_beat_track_on_demucs_accompaniment",
@@ -328,6 +356,7 @@ def main() -> None:
         "review_policy": {
             "allowed_states": ["pending", "verified", "needs_correction", "unknown"],
             "rule": "Only reviewer-verified fields may be copied into a future MSS or MCP payload.",
+            "polyphonic_rule": "A single pYIN contour is diagnostic-only when lead_voice_count is greater than one.",
         },
     }
 

@@ -18,3 +18,5 @@ python3 -m http.server 4173
 4. 导出 `jieyue.melody-harmony.reviewed.json`。
 
 页面不会修改 `candidates.json`。只有后续明确导入并验证的字段才可以进入 MSS 或 MCP。
+
+“连续哼唱”只对单人候选开放，并在候选空值处断开；“诊断点音”保留逐点播放，方便定位漏音。双主唱与多人合唱会明确标成单线旋律不适用，只允许查看主导音高诊断，避免将声部竞争误听成跑调。

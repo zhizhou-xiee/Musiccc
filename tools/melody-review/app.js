@@ -7,8 +7,8 @@ const el = {
   importReview: $("#import-review"), reviewFile: $("#review-file"), exportReview: $("#export-review"), reviewProgress: $("#review-progress"), resetReview: $("#reset-review"),
   keyCandidates: $("#key-candidates"), tempoCandidates: $("#tempo-candidates"), harmonySummary: $("#harmony-summary"), relationSummary: $("#relation-summary"),
   filter: $("#filter"), lineList: $("#line-list"), position: $("#position"), section: $("#section"), status: $("#status"), lyric: $("#lyric"), lineMeta: $("#line-meta"),
-  previous: $("#previous"), next: $("#next"), playOriginal: $("#play-original"), playContour: $("#play-contour"), stop: $("#stop"), loop: $("#loop"), scrubber: $("#scrubber"), playhead: $("#playhead"), lineEnd: $("#line-end"),
-  coverage: $("#coverage"), melodyChart: $("#melody-chart"), noteStrip: $("#note-strip"), relationCopy: $("#relation-copy"), harmonyList: $("#harmony-list"), notes: $("#notes"),
+  previous: $("#previous"), next: $("#next"), playOriginal: $("#play-original"), playContour: $("#play-contour"), playDiagnostic: $("#play-diagnostic"), stop: $("#stop"), loop: $("#loop"), scrubber: $("#scrubber"), playhead: $("#playhead"), lineEnd: $("#line-end"),
+  coverage: $("#coverage"), melodyChart: $("#melody-chart"), noteStrip: $("#note-strip"), manualObservation: $("#manual-observation"), relationCopy: $("#relation-copy"), harmonyList: $("#harmony-list"), notes: $("#notes"),
   markPending: $("#mark-pending"), markUnknown: $("#mark-unknown"), markCorrection: $("#mark-correction"), markVerified: $("#mark-verified"), toast: $("#toast"),
 };
 
@@ -21,7 +21,13 @@ let synthNodes = [];
 let toastTimer;
 
 function line() { return data.melody_lines[activeIndex]; }
-function reviewFor(id) { return reviews[id] || { status: "pending", notes: "" }; }
+function reviewFor(id) {
+  if (reviews[id]) return reviews[id];
+  const source = data?.melody_lines?.find((item) => item.line_id === id)?.manual_observation;
+  return source ? { status: source.status || "pending", notes: source.observation || "", source: "project_owner_listener" } : { status: "pending", notes: "" };
+}
+function analysisStart(item) { return item.analysis_start_ms ?? item.start_ms; }
+function analysisEnd(item) { return item.analysis_end_ms ?? item.end_ms; }
 function formatTime(ms) {
   const safe = Math.max(0, Number(ms) || 0), minutes = Math.floor(safe / 60000), seconds = Math.floor((safe % 60000) / 1000), millis = Math.floor(safe % 1000);
   return `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}.${String(millis).padStart(3,"0")}`;
@@ -78,6 +84,7 @@ function renderChart(item) {
   const paths = segments.map((points) => `<polyline points="${points.map((point) => point.join(",")).join(" ")}" fill="none" stroke="#e8d398" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`).join("");
   const dots = item.contour_points.map((point,index) => point.relative_semitones === null ? "" : `<circle cx="${x(index)}" cy="${y(point.relative_semitones)}" r="4" fill="#8fc3d5"><title>${formatTime(point.time_ms)} · ${point.note} · ${point.relative_semitones >= 0 ? "+" : ""}${point.relative_semitones}st · p=${point.confidence}</title></circle>`).join("");
   el.melodyChart.innerHTML = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">${grid}${paths}${dots}<text x="${pad.left}" y="${height-8}" fill="#9ba7aa" font-size="10">${formatTime(item.start_ms)}</text><text x="${width-pad.right}" y="${height-8}" fill="#9ba7aa" font-size="10" text-anchor="end">${formatTime(item.end_ms)}</text></svg>`;
+  el.noteStrip.style.gridTemplateColumns = `repeat(${item.contour_points.length}, minmax(0,1fr))`;
   el.noteStrip.replaceChildren(...item.contour_points.map((point) => { const chip = document.createElement("span"); chip.className = "note-chip"; chip.textContent = point.note || "—"; chip.title = point.note ? `${formatTime(point.time_ms)} · MIDI ${point.midi}` : `${formatTime(point.time_ms)} · 空白`; return chip; }));
 }
 
@@ -88,7 +95,8 @@ function renderRelation(item) {
   const otherId = relation.source_line_id === item.line_id ? relation.target_line_id : relation.source_line_id;
   const other = data.melody_lines.find((candidate) => candidate.line_id === otherId);
   if (!relation.relative_contour_correlation) { el.relationCopy.textContent = `与 ${otherId}「${other?.text || ""}」配对，但有效音高不足，关系保持 unknown。`; return; }
-  el.relationCopy.textContent = `与 ${otherId}「${other?.text || ""}」配对：相对轮廓相关 ${relation.relative_contour_correlation}，中位音高差 ${relation.median_pitch_shift_semitones > 0 ? "+" : ""}${relation.median_pitch_shift_semitones} 半音。标签：${relation.relation}（自动未校对）。`;
+  const listener = relation.manual_observation ? ` 人工抽听：${relation.manual_observation.observation}` : "";
+  el.relationCopy.textContent = `与 ${otherId}「${other?.text || ""}」配对：相对轮廓相关 ${relation.relative_contour_correlation}，中位音高差 ${relation.median_pitch_shift_semitones > 0 ? "+" : ""}${relation.median_pitch_shift_semitones} 半音。标签：${relation.relation}（自动未校对）。${listener}`;
 }
 
 function renderHarmony(item) {
@@ -108,9 +116,13 @@ function renderActive() {
   const item = line(), review = reviewFor(item.line_id);
   el.position.textContent = `第 ${activeIndex + 1} / ${data.melody_lines.length} 句`; el.section.textContent = item.section_title; el.lyric.textContent = item.text;
   el.status.className = `status ${review.status}`; el.status.textContent = statusLabel(review.status);
-  el.lineMeta.textContent = `${formatTime(item.start_ms)}–${formatTime(item.end_ms)} · ${performers(item)} · ${item.line_id}`;
-  el.playhead.textContent = formatTime(item.start_ms); el.lineEnd.textContent = formatTime(item.end_ms); el.scrubber.value = 0;
-  el.coverage.textContent = `有效覆盖 ${(item.voiced_coverage * 100).toFixed(1)}% · ${item.candidate_range.lowest_note || "?"}–${item.candidate_range.highest_note || "?"}`;
+  const extended = analysisEnd(item) !== item.end_ms ? ` · 分析尾部延至 ${formatTime(analysisEnd(item))}` : "";
+  el.lineMeta.textContent = `${formatTime(item.start_ms)}–${formatTime(item.end_ms)}${extended} · ${performers(item)} · ${item.line_id}`;
+  el.playhead.textContent = formatTime(analysisStart(item)); el.lineEnd.textContent = formatTime(analysisEnd(item)); el.scrubber.value = 0;
+  const polyphonic = item.representation_status === "unsupported_polyphonic_unresolved";
+  el.coverage.textContent = polyphonic ? `${item.lead_voice_count} 位主唱 · 单线旋律不适用 · 仅主导音高诊断` : `有效覆盖 ${(item.voiced_coverage * 100).toFixed(1)}% · ${item.candidate_range.lowest_note || "?"}–${item.candidate_range.highest_note || "?"}`;
+  el.playContour.disabled = polyphonic; el.playContour.title = polyphonic ? "多人主唱不能安全压成一条连续旋律" : "连续播放单旋律候选";
+  if (item.manual_observation) { el.manualObservation.hidden = false; el.manualObservation.textContent = `人工抽听：${item.manual_observation.observation}${item.manual_observation.representation_note ? ` ${item.manual_observation.representation_note}` : ""}`; } else { el.manualObservation.hidden = true; el.manualObservation.textContent = ""; }
   el.notes.value = review.notes || ""; renderChart(item); renderRelation(item); renderHarmony(item); renderList();
 }
 function select(index) { stopAll(); activeIndex = Math.max(0, Math.min(data.melody_lines.length - 1, index)); renderActive(); document.querySelector(".line-item.active")?.scrollIntoView({ block: "nearest" }); }
@@ -120,26 +132,44 @@ function stopSynth() { synthNodes.forEach((node) => { try { node.stop(); } catch
 function stopAll() { el.audio.pause(); stopSynth(); el.playOriginal.textContent = "播放母带原句"; }
 async function playOriginal() {
   if (!audioUrl) { toast("先选择本机母带 WAV 或 MP3"); return; }
-  stopSynth(); const item = line(); el.audio.currentTime = item.start_ms / 1000; await el.audio.play(); el.playOriginal.textContent = "暂停";
+  stopSynth(); const item = line(); el.audio.currentTime = analysisStart(item) / 1000; await el.audio.play(); el.playOriginal.textContent = "暂停";
 }
-async function playContour() {
-  stopAll(); audioContext ||= new AudioContext(); await audioContext.resume(); const points = line().contour_points; const now = audioContext.currentTime + .06;
+function schedulePointTone(point, start, duration, destination) {
+  const oscillator = audioContext.createOscillator(), gain = audioContext.createGain(); oscillator.type = "sine"; oscillator.frequency.value = 440 * 2 ** ((point.midi - 69) / 12);
+  gain.gain.setValueAtTime(0.0001, start); gain.gain.exponentialRampToValueAtTime(.055, start + .015); gain.gain.setValueAtTime(.055, start + Math.max(.02,duration-.025)); gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
+  oscillator.connect(gain).connect(destination); oscillator.start(start); oscillator.stop(start + duration + .02); synthNodes.push(oscillator);
+}
+async function playDiagnostic() {
+  stopAll(); audioContext ||= new AudioContext(); await audioContext.resume(); const item = line(), points = item.contour_points, now = audioContext.currentTime + .06;
   points.forEach((point, index) => {
     if (point.midi === null) return;
-    const next = points[index + 1]; const duration = Math.max(.08, ((next?.time_ms || line().end_ms) - point.time_ms) / 1000);
-    const oscillator = audioContext.createOscillator(), gain = audioContext.createGain(); oscillator.type = "sine"; oscillator.frequency.value = 440 * 2 ** ((point.midi - 69) / 12);
-    gain.gain.setValueAtTime(0.0001, now + (point.time_ms - line().start_ms) / 1000); gain.gain.exponentialRampToValueAtTime(.055, now + (point.time_ms - line().start_ms) / 1000 + .015); gain.gain.setValueAtTime(.055, now + (point.time_ms - line().start_ms) / 1000 + Math.max(.02,duration-.025)); gain.gain.exponentialRampToValueAtTime(.0001, now + (point.time_ms - line().start_ms) / 1000 + duration);
-    oscillator.connect(gain).connect(audioContext.destination); oscillator.start(now + (point.time_ms - line().start_ms) / 1000); oscillator.stop(now + (point.time_ms - line().start_ms) / 1000 + duration + .02); synthNodes.push(oscillator);
+    const next = points[index + 1], duration = Math.max(.06, ((next?.time_ms || analysisEnd(item)) - point.time_ms) / 1000 * .72), start = now + (point.time_ms - analysisStart(item)) / 1000;
+    schedulePointTone(point, start, duration, audioContext.destination);
   });
+}
+async function playContour() {
+  const item = line(); if (item.representation_status === "unsupported_polyphonic_unresolved") { toast("这句有多位主唱，不能安全压成一条旋律；请用诊断点音或听母带"); return; }
+  stopAll(); audioContext ||= new AudioContext(); await audioContext.resume(); const points = item.contour_points, now = audioContext.currentTime + .06;
+  const spacing = points.length > 1 ? (points[1].time_ms - points[0].time_ms) / 1000 : .1; let index = 0;
+  while (index < points.length) {
+    while (index < points.length && points[index].midi === null) index += 1; if (index >= points.length) break;
+    const group = []; while (index < points.length && points[index].midi !== null) { group.push(points[index]); index += 1; }
+    const start = now + (group[0].time_ms - analysisStart(item)) / 1000, end = now + (group[group.length-1].time_ms - analysisStart(item)) / 1000 + spacing * .72;
+    const carrier = audioContext.createOscillator(), overtone = audioContext.createOscillator(), carrierGain = audioContext.createGain(), overtoneGain = audioContext.createGain(), filter = audioContext.createBiquadFilter();
+    carrier.type = "triangle"; overtone.type = "sine"; filter.type = "lowpass"; filter.frequency.value = 1250; carrierGain.gain.value = .045; overtoneGain.gain.value = .012;
+    group.forEach((point, pointIndex) => { const at = now + (point.time_ms - analysisStart(item)) / 1000, frequency = 440 * 2 ** ((point.midi - 69) / 12); if (pointIndex === 0) { carrier.frequency.setValueAtTime(frequency, at); overtone.frequency.setValueAtTime(frequency*2, at); } else { carrier.frequency.linearRampToValueAtTime(frequency, at); overtone.frequency.linearRampToValueAtTime(frequency*2, at); } });
+    const envelope = audioContext.createGain(); envelope.gain.setValueAtTime(.0001,start); envelope.gain.exponentialRampToValueAtTime(1,start+.035); envelope.gain.setValueAtTime(1,Math.max(start+.04,end-.05)); envelope.gain.exponentialRampToValueAtTime(.0001,end);
+    carrier.connect(carrierGain).connect(filter); overtone.connect(overtoneGain).connect(filter); filter.connect(envelope).connect(audioContext.destination); carrier.start(start); overtone.start(start); carrier.stop(end+.02); overtone.stop(end+.02); synthNodes.push(carrier,overtone);
+  }
 }
 function setReview(status, advance = false) { const item = line(); reviews[item.line_id] = { status, notes: el.notes.value.trim(), reviewed_at: new Date().toISOString() }; save(); if (advance && activeIndex < data.melody_lines.length - 1) select(activeIndex + 1); else renderActive(); }
 
 el.chooseAudio.addEventListener("click", () => el.audioFile.click());
 el.audioFile.addEventListener("change", () => { const file = el.audioFile.files?.[0]; if (!file) return; if (audioUrl) URL.revokeObjectURL(audioUrl); audioUrl = URL.createObjectURL(file); el.audio.src = audioUrl; el.audioDot.classList.add("ready"); el.audioStatus.textContent = `${file.name} · 仅本机读取`; toast("母带已载入"); });
-el.playOriginal.addEventListener("click", () => el.audio.paused ? playOriginal() : el.audio.pause()); el.playContour.addEventListener("click", playContour); el.stop.addEventListener("click", stopAll);
+el.playOriginal.addEventListener("click", () => el.audio.paused ? playOriginal() : el.audio.pause()); el.playContour.addEventListener("click", playContour); el.playDiagnostic.addEventListener("click", playDiagnostic); el.stop.addEventListener("click", stopAll);
 el.audio.addEventListener("pause", () => { el.playOriginal.textContent = "播放母带原句"; });
-el.audio.addEventListener("timeupdate", () => { const item = line(), currentMs = el.audio.currentTime * 1000; if (currentMs >= item.end_ms) { if (el.loop.checked) { el.audio.currentTime = item.start_ms / 1000; el.audio.play(); } else el.audio.pause(); } const ratio = (currentMs - item.start_ms) / Math.max(1,item.end_ms-item.start_ms); el.scrubber.value = Math.max(0,Math.min(1000,ratio*1000)); el.playhead.textContent = formatTime(Math.max(item.start_ms,currentMs)); });
-el.scrubber.addEventListener("input", () => { const item = line(); el.audio.currentTime = (item.start_ms + Number(el.scrubber.value)/1000*(item.end_ms-item.start_ms))/1000; });
+el.audio.addEventListener("timeupdate", () => { const item = line(), currentMs = el.audio.currentTime * 1000; if (currentMs >= analysisEnd(item)) { if (el.loop.checked) { el.audio.currentTime = analysisStart(item) / 1000; el.audio.play(); } else el.audio.pause(); } const ratio = (currentMs - analysisStart(item)) / Math.max(1,analysisEnd(item)-analysisStart(item)); el.scrubber.value = Math.max(0,Math.min(1000,ratio*1000)); el.playhead.textContent = formatTime(Math.max(analysisStart(item),currentMs)); });
+el.scrubber.addEventListener("input", () => { const item = line(); el.audio.currentTime = (analysisStart(item) + Number(el.scrubber.value)/1000*(analysisEnd(item)-analysisStart(item)))/1000; });
 el.previous.addEventListener("click", () => select(activeIndex - 1)); el.next.addEventListener("click", () => select(activeIndex + 1)); el.filter.addEventListener("change", renderList);
 el.notes.addEventListener("input", () => { const item = line(), old = reviewFor(item.line_id); reviews[item.line_id] = { ...old, notes: el.notes.value }; save(); });
 el.markPending.addEventListener("click", () => setReview("pending")); el.markUnknown.addEventListener("click", () => setReview("unknown")); el.markCorrection.addEventListener("click", () => setReview("needs_correction")); el.markVerified.addEventListener("click", () => setReview("verified", true));

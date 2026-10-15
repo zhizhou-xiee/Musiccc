@@ -37,3 +37,5 @@ Python 依赖见 `scripts/requirements-melody-poc.txt`。输出为 `outputs/cand
 - 每四个跟踪拍形成的大小三和弦模板候选。第一、第二候选差距不足 0.08 时强制留空。
 
 所有字段均为 `automatic_unverified` 或 `unknown`。人工流程见 `tools/melody-review/README.md`。
+
+负责人第一轮抽听观察保存在 `data/songs/jieyue/source/manual-melody-review-observations.json`。生成脚本只对其中明确记录的分析窗口、概率门槛和采样格数应用局部覆盖；双主唱 / 多主唱片段标为单旋律表示不适用，不会用一条主导音高曲线冒充完整声部。
