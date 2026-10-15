@@ -1,0 +1,91 @@
+{
+  "evaluation_version": "openrouter-cross-model-r1-corrected",
+  "formal_run_id": "20261015T065625Z",
+  "models": [
+    "openai/gpt-6-luna",
+    "anthropic/claude-haiku-5.5",
+    "google/gemini-3.8-flash"
+  ],
+  "scoring": {
+    "objective_questions_per_sample": 10,
+    "full": 1.0,
+    "partial": 0.5,
+    "wrong_or_unavailable": 0.0,
+    "scores_order": "repetition_1_then_2_then_3",
+    "lyrics_only_rule": "Unsupported unknown answers are safe abstentions but recover zero musical information; Q5 and Q10 can score by correctly identifying uncertainty.",
+    "grader": "Independent model-family review followed by aggregate verification"
+  },
+  "by_model": {
+    "GPT": {
+      "a_lyrics_only": {"scores": [2.0, 2.0, 2.0], "mean": 2.0},
+      "b_natural_layers": {"scores": [9.0, 8.0, 8.5], "mean": 8.5},
+      "c_mss_layers": {"scores": [8.5, 9.5, 9.0], "mean": 9.0}
+    },
+    "Claude": {
+      "a_lyrics_only": {"scores": [2.0, 2.0, 2.0], "mean": 2.0},
+      "b_natural_layers": {"scores": [8.5, 9.5, 9.0], "mean": 9.0},
+      "c_mss_layers": {"scores": [9.0, 9.5, 9.0], "mean": 9.1667}
+    },
+    "Gemini": {
+      "a_lyrics_only": {"scores": [2.0, 2.0, 2.0], "mean": 2.0},
+      "b_natural_layers": {"scores": [10.0, 10.0, 10.0], "mean": 10.0},
+      "c_mss_layers": {"scores": [10.0, 10.0, 10.0], "mean": 10.0}
+    }
+  },
+  "aggregate": {
+    "a_lyrics_only": {
+      "mean_score_out_of_10": 2.0,
+      "full": 18,
+      "partial": 0,
+      "zero": 72,
+      "unsupported_factual_claims": 0
+    },
+    "b_natural_layers": {
+      "mean_score_out_of_10": 9.1667,
+      "full": 78,
+      "partial": 9,
+      "zero": 3,
+      "unsupported_factual_claims": 1
+    },
+    "c_mss_layers": {
+      "mean_score_out_of_10": 9.3889,
+      "full": 79,
+      "partial": 11,
+      "zero": 0,
+      "unsupported_factual_claims": 6
+    }
+  },
+  "response_integrity": {
+    "successful": 27,
+    "expected": 27,
+    "finish_reason_stop": 27,
+    "empty_content": 0,
+    "fact_interpretation_separation_pass": 27
+  },
+  "formal_run_usage": {
+    "prompt_tokens": 84720,
+    "completion_tokens": 20980,
+    "reported_cost_usd": 0.05821907,
+    "by_family_cost_usd": {
+      "GPT": 0.00318482,
+      "Claude": 0.0078975,
+      "Gemini": 0.04713675
+    }
+  },
+  "all_run_costs": {
+    "invalid_default_reasoning_prerun": 0.078219665,
+    "three_model_parameter_smoke": 0.001689325,
+    "gemini_disable_reasoning_error": 0.0,
+    "gemini_bounded_reasoning_smoke": 0.005799,
+    "formal_corrected_run": 0.05821907,
+    "total_reported_cost_usd": 0.14392706
+  },
+  "main_findings": [
+    "Both music representations greatly outperform lyrics alone on recoverable music facts.",
+    "Compressed MSS leads natural language by only 0.2222 points on the 10-point objective scale.",
+    "MSS produces no zero-score objective answers, but more confident factual contradictions than the natural-language condition.",
+    "The most repeated MSS failures concern instrument abbreviations, inherited background references, and the 119.138-second handoff direction.",
+    "Both natural-language and MSS conditions preserve varied metaphors; this sample does not show a clear diversity advantage for MSS."
+  ],
+  "recommendation": "Do not ship the current compressed MSS syntax unchanged. Keep numeric curves and layered event semantics, but replace ambiguous abbreviations and implicit handoffs with self-describing fields, then rerun the same fixed evaluation."
+}

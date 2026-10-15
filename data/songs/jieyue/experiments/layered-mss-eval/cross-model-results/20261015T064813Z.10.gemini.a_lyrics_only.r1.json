@@ -1,0 +1,36 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "condition": "a_lyrics_only",
+  "repetition": 1,
+  "seed": 17,
+  "status": "ok",
+  "elapsed_ms": 12311,
+  "response_id": "gen-1792047011-3UYHGIK22hJHI2wgz9qf",
+  "resolved_model": "google/gemini-3.8-flash",
+  "provider": "Google",
+  "usage": {
+    "prompt_tokens": 2404,
+    "completion_tokens": 1196,
+    "total_tokens": 3600,
+    "cost": 0.006288,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.006288,
+      "upstream_inference_prompt_cost": 0.001803,
+      "upstream_inference_completions_cost": 0.004485
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 893,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "content": "### 客观题\n\n1. **[layer_053285]**\n   * **事实**：unknown（材料未包含乐器或层级信息）。\n\n2. **[layer_058795]**\n   * **事实**：unknown（材料未包含乐器或基底信息）。\n\n3. **[layer_064100]**\n   * **事实**：unknown（材料仅记录 64870 起姬珩演唱歌词，未包含前景与基底的声学信息）。\n\n4. **[layer_119138]**\n   * **事实**：unknown（材料在 109870–128700 之间无记录，亦无前景与基底信息）。\n\n5. **[uncertainty_119138]**\n   * **事实**：unknown（材料未记录任何乐器）。\n\n6. **[layer_prechorus2]**\n   * **事实**：unknown（材料未记录古筝及声学基底）。\n\n7. **[layer_bridge]**\n   * **事实**：unknown（材料未包含古筝事件及基底信息）。\n\n8. **[layer_outro]**\n   * **事实**：unknown（材料未记录乐器与底层织体）。\n\n9."
+}

@@ -36,9 +36,9 @@
     43,
     91
   ],
-  "max_completion_tokens_per_call": 1200,
+  "max_completion_tokens_per_call": 1800,
   "conservative_input_tokens_per_call": 5000,
-  "maximum_approved_cost_usd": 0.1,
+  "maximum_approved_cost_usd": 0.2,
   "inference_call_count": 27,
   "notes": [
     "每次调用为独立对话，不共享上下文。",

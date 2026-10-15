@@ -34,8 +34,20 @@ python3 scripts/configure_openrouter_key.py
 
 ```bash
 OPENROUTER_API_KEY=... python3 scripts/run_openrouter_cross_model_eval.py \
-  --execute --approved-cap-usd 0.10
+  --execute --approved-cap-usd 0.20
 ```
+
+首次外部预跑发现三个模型默认启用隐藏推理，导致 1,200-token 输出预算主要被推理占用，不能用于正式评分。正式配置为 GPT 与 Claude 关闭推理，并把正文上限调整为 1,800 token；Gemini 3.8 Flash 的当前端点强制启用推理，因此限定为 256-token 推理预算，其余预算留给正文。这个供应商差异必须随结果报告。预跑保留为兼容性失败案例，不计入对照结果。
+
+跨模型运行清单：
+
+- `20261015T064813Z`：无效预跑；默认隐藏推理耗尽正文预算。
+- `20261015T065427Z`：三模型参数 smoke；定位 Claude 截断与 Gemini 参数错误。
+- `20261015T065536Z`：Gemini 禁用推理 smoke；端点拒绝，费用为 0。
+- `20261015T065602Z`：Gemini 限定推理预算 smoke；成功。
+- `20261015T065625Z`：正式修正版，27 / 27 成功；唯一计分 run。
+
+正式评分见 `cross-model-scorecard.json`，完整报告见 `docs/mss-cross-model-eval-report.md`。原始响应、usage 与 manifest 位于 `cross-model-results/`。所有结果已扫描，未包含 API key。
 
 `results/a_lyrics_only.md`、`results/b_natural_layers.md` 和 `results/c_mss_layers.md` 是预跑原文；预跑暴露连续事件结束时间缺失后，修订条件重新生成，`results/b_natural_layers_r2.md` 与 `results/c_mss_layers_r2.md` 为最终计分样本。歌词条件没有变化，因此没有重复调用。`scorecard.json` 记录最终评分。
 

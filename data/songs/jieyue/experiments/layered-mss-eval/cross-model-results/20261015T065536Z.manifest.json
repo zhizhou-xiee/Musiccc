@@ -1,0 +1,46 @@
+{
+  "run_id": "20261015T065536Z",
+  "started_at": "2026-10-15T06:55:36.571731+00:00",
+  "plan": {
+    "mode": "execute",
+    "run_type": "smoke",
+    "inference_calls": 1,
+    "worst_case_estimated_usd": 0.0105,
+    "cost_cap_usd": 0.2,
+    "models": [
+      {
+        "model": "openai/gpt-6-luna",
+        "worst_case_usd": 0.0,
+        "prompt_usd_per_token": "1E-7",
+        "completion_usd_per_token": "5E-7"
+      },
+      {
+        "model": "anthropic/claude-haiku-5.5",
+        "worst_case_usd": 0.0,
+        "prompt_usd_per_token": "1E-7",
+        "completion_usd_per_token": "5E-7"
+      },
+      {
+        "model": "google/gemini-3.8-flash",
+        "worst_case_usd": 0.0105,
+        "prompt_usd_per_token": "7.5E-7",
+        "completion_usd_per_token": "0.00000375"
+      }
+    ],
+    "max_completion_tokens_per_call": 1800,
+    "conservative_input_tokens_per_call": 5000
+  },
+  "jobs": [
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "c_mss_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T065536Z.01.gemini.c_mss_layers.r1.json",
+      "status": "error"
+    }
+  ],
+  "actual_cost_usd": 0.0,
+  "finished_at": "2026-10-15T06:55:36.837691+00:00"
+}

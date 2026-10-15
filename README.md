@@ -21,6 +21,8 @@ MSS/0.2 的 curve-first 实验见 [docs/mss-v0.2-curve-report.md](docs/mss-v0.2-
 
 分层表示的首轮隔离子代理盲测见 [docs/mss-layered-blind-test-report.md](docs/mss-layered-blind-test-report.md) 与 [实验目录](data/songs/jieyue/experiments/layered-mss-eval/README.md)。本轮未调用外部模型或产生费用；结果只支持继续验证 MSS，不能宣称跨模型兼容。
 
+OpenRouter 跨模型正式对照见 [docs/mss-cross-model-eval-report.md](docs/mss-cross-model-eval-report.md)。GPT、Claude、Gemini 的 27 个修正版样本显示自然语言＋曲线为 9.17 / 10，压缩 MSS＋曲线为 9.39 / 10；MSS 增益很小且产生更多自信事实错误，因此当前缩写版不直接进入生产，下一步改为自描述 MSS/0.3 后复测。
+
 统一歌曲资料位于 `data/songs/jieyue/metadata.json`，当前校对基准位于 `data/songs/jieyue/timeline.reference.json`。Whisper 旧初稿保留在 `data/songs/jieyue/timeline.draft.json` 作为对照；人工开口、估算唱完、字幕显示边界和自动节拍在数据中分别标注，不会混作同一种精度。
 
 本地歌词时间轴校对器位于 [tools/timeline-review](tools/timeline-review/README.md)。它直接读取本机母带，在浏览器本地保存进度并导出带人工审核记录的 JSON；不会上传或提交音频文件。

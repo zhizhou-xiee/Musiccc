@@ -1,0 +1,9 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "condition": "c_mss_layers",
+  "repetition": 1,
+  "seed": 17,
+  "status": "error",
+  "error": "HTTP Error 400: Bad Request"
+}

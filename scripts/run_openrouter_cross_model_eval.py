@@ -34,13 +34,18 @@ CHAT_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL_URL = "https://openrouter.ai/api/v1/model/{model_id}"
 SYSTEM_PROMPT = """你正在参加音乐表示盲测。你只能依据用户给出的材料回答。
 材料缺少证据时必须写 unknown；不得借助常识补全乐器、旋律、调性或拍号。
-客观事实和自由联想必须明确分开。请按题号逐题作答，保持简洁。"""
+客观事实和自由联想必须明确分开。请按题号逐题作答，保持简洁。
+每道客观题最多两句；每道开放题最多 100 个汉字。完整回答全部题目比展开论述更重要。"""
 
 
 @dataclass(frozen=True)
 class Price:
     prompt: Decimal
     completion: Decimal
+
+
+class APIRequestError(RuntimeError):
+    """An OpenRouter HTTP error with its diagnostic response body."""
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -106,8 +111,12 @@ def request_json(url: str, api_key: str, *, payload: dict[str, Any] | None = Non
             "X-Title": "JieYue MSS evaluation",
         },
     )
-    with urllib.request.urlopen(request, timeout=120) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(request, timeout=120) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        raise APIRequestError(f"HTTP {error.code}: {body[:4000]}") from error
 
 
 def live_price(model_id: str, api_key: str) -> Price:
@@ -123,22 +132,22 @@ def estimate_input_tokens(text: str, floor: int) -> int:
 
 
 def estimate_cost(
-    plan: dict[str, Any], prices: dict[str, Price], prompts: dict[str, str]
+    plan: dict[str, Any],
+    prices: dict[str, Price],
+    prompts: dict[str, str],
+    jobs: list[dict[str, Any]],
 ) -> tuple[Decimal, list[dict[str, Any]]]:
     rows: list[dict[str, Any]] = []
     total = Decimal("0")
-    repetitions = int(plan["repetitions_per_model_condition"])
     output_tokens = int(plan["max_completion_tokens_per_call"])
     input_floor = int(plan["conservative_input_tokens_per_call"])
     for model in plan["models"]:
         model_id = model["id"]
         price = prices[model_id]
         model_cost = Decimal("0")
-        for condition in plan["conditions"]:
-            input_tokens = estimate_input_tokens(prompts[condition], input_floor)
-            model_cost += repetitions * (
-                input_tokens * price.prompt + output_tokens * price.completion
-            )
+        for job in (item for item in jobs if item["model"] == model_id):
+            input_tokens = estimate_input_tokens(prompts[job["condition"]], input_floor)
+            model_cost += input_tokens * price.prompt + output_tokens * price.completion
         rows.append(
             {
                 "model": model_id,
@@ -151,11 +160,17 @@ def estimate_cost(
     return total, rows
 
 
-def build_jobs(plan: dict[str, Any]) -> list[dict[str, Any]]:
+def build_jobs(
+    plan: dict[str, Any], *, smoke: bool = False, only_family: str | None = None
+) -> list[dict[str, Any]]:
     jobs = []
     for model in plan["models"]:
-        for condition in plan["conditions"]:
-            for repetition, seed in enumerate(plan["seeds"], start=1):
+        if only_family and model["family"] != only_family:
+            continue
+        conditions = ["c_mss_layers"] if smoke else plan["conditions"]
+        seeds = [plan["seeds"][0]] if smoke else plan["seeds"]
+        for condition in conditions:
+            for repetition, seed in enumerate(seeds, start=1):
                 jobs.append(
                     {
                         "model": model["id"],
@@ -173,6 +188,16 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true", help="Send paid inference requests.")
     parser.add_argument(
+        "--smoke",
+        action="store_true",
+        help="Run one MSS request per model to verify response settings.",
+    )
+    parser.add_argument(
+        "--only-family",
+        choices=("GPT", "Claude", "Gemini"),
+        help="Limit a smoke or full run to one registered model family.",
+    )
+    parser.add_argument(
         "--approved-cap-usd",
         type=Decimal,
         help="Explicit spending approval. Required with --execute.",
@@ -184,7 +209,7 @@ def main() -> int:
     args = parse_args()
     plan = read_json(PLAN_PATH)
     prompts = {condition: build_prompt(condition) for condition in plan["conditions"]}
-    jobs = build_jobs(plan)
+    jobs = build_jobs(plan, smoke=args.smoke, only_family=args.only_family)
     configured_cap = Decimal(str(plan["maximum_approved_cost_usd"]))
     prices = {model["id"]: planned_price(model) for model in plan["models"]}
 
@@ -198,9 +223,10 @@ def main() -> int:
     else:
         api_key = ""
 
-    estimated_total, estimate_rows = estimate_cost(plan, prices, prompts)
+    estimated_total, estimate_rows = estimate_cost(plan, prices, prompts, jobs)
     summary = {
         "mode": "execute" if args.execute else "dry-run",
+        "run_type": "smoke" if args.smoke else "full",
         "inference_calls": len(jobs),
         "worst_case_estimated_usd": float(estimated_total),
         "cost_cap_usd": float(configured_cap),
@@ -229,6 +255,11 @@ def main() -> int:
     manifest_path = RESULTS_DIR / f"{run_id}.manifest.json"
 
     for index, job in enumerate(jobs, start=1):
+        reasoning = (
+            {"max_tokens": 256, "exclude": True}
+            if job["family"] == "Gemini"
+            else {"effort": "none", "exclude": True}
+        )
         payload = {
             "model": job["model"],
             "messages": [
@@ -238,6 +269,7 @@ def main() -> int:
             "temperature": plan["temperature"],
             "seed": job["seed"],
             "max_tokens": plan["max_completion_tokens_per_call"],
+            "reasoning": reasoning,
             "usage": {"include": True},
         }
         started = time.monotonic()
@@ -247,6 +279,8 @@ def main() -> int:
             usage = response.get("usage") or {}
             call_cost = Decimal(str(usage.get("cost") or "0"))
             actual_cost += call_cost
+            choice = response.get("choices", [{}])[0]
+            message = choice.get("message") or {}
             record = {
                 **job,
                 "status": "ok",
@@ -255,9 +289,11 @@ def main() -> int:
                 "resolved_model": response.get("model"),
                 "provider": response.get("provider"),
                 "usage": usage,
-                "content": response.get("choices", [{}])[0].get("message", {}).get("content", ""),
+                "finish_reason": choice.get("finish_reason"),
+                "native_finish_reason": choice.get("native_finish_reason"),
+                "content": message.get("content", ""),
             }
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as error:
+        except (APIRequestError, urllib.error.URLError, TimeoutError) as error:
             record = {**job, "status": "error", "error": str(error)}
         result_path = RESULTS_DIR / (
             f"{run_id}.{index:02d}.{job['family'].lower()}.{job['condition']}.r{job['repetition']}.json"

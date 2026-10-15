@@ -1,0 +1,279 @@
+{
+  "run_id": "20261015T064813Z",
+  "started_at": "2026-10-15T06:48:13.500657+00:00",
+  "plan": {
+    "mode": "execute",
+    "inference_calls": 27,
+    "worst_case_estimated_usd": 0.09405,
+    "cost_cap_usd": 0.1,
+    "models": [
+      {
+        "model": "openai/gpt-6-luna",
+        "worst_case_usd": 0.0099,
+        "prompt_usd_per_token": "1E-7",
+        "completion_usd_per_token": "5E-7"
+      },
+      {
+        "model": "anthropic/claude-haiku-5.5",
+        "worst_case_usd": 0.0099,
+        "prompt_usd_per_token": "1E-7",
+        "completion_usd_per_token": "5E-7"
+      },
+      {
+        "model": "google/gemini-3.8-flash",
+        "worst_case_usd": 0.07425,
+        "prompt_usd_per_token": "7.5E-7",
+        "completion_usd_per_token": "0.00000375"
+      }
+    ],
+    "max_completion_tokens_per_call": 1200,
+    "conservative_input_tokens_per_call": 5000
+  },
+  "jobs": [
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "a_lyrics_only",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.01.gpt.a_lyrics_only.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "c_mss_layers",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.02.gpt.c_mss_layers.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "c_mss_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.03.gemini.c_mss_layers.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "b_natural_layers",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.04.gpt.b_natural_layers.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "b_natural_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.05.gemini.b_natural_layers.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "a_lyrics_only",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.06.gemini.a_lyrics_only.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "b_natural_layers",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.07.gpt.b_natural_layers.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "c_mss_layers",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.08.gpt.c_mss_layers.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "b_natural_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.09.gpt.b_natural_layers.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "a_lyrics_only",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.10.gemini.a_lyrics_only.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "b_natural_layers",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.11.gemini.b_natural_layers.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "c_mss_layers",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.12.claude.c_mss_layers.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "a_lyrics_only",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.13.claude.a_lyrics_only.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "a_lyrics_only",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.14.claude.a_lyrics_only.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "a_lyrics_only",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.15.claude.a_lyrics_only.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "b_natural_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.16.claude.b_natural_layers.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "b_natural_layers",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.17.claude.b_natural_layers.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "c_mss_layers",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.18.claude.c_mss_layers.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "c_mss_layers",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.19.gemini.c_mss_layers.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "a_lyrics_only",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.20.gemini.a_lyrics_only.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "b_natural_layers",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.21.gemini.b_natural_layers.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "a_lyrics_only",
+      "repetition": 2,
+      "seed": 43,
+      "file": "20261015T064813Z.22.gpt.a_lyrics_only.r2.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "a_lyrics_only",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.23.gpt.a_lyrics_only.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "c_mss_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.24.claude.c_mss_layers.r1.json",
+      "status": "ok"
+    },
+    {
+      "model": "anthropic/claude-haiku-5.5",
+      "family": "Claude",
+      "condition": "b_natural_layers",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.25.claude.b_natural_layers.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "google/gemini-3.8-flash",
+      "family": "Gemini",
+      "condition": "c_mss_layers",
+      "repetition": 3,
+      "seed": 91,
+      "file": "20261015T064813Z.26.gemini.c_mss_layers.r3.json",
+      "status": "ok"
+    },
+    {
+      "model": "openai/gpt-6-luna",
+      "family": "GPT",
+      "condition": "c_mss_layers",
+      "repetition": 1,
+      "seed": 17,
+      "file": "20261015T064813Z.27.gpt.c_mss_layers.r1.json",
+      "status": "ok"
+    }
+  ],
+  "actual_cost_usd": 0.078219665,
+  "finished_at": "2026-10-15T06:52:48.257046+00:00"
+}

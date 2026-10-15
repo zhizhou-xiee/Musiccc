@@ -1,0 +1,36 @@
+{
+  "model": "openai/gpt-6-luna",
+  "family": "GPT",
+  "condition": "c_mss_layers",
+  "repetition": 3,
+  "seed": 91,
+  "status": "ok",
+  "elapsed_ms": 14289,
+  "response_id": "gen-1792046908-3xyE0DeRPcKfTzVm0gxU",
+  "resolved_model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "usage": {
+    "prompt_tokens": 3052,
+    "completion_tokens": 1200,
+    "total_tokens": 4252,
+    "cost": 0.000981425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3049,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000981425,
+      "upstream_inference_prompt_cost": 0.000381425,
+      "upstream_inference_completions_cost": 0.0006
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1200,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "content": null
+}

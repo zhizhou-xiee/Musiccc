@@ -1,0 +1,36 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "condition": "b_natural_layers",
+  "repetition": 2,
+  "seed": 43,
+  "status": "ok",
+  "elapsed_ms": 7012,
+  "response_id": "gen-1792047091-OpekX2WbQaewvCVBPjYp",
+  "resolved_model": "google/gemini-3.8-flash",
+  "provider": "Google",
+  "usage": {
+    "prompt_tokens": 3801,
+    "completion_tokens": 1196,
+    "total_tokens": 4997,
+    "cost": 0.00733575,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00733575,
+      "upstream_inference_prompt_cost": 0.00285075,
+      "upstream_inference_completions_cost": 0.004485
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1148,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "content": "-200450 短扬起).\n        *   Answer: 不是同一次事件，是两次不同的古筝前景事件（前者为短和声，后者为短扬起）。基底均为低音类"
+}

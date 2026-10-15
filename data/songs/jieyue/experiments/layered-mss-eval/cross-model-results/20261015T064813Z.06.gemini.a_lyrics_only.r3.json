@@ -1,0 +1,36 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "family": "Gemini",
+  "condition": "a_lyrics_only",
+  "repetition": 3,
+  "seed": 91,
+  "status": "ok",
+  "elapsed_ms": 9916,
+  "response_id": "gen-1792046954-lTh7XvajrqeYQlW8nD7D",
+  "resolved_model": "google/gemini-3.8-flash",
+  "provider": "Google",
+  "usage": {
+    "prompt_tokens": 2404,
+    "completion_tokens": 1196,
+    "total_tokens": 3600,
+    "cost": 0.006288,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.006288,
+      "upstream_inference_prompt_cost": 0.001803,
+      "upstream_inference_completions_cost": 0.004485
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1151,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "content": "### 客观题\n\n1. **[layer_053285]** \n   - 事实：unknown（材料仅包含歌词、演唱者和时间轴，未提供乐器、"
+}
