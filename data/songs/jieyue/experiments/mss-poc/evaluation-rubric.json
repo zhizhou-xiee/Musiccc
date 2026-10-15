@@ -1,0 +1,192 @@
+{
+  "evaluation_kind": "explicit_information_coverage_proxy",
+  "warning": "这不是模型客户端实测；只检查表示中是否有回答问题所需的明确证据。",
+  "ratings": {
+    "supported": "有直接、可定位的证据。",
+    "partial": "只能回答到段落级或缺少完整时间/不确定性。",
+    "unsupported": "没有足够证据。",
+    "contradicted": "表示包含被较新人工细标纠正的旧结论。"
+  },
+  "probes": [
+    {
+      "id": "bridge_singer",
+      "question": "Bridge 由谁主唱？",
+      "ground_truth": "小克（vv家的）",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "supported",
+        "natural_800": "supported",
+        "mss_300": "unsupported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "intro_order",
+      "question": "前奏乐器按什么顺序进入并成为前景？",
+      "ground_truth": "钢琴独奏；吉他加入；古筝加入并成为前景。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "partial",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "intro_guitar_time",
+      "question": "吉他在前奏何时进入？",
+      "ground_truth": "25718 ms",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "unsupported",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "first_drum_time",
+      "question": "精细听音记录中最早的轻架子鼓鼓点何时出现？",
+      "ground_truth": "约 64100 ms；旧粗标约 54000 ms 已被细标修正。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "contradicted",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "interlude_handoff",
+      "question": "间奏的前景乐器如何交接？",
+      "ground_truth": "横笛在 109358 ms 进入；119138 ms 退出并交给古筝或琵琶候选。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "partial",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "interlude_uncertainty",
+      "question": "119138 ms 的高音乐器是否已确定？",
+      "ground_truth": "未确定，候选为古筝或琵琶。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "contradicted",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "verse1_texture",
+      "question": "Verse 1 在 55593 ms 后的持续基底是什么？",
+      "ground_truth": "低沉吹奏家族、低音提琴类、电子琴。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "partial",
+        "natural_800": "supported",
+        "mss_300": "unsupported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "chorus1_exit",
+      "question": "第一遍副歌的主要伴奏何时退出？",
+      "ground_truth": "106764 ms",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "unsupported",
+        "natural_800": "supported",
+        "mss_300": "unsupported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "prechorus2_accents",
+      "question": "第二个 Pre-Chorus 的古筝亮音出现几次、在何时？",
+      "ground_truth": "两次：152761 ms 与 158631 ms。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "unsupported",
+        "natural_800": "supported",
+        "mss_300": "unsupported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "final_chorus_build",
+      "question": "Final Chorus 如何从稀疏织体扩展？",
+      "ground_truth": "210738 ms 单吉他拨弦；219117 ms 鼓点及低音/键盘基底进入。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "partial",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "outro_handoff",
+      "question": "尾奏前景怎样从古筝交给吉他？",
+      "ground_truth": "235060 ms 古筝前景；242489 ms 吉他衔接、古筝退出。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "partial",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "chorus1_dynamic",
+      "question": "第一遍副歌的自动响度轮廓从前到后怎样变化？",
+      "ground_truth": "约 -8.2/-8.8/-10.3 LUFS，后段较轻。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "supported",
+        "natural_800": "supported",
+        "mss_300": "unsupported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "spectral_bridge_outro",
+      "question": "Bridge 与尾奏的频谱质心中位数如何比较？",
+      "ground_truth": "Bridge 约 1062 Hz；尾奏约 672 Hz。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "unsupported",
+        "natural_800": "supported",
+        "mss_300": "unsupported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "drums_first_sections",
+      "question": "哪些段落明确记录为鼓点先进入？",
+      "ground_truth": "Pre-Chorus 1、Verse 2、Chorus 2。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "unsupported",
+        "natural_800": "supported",
+        "mss_300": "partial",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    },
+    {
+      "id": "motif",
+      "question": "副歌是否复用了某个已验证的旋律动机？",
+      "ground_truth": "unknown；没有经人工核验的旋律转录。",
+      "ratings_by_variant": {
+        "legacy_summary_baseline": "unsupported",
+        "natural_800": "supported",
+        "mss_300": "supported",
+        "mss_800": "supported",
+        "mss_1500": "supported"
+      }
+    }
+  ]
+}

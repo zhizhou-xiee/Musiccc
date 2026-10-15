@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crotown.app/schemas/mss/0.1.json",
+  "title": "Music Semantic Score 0.1",
+  "description": "面向语言模型的可溯源音乐语义表示；不是可演奏总谱，也不表示模型直接听到了音频。",
+  "type": "object",
+  "required": ["mss_version", "track", "meta", "performers", "instrument_vocabulary", "sections", "events", "relations", "motifs", "sources"],
+  "properties": {
+    "mss_version": {"const": "0.1"},
+    "track": {
+      "type": "object",
+      "required": ["song_id", "title", "duration_ms", "audio_sha256"],
+      "properties": {
+        "song_id": {"type": "string"},
+        "title": {"type": "string"},
+        "duration_ms": {"type": "integer", "minimum": 1},
+        "audio_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "meta": {
+      "type": "object",
+      "required": ["tempo", "meter", "key"],
+      "properties": {
+        "tempo": {"$ref": "#/$defs/claim"},
+        "meter": {"$ref": "#/$defs/claim"},
+        "key": {"$ref": "#/$defs/claim"}
+      },
+      "additionalProperties": false
+    },
+    "performers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name"],
+        "properties": {
+          "id": {"type": "string"},
+          "display_name": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "instrument_vocabulary": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "sections": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/section"}
+    },
+    "events": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/event"}
+    },
+    "relations": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/relation"}
+    },
+    "motifs": {
+      "type": "object",
+      "required": ["status", "items"],
+      "properties": {
+        "status": {"enum": ["unknown", "measured", "human_verified"]},
+        "reason": {"type": "string"},
+        "items": {"type": "array", "items": {"type": "object"}}
+      },
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"type": "string"},
+          "status": {"type": "string"},
+          "description": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "required": ["value", "status", "source_ids"],
+      "properties": {
+        "value": {},
+        "unit": {"type": ["string", "null"]},
+        "status": {"enum": ["unknown", "automatic_unverified", "human_annotated", "human_verified"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "note": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "section": {
+      "type": "object",
+      "required": ["id", "label", "start_ms", "end_ms", "lead_performer_ids", "backing_performer_ids", "lyric_line_ids", "acoustic", "source_ids"],
+      "properties": {
+        "id": {"type": "string"},
+        "label": {"type": "string"},
+        "start_ms": {"type": "integer", "minimum": 0},
+        "end_ms": {"type": "integer", "minimum": 1},
+        "lead_performer_ids": {"type": "array", "items": {"type": "string"}},
+        "backing_performer_ids": {"type": "array", "items": {"type": "string"}},
+        "lyric_line_ids": {"type": "array", "items": {"type": "string"}},
+        "acoustic": {
+          "type": "object",
+          "required": ["integrated_lufs", "loudness_profile_lufs", "spectral_centroid_hz_median", "spectral_flux_median", "status"],
+          "properties": {
+            "integrated_lufs": {"type": "number"},
+            "loudness_profile_lufs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+            "spectral_centroid_hz_median": {"type": "number"},
+            "spectral_flux_median": {"type": "number"},
+            "status": {"const": "automatic_unverified"}
+          },
+          "additionalProperties": false
+        },
+        "source_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "required": ["id", "section_id", "start_ms", "type", "description_zh", "certainty", "source_ids"],
+      "properties": {
+        "id": {"type": "string"},
+        "section_id": {"type": "string"},
+        "start_ms": {"type": "integer", "minimum": 0},
+        "end_ms": {"type": "integer", "minimum": 1},
+        "type": {"type": "string"},
+        "instruments": {"type": "array", "items": {"type": "string"}},
+        "instrument_candidates": {"type": "array", "items": {"type": "string"}},
+        "foreground": {"type": "string"},
+        "actions": {"type": "array", "items": {"type": "string"}},
+        "register": {"type": "string"},
+        "motion": {"type": "string"},
+        "articulation": {"type": "array", "items": {"type": "string"}},
+        "timbre": {"type": "array", "items": {"type": "string"}},
+        "role": {"type": "string"},
+        "description_zh": {"type": "string"},
+        "certainty": {"type": "string"},
+        "source_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "required": ["id", "type", "from", "to", "claim", "status", "source_ids"],
+      "properties": {
+        "id": {"type": "string"},
+        "type": {"type": "string"},
+        "from": {"type": "string"},
+        "to": {"type": "string"},
+        "claim": {"type": "string"},
+        "status": {"enum": ["automatic_unverified", "human_annotated", "human_verified"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  }
+}

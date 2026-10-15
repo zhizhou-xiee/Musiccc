@@ -1,0 +1,70 @@
+{
+  "measurement_notice": "No provider tokenizer is installed. Token ranges are UTF-8 bytes / 4 through bytes / 3; they are comparison proxies, not billed tokens.",
+  "variants": {
+    "legacy_summary_baseline": {
+      "target_token_budget": null,
+      "utf8_bytes": 2822,
+      "unicode_characters": 1130,
+      "estimated_tokens_low": 706,
+      "estimated_tokens_high": 941,
+      "coverage_counts": {
+        "supported": 2,
+        "partial": 5,
+        "unsupported": 6,
+        "contradicted": 2
+      }
+    },
+    "natural_800": {
+      "target_token_budget": 800,
+      "utf8_bytes": 2357,
+      "unicode_characters": 1097,
+      "estimated_tokens_low": 590,
+      "estimated_tokens_high": 786,
+      "coverage_counts": {
+        "supported": 15
+      }
+    },
+    "mss_300": {
+      "target_token_budget": 300,
+      "utf8_bytes": 865,
+      "unicode_characters": 865,
+      "estimated_tokens_low": 217,
+      "estimated_tokens_high": 289,
+      "coverage_counts": {
+        "unsupported": 6,
+        "supported": 8,
+        "partial": 1
+      }
+    },
+    "mss_800": {
+      "target_token_budget": 800,
+      "utf8_bytes": 2376,
+      "unicode_characters": 2280,
+      "estimated_tokens_low": 594,
+      "estimated_tokens_high": 792,
+      "coverage_counts": {
+        "supported": 15
+      }
+    },
+    "mss_1500": {
+      "target_token_budget": 1500,
+      "utf8_bytes": 4497,
+      "unicode_characters": 2875,
+      "estimated_tokens_low": 1125,
+      "estimated_tokens_high": 1499,
+      "coverage_counts": {
+        "supported": 15
+      }
+    }
+  },
+  "full_mss": {
+    "utf8_bytes": 21175,
+    "unicode_characters": 19181,
+    "estimated_tokens_low": 5294,
+    "estimated_tokens_high": 7059,
+    "sections": 12,
+    "events": 32,
+    "relations": 4,
+    "verified_motifs": 0
+  }
+}

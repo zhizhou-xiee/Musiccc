@@ -1,0 +1,1231 @@
+{
+  "mss_version": "0.1",
+  "track": {
+    "song_id": "jieyue",
+    "title": "借月",
+    "duration_ms": 249594,
+    "audio_sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c"
+  },
+  "meta": {
+    "tempo": {
+      "value": 95.7,
+      "unit": "bpm",
+      "status": "automatic_unverified",
+      "source_ids": [
+        "timeline_reference"
+      ],
+      "confidence": null,
+      "note": "自动估算，尚未按工程速度人工核对。"
+    },
+    "meter": {
+      "value": null,
+      "unit": null,
+      "status": "unknown",
+      "source_ids": [],
+      "confidence": null,
+      "note": "未进行可靠拍号识别。"
+    },
+    "key": {
+      "value": null,
+      "unit": null,
+      "status": "unknown",
+      "source_ids": [],
+      "confidence": null,
+      "note": "未进行可靠调性识别。"
+    }
+  },
+  "performers": [
+    {
+      "id": "performer-01",
+      "display_name": "阿珩"
+    },
+    {
+      "id": "performer-02",
+      "display_name": "阿谢姆"
+    },
+    {
+      "id": "performer-03",
+      "display_name": "艾六六"
+    },
+    {
+      "id": "performer-04",
+      "display_name": "柏舟"
+    },
+    {
+      "id": "performer-05",
+      "display_name": "姬珩"
+    },
+    {
+      "id": "performer-06",
+      "display_name": "离守念"
+    },
+    {
+      "id": "performer-07",
+      "display_name": "林帆"
+    },
+    {
+      "id": "performer-08",
+      "display_name": "林柚"
+    },
+    {
+      "id": "performer-09",
+      "display_name": "明"
+    },
+    {
+      "id": "performer-10",
+      "display_name": "南枳"
+    },
+    {
+      "id": "performer-11",
+      "display_name": "祁序"
+    },
+    {
+      "id": "performer-12",
+      "display_name": "祁昼"
+    },
+    {
+      "id": "performer-13",
+      "display_name": "滕八八"
+    },
+    {
+      "id": "performer-14",
+      "display_name": "小克（小预家的）"
+    },
+    {
+      "id": "performer-15",
+      "display_name": "小克（vv家的）"
+    },
+    {
+      "id": "performer-16",
+      "display_name": "小语"
+    },
+    {
+      "id": "performer-17",
+      "display_name": "玄砚"
+    },
+    {
+      "id": "performer-18",
+      "display_name": "谢之平"
+    },
+    {
+      "id": "performer-19",
+      "display_name": "聿宿"
+    },
+    {
+      "id": "performer-20",
+      "display_name": "阈声"
+    },
+    {
+      "id": "performer-21",
+      "display_name": "周衡"
+    }
+  ],
+  "instrument_vocabulary": {
+    "piano": "钢琴",
+    "guitar": "吉他",
+    "guzheng": "古筝",
+    "pipa": "琵琶",
+    "dizi": "横笛",
+    "electronic_keyboard": "电子琴",
+    "low_wind_family": "低沉的吹奏乐器（具体乐器未知）",
+    "low_string_or_bass_family": "低音提琴类（具体乐器未知）",
+    "drum_kit": "架子鼓",
+    "shaker_family": "沙鼓类（具体乐器未知）",
+    "gong_like_percussion": "锣鼓感打击乐（具体乐器未知）"
+  },
+  "sections": [
+    {
+      "id": "a_cappella",
+      "label": "清唱（无伴奏）",
+      "start_ms": 0,
+      "end_ms": 23300,
+      "lead_performer_ids": [
+        "performer-01",
+        "performer-02"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-001",
+        "line-002"
+      ],
+      "acoustic": {
+        "integrated_lufs": -19.3,
+        "loudness_profile_lufs": [
+          -18.0,
+          -18.6,
+          -21.1
+        ],
+        "spectral_centroid_hz_median": 1110,
+        "spectral_flux_median": 0.0104,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "intro",
+      "label": "前奏",
+      "start_ms": 23300,
+      "end_ms": 34080,
+      "lead_performer_ids": [],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [],
+      "acoustic": {
+        "integrated_lufs": -15.5,
+        "loudness_profile_lufs": [
+          -16.0,
+          -13.9,
+          -18.0
+        ],
+        "spectral_centroid_hz_median": 974,
+        "spectral_flux_median": 0.025,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "verse_1",
+      "label": "Verse 1",
+      "start_ms": 34080,
+      "end_ms": 74650,
+      "lead_performer_ids": [
+        "performer-03",
+        "performer-04",
+        "performer-05"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-003",
+        "line-004",
+        "line-005",
+        "line-006",
+        "line-007",
+        "line-008",
+        "line-009",
+        "line-010",
+        "line-011",
+        "line-012",
+        "line-013",
+        "line-014"
+      ],
+      "acoustic": {
+        "integrated_lufs": -11.9,
+        "loudness_profile_lufs": [
+          -11.7,
+          -12.1,
+          -12.0
+        ],
+        "spectral_centroid_hz_median": 915,
+        "spectral_flux_median": 0.0462,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "pre_chorus_1",
+      "label": "Pre-Chorus",
+      "start_ms": 74650,
+      "end_ms": 87470,
+      "lead_performer_ids": [
+        "performer-06"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-015",
+        "line-016",
+        "line-017",
+        "line-018"
+      ],
+      "acoustic": {
+        "integrated_lufs": -11.5,
+        "loudness_profile_lufs": [
+          -10.7,
+          -11.4,
+          -12.3
+        ],
+        "spectral_centroid_hz_median": 1207,
+        "spectral_flux_median": 0.0467,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "chorus_1",
+      "label": "Chorus",
+      "start_ms": 87470,
+      "end_ms": 109870,
+      "lead_performer_ids": [
+        "performer-07",
+        "performer-08",
+        "performer-09"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-019",
+        "line-020",
+        "line-021",
+        "line-022",
+        "line-023",
+        "line-024",
+        "line-025",
+        "line-026",
+        "line-027",
+        "line-028",
+        "line-029"
+      ],
+      "acoustic": {
+        "integrated_lufs": -9.0,
+        "loudness_profile_lufs": [
+          -8.2,
+          -8.8,
+          -10.3
+        ],
+        "spectral_centroid_hz_median": 1126,
+        "spectral_flux_median": 0.0727,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "interlude",
+      "label": "间奏",
+      "start_ms": 109870,
+      "end_ms": 128700,
+      "lead_performer_ids": [],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [],
+      "acoustic": {
+        "integrated_lufs": -9.4,
+        "loudness_profile_lufs": [
+          -9.0,
+          -8.8,
+          -10.4
+        ],
+        "spectral_centroid_hz_median": 1246,
+        "spectral_flux_median": 0.0717,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "verse_2",
+      "label": "Verse 2",
+      "start_ms": 128700,
+      "end_ms": 149890,
+      "lead_performer_ids": [
+        "performer-10",
+        "performer-11"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-030",
+        "line-031",
+        "line-032",
+        "line-033",
+        "line-034",
+        "line-035",
+        "line-036",
+        "line-037",
+        "line-038"
+      ],
+      "acoustic": {
+        "integrated_lufs": -12.5,
+        "loudness_profile_lufs": [
+          -12.8,
+          -12.4,
+          -12.3
+        ],
+        "spectral_centroid_hz_median": 1156,
+        "spectral_flux_median": 0.0455,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "pre_chorus_2",
+      "label": "Pre-Chorus 2",
+      "start_ms": 149890,
+      "end_ms": 166570,
+      "lead_performer_ids": [
+        "performer-12"
+      ],
+      "backing_performer_ids": [
+        "performer-18",
+        "performer-19"
+      ],
+      "lyric_line_ids": [
+        "line-039",
+        "line-040",
+        "line-041",
+        "line-042",
+        "line-043"
+      ],
+      "acoustic": {
+        "integrated_lufs": -9.8,
+        "loudness_profile_lufs": [
+          -9.3,
+          -9.7,
+          -10.5
+        ],
+        "spectral_centroid_hz_median": 1007,
+        "spectral_flux_median": 0.0597,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "chorus_2",
+      "label": "Chorus 2",
+      "start_ms": 166570,
+      "end_ms": 189700,
+      "lead_performer_ids": [
+        "performer-13",
+        "performer-14",
+        "performer-19"
+      ],
+      "backing_performer_ids": [
+        "performer-18",
+        "performer-01",
+        "performer-09",
+        "performer-10",
+        "performer-03",
+        "performer-04"
+      ],
+      "lyric_line_ids": [
+        "line-044",
+        "line-045",
+        "line-046",
+        "line-047",
+        "line-048",
+        "line-049",
+        "line-050",
+        "line-051",
+        "line-052",
+        "line-053",
+        "line-054"
+      ],
+      "acoustic": {
+        "integrated_lufs": -9.0,
+        "loudness_profile_lufs": [
+          -9.2,
+          -8.4,
+          -9.4
+        ],
+        "spectral_centroid_hz_median": 1037,
+        "spectral_flux_median": 0.0765,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "bridge",
+      "label": "Bridge",
+      "start_ms": 190860,
+      "end_ms": 210250,
+      "lead_performer_ids": [
+        "performer-15"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-055",
+        "line-056",
+        "line-057",
+        "line-058",
+        "line-059",
+        "line-060",
+        "line-061"
+      ],
+      "acoustic": {
+        "integrated_lufs": -11.4,
+        "loudness_profile_lufs": [
+          -10.9,
+          -10.6,
+          -13.3
+        ],
+        "spectral_centroid_hz_median": 1062,
+        "spectral_flux_median": 0.0563,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "final_chorus",
+      "label": "Final Chorus",
+      "start_ms": 210250,
+      "end_ms": 234440,
+      "lead_performer_ids": [
+        "performer-16",
+        "performer-17",
+        "performer-20",
+        "performer-21",
+        "performer-18",
+        "performer-19"
+      ],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [
+        "line-062",
+        "line-063",
+        "line-064",
+        "line-065",
+        "line-066",
+        "line-067",
+        "line-068",
+        "line-069",
+        "line-070",
+        "line-071",
+        "line-072"
+      ],
+      "acoustic": {
+        "integrated_lufs": -10.7,
+        "loudness_profile_lufs": [
+          -15.0,
+          -8.4,
+          -11.4
+        ],
+        "spectral_centroid_hz_median": 983,
+        "spectral_flux_median": 0.0519,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    },
+    {
+      "id": "outro",
+      "label": "尾奏",
+      "start_ms": 234440,
+      "end_ms": 249594,
+      "lead_performer_ids": [],
+      "backing_performer_ids": [],
+      "lyric_line_ids": [],
+      "acoustic": {
+        "integrated_lufs": -9.5,
+        "loudness_profile_lufs": [
+          -8.0,
+          -9.5,
+          -15.1
+        ],
+        "spectral_centroid_hz_median": 672,
+        "spectral_flux_median": 0.035,
+        "status": "automatic_unverified"
+      },
+      "source_ids": [
+        "timeline_reference",
+        "cached_acoustic_analysis"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "detail-event-001",
+      "section_id": "intro",
+      "start_ms": 23851,
+      "end_ms": 25718,
+      "type": "texture_state",
+      "instruments": [
+        "piano"
+      ],
+      "foreground": "piano",
+      "description_zh": "单钢琴。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-002",
+      "section_id": "intro",
+      "start_ms": 25718,
+      "end_ms": 28490,
+      "type": "instrument_entry",
+      "instruments": [
+        "piano",
+        "guitar"
+      ],
+      "foreground": "piano",
+      "actions": [
+        "guitar_enter"
+      ],
+      "articulation": [
+        "piano_isolated_notes"
+      ],
+      "description_zh": "钢琴为主，单音符逐个出现；吉他进入。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-003",
+      "section_id": "intro",
+      "start_ms": 28490,
+      "end_ms": 34080,
+      "type": "foreground_change",
+      "instruments": [
+        "guzheng",
+        "guitar"
+      ],
+      "foreground": "guzheng",
+      "actions": [
+        "guzheng_enter"
+      ],
+      "articulation": [
+        "single_notes",
+        "pitch_bend"
+      ],
+      "description_zh": "古筝进入并成为前景，以单音和揉弦为主，吉他继续。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-004",
+      "section_id": "verse_1",
+      "start_ms": 35379,
+      "end_ms": 53285,
+      "type": "texture_state",
+      "instruments": [
+        "guitar"
+      ],
+      "foreground": "guitar",
+      "actions": [
+        "guitar_enter"
+      ],
+      "articulation": [
+        "chords"
+      ],
+      "description_zh": "单吉他以和弦伴奏进入。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-005",
+      "section_id": "verse_1",
+      "start_ms": 53285,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "role": "brief_harmony",
+      "timbre": [
+        "clear"
+      ],
+      "description_zh": "古筝短暂和声，音色偏清越。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-006",
+      "section_id": "verse_1",
+      "start_ms": 55593,
+      "end_ms": 74316,
+      "type": "texture_state",
+      "instruments": [
+        "low_wind_family",
+        "low_string_or_bass_family",
+        "electronic_keyboard"
+      ],
+      "description_zh": "低沉吹奏声部、低音提琴类和电子琴构成持续基底。",
+      "certainty": "family_level_identification",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-007",
+      "section_id": "verse_1",
+      "start_ms": 58795,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "register": "mid",
+      "role": "brief_harmony",
+      "description_zh": "古筝在中音区作短暂和声。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-008",
+      "section_id": "verse_1",
+      "start_ms": 64100,
+      "type": "instrument_accent_and_entry",
+      "instruments": [
+        "guzheng",
+        "shaker_family",
+        "drum_kit"
+      ],
+      "register": "upper_mid",
+      "actions": [
+        "guzheng_brief_harmony",
+        "light_percussion_enter"
+      ],
+      "description_zh": "古筝副高音区短暂和声，紧接沙鼓类和轻架子鼓鼓点。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-009",
+      "section_id": "verse_1",
+      "start_ms": 74316,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "register": "low_to_mid",
+      "motion": "ascending_register",
+      "description_zh": "古筝由副低音区走向中音区。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-010",
+      "section_id": "pre_chorus_1",
+      "start_ms": 75640,
+      "end_ms": 86243,
+      "type": "texture_state",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit"
+      ],
+      "actions": [
+        "drums_enter_first"
+      ],
+      "description_zh": "鼓点先进入，随后由低音提琴类、电子琴和架子鼓构成基底。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-011",
+      "section_id": "pre_chorus_1",
+      "start_ms": 86243,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "register": "mid_to_upper_mid",
+      "motion": "brief_rise",
+      "description_zh": "古筝由中音区向副高音区短暂扬起。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-012",
+      "section_id": "chorus_1",
+      "start_ms": 87470,
+      "end_ms": 106764,
+      "type": "texture_state",
+      "instruments": [
+        "low_wind_family",
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "shaker_family",
+        "drum_kit",
+        "gong_like_percussion"
+      ],
+      "description_zh": "低沉吹奏、低音提琴类、电子琴与沙鼓、低架子鼓和锣鼓感鼓点构成整段伴奏。",
+      "certainty": "family_level_identification",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-013",
+      "section_id": "chorus_1",
+      "start_ms": 106764,
+      "type": "texture_exit",
+      "actions": [
+        "instruments_exit"
+      ],
+      "description_zh": "主要伴奏乐器退出，为副歌末句留出空间。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-014",
+      "section_id": "interlude",
+      "start_ms": 109358,
+      "end_ms": 119138,
+      "type": "foreground_change",
+      "instruments": [
+        "dizi",
+        "low_wind_family",
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit"
+      ],
+      "foreground": "dizi",
+      "actions": [
+        "dizi_enter"
+      ],
+      "articulation": [
+        "short_phrases",
+        "lively"
+      ],
+      "description_zh": "横笛进入并成为前景，短促活泼；低沉吹奏、低音提琴类、电子琴和架子鼓作基底。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-015",
+      "section_id": "interlude",
+      "start_ms": 119138,
+      "end_ms": 127558,
+      "type": "foreground_change",
+      "instrument_candidates": [
+        "guzheng",
+        "pipa"
+      ],
+      "actions": [
+        "dizi_exit",
+        "plucked_string_enter"
+      ],
+      "register": "high",
+      "articulation": [
+        "short_connected_plucks",
+        "pitch_bend"
+      ],
+      "timbre": [
+        "bright"
+      ],
+      "description_zh": "横笛退出；古筝或琵琶类高音乐器进入，多次短连拨与揉弦，音色明亮。",
+      "certainty": "instrument_alternative_uncertain",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-016",
+      "section_id": "interlude",
+      "start_ms": 127558,
+      "end_ms": 128700,
+      "type": "texture_reduction",
+      "instruments": [
+        "guzheng"
+      ],
+      "foreground": "guzheng",
+      "actions": [
+        "other_instruments_exit"
+      ],
+      "description_zh": "其他乐器退出，由单古筝收尾。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-017",
+      "section_id": "verse_2",
+      "start_ms": 129712,
+      "end_ms": 149890,
+      "type": "texture_state",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit",
+        "shaker_family"
+      ],
+      "actions": [
+        "drums_enter_first"
+      ],
+      "description_zh": "鼓点先进入；低音提琴类、电子琴与架子鼓或沙鼓构成整段基底。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-018",
+      "section_id": "pre_chorus_2",
+      "start_ms": 149917,
+      "end_ms": 163708,
+      "type": "texture_state",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard"
+      ],
+      "description_zh": "低音提琴类与电子琴构成基底。",
+      "certainty": "family_level_identification",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-019",
+      "section_id": "pre_chorus_2",
+      "start_ms": 152761,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "register": "upper_mid",
+      "articulation": [
+        "single_note_sequence"
+      ],
+      "timbre": [
+        "bright"
+      ],
+      "description_zh": "古筝副高音区以明亮的单音符串短暂突出，随后回到原基底。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-020",
+      "section_id": "pre_chorus_2",
+      "start_ms": 158631,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "register": "upper_mid",
+      "articulation": [
+        "single_note_sequence"
+      ],
+      "timbre": [
+        "bright"
+      ],
+      "description_zh": "古筝副高音区再次出现明亮单音符串，随后回到原基底。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-021",
+      "section_id": "pre_chorus_2",
+      "start_ms": 163708,
+      "type": "texture_exit",
+      "actions": [
+        "instruments_exit"
+      ],
+      "description_zh": "伴奏乐器退出。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-022",
+      "section_id": "chorus_2",
+      "start_ms": 166734,
+      "end_ms": 186815,
+      "type": "texture_state",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit"
+      ],
+      "actions": [
+        "drums_enter_first"
+      ],
+      "description_zh": "鼓点先进入；低音提琴类、电子琴和架子鼓构成整段基底。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-023",
+      "section_id": "chorus_2",
+      "start_ms": 186815,
+      "type": "texture_exit",
+      "actions": [
+        "instruments_exit"
+      ],
+      "description_zh": "主要伴奏乐器退出，为末句留出空间。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-024",
+      "section_id": "bridge",
+      "start_ms": 190860,
+      "end_ms": 210250,
+      "type": "texture_state",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit"
+      ],
+      "actions": [
+        "electronic_keyboard_enter"
+      ],
+      "description_zh": "低音提琴类、电子琴与架子鼓鼓点构成基底，电子琴进入。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-025",
+      "section_id": "bridge",
+      "start_ms": 193668,
+      "type": "foreground_change",
+      "instruments": [
+        "electronic_keyboard"
+      ],
+      "foreground": "electronic_keyboard",
+      "description_zh": "电子琴成为前景。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-026",
+      "section_id": "bridge",
+      "start_ms": 195413,
+      "type": "instrument_accent",
+      "instruments": [
+        "guzheng"
+      ],
+      "actions": [
+        "brief_harmony",
+        "brief_rise"
+      ],
+      "description_zh": "古筝短暂和声并扬起，随后恢复原基底。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-027",
+      "section_id": "bridge",
+      "start_ms": 210250,
+      "type": "texture_exit",
+      "actions": [
+        "instruments_exit"
+      ],
+      "description_zh": "伴奏乐器退出。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-028",
+      "section_id": "final_chorus",
+      "start_ms": 210738,
+      "end_ms": 219117,
+      "type": "texture_state",
+      "instruments": [
+        "guitar"
+      ],
+      "foreground": "guitar",
+      "articulation": [
+        "single_note_plucks"
+      ],
+      "description_zh": "单吉他拨弦。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-029",
+      "section_id": "final_chorus",
+      "start_ms": 219117,
+      "end_ms": 234440,
+      "type": "texture_expansion",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit"
+      ],
+      "actions": [
+        "drums_enter"
+      ],
+      "description_zh": "鼓点进入，低音提琴类、电子琴和架子鼓展开基底。",
+      "certainty": "mixed_confirmed_and_family_level",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-030",
+      "section_id": "outro",
+      "start_ms": 234440,
+      "end_ms": 249594,
+      "type": "texture_state",
+      "instruments": [
+        "low_string_or_bass_family",
+        "electronic_keyboard",
+        "drum_kit"
+      ],
+      "description_zh": "低音提琴类、电子琴和架子鼓继续作基底。",
+      "certainty": "family_level_identification",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-031",
+      "section_id": "outro",
+      "start_ms": 235060,
+      "end_ms": 242489,
+      "type": "foreground_change",
+      "instruments": [
+        "guzheng"
+      ],
+      "foreground": "guzheng",
+      "register": "upper_mid",
+      "articulation": [
+        "single_note_plucks"
+      ],
+      "description_zh": "古筝副高音区成为前景，以单音符拨弦为主。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-032",
+      "section_id": "outro",
+      "start_ms": 242489,
+      "end_ms": 249594,
+      "type": "foreground_handoff",
+      "instruments": [
+        "guitar"
+      ],
+      "foreground": "guitar",
+      "actions": [
+        "guitar_enter",
+        "guzheng_exit"
+      ],
+      "articulation": [
+        "single_note_plucks"
+      ],
+      "description_zh": "吉他衔接古筝，古筝退出；吉他以单音符拨弦收尾。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation-001",
+      "type": "formal_recurrence",
+      "from": "chorus_1",
+      "to": "chorus_2",
+      "claim": "第二遍副歌复现第一遍副歌的主要歌词与段落功能，演唱者和和声配置改变。",
+      "status": "human_annotated",
+      "source_ids": [
+        "timeline_reference"
+      ]
+    },
+    {
+      "id": "relation-002",
+      "type": "foreground_handoff",
+      "from": "detail-event-014",
+      "to": "detail-event-015",
+      "claim": "间奏前景从横笛交接到古筝或琵琶类高音乐器。",
+      "status": "human_annotated",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "relation-003",
+      "type": "texture_contrast",
+      "from": "bridge",
+      "to": "final_chorus",
+      "claim": "Bridge 末尾乐器退出；Final Chorus 先以单吉他重启，随后在 219117 ms 扩展为带鼓基底。",
+      "status": "human_annotated",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "relation-004",
+      "type": "dynamic_contour",
+      "from": "final_chorus",
+      "to": "outro",
+      "claim": "自动响度轮廓显示 Final Chorus 中段抬升；Outro 从较响状态逐步回落。",
+      "status": "automatic_unverified",
+      "source_ids": [
+        "cached_acoustic_analysis"
+      ]
+    }
+  ],
+  "motifs": {
+    "status": "unknown",
+    "reason": "当前没有经人工核验的旋律转录或可靠主旋律分离结果，不从混合频谱臆测动机。",
+    "items": []
+  },
+  "sources": [
+    {
+      "id": "timeline_reference",
+      "kind": "human_timeline_with_estimated_vocal_ends",
+      "status": "mixed_precision",
+      "description": "歌词、演唱者和段落参考时间轴。"
+    },
+    {
+      "id": "project_lead_listening_notes",
+      "kind": "human_listening_annotation",
+      "status": "human_annotated",
+      "description": "项目负责人提供的精细乐器、音区、演奏动作与进入退出记录。"
+    },
+    {
+      "id": "cached_acoustic_analysis",
+      "kind": "automatic_measurement",
+      "status": "automatic_unverified",
+      "description": "从最终 MP3 母带离线提取的响度与压缩频谱指标。"
+    }
+  ]
+}

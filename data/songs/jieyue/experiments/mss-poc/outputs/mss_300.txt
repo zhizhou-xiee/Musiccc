@@ -1,0 +1,5 @@
+MSS/0.1 jieyue d=249594 tempo=95.7? meter=? key=? (?=unverified/uncertain)
+I pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc
+S ac:0-23300;in:23300-34080;v1:34080-74650;p1:74650-87470;c1:87470-109870;it:109870-128700;v2:128700-149890;p2:149890-166570;c2:166570-189700;br:190860-210250;fc:210250-234440;ou:234440-249594
+E 23851-25718@in pn>pn;25718-28490@in pn+gt>pn:guitar_enter;28490-34080@in gz+gt>gz:guzheng_enter;64100@v1 gz+sh?+dr:guzheng_brief_harmony,light_percussion_enter;109358-119138@it fl+lw?+lb?+ek+dr>fl:dizi_enter;119138-127558@it (gz|pp)?:dizi_exit,plucked_string_enter;210738-219117@fc gt>gt;219117-234440@fc lb?+ek+dr:drums_enter;235060-242489@ou gz>gz;242489-249594@ou gt>gt:guitar_enter,guzheng_exit
+R c1~c2=refrain;it:fl>(gz|pp)?;br>fc=band-off>solo-gt>drums+;fc>ou=rise>fall
