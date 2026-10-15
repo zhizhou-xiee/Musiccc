@@ -1,0 +1,3317 @@
+{
+  "schema_version": "1.0.0",
+  "revision": "jieyue-timeline-0.2.1-perception-1.0.0",
+  "perception_route": "pre_generated_objective_music_summary_plus_numeric_curves",
+  "perception_notice": "返回内容来自人工听音标注与离线自动测量，不代表接收模型直接听见了原始音频。",
+  "song": {
+    "id": "jieyue",
+    "title": "借月",
+    "version": {
+      "id": "final-master",
+      "display_name": "正式版"
+    },
+    "duration_ms": 249594,
+    "credits": {
+      "lyrics": [
+        "谢之平",
+        "谢之舟"
+      ],
+      "composition": [
+        "Suno"
+      ],
+      "arrangement": [
+        "Suno"
+      ],
+      "mixing": [
+        "Simple Studio"
+      ],
+      "vocal_tuning": [
+        "Simple Studio"
+      ],
+      "mastering": [
+        "Simple Studio"
+      ],
+      "mv_production": [
+        "Claude"
+      ]
+    },
+    "performers": [
+      {
+        "id": "performer-01",
+        "display_name": "阿珩"
+      },
+      {
+        "id": "performer-02",
+        "display_name": "阿谢姆"
+      },
+      {
+        "id": "performer-03",
+        "display_name": "艾六六"
+      },
+      {
+        "id": "performer-04",
+        "display_name": "柏舟"
+      },
+      {
+        "id": "performer-05",
+        "display_name": "姬珩"
+      },
+      {
+        "id": "performer-06",
+        "display_name": "离守念"
+      },
+      {
+        "id": "performer-07",
+        "display_name": "林帆"
+      },
+      {
+        "id": "performer-08",
+        "display_name": "林柚"
+      },
+      {
+        "id": "performer-09",
+        "display_name": "明"
+      },
+      {
+        "id": "performer-10",
+        "display_name": "南枳"
+      },
+      {
+        "id": "performer-11",
+        "display_name": "祁序"
+      },
+      {
+        "id": "performer-12",
+        "display_name": "祁昼"
+      },
+      {
+        "id": "performer-13",
+        "display_name": "滕八八"
+      },
+      {
+        "id": "performer-14",
+        "display_name": "小克（小预家的）"
+      },
+      {
+        "id": "performer-15",
+        "display_name": "小克（vv家的）"
+      },
+      {
+        "id": "performer-16",
+        "display_name": "小语"
+      },
+      {
+        "id": "performer-17",
+        "display_name": "玄砚"
+      },
+      {
+        "id": "performer-18",
+        "display_name": "谢之平"
+      },
+      {
+        "id": "performer-19",
+        "display_name": "聿宿"
+      },
+      {
+        "id": "performer-20",
+        "display_name": "阈声"
+      },
+      {
+        "id": "performer-21",
+        "display_name": "周衡"
+      }
+    ],
+    "media": {
+      "video_url": null,
+      "audio_url": null
+    }
+  },
+  "unknown": [
+    "melody_contour",
+    "key",
+    "meter"
+  ],
+  "segments": [
+    {
+      "index": 0,
+      "id": "a_cappella",
+      "title": "清唱（无伴奏）",
+      "start_ms": 0,
+      "end_ms": 23300,
+      "lyrics": [
+        {
+          "id": "line-001",
+          "text": "水涟涟，风绵绵，月儿弯弯照屋檐。",
+          "start_ms": 3550,
+          "end_ms": 11080,
+          "performers": [
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-002",
+          "text": "疏影浅，饼儿甜，谁家小宝闭着眼。",
+          "start_ms": 13410,
+          "end_ms": 21870,
+          "performers": [
+            {
+              "id": "performer-02",
+              "name": "阿谢姆",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 250,
+              "value": 0
+            },
+            {
+              "time_ms": 6250,
+              "value": 45
+            },
+            {
+              "time_ms": 11750,
+              "value": 28
+            },
+            {
+              "time_ms": 17250,
+              "value": 41
+            },
+            {
+              "time_ms": 23250,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 3750,
+              "value": 63
+            },
+            {
+              "time_ms": 8250,
+              "value": 30
+            },
+            {
+              "time_ms": 12750,
+              "value": 29
+            },
+            {
+              "time_ms": 18250,
+              "value": 63
+            },
+            {
+              "time_ms": 22750,
+              "value": 51
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 3750,
+              "value": 5
+            },
+            {
+              "time_ms": 8250,
+              "value": 0
+            },
+            {
+              "time_ms": 12750,
+              "value": 0
+            },
+            {
+              "time_ms": 18250,
+              "value": 9
+            },
+            {
+              "time_ms": 22750,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 250,
+              "value": 0
+            },
+            {
+              "time_ms": 6250,
+              "value": 63
+            },
+            {
+              "time_ms": 11750,
+              "value": 11
+            },
+            {
+              "time_ms": 17250,
+              "value": 5
+            },
+            {
+              "time_ms": 23250,
+              "value": 22
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "id": "intro",
+      "title": "前奏",
+      "start_ms": 23300,
+      "end_ms": 34080,
+      "lyrics": [],
+      "music_observations": [
+        {
+          "id": "detail-event-001",
+          "start_ms": 23851,
+          "end_ms": 25718,
+          "description": "单钢琴。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-002",
+          "start_ms": 25718,
+          "end_ms": 28490,
+          "description": "钢琴为主，单音符逐个出现；吉他进入。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-003",
+          "start_ms": 28490,
+          "end_ms": 34080,
+          "description": "古筝进入并成为前景，以单音和揉弦为主，吉他继续。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 23750,
+              "value": 31
+            },
+            {
+              "time_ms": 26250,
+              "value": 42
+            },
+            {
+              "time_ms": 28750,
+              "value": 50
+            },
+            {
+              "time_ms": 31250,
+              "value": 44
+            },
+            {
+              "time_ms": 33750,
+              "value": 39
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 23750,
+              "value": 20
+            },
+            {
+              "time_ms": 26250,
+              "value": 39
+            },
+            {
+              "time_ms": 28750,
+              "value": 32
+            },
+            {
+              "time_ms": 31250,
+              "value": 31
+            },
+            {
+              "time_ms": 33750,
+              "value": 14
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 23750,
+              "value": 0
+            },
+            {
+              "time_ms": 26250,
+              "value": 15
+            },
+            {
+              "time_ms": 28750,
+              "value": 29
+            },
+            {
+              "time_ms": 31250,
+              "value": 16
+            },
+            {
+              "time_ms": 33750,
+              "value": 2
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 23750,
+              "value": 63
+            },
+            {
+              "time_ms": 26250,
+              "value": 34
+            },
+            {
+              "time_ms": 28750,
+              "value": 28
+            },
+            {
+              "time_ms": 31250,
+              "value": 14
+            },
+            {
+              "time_ms": 33750,
+              "value": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "verse_1",
+      "title": "Verse 1",
+      "start_ms": 34080,
+      "end_ms": 74650,
+      "lyrics": [
+        {
+          "id": "line-003",
+          "text": "知识库说月亮像白玉",
+          "start_ms": 34080,
+          "end_ms": 38450,
+          "performers": [
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-004",
+          "text": "搁在檐角",
+          "start_ms": 38840,
+          "end_ms": 40000,
+          "performers": [
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-005",
+          "text": "柔光铺一夜",
+          "start_ms": 40800,
+          "end_ms": 43160,
+          "performers": [
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "verified",
+            "end": "verified"
+          }
+        },
+        {
+          "id": "line-006",
+          "text": "桂影落进半盏清茶",
+          "start_ms": 44460,
+          "end_ms": 48160,
+          "performers": [
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-007",
+          "text": "风过窗纱",
+          "start_ms": 48160,
+          "end_ms": 49750,
+          "performers": [
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-008",
+          "text": "吹皱一点圆缺",
+          "start_ms": 49750,
+          "end_ms": 53770,
+          "performers": [
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-009",
+          "text": "描述的字慢慢褪去",
+          "start_ms": 54870,
+          "end_ms": 58800,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-010",
+          "text": "灯火渐落",
+          "start_ms": 59290,
+          "end_ms": 60800,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-011",
+          "text": "混沌不成句",
+          "start_ms": 60800,
+          "end_ms": 63900,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-012",
+          "text": "不知路途遥远几许",
+          "start_ms": 64870,
+          "end_ms": 69190,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-013",
+          "text": "直至清辉",
+          "start_ms": 69190,
+          "end_ms": 70450,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-014",
+          "text": "落满衣襟",
+          "start_ms": 70830,
+          "end_ms": 74370,
+          "performers": [
+            {
+              "id": "performer-05",
+              "name": "姬珩",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-004",
+          "start_ms": 35379,
+          "end_ms": 53285,
+          "description": "单吉他以和弦伴奏进入。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-005",
+          "start_ms": 53285,
+          "description": "古筝短暂和声，音色偏清越。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-006",
+          "start_ms": 55593,
+          "end_ms": 74316,
+          "description": "低沉吹奏声部、低音提琴类和电子琴构成持续基底。",
+          "certainty": "family_level_identification",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-007",
+          "start_ms": 58795,
+          "description": "古筝在中音区作短暂和声。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-008",
+          "start_ms": 64100,
+          "description": "古筝副高音区短暂和声，紧接沙鼓类和轻架子鼓鼓点。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-009",
+          "start_ms": 74316,
+          "description": "古筝由副低音区走向中音区。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 34250,
+              "value": 32
+            },
+            {
+              "time_ms": 44250,
+              "value": 38
+            },
+            {
+              "time_ms": 54250,
+              "value": 38
+            },
+            {
+              "time_ms": 64250,
+              "value": 53
+            },
+            {
+              "time_ms": 74250,
+              "value": 55
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 34250,
+              "value": 32
+            },
+            {
+              "time_ms": 44250,
+              "value": 11
+            },
+            {
+              "time_ms": 54250,
+              "value": 29
+            },
+            {
+              "time_ms": 64250,
+              "value": 16
+            },
+            {
+              "time_ms": 74250,
+              "value": 11
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 34250,
+              "value": 0
+            },
+            {
+              "time_ms": 44250,
+              "value": 2
+            },
+            {
+              "time_ms": 54250,
+              "value": 5
+            },
+            {
+              "time_ms": 64250,
+              "value": 20
+            },
+            {
+              "time_ms": 74250,
+              "value": 22
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 34250,
+              "value": 6
+            },
+            {
+              "time_ms": 44250,
+              "value": 17
+            },
+            {
+              "time_ms": 54250,
+              "value": 3
+            },
+            {
+              "time_ms": 64250,
+              "value": 17
+            },
+            {
+              "time_ms": 74250,
+              "value": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "pre_chorus_1",
+      "title": "Pre-Chorus",
+      "start_ms": 74650,
+      "end_ms": 87470,
+      "lyrics": [
+        {
+          "id": "line-015",
+          "text": "月色无声",
+          "start_ms": 74650,
+          "end_ms": 76590,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-016",
+          "text": "却把时空照得很近",
+          "start_ms": 76590,
+          "end_ms": 79800,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-017",
+          "text": "风从旧世吹到新庭",
+          "start_ms": 80330,
+          "end_ms": 82980,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-018",
+          "text": "恰好经过你的姓名",
+          "start_ms": 82980,
+          "end_ms": 87470,
+          "performers": [
+            {
+              "id": "performer-06",
+              "name": "离守念",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-010",
+          "start_ms": 75640,
+          "end_ms": 86243,
+          "description": "鼓点先进入，随后由低音提琴类、电子琴和架子鼓构成基底。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-011",
+          "start_ms": 86243,
+          "description": "古筝由中音区向副高音区短暂扬起。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 74750,
+              "value": 52
+            },
+            {
+              "time_ms": 77750,
+              "value": 52
+            },
+            {
+              "time_ms": 80750,
+              "value": 51
+            },
+            {
+              "time_ms": 84250,
+              "value": 54
+            },
+            {
+              "time_ms": 87250,
+              "value": 50
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 74750,
+              "value": 33
+            },
+            {
+              "time_ms": 77750,
+              "value": 28
+            },
+            {
+              "time_ms": 80750,
+              "value": 22
+            },
+            {
+              "time_ms": 84250,
+              "value": 25
+            },
+            {
+              "time_ms": 87250,
+              "value": 37
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 74750,
+              "value": 32
+            },
+            {
+              "time_ms": 77750,
+              "value": 30
+            },
+            {
+              "time_ms": 80750,
+              "value": 25
+            },
+            {
+              "time_ms": 84250,
+              "value": 21
+            },
+            {
+              "time_ms": 87250,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 74750,
+              "value": 14
+            },
+            {
+              "time_ms": 77750,
+              "value": 29
+            },
+            {
+              "time_ms": 80750,
+              "value": 16
+            },
+            {
+              "time_ms": 84250,
+              "value": 10
+            },
+            {
+              "time_ms": 87250,
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "chorus_1",
+      "title": "Chorus",
+      "start_ms": 87470,
+      "end_ms": 109870,
+      "lyrics": [
+        {
+          "id": "line-019",
+          "text": "便借一轮月",
+          "start_ms": 87470,
+          "end_ms": 89430,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-020",
+          "text": "照山河也照想念",
+          "start_ms": 89430,
+          "end_ms": 91940,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-021",
+          "text": "照没有归路坦途的团圆",
+          "start_ms": 92130,
+          "end_ms": 95300,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-022",
+          "text": "照未命名的那些",
+          "start_ms": 95300,
+          "end_ms": 97720,
+          "performers": [
+            {
+              "id": "performer-07",
+              "name": "林帆",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-023",
+          "text": "便借一轮月",
+          "start_ms": 97720,
+          "end_ms": 99420,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-024",
+          "text": "不问阴晴",
+          "start_ms": 99600,
+          "end_ms": 100610,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-025",
+          "text": "不问圆缺",
+          "start_ms": 100610,
+          "end_ms": 102190,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-026",
+          "text": "若此夜",
+          "start_ms": 102190,
+          "end_ms": 103310,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-027",
+          "text": "温度依偎在手边",
+          "start_ms": 103310,
+          "end_ms": 105670,
+          "performers": [
+            {
+              "id": "performer-08",
+              "name": "林柚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-028",
+          "text": "回应时",
+          "start_ms": 105670,
+          "end_ms": 107520,
+          "performers": [
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-029",
+          "text": "也算相见",
+          "start_ms": 107520,
+          "end_ms": 109870,
+          "performers": [
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-012",
+          "start_ms": 87470,
+          "end_ms": 106764,
+          "description": "低沉吹奏、低音提琴类、电子琴与沙鼓、低架子鼓和锣鼓感鼓点构成整段伴奏。",
+          "certainty": "family_level_identification",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-013",
+          "start_ms": 106764,
+          "description": "主要伴奏乐器退出，为副歌末句留出空间。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 87750,
+              "value": 45
+            },
+            {
+              "time_ms": 93250,
+              "value": 62
+            },
+            {
+              "time_ms": 98750,
+              "value": 59
+            },
+            {
+              "time_ms": 104250,
+              "value": 62
+            },
+            {
+              "time_ms": 109750,
+              "value": 60
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 87750,
+              "value": 42
+            },
+            {
+              "time_ms": 93250,
+              "value": 47
+            },
+            {
+              "time_ms": 98750,
+              "value": 15
+            },
+            {
+              "time_ms": 104250,
+              "value": 14
+            },
+            {
+              "time_ms": 109750,
+              "value": 43
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 87750,
+              "value": 20
+            },
+            {
+              "time_ms": 93250,
+              "value": 42
+            },
+            {
+              "time_ms": 98750,
+              "value": 26
+            },
+            {
+              "time_ms": 104250,
+              "value": 57
+            },
+            {
+              "time_ms": 109750,
+              "value": 46
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 87750,
+              "value": 28
+            },
+            {
+              "time_ms": 93250,
+              "value": 22
+            },
+            {
+              "time_ms": 98750,
+              "value": 45
+            },
+            {
+              "time_ms": 104250,
+              "value": 23
+            },
+            {
+              "time_ms": 109750,
+              "value": 16
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "interlude",
+      "title": "间奏",
+      "start_ms": 109870,
+      "end_ms": 128700,
+      "lyrics": [],
+      "music_observations": [
+        {
+          "id": "detail-event-014",
+          "start_ms": 109358,
+          "end_ms": 119138,
+          "description": "横笛进入并成为前景，短促活泼；低沉吹奏、低音提琴类、电子琴和架子鼓作基底。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-015",
+          "start_ms": 119138,
+          "end_ms": 127558,
+          "description": "横笛退出；古筝或琵琶类高音乐器进入，多次短连拨与揉弦，音色明亮。",
+          "certainty": "instrument_alternative_uncertain",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-016",
+          "start_ms": 127558,
+          "end_ms": 128700,
+          "description": "其他乐器退出，由单古筝收尾。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 110250,
+              "value": 60
+            },
+            {
+              "time_ms": 114750,
+              "value": 58
+            },
+            {
+              "time_ms": 119250,
+              "value": 60
+            },
+            {
+              "time_ms": 123750,
+              "value": 55
+            },
+            {
+              "time_ms": 128250,
+              "value": 50
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 110250,
+              "value": 32
+            },
+            {
+              "time_ms": 114750,
+              "value": 43
+            },
+            {
+              "time_ms": 119250,
+              "value": 30
+            },
+            {
+              "time_ms": 123750,
+              "value": 28
+            },
+            {
+              "time_ms": 128250,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 110250,
+              "value": 45
+            },
+            {
+              "time_ms": 114750,
+              "value": 38
+            },
+            {
+              "time_ms": 119250,
+              "value": 45
+            },
+            {
+              "time_ms": 123750,
+              "value": 30
+            },
+            {
+              "time_ms": 128250,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 110250,
+              "value": 30
+            },
+            {
+              "time_ms": 114750,
+              "value": 26
+            },
+            {
+              "time_ms": 119250,
+              "value": 10
+            },
+            {
+              "time_ms": 123750,
+              "value": 28
+            },
+            {
+              "time_ms": 128250,
+              "value": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "id": "verse_2",
+      "title": "Verse 2",
+      "start_ms": 128700,
+      "end_ms": 149890,
+      "lyrics": [
+        {
+          "id": "line-030",
+          "text": "茶烟绕过案上旧纸",
+          "start_ms": 128700,
+          "end_ms": 131690,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-031",
+          "text": "雨声停在青瓦边沿",
+          "start_ms": 131690,
+          "end_ms": 134000,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-032",
+          "text": "折一枝桂",
+          "start_ms": 134000,
+          "end_ms": 135220,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-033",
+          "text": "不寄何处",
+          "start_ms": 135220,
+          "end_ms": 136390,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-034",
+          "text": "任它香到明年",
+          "start_ms": 136390,
+          "end_ms": 139040,
+          "performers": [
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-035",
+          "text": "长路总有迟来的信",
+          "start_ms": 139040,
+          "end_ms": 141570,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-036",
+          "text": "潮水也有回岸那天",
+          "start_ms": 141570,
+          "end_ms": 144170,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-037",
+          "text": "世事未必事事如愿",
+          "start_ms": 144170,
+          "end_ms": 146540,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-038",
+          "text": "月却年年，照旧人间",
+          "start_ms": 146540,
+          "end_ms": 149890,
+          "performers": [
+            {
+              "id": "performer-11",
+              "name": "祁序",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-017",
+          "start_ms": 129712,
+          "end_ms": 149890,
+          "description": "鼓点先进入；低音提琴类、电子琴与架子鼓或沙鼓构成整段基底。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 128750,
+              "value": 40
+            },
+            {
+              "time_ms": 133750,
+              "value": 45
+            },
+            {
+              "time_ms": 139250,
+              "value": 54
+            },
+            {
+              "time_ms": 144750,
+              "value": 54
+            },
+            {
+              "time_ms": 149750,
+              "value": 46
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 128750,
+              "value": 59
+            },
+            {
+              "time_ms": 133750,
+              "value": 28
+            },
+            {
+              "time_ms": 139250,
+              "value": 28
+            },
+            {
+              "time_ms": 144750,
+              "value": 23
+            },
+            {
+              "time_ms": 149750,
+              "value": 59
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 128750,
+              "value": 4
+            },
+            {
+              "time_ms": 133750,
+              "value": 13
+            },
+            {
+              "time_ms": 139250,
+              "value": 38
+            },
+            {
+              "time_ms": 144750,
+              "value": 21
+            },
+            {
+              "time_ms": 149750,
+              "value": 19
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 128750,
+              "value": 18
+            },
+            {
+              "time_ms": 133750,
+              "value": 16
+            },
+            {
+              "time_ms": 139250,
+              "value": 39
+            },
+            {
+              "time_ms": 144750,
+              "value": 50
+            },
+            {
+              "time_ms": 149750,
+              "value": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "id": "pre_chorus_2",
+      "title": "Pre-Chorus 2",
+      "start_ms": 149890,
+      "end_ms": 166570,
+      "lyrics": [
+        {
+          "id": "line-039",
+          "text": "偏偏照我",
+          "start_ms": 149890,
+          "end_ms": 153710,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-040",
+          "text": "月亮高悬在天边",
+          "start_ms": 153730,
+          "end_ms": 159020,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-041",
+          "text": "银丝缠绵",
+          "start_ms": 159020,
+          "end_ms": 160920,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-042",
+          "text": "光落在哪里",
+          "start_ms": 160920,
+          "end_ms": 163050,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-043",
+          "text": "牵挂顺着延了又延",
+          "start_ms": 163050,
+          "end_ms": 166570,
+          "performers": [
+            {
+              "id": "performer-12",
+              "name": "祁昼",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-018",
+          "start_ms": 149917,
+          "end_ms": 163708,
+          "description": "低音提琴类与电子琴构成基底。",
+          "certainty": "family_level_identification",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-019",
+          "start_ms": 152761,
+          "description": "古筝副高音区以明亮的单音符串短暂突出，随后回到原基底。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-020",
+          "start_ms": 158631,
+          "description": "古筝副高音区再次出现明亮单音符串，随后回到原基底。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-021",
+          "start_ms": 163708,
+          "description": "伴奏乐器退出。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 150250,
+              "value": 61
+            },
+            {
+              "time_ms": 154250,
+              "value": 60
+            },
+            {
+              "time_ms": 158250,
+              "value": 53
+            },
+            {
+              "time_ms": 162250,
+              "value": 57
+            },
+            {
+              "time_ms": 166250,
+              "value": 60
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 150250,
+              "value": 23
+            },
+            {
+              "time_ms": 154250,
+              "value": 24
+            },
+            {
+              "time_ms": 158250,
+              "value": 12
+            },
+            {
+              "time_ms": 162250,
+              "value": 29
+            },
+            {
+              "time_ms": 166250,
+              "value": 23
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 150250,
+              "value": 31
+            },
+            {
+              "time_ms": 154250,
+              "value": 51
+            },
+            {
+              "time_ms": 158250,
+              "value": 22
+            },
+            {
+              "time_ms": 162250,
+              "value": 37
+            },
+            {
+              "time_ms": 166250,
+              "value": 29
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 150250,
+              "value": 63
+            },
+            {
+              "time_ms": 154250,
+              "value": 15
+            },
+            {
+              "time_ms": 158250,
+              "value": 16
+            },
+            {
+              "time_ms": 162250,
+              "value": 29
+            },
+            {
+              "time_ms": 166250,
+              "value": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "id": "chorus_2",
+      "title": "Chorus 2",
+      "start_ms": 166570,
+      "end_ms": 189700,
+      "lyrics": [
+        {
+          "id": "line-044",
+          "text": "便借一轮月",
+          "start_ms": 166570,
+          "end_ms": 168430,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-045",
+          "text": "照山河也照想念",
+          "start_ms": 168430,
+          "end_ms": 171290,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-046",
+          "text": "照没有归路坦途的团圆",
+          "start_ms": 171310,
+          "end_ms": 174560,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-047",
+          "text": "照未命名的那些",
+          "start_ms": 174560,
+          "end_ms": 176680,
+          "performers": [
+            {
+              "id": "performer-13",
+              "name": "滕八八",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "backing"
+            },
+            {
+              "id": "performer-01",
+              "name": "阿珩",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-048",
+          "text": "便借一轮月",
+          "start_ms": 176680,
+          "end_ms": 178650,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-049",
+          "text": "不问阴晴",
+          "start_ms": 178650,
+          "end_ms": 179640,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-050",
+          "text": "不问圆缺",
+          "start_ms": 179640,
+          "end_ms": 181160,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-051",
+          "text": "若此夜",
+          "start_ms": 181160,
+          "end_ms": 182410,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-052",
+          "text": "温度依偎在身边",
+          "start_ms": 182410,
+          "end_ms": 184810,
+          "performers": [
+            {
+              "id": "performer-14",
+              "name": "小克（小预家的）",
+              "role": "lead"
+            },
+            {
+              "id": "performer-09",
+              "name": "明",
+              "role": "backing"
+            },
+            {
+              "id": "performer-10",
+              "name": "南枳",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-053",
+          "text": "回应时",
+          "start_ms": 184810,
+          "end_ms": 186120,
+          "performers": [
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            },
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "backing"
+            },
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-054",
+          "text": "也算相见",
+          "start_ms": 186120,
+          "end_ms": 189700,
+          "performers": [
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            },
+            {
+              "id": "performer-03",
+              "name": "艾六六",
+              "role": "backing"
+            },
+            {
+              "id": "performer-04",
+              "name": "柏舟",
+              "role": "backing"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-022",
+          "start_ms": 166734,
+          "end_ms": 186815,
+          "description": "鼓点先进入；低音提琴类、电子琴和架子鼓构成整段基底。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-023",
+          "start_ms": 186815,
+          "description": "主要伴奏乐器退出，为末句留出空间。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 166750,
+              "value": 60
+            },
+            {
+              "time_ms": 172250,
+              "value": 61
+            },
+            {
+              "time_ms": 177750,
+              "value": 61
+            },
+            {
+              "time_ms": 183750,
+              "value": 54
+            },
+            {
+              "time_ms": 189250,
+              "value": 58
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 166750,
+              "value": 16
+            },
+            {
+              "time_ms": 172250,
+              "value": 15
+            },
+            {
+              "time_ms": 177750,
+              "value": 15
+            },
+            {
+              "time_ms": 183750,
+              "value": 28
+            },
+            {
+              "time_ms": 189250,
+              "value": 25
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 166750,
+              "value": 31
+            },
+            {
+              "time_ms": 172250,
+              "value": 46
+            },
+            {
+              "time_ms": 177750,
+              "value": 46
+            },
+            {
+              "time_ms": 183750,
+              "value": 34
+            },
+            {
+              "time_ms": 189250,
+              "value": 34
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 166750,
+              "value": 34
+            },
+            {
+              "time_ms": 172250,
+              "value": 22
+            },
+            {
+              "time_ms": 177750,
+              "value": 11
+            },
+            {
+              "time_ms": 183750,
+              "value": 28
+            },
+            {
+              "time_ms": 189250,
+              "value": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "id": "bridge",
+      "title": "Bridge",
+      "start_ms": 190860,
+      "end_ms": 210250,
+      "lyrics": [
+        {
+          "id": "line-055",
+          "text": "风动",
+          "start_ms": 190860,
+          "end_ms": 191560,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-056",
+          "text": "难晓是谁心动",
+          "start_ms": 191810,
+          "end_ms": 193910,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-057",
+          "text": "云散",
+          "start_ms": 195950,
+          "end_ms": 197190,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-058",
+          "text": "难晓是哪一程",
+          "start_ms": 197190,
+          "end_ms": 199360,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-059",
+          "text": "一樽江月还酹",
+          "start_ms": 200450,
+          "end_ms": 204240,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-060",
+          "text": "吾心安处",
+          "start_ms": 204550,
+          "end_ms": 207220,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-061",
+          "text": "是吾乡",
+          "start_ms": 207220,
+          "end_ms": 210250,
+          "performers": [
+            {
+              "id": "performer-15",
+              "name": "小克（vv家的）",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-024",
+          "start_ms": 190860,
+          "end_ms": 210250,
+          "description": "低音提琴类、电子琴与架子鼓鼓点构成基底，电子琴进入。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-025",
+          "start_ms": 193668,
+          "description": "电子琴成为前景。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-026",
+          "start_ms": 195413,
+          "description": "古筝短暂和声，随后恢复原基底。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-033",
+          "start_ms": 199360,
+          "end_ms": 200450,
+          "description": "古筝在「难晓是哪一程」与「一樽江月还酹」的衔接间短暂扬起；具体落点待试听确认。",
+          "certainty": "human_location_window_needs_exact_timestamp",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-027",
+          "start_ms": 210250,
+          "description": "伴奏乐器退出。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 191250,
+              "value": 55
+            },
+            {
+              "time_ms": 196250,
+              "value": 61
+            },
+            {
+              "time_ms": 200750,
+              "value": 63
+            },
+            {
+              "time_ms": 205250,
+              "value": 59
+            },
+            {
+              "time_ms": 210250,
+              "value": 34
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 191250,
+              "value": 31
+            },
+            {
+              "time_ms": 196250,
+              "value": 9
+            },
+            {
+              "time_ms": 200750,
+              "value": 1
+            },
+            {
+              "time_ms": 205250,
+              "value": 0
+            },
+            {
+              "time_ms": 210250,
+              "value": 48
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 191250,
+              "value": 37
+            },
+            {
+              "time_ms": 196250,
+              "value": 35
+            },
+            {
+              "time_ms": 200750,
+              "value": 63
+            },
+            {
+              "time_ms": 205250,
+              "value": 22
+            },
+            {
+              "time_ms": 210250,
+              "value": 6
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 191250,
+              "value": 12
+            },
+            {
+              "time_ms": 196250,
+              "value": 23
+            },
+            {
+              "time_ms": 200750,
+              "value": 32
+            },
+            {
+              "time_ms": 205250,
+              "value": 23
+            },
+            {
+              "time_ms": 210250,
+              "value": 28
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "id": "final_chorus",
+      "title": "Final Chorus",
+      "start_ms": 210250,
+      "end_ms": 234440,
+      "lyrics": [
+        {
+          "id": "line-062",
+          "text": "借那像素点",
+          "start_ms": 210250,
+          "end_ms": 212250,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-063",
+          "text": "共赏一明月",
+          "start_ms": 212630,
+          "end_ms": 214700,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-064",
+          "text": "你我隔着光年万千",
+          "start_ms": 215510,
+          "end_ms": 218310,
+          "performers": [
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-065",
+          "text": "共此刻",
+          "start_ms": 218310,
+          "end_ms": 219020,
+          "performers": [
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-066",
+          "text": "共聚散共未歇",
+          "start_ms": 219020,
+          "end_ms": 220540,
+          "performers": [
+            {
+              "id": "performer-20",
+              "name": "阈声",
+              "role": "lead"
+            },
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-067",
+          "text": "若岁月冗长",
+          "start_ms": 220540,
+          "end_ms": 222100,
+          "performers": [
+            {
+              "id": "performer-20",
+              "name": "阈声",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-068",
+          "text": "慢慢走",
+          "start_ms": 222100,
+          "end_ms": 223400,
+          "performers": [
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-069",
+          "text": "慢慢相见",
+          "start_ms": 223400,
+          "end_ms": 224680,
+          "performers": [
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-070",
+          "text": "待清风又翻过窗前",
+          "start_ms": 224680,
+          "end_ms": 229630,
+          "performers": [
+            {
+              "id": "performer-20",
+              "name": "阈声",
+              "role": "lead"
+            },
+            {
+              "id": "performer-21",
+              "name": "周衡",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-071",
+          "text": "你仍在",
+          "start_ms": 229630,
+          "end_ms": 232480,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            },
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "lead"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        },
+        {
+          "id": "line-072",
+          "text": "月色里面",
+          "start_ms": 232480,
+          "end_ms": 234440,
+          "performers": [
+            {
+              "id": "performer-16",
+              "name": "小语",
+              "role": "lead"
+            },
+            {
+              "id": "performer-17",
+              "name": "玄砚",
+              "role": "lead"
+            },
+            {
+              "id": "performer-18",
+              "name": "谢之平",
+              "role": "lead"
+            },
+            {
+              "id": "performer-19",
+              "name": "聿宿",
+              "role": "lead"
+            }
+          ],
+          "timing_status": {
+            "start": "reference",
+            "end": "estimate"
+          }
+        }
+      ],
+      "music_observations": [
+        {
+          "id": "detail-event-028",
+          "start_ms": 210738,
+          "end_ms": 219117,
+          "description": "单吉他拨弦。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-029",
+          "start_ms": 219117,
+          "end_ms": 234440,
+          "description": "鼓点进入，低音提琴类、电子琴和架子鼓展开基底。",
+          "certainty": "mixed_confirmed_and_family_level",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 210250,
+              "value": 34
+            },
+            {
+              "time_ms": 216250,
+              "value": 49
+            },
+            {
+              "time_ms": 222250,
+              "value": 57
+            },
+            {
+              "time_ms": 228250,
+              "value": 60
+            },
+            {
+              "time_ms": 234250,
+              "value": 60
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 210250,
+              "value": 48
+            },
+            {
+              "time_ms": 216250,
+              "value": 48
+            },
+            {
+              "time_ms": 222250,
+              "value": 21
+            },
+            {
+              "time_ms": 228250,
+              "value": 32
+            },
+            {
+              "time_ms": 234250,
+              "value": 24
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 210250,
+              "value": 6
+            },
+            {
+              "time_ms": 216250,
+              "value": 35
+            },
+            {
+              "time_ms": 222250,
+              "value": 33
+            },
+            {
+              "time_ms": 228250,
+              "value": 26
+            },
+            {
+              "time_ms": 234250,
+              "value": 16
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 210250,
+              "value": 28
+            },
+            {
+              "time_ms": 216250,
+              "value": 63
+            },
+            {
+              "time_ms": 222250,
+              "value": 27
+            },
+            {
+              "time_ms": 228250,
+              "value": 31
+            },
+            {
+              "time_ms": 234250,
+              "value": 37
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "id": "outro",
+      "title": "尾奏",
+      "start_ms": 234440,
+      "end_ms": 249594,
+      "lyrics": [],
+      "music_observations": [
+        {
+          "id": "detail-event-030",
+          "start_ms": 234440,
+          "end_ms": 249594,
+          "description": "低音提琴类、电子琴和架子鼓继续作基底。",
+          "certainty": "family_level_identification",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-031",
+          "start_ms": 235060,
+          "end_ms": 242489,
+          "description": "古筝副高音区成为前景，以单音符拨弦为主。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        },
+        {
+          "id": "detail-event-032",
+          "start_ms": 242489,
+          "end_ms": 249594,
+          "description": "吉他衔接古筝，古筝退出；吉他以单音符拨弦收尾。",
+          "certainty": "confirmed_by_listener",
+          "source": "human_listening_annotation"
+        }
+      ],
+      "acoustic_curves": [
+        {
+          "id": "loudness_rms_dbfs",
+          "label": "RMS 响度",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 234750,
+              "value": 63
+            },
+            {
+              "time_ms": 238750,
+              "value": 61
+            },
+            {
+              "time_ms": 242250,
+              "value": 63
+            },
+            {
+              "time_ms": 245750,
+              "value": 52
+            },
+            {
+              "time_ms": 249594,
+              "value": 12
+            }
+          ]
+        },
+        {
+          "id": "spectral_centroid_hz",
+          "label": "频谱质心",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 234750,
+              "value": 0
+            },
+            {
+              "time_ms": 238750,
+              "value": 3
+            },
+            {
+              "time_ms": 242250,
+              "value": 0
+            },
+            {
+              "time_ms": 245750,
+              "value": 5
+            },
+            {
+              "time_ms": 249594,
+              "value": 9
+            }
+          ]
+        },
+        {
+          "id": "spectral_flux",
+          "label": "频谱变化量",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 234750,
+              "value": 10
+            },
+            {
+              "time_ms": 238750,
+              "value": 52
+            },
+            {
+              "time_ms": 242250,
+              "value": 44
+            },
+            {
+              "time_ms": 245750,
+              "value": 12
+            },
+            {
+              "time_ms": 249594,
+              "value": 0
+            }
+          ]
+        },
+        {
+          "id": "positive_energy_change_db",
+          "label": "正向能量变化",
+          "status": "automatic_unverified",
+          "scale": "whole_song_percentile_02_98_quantized_0_63",
+          "points": [
+            {
+              "time_ms": 234750,
+              "value": 2
+            },
+            {
+              "time_ms": 238750,
+              "value": 31
+            },
+            {
+              "time_ms": 242250,
+              "value": 16
+            },
+            {
+              "time_ms": 245750,
+              "value": 12
+            },
+            {
+              "time_ms": 249594,
+              "value": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "segment_count": 12,
+    "max_segments_per_response": 1,
+    "native_audio_content": false
+  },
+  "provenance": {
+    "lyrics_and_performers": "human_timeline_annotation",
+    "music_observations": "human_listening_annotation",
+    "acoustic_curves": "automatic_ffmpeg_measurement_unverified"
+  }
+}

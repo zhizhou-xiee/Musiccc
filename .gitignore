@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 .DS_Store
 .secrets/
+node_modules/
+dist/
 
 # Source media and local analysis models stay outside ordinary Git history.
 *.mp3

@@ -2,7 +2,7 @@
 
 《借月》人机双端音乐展厅的独立仓库。
 
-当前状态：Phase 0 技术验证与音乐时间轴校对。GitHub 独立仓库已创建；终版 MV 使用的人工开口时间已导入为校对基准；尚未创建或连接任何 Railway、对象存储、生产域名或付费资源。
+当前状态：Phase 0 技术路线已锁定，Phase 1 人类网页与 Phase 3 本地 MCP 初版已完成；音乐时间轴仍保留逐项人工校对状态。GitHub 独立仓库已创建；尚未创建或连接任何 Railway、对象存储、生产域名或付费资源。
 
 ## 隔离原则
 
@@ -24,6 +24,8 @@ MSS/0.2 的 curve-first 实验见 [docs/mss-v0.2-curve-report.md](docs/mss-v0.2-
 OpenRouter 跨模型正式对照见 [docs/mss-cross-model-eval-report.md](docs/mss-cross-model-eval-report.md)。GPT、Claude、Gemini 的 27 个修正版样本显示自然语言＋曲线为 9.17 / 10，压缩 MSS＋曲线为 9.39 / 10；MSS 增益很小且产生更多自信事实错误，因此当前缩写版不直接进入生产，下一步改为自描述 MSS/0.3 后复测。
 
 MSS/0.3 的三轮复测与最终路线决定见 [docs/mss-v0.3-eval-report.md](docs/mss-v0.3-eval-report.md)。最终候选实测最多 642 token、客观题均值 9.89 / 10，但仍有 2 个明确方向矛盾，未通过预设的 ≤1 安全门槛；因此 MSS 保留为研究产物，不进入第一版 MCP 默认通道。
+
+本地 MCP 服务见 [docs/mcp-service.md](docs/mcp-service.md)。四个只读工具已使用官方 SDK v2 实现，客户端游标无状态；自动测试同时覆盖 2025-era 与 2026-07-28 Streamable HTTP 协议。具体 GPT、Claude、Gemini 产品客户端仍须在临时公网域名部署后分别验证。
 
 统一歌曲资料位于 `data/songs/jieyue/metadata.json`，当前校对基准位于 `data/songs/jieyue/timeline.reference.json`。Whisper 旧初稿保留在 `data/songs/jieyue/timeline.draft.json` 作为对照；人工开口、估算唱完、字幕显示边界和自动节拍在数据中分别标注，不会混作同一种精度。
 

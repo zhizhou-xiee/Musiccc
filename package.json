@@ -1,0 +1,28 @@
+{
+  "name": "jieyue-music",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent human and MCP music gallery for JieYue",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "dev": "pnpm build && node dist/src/server.js",
+    "start": "node dist/src/server.js",
+    "test": "pnpm build && node --test dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "2.1.1",
+    "@modelcontextprotocol/server": "2.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3"
+  },
+  "packageManager": "pnpm@11.25.0"
+}
