@@ -12,6 +12,23 @@
 
 当前首轮使用同一模型家族的隔离子代理，只能发现表示歧义和提示问题，不能证明 GPT、Claude、Gemini 的跨模型兼容性。跨模型测试需要另行登记目标模型、调用次数、实际 Token 与预计费用。
 
+## 跨模型计划
+
+`openrouter-plan.json` 登记第二轮的模型、价格快照、调用次数和成本上限。计划使用 GPT‑6 Luna、Claude Haiku 5.5、Gemini 3.8 Flash；三种条件各独立重复 3 次，共 27 次调用。
+
+执行器默认只做免费干跑：
+
+```bash
+python3 scripts/run_openrouter_cross_model_eval.py
+```
+
+只有同时提供 `--execute`、明确批准的美元上限和环境变量 `OPENROUTER_API_KEY` 才会发送推理请求。执行前会读取 OpenRouter 实时价格，最坏情况估算超过批准上限时拒绝运行。API 密钥不会写入仓库、请求结果或日志。
+
+```bash
+OPENROUTER_API_KEY=... python3 scripts/run_openrouter_cross_model_eval.py \
+  --execute --approved-cap-usd 0.10
+```
+
 `results/a_lyrics_only.md`、`results/b_natural_layers.md` 和 `results/c_mss_layers.md` 是预跑原文；预跑暴露连续事件结束时间缺失后，修订条件重新生成，`results/b_natural_layers_r2.md` 与 `results/c_mss_layers_r2.md` 为最终计分样本。歌词条件没有变化，因此没有重复调用。`scorecard.json` 记录最终评分。
 
 重新生成：
