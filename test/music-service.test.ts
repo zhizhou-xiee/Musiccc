@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { decodeCursor, musicNext, musicSeek, musicStart } from "../src/music-service.js";
+import {
+  decodeCursor,
+  formatSegmentText,
+  musicNext,
+  musicSeek,
+  musicStart,
+} from "../src/music-service.js";
 
 test("client cursor is deterministic and stateless", () => {
   const startA = musicStart("jieyue");
@@ -36,4 +42,15 @@ test("invalid or stale cursors are rejected", () => {
   assert.throws(() => decodeCursor("not-a-cursor"), /Invalid cursor|current song revision/);
   const stale = Buffer.from(JSON.stringify({ v: "old", song: "jieyue", index: 0 })).toString("base64url");
   assert.throws(() => decodeCursor(stale), /current song revision/);
+});
+
+test("listener text is a compact score rather than an engineering dump", () => {
+  const intro = musicSeek("jieyue", { kind: "section_id", value: "intro" });
+  const text = formatSegmentText(intro);
+  assert.match(text, /《借月》· 前奏/);
+  assert.match(text, /声音事件/);
+  assert.match(text, /音乐运动/);
+  assert.match(text, /响度.*[▁▂▃▄▅▆▇█]/);
+  assert.match(text, new RegExp(intro.cursor));
+  assert.doesNotMatch(text, /confirmed_by_listener|p02-p98|明确未知|自动未校/);
 });

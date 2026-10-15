@@ -126,35 +126,59 @@ export function musicSeek(songId: string, target: SeekTarget): SegmentEnvelope {
 export function formatSegmentText(value: SegmentEnvelope): string {
   const segment = value.segment;
   if (!segment) return `《${musicData.song.title}》已结束。`;
+
+  const formatTime = (timeMs: number): string => {
+    const minutes = Math.floor(timeMs / 60_000);
+    const seconds = Math.floor((timeMs % 60_000) / 1_000);
+    const milliseconds = timeMs % 1_000;
+    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.${String(milliseconds).padStart(3, "0")}`;
+  };
+  const curveNames: Record<string, string> = {
+    loudness_rms_dbfs: "响度",
+    spectral_centroid_hz: "音色明亮度",
+    spectral_flux: "声音变化活跃度",
+    positive_energy_change_db: "能量抬升",
+  };
+  const blocks = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];
+  const sparkline = (values: number[]): string =>
+    values
+      .map((value) => blocks[Math.max(0, Math.min(7, Math.round((value / 63) * 7)))])
+      .join("");
+
   const lyrics = segment.lyrics.length
     ? segment.lyrics
         .map(
           (line) =>
-            `${line.start_ms}-${line.end_ms} ${line.performers.map((item) => item.name).join("、")}: ${line.text}`,
+            `${formatTime(line.start_ms)}–${formatTime(line.end_ms)} ${line.performers.map((item) => item.name).join("、")}：${line.text}`,
         )
         .join("\n")
     : "（本段无歌词）";
   const observations = segment.music_observations.length
     ? segment.music_observations
-        .map((item) => `${item.start_ms}: ${item.description} [${item.certainty}]`)
+        .map((item) => `${formatTime(item.start_ms)}　${item.description}`)
         .join("\n")
-    : "（本段没有独立的人工乐器事件记录）";
+    : "（本段没有额外的乐器进入或退出标记）";
   const curves = segment.acoustic_curves
     .map(
       (curve) =>
-        `${curve.label}[自动未校]: ${curve.points.map((point) => `${point.time_ms}:${point.value}`).join(",")}`,
+        `${(curveNames[curve.id] ?? curve.label).padEnd(8, "　")} ${sparkline(curve.points.map((point) => point.value))}`,
     )
     .join("\n");
   return [
-    `《${musicData.song.title}》${segment.title} ${segment.start_ms}-${segment.end_ms}ms`,
-    musicData.perception_notice,
-    "歌词与演唱者：",
+    `《${musicData.song.title}》· ${segment.title}　${formatTime(segment.start_ms)}–${formatTime(segment.end_ms)}`,
+    "",
+    "歌词",
     lyrics,
-    "人工听音事实：",
+    "",
+    "声音事件",
     observations,
-    "离线测量曲线（全曲 p02-p98 归一化为 0-63）：",
+    "",
+    "音乐运动（从左到右，位置越高表示相对值越高）",
     curves,
-    `明确未知：${musicData.unknown.join("、")}`,
+    "",
+    value.completed
+      ? "已到达歌曲结尾；可用 music_seek 回听任意片段。"
+      : `继续游标：${value.cursor}`,
   ].join("\n");
 }
 
