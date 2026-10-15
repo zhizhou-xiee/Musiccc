@@ -1,6 +1,6 @@
 # 《借月》旋律 / 和声 PoC 0.1
 
-本实验尝试补上现有 MSS 中明确留空的 `melody_contour` 与 `key`，并验证和弦候选是否足够可靠。它不修改生产 `mcp.json`，也不把自动结果称为乐谱或听觉事实。
+本实验尝试补上 MSS 的旋律走向，并验证和弦候选是否足够可靠。自动候选本身不直接进入生产；只有负责人实际试听通过、明确标记 `publish_to_mcp` 且适合单线表示的歌词行，才会由 `build_mcp_data.py` 压缩后发布。调性、和弦和多人声单线候选仍只保留在后台实验数据中。
 
 ## 输入与隐私边界
 
@@ -36,6 +36,6 @@ Python 依赖见 `scripts/requirements-melody-poc.txt`。输出为 `outputs/cand
 - 自动速度候选；本实验不推断拍号。
 - 每四个跟踪拍形成的大小三和弦模板候选。第一、第二候选差距不足 0.08 时强制留空。
 
-所有字段均为 `automatic_unverified` 或 `unknown`。人工流程见 `tools/melody-review/README.md`。
+候选层保留自动状态、失败原因和人工观察，供后台审计。人工流程见 `tools/melody-review/README.md`。
 
 负责人第一轮抽听观察保存在 `data/songs/jieyue/source/manual-melody-review-observations.json`。生成脚本只对其中明确记录的分析窗口、概率门槛和采样格数应用局部覆盖；双主唱 / 多主唱片段标为单旋律表示不适用，不会用一条主导音高曲线冒充完整声部。

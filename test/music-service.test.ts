@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   decodeCursor,
   formatSegmentText,
+  musicCatalog,
   musicNext,
   musicSeek,
   musicStart,
@@ -84,6 +85,29 @@ test("listener text is a compact score rather than an engineering dump", () => {
   assert.match(text, /响度.*[▁▂▃▄▅▆▇█]/);
   assert.match(text, new RegExp(intro.cursor));
   assert.doesNotMatch(text, /confirmed_by_listener|p02-p98|明确未知|自动未校/);
+});
+
+test("model-facing data publishes reviewed melodies without audit placeholders", () => {
+  const catalog = musicCatalog();
+  assert.equal("perception_notice" in catalog, false);
+  const song = (catalog.songs as Array<Record<string, unknown>>)[0] ?? {};
+  assert.equal("native_audio_content" in song, false);
+  assert.equal("perception_route" in song, false);
+
+  const chorus = musicSeek("jieyue", { kind: "line_id", value: "line-019" });
+  assert.deepEqual(
+    chorus.segment?.melody_contours.map((contour) => contour.line_id),
+    ["line-019", "line-021", "line-024", "line-028", "line-029"],
+  );
+  const finalChorus = musicSeek("jieyue", { kind: "line_id", value: "line-066" });
+  assert.deepEqual(
+    finalChorus.segment?.melody_contours.map((contour) => contour.line_id),
+    ["line-065", "line-069"],
+  );
+  const text = formatSegmentText(finalChorus);
+  assert.match(text, /阈声、周衡（共同演唱）/);
+  assert.match(text, /旋律走向/);
+  assert.doesNotMatch(text, /unknown|unresolved|unsupported|未解析|不支持|原始音频/);
 });
 
 test("prediction is committed before reveal and transition preserves the segment seam", () => {

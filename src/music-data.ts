@@ -33,6 +33,11 @@ export interface AcousticCurve {
   points: Array<{ time_ms: number; value: number }>;
 }
 
+export interface MelodyContour {
+  line_id: string;
+  points: Array<[time_ms: number, relative_semitones: number]>;
+}
+
 export interface MusicSegment {
   index: number;
   id: string;
@@ -42,6 +47,7 @@ export interface MusicSegment {
   lyrics: LyricLine[];
   music_observations: MusicObservation[];
   acoustic_curves: AcousticCurve[];
+  melody_contours: MelodyContour[];
 }
 
 export interface McpMusicData {
@@ -58,7 +64,6 @@ export interface McpMusicData {
     performers: Array<{ id: string; display_name: string }>;
     media: { video_url: string | null; audio_url: string | null };
   };
-  unknown: string[];
   segments: MusicSegment[];
   limits: {
     segment_count: number;

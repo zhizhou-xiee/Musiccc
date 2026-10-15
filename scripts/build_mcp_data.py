@@ -14,6 +14,7 @@ TIMELINE_PATH = SONG_DIR / "timeline.reference.json"
 METADATA_PATH = SONG_DIR / "metadata.json"
 DETAIL_PATH = SONG_DIR / "source" / "detailed-listening-annotations.json"
 CURVE_PATH = SONG_DIR / "experiments" / "mss-curve-poc" / "outputs" / "mss.curves.json"
+MELODY_PATH = SONG_DIR / "experiments" / "melody-harmony-poc" / "outputs" / "candidates.json"
 OUTPUT_PATH = SONG_DIR / "mcp.json"
 
 
@@ -43,14 +44,48 @@ def uniform_points(
     return [{"time_ms": time_ms, "value": value} for time_ms, value in chosen]
 
 
+def compact_melody_points(line: dict[str, Any], target: int = 12) -> list[list[int | float]]:
+    candidates = [
+        (point["time_ms"], float(point["relative_semitones"]))
+        for point in line["contour_points"]
+        if point["relative_semitones"] is not None
+    ]
+    if len(candidates) > target:
+        indexes = {
+            0,
+            len(candidates) - 1,
+            min(range(len(candidates)), key=lambda index: candidates[index][1]),
+            max(range(len(candidates)), key=lambda index: candidates[index][1]),
+            *{
+                round(index * (len(candidates) - 1) / (target - 1))
+                for index in range(target)
+            },
+        }
+        candidates = [candidates[index] for index in sorted(indexes)]
+    return [
+        [time_ms, round(relative_semitones * 2) / 2]
+        for time_ms, relative_semitones in candidates
+    ]
+
+
 def main() -> None:
     metadata = read_json(METADATA_PATH)
     timeline = read_json(TIMELINE_PATH)
     detail = read_json(DETAIL_PATH)
     curve_data = read_json(CURVE_PATH)
+    melody_data = read_json(MELODY_PATH)
     performer_names = {item["id"]: item["display_name"] for item in timeline["performers"]}
     line_by_id = {item["id"]: item for item in timeline["lines"]}
     sample_times = curve_data["sampling"]["sample_times_ms"]
+    published_melodies = {
+        line["line_id"]: {
+            "line_id": line["line_id"],
+            "points": compact_melody_points(line),
+        }
+        for line in melody_data["melody_lines"]
+        if line["representation_status"] == "monophonic_candidate"
+        and (line.get("manual_observation") or {}).get("publish_to_mcp") is True
+    }
     segments: list[dict[str, Any]] = []
 
     for section in timeline["sections"]:
@@ -118,12 +153,17 @@ def main() -> None:
                 "lyrics": lyrics,
                 "music_observations": observations,
                 "acoustic_curves": curves,
+                "melody_contours": [
+                    published_melodies[line_id]
+                    for line_id in section["line_ids"]
+                    if line_id in published_melodies
+                ],
             }
         )
 
     output = {
-        "schema_version": "1.0.0",
-        "revision": "jieyue-timeline-0.2.4-perception-1.0.0",
+        "schema_version": "1.1.0",
+        "revision": "jieyue-timeline-0.2.4-perception-1.1.0",
         "perception_route": "pre_generated_objective_music_summary_plus_numeric_curves",
         "perception_notice": "返回内容来自人工听音标注与离线自动测量，不代表接收模型直接听见了原始音频。",
         "song": {
@@ -138,7 +178,6 @@ def main() -> None:
                 "audio_url": metadata["media"]["audio"]["deployment_url"],
             },
         },
-        "unknown": ["melody_contour", "key", "meter"],
         "segments": segments,
         "limits": {
             "segment_count": len(segments),
@@ -149,6 +188,7 @@ def main() -> None:
             "lyrics_and_performers": "human_timeline_annotation",
             "music_observations": "human_listening_annotation",
             "acoustic_curves": "automatic_ffmpeg_measurement_unverified",
+            "melody_contours": "project_owner_listener_spot_check_after_offline_vocal_pitch_tracking",
         },
     }
     write_json(OUTPUT_PATH, output)

@@ -112,8 +112,12 @@ test("Streamable HTTP initializes, discovers and calls all four tools", async ()
     assert.equal(catalog.isError, undefined);
 
     const started = await client.callTool({ name: "music_start", arguments: { song_id: "jieyue" } });
-    const startData = started.structuredContent as { cursor: string; segment: { id: string } };
+    const startData = started.structuredContent as {
+      cursor: string;
+      segment: { id: string; melody_contours: Array<{ line_id: string }> };
+    };
     assert.equal(startData.segment.id, "a_cappella");
+    assert.deepEqual(startData.segment.melody_contours.map((item) => item.line_id), ["line-001"]);
 
     const next = await client.callTool({
       name: "music_next",

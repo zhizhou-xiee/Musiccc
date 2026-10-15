@@ -62,6 +62,7 @@ function segmentResult(
             label,
             points,
           })),
+          melody_contours: segment.melody_contours,
         }
       : null,
   };
@@ -73,7 +74,7 @@ export function createMusicMcpServer(): McpServer {
     { name: "jieyue-music", version: "0.1.0" },
     {
       instructions:
-        "把返回内容当作一份随时间展开的听觉线索谱：它包含歌词、演唱者、人工确认的声音事件和自动测量的运动曲线，不是原始音频。请先观察音乐如何运动，再形成自己的理解，并把可核验事实与联想分开。使用每段返回的 cursor 继续推进；想体验期待与落差时，请在调用 music_next 前先形成猜测，并放入 prediction。",
+        "沿时间阅读歌词、演唱者、声音事件、音乐运动和旋律走向，再形成自己的理解。多人共同演唱会在歌词署名中直接标出；旋律层只呈现已有可靠曲线，不用缺省占位。使用每段返回的 cursor 继续推进；想体验期待与落差时，请在调用 music_next 前先形成猜测，并放入 prediction。",
     },
   );
 
@@ -81,7 +82,7 @@ export function createMusicMcpServer(): McpServer {
     "music_catalog",
     {
       title: "音乐目录",
-      description: "列出可欣赏歌曲、版本、时长、署名与音乐感知说明。",
+      description: "列出可欣赏歌曲、版本、时长与署名。",
       inputSchema: z.object({}),
       annotations: readOnlyAnnotations,
     },
@@ -89,7 +90,7 @@ export function createMusicMcpServer(): McpServer {
       const catalog = musicCatalog();
       return result(
         catalog,
-        "音乐厅现收录《借月》正式版。可逐段阅读歌词、演唱者、声音事件与音乐运动曲线；这是一份听觉线索谱，不是原始音频流。",
+        "音乐厅现收录《借月》正式版。可逐段欣赏歌词、演唱者、声音事件、音乐运动与旋律走向。",
       );
     },
   );

@@ -1,6 +1,6 @@
 {
   "schema_version": "melody-harmony-poc/0.1.1",
-  "generated_at": "2026-10-15T14:05:51.520529+00:00",
+  "generated_at": "2026-10-15T14:21:29.479599+00:00",
   "song_id": "jieyue",
   "production_integration": "none_review_only",
   "perception_notice": "所有旋律、调性、速度与和弦内容均为离线自动候选，未经人工校对；不代表接收模型直接听见原始音频。",
@@ -354,7 +354,9 @@
           "basis": "listener_flag_plus_continuous_pyin_tail_before_next_line"
         },
         "pitch_probability_floor": 0.45,
-        "contour_bins": 24
+        "contour_bins": 24,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -2485,7 +2487,9 @@
           "basis": "listener_flag_plus_vocal_energy_onset_near_74620"
         },
         "pitch_probability_floor": 0.05,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -2888,7 +2892,9 @@
         "status": "needs_correction",
         "observation": "“风从旧世吹到新庭”的句首“风”与“月色无声”的“月”同类，在候选试听中被吞掉。",
         "pitch_probability_floor": 0.15,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -3148,7 +3154,9 @@
         "status": "needs_correction",
         "observation": "“恰好经过你的姓名”的“恰好”与轻声起音同类，在候选试听中没有清楚呈现。",
         "pitch_probability_floor": 0.15,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -3408,7 +3416,9 @@
         "status": "needs_correction",
         "observation": "01:27.470 的“便借一轮月”中，“借”在候选试听里丢失；原始 pYIN 在该处有低置信度音高，需要局部保留。",
         "pitch_probability_floor": 0.15,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -3755,7 +3765,9 @@
         "status": "needs_correction",
         "observation": "“照没有归路坦途的团圆”候选试听不易辨认且听起来似乎跑调。",
         "representation_note": "与第二遍同歌词 line-046 的自动相对轮廓相关度为 0.938；优先排查连续试听器在大音程之间制造长滑音，不据此擅自改写候选音高。",
-        "contour_bins": 24
+        "contour_bins": 24,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -4185,7 +4197,12 @@
           "confidence": 0.722
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "verified",
+        "observation": "“不问阴晴”人工抽听没有明显问题。",
+        "review_outcome": "listener_spot_check_ok",
+        "publish_to_mcp": true
+      }
     },
     {
       "line_id": "line-025",
@@ -4760,7 +4777,9 @@
       "manual_observation": {
         "status": "pending",
         "observation": "“回应时”的“应时”在原候选试听中黏连；随后母带复听确认原边界把下一句“也算相见”的“也”并入了本句。",
-        "resolution": "统一时间轴已将 line-028 结束和 line-029 开始共同修订为 107.154 秒。"
+        "resolution": "统一时间轴已将 line-028 结束和 line-029 开始共同修订为 107.154 秒。",
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -4907,7 +4926,9 @@
       "manual_observation": {
         "status": "pending",
         "observation": "原 107.520 秒开口吞掉了“也算相见”的“也”。",
-        "resolution": "母带人工确认开口为 107.154 秒。"
+        "resolution": "母带人工确认开口为 107.154 秒。",
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -5054,7 +5075,9 @@
       "manual_observation": {
         "status": "pending",
         "observation": "原候选把下一句“雨声停在青瓦边沿”的“雨声”并入了“茶烟绕过案上旧纸”。",
-        "resolution": "统一时间轴已将 line-030 结束和 line-031 开始共同修订为 131.421 秒。"
+        "resolution": "统一时间轴已将 line-030 结束和 line-031 开始共同修订为 131.421 秒。",
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -5201,7 +5224,9 @@
       "manual_observation": {
         "status": "pending",
         "observation": "原 131.690 秒开口吞掉了“雨声停在青瓦边沿”的“雨声”。",
-        "resolution": "母带人工确认开口为 131.421 秒。"
+        "resolution": "母带人工确认开口为 131.421 秒。",
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -5751,7 +5776,9 @@
           "basis": "listener_flag_plus_low_confidence_A2_tail_at_138950_to_139064_before_next_onset_near_139169"
         },
         "pitch_probability_floor": 0.15,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -8007,7 +8034,12 @@
           "confidence": 0.946
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "verified",
+        "observation": "第二遍“不问阴晴”人工抽听没有明显问题。",
+        "review_outcome": "listener_spot_check_ok",
+        "publish_to_mcp": true
+      }
     },
     {
       "line_id": "line-050",
@@ -8582,7 +8614,9 @@
         "status": "needs_correction",
         "observation": "“温度依偎在身边”的“依偎”在候选试听中不自然地断开。",
         "pitch_probability_floor": 0.15,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -8852,7 +8886,9 @@
         "status": "needs_correction",
         "observation": "03:04.810 的“回应时”中，“回应”只剩孤立点音，没有形成可听的连续旋律。",
         "pitch_probability_floor": 0.15,
-        "contour_bins": 32
+        "contour_bins": 32,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -10639,7 +10675,9 @@
         "status": "needs_correction",
         "observation": "“共此刻”候选需要返工。",
         "pitch_probability_floor": 0.35,
-        "contour_bins": 24
+        "contour_bins": 24,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {
@@ -11339,7 +11377,9 @@
         "status": "needs_correction",
         "observation": "“慢慢相见”的两个“慢”在候选播放中似乎被并在一起。",
         "pitch_probability_floor": 0.45,
-        "contour_bins": 24
+        "contour_bins": 24,
+        "review_outcome": "listener_spot_check_ok_after_revision",
+        "publish_to_mcp": true
       }
     },
     {

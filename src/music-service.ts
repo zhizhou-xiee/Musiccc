@@ -15,9 +15,6 @@ export interface SegmentEnvelope {
   cursor: string;
   completed: boolean;
   segment: MusicSegment | null;
-  perception_route: string;
-  perception_notice: string;
-  unknown: string[];
 }
 
 export interface CurveTransition {
@@ -80,9 +77,6 @@ function envelope(index: number): SegmentEnvelope {
     cursor: encodeCursor(index),
     completed: index === musicData.segments.length - 1,
     segment,
-    perception_route: musicData.perception_route,
-    perception_notice: musicData.perception_notice,
-    unknown: musicData.unknown,
   };
 }
 
@@ -92,11 +86,8 @@ export function musicCatalog(): Record<string, unknown> {
       {
         ...musicData.song,
         segment_count: musicData.segments.length,
-        perception_route: musicData.perception_route,
-        native_audio_content: false,
       },
     ],
-    perception_notice: musicData.perception_notice,
   };
 }
 
@@ -180,12 +171,34 @@ export function formatSegmentText(
     values
       .map((value) => blocks[Math.max(0, Math.min(7, Math.round((value / 63) * 7)))])
       .join("");
+  const melodySparkline = (points: Array<[number, number]>): string => {
+    if (!points.length) return "";
+    const gaps = points.slice(1).map((point, index) => point[0] - points[index]![0]);
+    const orderedGaps = [...gaps].sort((left, right) => left - right);
+    const medianGap = orderedGaps[Math.floor(orderedGaps.length / 2)] ?? 0;
+    return points
+      .map((point, index) => {
+        const gap = index > 0 && point[0] - points[index - 1]![0] > Math.max(260, medianGap * 1.8) ? "·" : "";
+        const level = Math.max(0, Math.min(7, Math.round(((point[1] + 12) / 24) * 7)));
+        return `${gap}${blocks[level]}`;
+      })
+      .join("");
+  };
+  const performerLabel = (line: MusicSegment["lyrics"][number]): string => {
+    const leads = line.performers.filter((performer) => performer.role === "lead").map((performer) => performer.name);
+    const supporting = line.performers.filter((performer) => performer.role !== "lead").map((performer) => performer.name);
+    if (leads.length > 1) {
+      return `${leads.join("、")}（共同演唱${supporting.length ? `；${supporting.join("、")}和声` : ""}）`;
+    }
+    if (supporting.length) return `${leads[0] ?? line.performers[0]?.name}（主唱；${supporting.join("、")}和声）`;
+    return leads[0] ?? line.performers.map((performer) => performer.name).join("、");
+  };
 
   const lyrics = segment.lyrics.length
     ? segment.lyrics
         .map(
           (line) =>
-            `${formatTime(line.start_ms)}–${formatTime(line.end_ms)} ${line.performers.map((item) => item.name).join("、")}：${line.text}`,
+            `${formatTime(line.start_ms)}–${formatTime(line.end_ms)} ${performerLabel(line)}：${line.text}`,
         )
         .join("\n")
     : "（本段无歌词）";
@@ -206,6 +219,14 @@ export function formatSegmentText(
         `${(curveNames[curve.id] ?? curve.label).padEnd(8, "　")} ${sparkline(curve.previous_tail)} │ ${sparkline(curve.current_head)}`,
     )
     .join("\n");
+  const melodies = segment.melody_contours
+    .map((contour) => {
+      const lyric = segment.lyrics.find((line) => line.id === contour.line_id);
+      const values = contour.points.map((point) => point[1]);
+      const range = values.length ? `　${Math.min(...values)}…${Math.max(...values)} 半音` : "";
+      return `${lyric ? formatTime(lyric.start_ms) : contour.line_id} ${lyric?.text ?? contour.line_id}　${melodySparkline(contour.points)}${range}`;
+    })
+    .join("\n");
   const prediction = options.prediction?.trim();
   return [
     ...(prediction ? ["揭晓前的猜测", prediction, "", "—— 揭晓 ——", ""] : []),
@@ -219,6 +240,9 @@ export function formatSegmentText(
     "",
     "音乐运动（全曲共用一把相对尺；从左到右）",
     curves,
+    ...(melodies
+      ? ["", "旋律走向（每句以自身中位音为中线；低→高，·为间隔）", melodies]
+      : []),
     ...(transition
       ? ["", "与上一段的衔接（末尾两点 │ 开头两点）", transition]
       : []),
