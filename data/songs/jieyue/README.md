@@ -5,7 +5,7 @@
 - `timeline.draft.json`：Whisper 自动对齐的旧初稿，用作来源对照，不再作为校对器默认输入。
 - `timeline.draft.lrc`：由自动对齐旧初稿生成的 LRC 预览。
 - `subtitles/zh-CN.srt`：终版 MV 使用的中文字幕时间。
-- `source/`：负责人提供的终版 MV 分拍资料、第 5 句人工校对导出原件，以及 2026-10-15 的精细听音乐器事件；媒体文件仍不进入 Git。
+- `source/`：负责人提供的终版 MV 分拍资料、第 5 句人工校对导出原件、后续母带定点修订，以及 2026-10-15 的精细听音乐器事件；媒体文件仍不进入 Git。
 - `experiments/mss-poc/`：Music Semantic Score 0.1 Schema、300/800/1500 档输出、公平自然语言基线与信息覆盖量表。
 - `experiments/mss-curve-poc/`：Music Semantic Score 0.2 的四条客观时间序列、稀疏关键点压缩、同证据自然语言对照及曲线理解量表。
 - `experiments/melody-harmony-poc/`：WAV 母带分轨后的逐句旋律、重复关系、调性和低置信度和弦候选；只用于人工校对与后续对照实验。

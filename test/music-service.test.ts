@@ -39,6 +39,16 @@ test("reviewed handoff and layered outro facts are present", () => {
   assert.match(outro?.music_observations.map((item) => item.description).join(" ") ?? "", /吉他衔接古筝/);
 });
 
+test("project-owner timing correction assigns 直至 to line 013", () => {
+  const verse = musicSeek("jieyue", { kind: "line_id", value: "line-013" }).segment;
+  const previous = verse?.lyrics.find((line) => line.id === "line-012");
+  const corrected = verse?.lyrics.find((line) => line.id === "line-013");
+  assert.equal(previous?.end_ms, 68_651);
+  assert.equal(previous?.timing_status.end, "verified");
+  assert.equal(corrected?.start_ms, 68_651);
+  assert.equal(corrected?.timing_status.start, "verified");
+});
+
 test("invalid or stale cursors are rejected", () => {
   assert.throws(() => decodeCursor("not-a-cursor"), /Invalid cursor|current song revision/);
   const stale = Buffer.from(JSON.stringify({ v: "old", song: "jieyue", index: 0 })).toString("base64url");

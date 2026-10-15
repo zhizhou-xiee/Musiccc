@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "revision": "jieyue-timeline-0.2.1-perception-1.0.0",
+  "revision": "jieyue-timeline-0.2.2-perception-1.0.0",
   "perception_route": "pre_generated_objective_music_summary_plus_numeric_curves",
   "perception_notice": "返回内容来自人工听音标注与离线自动测量，不代表接收模型直接听见了原始音频。",
   "song": {
@@ -602,7 +602,7 @@
           "id": "line-012",
           "text": "不知路途遥远几许",
           "start_ms": 64870,
-          "end_ms": 69190,
+          "end_ms": 68651,
           "performers": [
             {
               "id": "performer-05",
@@ -612,13 +612,13 @@
           ],
           "timing_status": {
             "start": "reference",
-            "end": "estimate"
+            "end": "verified"
           }
         },
         {
           "id": "line-013",
           "text": "直至清辉",
-          "start_ms": 69190,
+          "start_ms": 68651,
           "end_ms": 70450,
           "performers": [
             {
@@ -628,7 +628,7 @@
             }
           ],
           "timing_status": {
-            "start": "reference",
+            "start": "verified",
             "end": "estimate"
           }
         },

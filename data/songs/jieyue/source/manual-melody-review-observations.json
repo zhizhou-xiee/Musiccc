@@ -17,8 +17,23 @@
     },
     "line-012": {
       "status": "pending",
-      "observation": "播放“不知路途遥远几许”时似乎带入了下一句“直至清辉”的“直”。",
-      "diagnosis": "候选帧在 69.18 秒结束，下一句稳定音高从约 69.24 秒开始；69.190 秒数据边界未串句，问题来自浏览器 timeupdate 停止延迟。"
+      "observation": "母带复听确认：68.651–69.190 是下一句“直至清辉”的“直至”，不是上一句尾部。",
+      "resolution": "统一时间轴已将 line-012 结束和 line-013 开始共同修订为 68.651 秒。"
+    },
+    "line-013": {
+      "status": "pending",
+      "observation": "原 69.190 秒开口吞掉了“直至”两个字。",
+      "resolution": "母带人工确认开口为 68.651 秒。"
+    },
+    "line-015": {
+      "status": "needs_correction",
+      "observation": "“月色无声”的“月”很短、很轻，候选似乎吞掉了一部分。",
+      "analysis_window_override": {
+        "start_ms": 74600,
+        "basis": "listener_flag_plus_vocal_energy_onset_near_74620"
+      },
+      "pitch_probability_floor": 0.2,
+      "contour_bins": 24
     },
     "line-065": {
       "status": "needs_correction",

@@ -1,0 +1,25 @@
+{
+  "schema_version": "manual-timing-corrections/0.1",
+  "song_id": "jieyue",
+  "master_version": "final-master",
+  "recorded_at": "2026-10-15",
+  "reviewer_role": "project_owner_listener",
+  "corrections": [
+    {
+      "line_id": "line-012",
+      "field": "vocal_end",
+      "value_ms": 68651,
+      "status": "verified",
+      "source": "project_owner_master_listening",
+      "note": "68.651–69.190 已经是下一句“直至清辉”的“直至”，因此上一句在 68.651 结束。"
+    },
+    {
+      "line_id": "line-013",
+      "field": "start",
+      "value_ms": 68651,
+      "status": "verified",
+      "source": "project_owner_master_listening",
+      "note": "“直至清辉”的“直至”位于 68.651–69.190，原 69.190 开口漏掉前两个字。"
+    }
+  ]
+}

@@ -50,6 +50,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source-dir", type=Path, required=True)
     parser.add_argument("--subtitle-output", type=Path, required=True)
     parser.add_argument("--review-export", type=Path)
+    parser.add_argument("--timing-corrections", type=Path)
     return parser.parse_args()
 
 
@@ -246,7 +247,7 @@ def main() -> None:
     }
 
     output = {
-        "schema_version": "0.2.1",
+        "schema_version": "0.2.2",
         "song_id": draft["song_id"],
         "title": draft["title"],
         "timeline_timebase": draft["timeline_timebase"],
@@ -371,6 +372,44 @@ def main() -> None:
                 item for item in output["alignment"]["review_scope"] if "第 5 句" not in item
             ]
 
+    if args.timing_corrections:
+        corrections = json.loads(args.timing_corrections.read_text(encoding="utf-8"))
+        if corrections["song_id"] != output["song_id"]:
+            raise ValueError("Timing corrections belong to a different song")
+        line_by_id = {line["id"]: line for line in output["lines"]}
+        for correction in corrections["corrections"]:
+            line = line_by_id[correction["line_id"]]
+            field = correction["field"]
+            value_ms = int(correction["value_ms"])
+            timing_value = {
+                "value_ms": value_ms,
+                "source": correction["source"],
+                "status": correction["status"],
+                "note": correction["note"],
+            }
+            if field == "start":
+                line["start_ms"] = value_ms
+                line["timing"]["start"] = timing_value
+                line["timing"]["start_frame"] = {
+                    "value": round(value_ms * raw["meta"]["video_fps"] / 1000),
+                    "fps": raw["meta"]["video_fps"],
+                    "source": "derived_from_verified_start",
+                }
+            elif field == "vocal_end":
+                line["end_ms"] = value_ms
+                line["timing"]["vocal_end"] = timing_value
+            else:
+                raise ValueError(f"Unsupported timing correction field: {field}")
+
+        correction_source = {
+            "stored_as": args.timing_corrections.name,
+            "sha256": sha256(args.timing_corrections),
+            "recorded_at": corrections.get("recorded_at"),
+            "count": len(corrections["corrections"]),
+        }
+        output["provenance"]["source_files"]["manual_timing_corrections"] = correction_source
+        output.setdefault("manual_review", {})["targeted_timing_corrections"] = correction_source
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -380,6 +419,8 @@ def main() -> None:
     copy_if_needed(args.subtitle_srt, args.source_dir / "lyrics-subtitle-reference.srt")
     if args.review_export:
         copy_if_needed(args.review_export, args.source_dir / "manual-review-line-005.json")
+    if args.timing_corrections:
+        copy_if_needed(args.timing_corrections, args.source_dir / args.timing_corrections.name)
     args.subtitle_output.parent.mkdir(parents=True, exist_ok=True)
     copy_if_needed(args.subtitle_srt, args.subtitle_output)
 

@@ -117,8 +117,11 @@ function renderActive() {
   const item = line(), review = reviewFor(item.line_id);
   el.position.textContent = `第 ${activeIndex + 1} / ${data.melody_lines.length} 句`; el.section.textContent = item.section_title; el.lyric.textContent = item.text;
   el.status.className = `status ${review.status}`; el.status.textContent = statusLabel(review.status);
-  const extended = analysisEnd(item) !== item.end_ms ? ` · 分析尾部延至 ${formatTime(analysisEnd(item))}` : "";
-  el.lineMeta.textContent = `${formatTime(item.start_ms)}–${formatTime(item.end_ms)}${extended} · ${performers(item)} · ${item.line_id}`;
+  const windowNotes = [];
+  if (analysisStart(item) !== item.start_ms) windowNotes.push(`分析起点提前至 ${formatTime(analysisStart(item))}`);
+  if (analysisEnd(item) !== item.end_ms) windowNotes.push(`分析尾部延至 ${formatTime(analysisEnd(item))}`);
+  const analysisWindow = windowNotes.length ? ` · ${windowNotes.join("；")}` : "";
+  el.lineMeta.textContent = `${formatTime(item.start_ms)}–${formatTime(item.end_ms)}${analysisWindow} · ${performers(item)} · ${item.line_id}`;
   el.playhead.textContent = formatTime(analysisStart(item)); el.lineEnd.textContent = formatTime(analysisEnd(item)); el.scrubber.value = 0;
   const polyphonic = item.representation_status === "unsupported_polyphonic_unresolved";
   el.coverage.textContent = polyphonic ? `${item.lead_voice_count} 位主唱 · 单线旋律不适用 · 仅主导音高诊断` : `有效覆盖 ${(item.voiced_coverage * 100).toFixed(1)}% · ${item.candidate_range.lowest_note || "?"}–${item.candidate_range.highest_note || "?"}`;

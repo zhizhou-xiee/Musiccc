@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.2.1",
+  "schema_version": "0.2.2",
   "song_id": "jieyue",
   "title": "借月",
   "timeline_timebase": {
@@ -36,6 +36,12 @@
         "stored_as": "manual-review-line-005.json",
         "sha256": "30a96bf1ba82acdb25354c1fb18315f887401a36588d9eb971f3f0a750df523c",
         "exported_at": "2026-10-14T18:10:09.951Z"
+      },
+      "manual_timing_corrections": {
+        "stored_as": "manual-timing-corrections.json",
+        "sha256": "30a7516eea883c418fd1298462d4161cb619bfb818ecf393928556457d9a651d",
+        "recorded_at": "2026-10-15",
+        "count": 2
       }
     }
   },
@@ -980,7 +986,7 @@
         }
       ],
       "start_ms": 64870,
-      "end_ms": 69190,
+      "end_ms": 68651,
       "timing": {
         "start": {
           "value_ms": 64870,
@@ -988,9 +994,10 @@
           "status": "reference"
         },
         "vocal_end": {
-          "value_ms": 69190,
-          "source": "separated_vocal_estimate",
-          "status": "estimate"
+          "value_ms": 68651,
+          "source": "project_owner_master_listening",
+          "status": "verified",
+          "note": "68.651–69.190 已经是下一句“直至清辉”的“直至”，因此上一句在 68.651 结束。"
         },
         "subtitle_end": {
           "value_ms": 69140,
@@ -1029,13 +1036,14 @@
           "role": "lead"
         }
       ],
-      "start_ms": 69190,
+      "start_ms": 68651,
       "end_ms": 70450,
       "timing": {
         "start": {
-          "value_ms": 69190,
-          "source": "human_waveform_mark",
-          "status": "reference"
+          "value_ms": 68651,
+          "source": "project_owner_master_listening",
+          "status": "verified",
+          "note": "“直至清辉”的“直至”位于 68.651–69.190，原 69.190 开口漏掉前两个字。"
         },
         "vocal_end": {
           "value_ms": 70450,
@@ -1053,8 +1061,9 @@
           "status": "display_only"
         },
         "start_frame": {
-          "value": 2076,
-          "fps": 30
+          "value": 2060,
+          "fps": 30,
+          "source": "derived_from_verified_start"
         },
         "exception": null
       },
@@ -4880,6 +4889,12 @@
       "stored_as": "manual-review-line-005.json",
       "sha256": "30a96bf1ba82acdb25354c1fb18315f887401a36588d9eb971f3f0a750df523c",
       "exported_at": "2026-10-14T18:10:09.951Z"
+    },
+    "targeted_timing_corrections": {
+      "stored_as": "manual-timing-corrections.json",
+      "sha256": "30a7516eea883c418fd1298462d4161cb619bfb818ecf393928556457d9a651d",
+      "recorded_at": "2026-10-15",
+      "count": 2
     }
   }
 }

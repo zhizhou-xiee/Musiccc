@@ -1,6 +1,6 @@
 {
   "schema_version": "melody-harmony-poc/0.1.1",
-  "generated_at": "2026-10-15T12:50:56.772775+00:00",
+  "generated_at": "2026-10-15T13:13:42.050699+00:00",
   "song_id": "jieyue",
   "production_integration": "none_review_only",
   "perception_notice": "所有旋律、调性、速度与和弦内容均为离线自动候选，未经人工校对；不代表接收模型直接听见原始音频。",
@@ -19,7 +19,7 @@
       "repository_copy": false,
       "separation": "demucs_htdemucs_two_stems"
     },
-    "timeline_revision": "jieyue-timeline-0.2.1-perception-1.0.0",
+    "timeline_revision": "jieyue-timeline-0.2.2-perception-1.0.0",
     "manual_review_source": "manual-melody-review-observations.json"
   },
   "analysis": {
@@ -1793,9 +1793,9 @@
       "section_title": "Verse 1",
       "text": "不知路途遥远几许",
       "start_ms": 64870,
-      "end_ms": 69190,
+      "end_ms": 68651,
       "analysis_start_ms": 64870,
-      "analysis_end_ms": 69190,
+      "analysis_end_ms": 68651,
       "performers": [
         {
           "id": "performer-05",
@@ -1808,130 +1808,130 @@
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
       "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.664,
-      "baseline_midi": 52.0,
+      "voiced_coverage": 0.66,
+      "baseline_midi": 50.3,
       "candidate_range": {
         "lowest_note": "A2",
         "highest_note": "A3"
       },
       "contour_points": [
         {
-          "time_ms": 65005,
+          "time_ms": 64988,
           "midi": 45.0,
-          "relative_semitones": -7.0,
+          "relative_semitones": -5.3,
           "note": "A2",
           "confidence": 0.757
         },
         {
-          "time_ms": 65275,
+          "time_ms": 65224,
           "midi": 47.1,
-          "relative_semitones": -4.9,
+          "relative_semitones": -3.2,
           "note": "B2",
           "confidence": 0.757
         },
         {
-          "time_ms": 65545,
+          "time_ms": 65461,
           "midi": 50.2,
-          "relative_semitones": -1.8,
+          "relative_semitones": -0.1,
+          "note": "D3",
+          "confidence": 0.859
+        },
+        {
+          "time_ms": 65697,
+          "midi": 50.2,
+          "relative_semitones": -0.1,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 65815,
+          "time_ms": 65933,
           "midi": 49.9,
-          "relative_semitones": -2.1,
+          "relative_semitones": -0.4,
           "note": "D3",
           "confidence": 0.891
         },
         {
-          "time_ms": 66085,
-          "midi": 47.6,
-          "relative_semitones": -4.4,
-          "note": "C3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 66355,
-          "midi": 46.85,
-          "relative_semitones": -5.15,
+          "time_ms": 66170,
+          "midi": 47.0,
+          "relative_semitones": -3.3,
           "note": "B2",
-          "confidence": 0.792
+          "confidence": 0.827
         },
         {
-          "time_ms": 66625,
-          "midi": 49.9,
-          "relative_semitones": -2.1,
+          "time_ms": 66406,
+          "midi": 50.1,
+          "relative_semitones": -0.2,
           "note": "D3",
-          "confidence": 0.616
+          "confidence": 0.686
         },
         {
-          "time_ms": 66895,
+          "time_ms": 66642,
+          "midi": 49.9,
+          "relative_semitones": -0.4,
+          "note": "D3",
+          "confidence": 0.651
+        },
+        {
+          "time_ms": 66879,
           "midi": 47.05,
-          "relative_semitones": -4.95,
+          "relative_semitones": -3.25,
           "note": "B2",
           "confidence": 0.757
         },
         {
-          "time_ms": 67165,
-          "midi": 56.3,
-          "relative_semitones": 4.3,
+          "time_ms": 67115,
+          "midi": 56.1,
+          "relative_semitones": 5.8,
           "note": "G#3",
-          "confidence": 0.792
+          "confidence": 0.686
         },
         {
-          "time_ms": 67435,
+          "time_ms": 67351,
           "midi": 56.9,
-          "relative_semitones": 4.9,
+          "relative_semitones": 6.6,
           "note": "A3",
           "confidence": 0.946
         },
         {
-          "time_ms": 67705,
-          "midi": 57.0,
-          "relative_semitones": 5.0,
+          "time_ms": 67588,
+          "midi": 56.9,
+          "relative_semitones": 6.6,
           "note": "A3",
           "confidence": 0.946
         },
         {
-          "time_ms": 67975,
+          "time_ms": 67824,
+          "midi": 57.05,
+          "relative_semitones": 6.75,
+          "note": "A3",
+          "confidence": 0.919
+        },
+        {
+          "time_ms": 68060,
           "midi": 53.8,
-          "relative_semitones": 1.8,
+          "relative_semitones": 3.5,
           "note": "F#3",
-          "confidence": 0.827
+          "confidence": 0.891
         },
         {
-          "time_ms": 68245,
+          "time_ms": 68297,
           "midi": 53.9,
-          "relative_semitones": 1.9,
+          "relative_semitones": 3.6,
           "note": "F#3",
           "confidence": 0.891
         },
         {
-          "time_ms": 68515,
+          "time_ms": 68533,
           "midi": 53.8,
-          "relative_semitones": 1.8,
+          "relative_semitones": 3.5,
           "note": "F#3",
-          "confidence": 0.946
-        },
-        {
-          "time_ms": 68785,
-          "midi": 54.0,
-          "relative_semitones": 2.0,
-          "note": "F#3",
-          "confidence": 0.891
-        },
-        {
-          "time_ms": 69055,
-          "midi": 52.0,
-          "relative_semitones": 0.0,
-          "note": "E3",
-          "confidence": 0.891
+          "confidence": 0.965
         }
       ],
       "manual_observation": {
         "status": "pending",
-        "observation": "播放“不知路途遥远几许”时似乎带入了下一句“直至清辉”的“直”。",
-        "diagnosis": "候选帧在 69.18 秒结束，下一句稳定音高从约 69.24 秒开始；69.190 秒数据边界未串句，问题来自浏览器 timeupdate 停止延迟。"
+        "observation": "母带复听确认：68.651–69.190 是下一句“直至清辉”的“直至”，不是上一句尾部。",
+        "resolution": "统一时间轴已将 line-012 结束和 line-013 开始共同修订为 68.651 秒。"
       }
     },
     {
@@ -1939,9 +1939,9 @@
       "section_id": "verse_1",
       "section_title": "Verse 1",
       "text": "直至清辉",
-      "start_ms": 69190,
+      "start_ms": 68651,
       "end_ms": 70450,
-      "analysis_start_ms": 69190,
+      "analysis_start_ms": 68651,
       "analysis_end_ms": 70450,
       "performers": [
         {
@@ -1955,127 +1955,131 @@
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
       "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.752,
-      "baseline_midi": 51.65,
+      "voiced_coverage": 0.735,
+      "baseline_midi": 53.75,
       "candidate_range": {
-        "lowest_note": "C#3",
+        "lowest_note": "D3",
         "highest_note": "F#3"
       },
       "contour_points": [
         {
-          "time_ms": 69229,
+          "time_ms": 68707,
+          "midi": 53.9,
+          "relative_semitones": 0.15,
+          "note": "F#3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 68820,
+          "midi": 54.0,
+          "relative_semitones": 0.25,
+          "note": "F#3",
+          "confidence": 0.946
+        },
+        {
+          "time_ms": 68932,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 69308,
+          "time_ms": 69045,
+          "midi": 52.0,
+          "relative_semitones": -1.75,
+          "note": "E3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 69157,
+          "midi": 52.0,
+          "relative_semitones": -1.75,
+          "note": "E3",
+          "confidence": 0.946
+        },
+        {
+          "time_ms": 69269,
           "midi": 54.2,
-          "relative_semitones": 2.55,
+          "relative_semitones": 0.45,
           "note": "F#3",
-          "confidence": 0.827
+          "confidence": 0.756
         },
         {
-          "time_ms": 69387,
+          "time_ms": 69382,
           "midi": 54.0,
-          "relative_semitones": 2.35,
+          "relative_semitones": 0.25,
           "note": "F#3",
           "confidence": 0.891
         },
         {
-          "time_ms": 69466,
+          "time_ms": 69494,
           "midi": 54.0,
-          "relative_semitones": 2.35,
+          "relative_semitones": 0.25,
           "note": "F#3",
           "confidence": 0.891
         },
         {
-          "time_ms": 69544,
-          "midi": 53.9,
-          "relative_semitones": 2.25,
-          "note": "F#3",
-          "confidence": 0.891
-        },
-        {
-          "time_ms": 69623,
+          "time_ms": 69607,
           "midi": 54.0,
-          "relative_semitones": 2.35,
+          "relative_semitones": 0.25,
           "note": "F#3",
           "confidence": 0.946
         },
         {
-          "time_ms": 69702,
+          "time_ms": 69719,
           "midi": 53.9,
-          "relative_semitones": 2.25,
+          "relative_semitones": 0.15,
           "note": "F#3",
           "confidence": 0.946
         },
         {
-          "time_ms": 69781,
-          "midi": 53.4,
-          "relative_semitones": 1.75,
+          "time_ms": 69832,
+          "midi": 53.0,
+          "relative_semitones": -0.75,
           "note": "F3",
-          "confidence": 0.827
+          "confidence": 0.616
         },
         {
-          "time_ms": 69859,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
-        },
-        {
-          "time_ms": 69938,
-          "midi": 50.3,
-          "relative_semitones": -1.35,
+          "time_ms": 69944,
+          "midi": 50.2,
+          "relative_semitones": -3.55,
           "note": "D3",
           "confidence": 0.757
         },
         {
-          "time_ms": 70017,
+          "time_ms": 70056,
+          "midi": 50.05,
+          "relative_semitones": -3.7,
+          "note": "D3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 70169,
           "midi": 50.0,
-          "relative_semitones": -1.65,
+          "relative_semitones": -3.75,
           "note": "D3",
           "confidence": 0.827
         },
         {
-          "time_ms": 70096,
-          "midi": 50.1,
-          "relative_semitones": -1.55,
-          "note": "D3",
-          "confidence": 0.827
-        },
-        {
-          "time_ms": 70174,
-          "midi": 50.0,
-          "relative_semitones": -1.65,
-          "note": "D3",
-          "confidence": 0.827
-        },
-        {
-          "time_ms": 70253,
+          "time_ms": 70281,
           "midi": 49.7,
-          "relative_semitones": -1.95,
+          "relative_semitones": -4.05,
           "note": "D3",
-          "confidence": 0.891
+          "confidence": 0.946
         },
         {
-          "time_ms": 70332,
+          "time_ms": 70394,
           "midi": 49.7,
-          "relative_semitones": -1.95,
+          "relative_semitones": -4.05,
           "note": "D3",
-          "confidence": 0.985
-        },
-        {
-          "time_ms": 70411,
-          "midi": 49.45,
-          "relative_semitones": -2.2,
-          "note": "C#3",
-          "confidence": 0.824
+          "confidence": 0.946
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "pending",
+        "observation": "原 69.190 秒开口吞掉了“直至”两个字。",
+        "resolution": "母带人工确认开口为 68.651 秒。"
+      }
     },
     {
       "line_id": "line-014",
@@ -2227,7 +2231,7 @@
       "text": "月色无声",
       "start_ms": 74650,
       "end_ms": 76590,
-      "analysis_start_ms": 74650,
+      "analysis_start_ms": 74600,
       "analysis_end_ms": 76590,
       "performers": [
         {
@@ -2240,8 +2244,8 @@
       "representation_status": "monophonic_candidate",
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
-      "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.599,
+      "pitch_probability_floor": 0.2,
+      "voiced_coverage": 0.667,
       "baseline_midi": 58.9,
       "candidate_range": {
         "lowest_note": "D3",
@@ -2249,67 +2253,102 @@
       },
       "contour_points": [
         {
-          "time_ms": 74711,
+          "time_ms": 74641,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 74832,
+          "time_ms": 74724,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 74807,
           "midi": 50.2,
           "relative_semitones": -8.7,
           "note": "D3",
-          "confidence": 0.757
+          "confidence": 0.485
         },
         {
-          "time_ms": 74953,
+          "time_ms": 74890,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 75074,
+          "time_ms": 74973,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 75056,
+          "midi": 52.3,
+          "relative_semitones": -6.6,
+          "note": "E3",
+          "confidence": 0.617
+        },
+        {
+          "time_ms": 75139,
           "midi": 52.1,
           "relative_semitones": -6.8,
+          "note": "E3",
+          "confidence": 0.891
+        },
+        {
+          "time_ms": 75222,
+          "midi": 51.8,
+          "relative_semitones": -7.1,
           "note": "E3",
           "confidence": 0.827
         },
         {
-          "time_ms": 75196,
-          "midi": 52.0,
-          "relative_semitones": -6.9,
+          "time_ms": 75305,
+          "midi": 52.4,
+          "relative_semitones": -6.5,
           "note": "E3",
-          "confidence": 0.827
+          "confidence": 0.426
         },
         {
-          "time_ms": 75317,
-          "midi": 52.1,
-          "relative_semitones": -6.8,
-          "note": "E3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 75438,
-          "midi": 53.8,
-          "relative_semitones": -5.1,
+          "time_ms": 75388,
+          "midi": 53.7,
+          "relative_semitones": -5.2,
           "note": "F#3",
           "confidence": 0.827
         },
         {
-          "time_ms": 75559,
-          "midi": 54.25,
-          "relative_semitones": -4.65,
+          "time_ms": 75471,
+          "midi": 54.05,
+          "relative_semitones": -4.85,
           "note": "F#3",
-          "confidence": 0.852
+          "confidence": 0.827
         },
         {
-          "time_ms": 75681,
+          "time_ms": 75554,
+          "midi": 54.3,
+          "relative_semitones": -4.6,
+          "note": "F#3",
+          "confidence": 0.323
+        },
+        {
+          "time_ms": 75636,
+          "midi": null,
+          "relative_semitones": null,
+          "note": null,
+          "confidence": null
+        },
+        {
+          "time_ms": 75719,
           "midi": 59.2,
           "relative_semitones": 0.3,
           "note": "B3",
-          "confidence": 0.616
+          "confidence": 0.687
         },
         {
           "time_ms": 75802,
@@ -2319,49 +2358,79 @@
           "confidence": 0.891
         },
         {
-          "time_ms": 75923,
+          "time_ms": 75885,
           "midi": 58.9,
           "relative_semitones": 0.0,
           "note": "B3",
-          "confidence": 0.965
+          "confidence": 0.946
         },
         {
-          "time_ms": 76044,
+          "time_ms": 75968,
           "midi": 59.0,
           "relative_semitones": 0.1,
           "note": "B3",
           "confidence": 0.946
         },
         {
-          "time_ms": 76166,
-          "midi": 59.25,
-          "relative_semitones": 0.35,
-          "note": "B3",
-          "confidence": 0.946
-        },
-        {
-          "time_ms": 76287,
+          "time_ms": 76051,
           "midi": 59.0,
           "relative_semitones": 0.1,
           "note": "B3",
           "confidence": 0.946
         },
         {
-          "time_ms": 76408,
+          "time_ms": 76134,
+          "midi": 59.1,
+          "relative_semitones": 0.2,
+          "note": "B3",
+          "confidence": 0.946
+        },
+        {
+          "time_ms": 76217,
+          "midi": 59.3,
+          "relative_semitones": 0.4,
+          "note": "B3",
+          "confidence": 0.985
+        },
+        {
+          "time_ms": 76300,
           "midi": 59.0,
           "relative_semitones": 0.1,
           "note": "B3",
           "confidence": 0.985
         },
         {
-          "time_ms": 76529,
+          "time_ms": 76383,
+          "midi": 59.1,
+          "relative_semitones": 0.2,
+          "note": "B3",
+          "confidence": 1.0
+        },
+        {
+          "time_ms": 76466,
+          "midi": 58.9,
+          "relative_semitones": 0.0,
+          "note": "B3",
+          "confidence": 0.985
+        },
+        {
+          "time_ms": 76549,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "needs_correction",
+        "observation": "“月色无声”的“月”很短、很轻，候选似乎吞掉了一部分。",
+        "analysis_window_override": {
+          "start_ms": 74600,
+          "basis": "listener_flag_plus_vocal_energy_onset_near_74620"
+        },
+        "pitch_probability_floor": 0.2,
+        "contour_bins": 24
+      }
     },
     {
       "line_id": "line-016",
