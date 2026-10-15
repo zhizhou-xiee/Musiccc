@@ -6,6 +6,39 @@ import { Client, StreamableHTTPClientTransport } from "@modelcontextprotocol/cli
 
 import { createMusicHttpServer } from "../src/server.js";
 
+test("/music uses prefix-safe absolute asset paths", async () => {
+  const server = createMusicHttpServer();
+  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const address = server.address() as AddressInfo;
+  const base = `http://127.0.0.1:${address.port}`;
+  try {
+    const page = await fetch(`${base}/music`);
+    assert.equal(page.status, 200);
+    const html = await page.text();
+    assert.match(html, /src="\/music\/app\.js"/);
+    assert.match(html, /href="\/music\/styles\.css"/);
+    assert.match(html, /src="\/music\/media\/jieyue-mv-720p\.mp4"/);
+
+    const [script, styles, data, poster] = await Promise.all([
+      fetch(`${base}/music/app.js`),
+      fetch(`${base}/music/styles.css`),
+      fetch(`${base}/music/data/song.json`),
+      fetch(`${base}/music/assets/poster.jpg`),
+    ]);
+    assert.deepEqual(
+      [script.status, styles.status, data.status, poster.status],
+      [200, 200, 200, 200],
+    );
+    const song = (await data.json()) as { media: { video_url: string; poster_url: string } };
+    assert.equal(song.media.video_url, "/music/media/jieyue-mv-720p.mp4");
+    assert.equal(song.media.poster_url, "/music/assets/poster.jpg");
+  } finally {
+    await new Promise<void>((resolve, reject) =>
+      server.close((error) => (error ? reject(error) : resolve())),
+    );
+  }
+});
+
 test("Streamable HTTP initializes, discovers and calls all four tools", async () => {
   const server = createMusicHttpServer();
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));

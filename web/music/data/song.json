@@ -8,8 +8,8 @@
     "duration_ms": 249594
   },
   "media": {
-    "video_url": "./media/jieyue-mv-720p.mp4",
-    "poster_url": "./assets/poster.jpg",
+    "video_url": "/music/media/jieyue-mv-720p.mp4",
+    "poster_url": "/music/assets/poster.jpg",
     "video_duration_ms": 255001,
     "width": 1280,
     "height": 720,

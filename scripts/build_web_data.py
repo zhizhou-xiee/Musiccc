@@ -31,7 +31,7 @@ def main() -> None:
     metadata = read_json(SONG_DIR / "metadata.json")
     timeline = read_json(SONG_DIR / "timeline.reference.json")
     video_url = os.environ.get(
-        "JIEYUE_VIDEO_URL", "./media/jieyue-mv-720p.mp4"
+        "JIEYUE_VIDEO_URL", "/music/media/jieyue-mv-720p.mp4"
     )
 
     public_sections = [
@@ -56,7 +56,7 @@ def main() -> None:
         },
         "media": {
             "video_url": video_url,
-            "poster_url": "./assets/poster.jpg",
+            "poster_url": "/music/assets/poster.jpg",
             "video_duration_ms": metadata["media"]["video"]["duration_ms"],
             "width": metadata["media"]["video"]["width"],
             "height": metadata["media"]["video"]["height"],

@@ -126,7 +126,7 @@ const wirePlayerEvents = () => {
 };
 
 const loadSong = async () => {
-  const response = await fetch("./data/song.json");
+  const response = await fetch("/music/data/song.json");
   if (!response.ok) throw new Error(`Song data returned ${response.status}`);
   const data = await response.json();
 
