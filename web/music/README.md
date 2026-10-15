@@ -15,7 +15,7 @@
 python3 scripts/build_web_data.py
 ```
 
-可以用 `JIEYUE_VIDEO_URL` 指定对象存储/CDN 地址；未设置时使用本地相对地址 `./media/jieyue-mv-720p.mp4`。
+部署时可以用 `JIEYUE_VIDEO_URL` 指定对象存储/CDN 的 HTTPS 地址，服务会在运行时将它写入网页数据；未设置时使用 `/music/media/jieyue-mv-720p.mp4`。
 
 ## 本地媒体
 

@@ -7,6 +7,7 @@ import { Client, StreamableHTTPClientTransport } from "@modelcontextprotocol/cli
 import { createMusicHttpServer } from "../src/server.js";
 
 test("/music uses prefix-safe absolute asset paths", async () => {
+  const previousVideoUrl = process.env.JIEYUE_VIDEO_URL;
   const server = createMusicHttpServer();
   await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
   const address = server.address() as AddressInfo;
@@ -32,7 +33,15 @@ test("/music uses prefix-safe absolute asset paths", async () => {
     const song = (await data.json()) as { media: { video_url: string; poster_url: string } };
     assert.equal(song.media.video_url, "/music/media/jieyue-mv-720p.mp4");
     assert.equal(song.media.poster_url, "/music/assets/poster.jpg");
+
+    process.env.JIEYUE_VIDEO_URL = "https://media.example/jieyue.mp4";
+    const configuredSong = (await (await fetch(`${base}/music/data/song.json`)).json()) as {
+      media: { video_url: string };
+    };
+    assert.equal(configuredSong.media.video_url, "https://media.example/jieyue.mp4");
   } finally {
+    if (previousVideoUrl === undefined) delete process.env.JIEYUE_VIDEO_URL;
+    else process.env.JIEYUE_VIDEO_URL = previousVideoUrl;
     await new Promise<void>((resolve, reject) =>
       server.close((error) => (error ? reject(error) : resolve())),
     );

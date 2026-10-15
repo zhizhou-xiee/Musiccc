@@ -1,4 +1,4 @@
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { extname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -61,6 +61,22 @@ function sendJson(response: ServerResponse, status: number, body: unknown): void
     "Cache-Control": "no-store",
   });
   response.end(payload);
+}
+
+function serveSongData(response: ServerResponse): void {
+  const path = resolve(webRoot, "data", "song.json");
+  const payload = JSON.parse(readFileSync(path, "utf8")) as {
+    media: { video_url: string };
+  };
+  const configuredVideoUrl = process.env.JIEYUE_VIDEO_URL?.trim();
+  if (configuredVideoUrl) {
+    const url = new URL(configuredVideoUrl);
+    if (url.protocol !== "https:" && url.protocol !== "http:") {
+      throw new Error("JIEYUE_VIDEO_URL must use http or https");
+    }
+    payload.media.video_url = url.href;
+  }
+  sendJson(response, 200, payload);
 }
 
 function serveFile(request: IncomingMessage, response: ServerResponse, path: string): void {
@@ -161,6 +177,15 @@ export function createMusicHttpServer() {
     if (request.method !== "GET" && request.method !== "HEAD") {
       response.setHeader("Allow", "GET, HEAD");
       sendJson(response, 405, { error: "method_not_allowed" });
+      return;
+    }
+    if (pathname === "/music/data/song.json") {
+      try {
+        serveSongData(response);
+      } catch (error) {
+        console.error("Song data failed:", error instanceof Error ? error.message : "unknown error");
+        sendJson(response, 500, { error: "song_data_failed" });
+      }
       return;
     }
     const path = staticPath(pathname);
