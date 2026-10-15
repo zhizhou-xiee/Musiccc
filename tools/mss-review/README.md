@@ -1,6 +1,6 @@
 # MSS 听音事件校对台
 
-用于逐条试听并校对《借月》Music Semantic Score PoC 的 32 个听音事件。
+用于逐条试听并校对《借月》Music Semantic Score PoC 的 33 个听音事件。
 
 ## 启动
 

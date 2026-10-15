@@ -2,8 +2,8 @@
   "schema_version": "0.2.0",
   "audio_sha256": "af29e03d36297d94fe2950f909f8d0484b5a33133d3547f470b76d3ccfd1eb7c",
   "preprocessing": {
-    "total_wall_ms": 708,
-    "decode_and_energy_ms": 363,
+    "total_wall_ms": 710,
+    "decode_and_energy_ms": 365,
     "spectral_measurement_ms": 275,
     "network_calls": 0,
     "model_api_calls": 0,
@@ -23,17 +23,17 @@
   },
   "storage": {
     "input_audio_bytes": 9983772,
-    "mss_curves_pretty_json_bytes": 188000,
-    "mss_curve_800_bytes": 2263,
-    "natural_hybrid_800_bytes": 2156
+    "mss_curves_pretty_json_bytes": 188563,
+    "mss_curve_800_bytes": 2276,
+    "natural_hybrid_800_bytes": 2170
   },
   "token_notice": "UTF-8 bytes / 4 through bytes / 3 proxy only; no provider tokenizer or billed model call.",
   "variants": {
     "mss_curve_800": {
-      "utf8_bytes": 2262,
-      "unicode_characters": 2262,
-      "estimated_tokens_low": 566,
-      "estimated_tokens_high": 754
+      "utf8_bytes": 2275,
+      "unicode_characters": 2275,
+      "estimated_tokens_low": 569,
+      "estimated_tokens_high": 759
     },
     "natural_curve_800": {
       "utf8_bytes": 1139,
@@ -42,21 +42,21 @@
       "estimated_tokens_high": 380
     },
     "natural_hybrid_800": {
-      "utf8_bytes": 2155,
-      "unicode_characters": 1269,
-      "estimated_tokens_low": 539,
-      "estimated_tokens_high": 719
+      "utf8_bytes": 2169,
+      "unicode_characters": 1279,
+      "estimated_tokens_low": 543,
+      "estimated_tokens_high": 723
     },
     "natural_event_baseline_800": {
-      "utf8_bytes": 2358,
-      "unicode_characters": 1098,
-      "estimated_tokens_low": 590,
-      "estimated_tokens_high": 786
+      "utf8_bytes": 2434,
+      "unicode_characters": 1132,
+      "estimated_tokens_low": 609,
+      "estimated_tokens_high": 812
     }
   },
   "event_integrity": {
-    "source_events": 32,
-    "mss_events": 32,
+    "source_events": 33,
+    "mss_events": 33,
     "stable_ids_preserved": true,
     "guzheng_related_event_times_ms": [
       28490,
@@ -70,9 +70,10 @@
       152761,
       158631,
       195413,
+      199360,
       235060,
       242489
     ],
-    "source_ambiguity": "项目负责人原文在 195413 ms 两次提到古筝短暂和声/扬起；当前合并为一个事件。如实际为两次，需要第二个时间戳。"
+    "resolved_timing_note": "195413 ms 保留为短暂和声；第二次短暂扬起位于 199360–200450 ms 歌词衔接窗口，精确落点待试听确认。"
   }
 }

@@ -16,10 +16,10 @@
     },
     "natural_800": {
       "target_token_budget": 800,
-      "utf8_bytes": 2357,
-      "unicode_characters": 1097,
-      "estimated_tokens_low": 590,
-      "estimated_tokens_high": 786,
+      "utf8_bytes": 2433,
+      "unicode_characters": 1131,
+      "estimated_tokens_low": 609,
+      "estimated_tokens_high": 811,
       "coverage_counts": {
         "supported": 15
       }
@@ -38,32 +38,32 @@
     },
     "mss_800": {
       "target_token_budget": 800,
-      "utf8_bytes": 2376,
-      "unicode_characters": 2280,
-      "estimated_tokens_low": 594,
-      "estimated_tokens_high": 792,
+      "utf8_bytes": 2398,
+      "unicode_characters": 2302,
+      "estimated_tokens_low": 600,
+      "estimated_tokens_high": 800,
       "coverage_counts": {
         "supported": 15
       }
     },
     "mss_1500": {
       "target_token_budget": 1500,
-      "utf8_bytes": 4497,
-      "unicode_characters": 2875,
-      "estimated_tokens_low": 1125,
-      "estimated_tokens_high": 1499,
+      "utf8_bytes": 4628,
+      "unicode_characters": 2934,
+      "estimated_tokens_low": 1157,
+      "estimated_tokens_high": 1543,
       "coverage_counts": {
         "supported": 15
       }
     }
   },
   "full_mss": {
-    "utf8_bytes": 21175,
-    "unicode_characters": 19181,
-    "estimated_tokens_low": 5294,
-    "estimated_tokens_high": 7059,
+    "utf8_bytes": 21601,
+    "unicode_characters": 19535,
+    "estimated_tokens_low": 5401,
+    "estimated_tokens_high": 7201,
     "sections": 12,
-    "events": 32,
+    "events": 33,
     "relations": 4,
     "verified_motifs": 0
   }

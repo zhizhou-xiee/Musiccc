@@ -39,7 +39,8 @@ E 166734-186815@c2 lb?+ek+dr:drums_enter_first
 E 186815@c2 -:instruments_exit
 E 190860-210250@br lb?+ek+dr:electronic_keyboard_enter
 E 193668@br ek>ek
-E 195413@br gz:brief_harmony,brief_rise
+E 195413@br gz:brief_harmony
+E 199360-200450@br gz:brief_rise
 E 210250@br -:instruments_exit
 E 210738-219117@fc gt>gt
 E 219117-234440@fc lb?+ek+dr:drums_enter

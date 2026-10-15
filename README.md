@@ -15,9 +15,9 @@ Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-asses
 
 音乐感知候选 A/B 的首轮本地验证见 [docs/perception-ab-report.md](docs/perception-ab-report.md)。当前建议使用预生成音乐摘要作为唯一默认路线，尚待项目负责人确认。
 
-候选 C「Music Semantic Score」的单曲 PoC 见 [docs/mss-poc-report.md](docs/mss-poc-report.md) 与 [MSS 实验目录](data/songs/jieyue/experiments/mss-poc/README.md)。MSS/0.1 已能表示 12 个段落和 32 个可溯源听音事件；同证据、同约 800 Token 的自然语言与 MSS 当前显式信息覆盖打平，仍需真实模型盲测，尚未替换候选 B。
+候选 C「Music Semantic Score」的单曲 PoC 见 [docs/mss-poc-report.md](docs/mss-poc-report.md) 与 [MSS 实验目录](data/songs/jieyue/experiments/mss-poc/README.md)。MSS/0.1 已能表示 12 个段落和 33 个可溯源听音事件；同证据、同约 800 Token 的自然语言与 MSS 当前显式信息覆盖打平，仍需真实模型盲测，尚未替换候选 B。
 
-MSS/0.2 的 curve-first 实验见 [docs/mss-v0.2-curve-report.md](docs/mss-v0.2-curve-report.md) 与 [曲线实验目录](data/songs/jieyue/experiments/mss-curve-poc/README.md)。这一版将情绪和比喻排除在核心层之外，用四条离线测量曲线、32 条客观事件和显式未知项保留音乐运动；自然语言摘要降为对照基线，尚未进行付费模型测试。
+MSS/0.2 的 curve-first 实验见 [docs/mss-v0.2-curve-report.md](docs/mss-v0.2-curve-report.md) 与 [曲线实验目录](data/songs/jieyue/experiments/mss-curve-poc/README.md)。这一版将情绪和比喻排除在核心层之外，用四条离线测量曲线、33 条客观事件和显式未知项保留音乐运动；自然语言摘要降为对照基线，尚未进行付费模型测试。
 
 统一歌曲资料位于 `data/songs/jieyue/metadata.json`，当前校对基准位于 `data/songs/jieyue/timeline.reference.json`。Whisper 旧初稿保留在 `data/songs/jieyue/timeline.draft.json` 作为对照；人工开口、估算唱完、字幕显示边界和自动节拍在数据中分别标注，不会混作同一种精度。
 
@@ -25,6 +25,6 @@ MSS/0.2 的 curve-first 实验见 [docs/mss-v0.2-curve-report.md](docs/mss-v0.2-
 
 本地音乐摘要校对器位于 [tools/summary-review](tools/summary-review/README.md)。它把人工歌词、演唱者和乐器粗标与自动声学测量并排展示，支持逐段循环试听、修改摘要、确认状态以及 JSON 导入导出。
 
-本地 MSS 听音事件校对器位于 [tools/mss-review](tools/mss-review/README.md)。它逐条呈现 32 个可溯源音乐事件，支持点状/连续事件循环试听、时间微调、乐器候选与语义字段修订、审核状态及 JSON 导入导出。
+本地 MSS 听音事件校对器位于 [tools/mss-review](tools/mss-review/README.md)。它逐条呈现 33 个可溯源音乐事件，支持点状/连续事件循环试听、时间微调、乐器候选与语义字段修订、审核状态及 JSON 导入导出。
 
 `/music` 人类端初版位于 [web/music](web/music/README.md)。页面使用浏览器原生视频控件，并从统一歌曲元数据生成作品署名、演唱者与段落跳转数据。

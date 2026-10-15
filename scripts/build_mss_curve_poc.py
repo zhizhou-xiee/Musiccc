@@ -676,7 +676,7 @@ def main() -> None:
                 if "guzheng" in event.get("instruments", []) or "guzheng" in event.get("instrument_candidates", [])
                 or "guzheng_exit" in event.get("actions", [])
             ],
-            "source_ambiguity": "项目负责人原文在 195413 ms 两次提到古筝短暂和声/扬起；当前合并为一个事件。如实际为两次，需要第二个时间戳。",
+            "resolved_timing_note": "195413 ms 保留为短暂和声；第二次短暂扬起位于 199360–200450 ms 歌词衔接窗口，精确落点待试听确认。",
         },
     }
     write_json(args.output / "metrics.json", metrics)

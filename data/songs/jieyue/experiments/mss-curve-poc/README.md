@@ -15,7 +15,7 @@ python3 scripts/build_mss_curve_poc.py --audio /absolute/path/to/借月MMM.mp3
 - 500ms 频谱变化量曲线；
 - 由 20ms 能量帧计算的正向能量变化曲线；
 - 每条曲线的 0–63 分位量化值和自适应稀疏关键点；
-- 原有 32 条人工听音乐器事件，稳定 ID 不变；
+- 33 条人工听音乐器事件；原有稳定 ID 不变，新增衔接窗口使用新 ID；
 - 曲线客观题与自由解释实验题。
 
 `melody_contour` 明确为 `unknown`：混合母带没有可靠的主旋律分离或人工核验音符，频谱质心不能冒充旋律。

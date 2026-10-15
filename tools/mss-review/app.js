@@ -87,10 +87,32 @@ function storageKey() {
 
 function saveLocal() { localStorage.setItem(storageKey(), JSON.stringify({ version: 1, reviews })); }
 
+function migrateSavedReviews() {
+  const bridgeAccent = reviews["detail-event-026"];
+  if (!bridgeAccent) return false;
+  let changed = false;
+  if (JSON.stringify(bridgeAccent.actions) === JSON.stringify(["brief_harmony", "brief_rise"])) {
+    bridgeAccent.actions = ["brief_harmony"];
+    changed = true;
+  }
+  if (bridgeAccent.description_zh === "古筝短暂和声并扬起，随后恢复原基底。") {
+    bridgeAccent.description_zh = "古筝短暂和声，随后恢复原基底。";
+    changed = true;
+  }
+  if (changed) {
+    bridgeAccent.status = "pending";
+    delete bridgeAccent.verified_at;
+  }
+  return changed;
+}
+
 function restoreLocal() {
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey()) || "null");
-    if (saved?.version === 1 && saved.reviews && typeof saved.reviews === "object") reviews = saved.reviews;
+    if (saved?.version === 1 && saved.reviews && typeof saved.reviews === "object") {
+      reviews = saved.reviews;
+      if (migrateSavedReviews()) saveLocal();
+    }
   } catch { reviews = {}; }
 }
 

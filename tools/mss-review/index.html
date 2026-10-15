@@ -13,7 +13,7 @@
         <div>
           <p class="eyebrow">JIEYUE · MSS EVENT REVIEW</p>
           <h1>《借月》MSS 听音事件校对台</h1>
-          <p class="lede">逐个试听 32 个音乐事件，确认时间、乐器与描述，再交给小机阅读。</p>
+          <p class="lede">逐个试听 33 个音乐事件，确认时间、乐器与描述，再交给小机阅读。</p>
         </div>
         <div class="header-actions">
           <button id="load-audio" class="button primary" type="button">选择母带 MP3</button>
@@ -57,7 +57,7 @@
           <div class="event-heading">
             <div>
               <div class="heading-meta">
-                <span id="event-position" class="pill">第 1 / 32 个</span>
+                <span id="event-position" class="pill">第 1 / 33 个</span>
                 <span id="event-section" class="pill section-pill">前奏</span>
                 <span id="event-status" class="status-label pending">待校对</span>
               </div>
@@ -91,7 +91,7 @@
                 <span class="source-badge automatic">自动测量 · 未核验</span>
                 <h3>MSS/0.2 连续音乐曲线</h3>
               </div>
-              <span id="guzheng-count" class="muted">13 条古筝相关事件</span>
+              <span id="guzheng-count" class="muted">14 条古筝相关事件</span>
             </div>
             <div id="curve-values" class="curve-values"></div>
             <div id="curve-chart" class="curve-chart" role="img" aria-label="全曲响度、频谱质心、频谱变化和正向能量变化曲线"></div>
@@ -167,7 +167,7 @@
 
           <details class="method-card">
             <summary>校对边界与导出规则</summary>
-            <p>原始 32 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。MSS/0.2 的四条曲线来自母带离线测量，不含情绪词；旋律轮廓仍明确标为未知。确认表示“这条人工听音记录已经复核”，不表示模型听到了原始音频。</p>
+            <p>原始 33 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。MSS/0.2 的四条曲线来自母带离线测量，不含情绪词；旋律轮廓仍明确标为未知。确认表示“这条人工听音记录已经复核”，不表示模型听到了原始音频。</p>
           </details>
         </section>
       </main>
@@ -177,6 +177,6 @@
       </footer>
     </div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./app.js?v=20261015-bridge-split"></script>
   </body>
 </html>

@@ -42,7 +42,8 @@ EVENTS [均为人工听音；? 表示家族或候选不确定，其余为听者�
 186815@c2 -:instruments_exit | 主要伴奏乐器退出，为末句留出空间。
 190860-210250@br lb?+ek+dr:electronic_keyboard_enter | 低音提琴类、电子琴与架子鼓鼓点构成基底，电子琴进入。
 193668@br ek>ek | 电子琴成为前景。
-195413@br gz:brief_harmony,brief_rise | 古筝短暂和声并扬起，随后恢复原基底。
+195413@br gz:brief_harmony | 古筝短暂和声，随后恢复原基底。
+199360-200450@br gz:brief_rise | 古筝在「难晓是哪一程」与「一樽江月还酹」的衔接间短暂扬起；具体落点待试听确认。
 210250@br -:instruments_exit | 伴奏乐器退出。
 210738-219117@fc gt>gt | 单吉他拨弦。
 219117-234440@fc lb?+ek+dr:drums_enter | 鼓点进入，低音提琴类、电子琴和架子鼓展开基底。

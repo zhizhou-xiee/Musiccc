@@ -1034,11 +1034,29 @@
         "guzheng"
       ],
       "actions": [
-        "brief_harmony",
+        "brief_harmony"
+      ],
+      "description_zh": "古筝短暂和声，随后恢复原基底。",
+      "certainty": "confirmed_by_listener",
+      "source_ids": [
+        "project_lead_listening_notes"
+      ]
+    },
+    {
+      "id": "detail-event-033",
+      "section_id": "bridge",
+      "start_ms": 199360,
+      "end_ms": 200450,
+      "type": "instrument_accent_window",
+      "instruments": [
+        "guzheng"
+      ],
+      "actions": [
         "brief_rise"
       ],
-      "description_zh": "古筝短暂和声并扬起，随后恢复原基底。",
-      "certainty": "confirmed_by_listener",
+      "role": "transition_between_lyric_lines",
+      "description_zh": "古筝在「难晓是哪一程」与「一樽江月还酹」的衔接间短暂扬起；具体落点待试听确认。",
+      "certainty": "human_location_window_needs_exact_timestamp",
       "source_ids": [
         "project_lead_listening_notes"
       ]
