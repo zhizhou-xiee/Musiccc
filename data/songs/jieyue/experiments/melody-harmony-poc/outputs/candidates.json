@@ -1928,7 +1928,11 @@
           "confidence": 0.891
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "pending",
+        "observation": "播放“不知路途遥远几许”时似乎带入了下一句“直至清辉”的“直”。",
+        "diagnosis": "候选帧在 69.18 秒结束，下一句稳定音高从约 69.24 秒开始；69.190 秒数据边界未串句，问题来自浏览器 timeupdate 停止延迟。"
+      }
     },
     {
       "line_id": "line-013",

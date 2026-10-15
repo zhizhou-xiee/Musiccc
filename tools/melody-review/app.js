@@ -19,6 +19,7 @@ let audioUrl;
 let audioContext;
 let synthNodes = [];
 let toastTimer;
+let playbackFrame;
 
 function line() { return data.melody_lines[activeIndex]; }
 function reviewFor(id) {
@@ -129,10 +130,25 @@ function select(index) { stopAll(); activeIndex = Math.max(0, Math.min(data.melo
 function updateProgress() { const done = data.melody_lines.filter((item) => reviewFor(item.line_id).status !== "pending").length; el.reviewProgress.textContent = `${done} / ${data.melody_lines.length} 已处理`; }
 
 function stopSynth() { synthNodes.forEach((node) => { try { node.stop(); } catch {} }); synthNodes = []; }
-function stopAll() { el.audio.pause(); stopSynth(); el.playOriginal.textContent = "播放母带原句"; }
+function stopOriginalMonitor() { if (playbackFrame) cancelAnimationFrame(playbackFrame); playbackFrame = undefined; }
+function updateOriginalProgress() {
+  const item = line(), currentMs = el.audio.currentTime * 1000, ratio = (currentMs - analysisStart(item)) / Math.max(1,analysisEnd(item)-analysisStart(item));
+  el.scrubber.value = Math.max(0,Math.min(1000,ratio*1000)); el.playhead.textContent = formatTime(Math.max(analysisStart(item),currentMs));
+}
+function monitorOriginalPlayback() {
+  if (el.audio.paused) { stopOriginalMonitor(); return; }
+  const item = line(), currentMs = el.audio.currentTime * 1000;
+  if (currentMs >= analysisEnd(item) - 8) {
+    if (el.loop.checked) { el.audio.currentTime = analysisStart(item) / 1000; updateOriginalProgress(); playbackFrame = requestAnimationFrame(monitorOriginalPlayback); }
+    else { el.audio.pause(); el.audio.currentTime = analysisEnd(item) / 1000; updateOriginalProgress(); stopOriginalMonitor(); }
+    return;
+  }
+  updateOriginalProgress(); playbackFrame = requestAnimationFrame(monitorOriginalPlayback);
+}
+function stopAll() { el.audio.pause(); stopOriginalMonitor(); stopSynth(); el.playOriginal.textContent = "播放母带原句"; }
 async function playOriginal() {
   if (!audioUrl) { toast("先选择本机母带 WAV 或 MP3"); return; }
-  stopSynth(); const item = line(); el.audio.currentTime = analysisStart(item) / 1000; await el.audio.play(); el.playOriginal.textContent = "暂停";
+  stopSynth(); stopOriginalMonitor(); const item = line(); el.audio.currentTime = analysisStart(item) / 1000; await el.audio.play(); el.playOriginal.textContent = "暂停"; playbackFrame = requestAnimationFrame(monitorOriginalPlayback);
 }
 function schedulePointTone(point, start, duration, destination) {
   const oscillator = audioContext.createOscillator(), gain = audioContext.createGain(); oscillator.type = "sine"; oscillator.frequency.value = 440 * 2 ** ((point.midi - 69) / 12);
@@ -168,7 +184,7 @@ el.chooseAudio.addEventListener("click", () => el.audioFile.click());
 el.audioFile.addEventListener("change", () => { const file = el.audioFile.files?.[0]; if (!file) return; if (audioUrl) URL.revokeObjectURL(audioUrl); audioUrl = URL.createObjectURL(file); el.audio.src = audioUrl; el.audioDot.classList.add("ready"); el.audioStatus.textContent = `${file.name} · 仅本机读取`; toast("母带已载入"); });
 el.playOriginal.addEventListener("click", () => el.audio.paused ? playOriginal() : el.audio.pause()); el.playContour.addEventListener("click", playContour); el.playDiagnostic.addEventListener("click", playDiagnostic); el.stop.addEventListener("click", stopAll);
 el.audio.addEventListener("pause", () => { el.playOriginal.textContent = "播放母带原句"; });
-el.audio.addEventListener("timeupdate", () => { const item = line(), currentMs = el.audio.currentTime * 1000; if (currentMs >= analysisEnd(item)) { if (el.loop.checked) { el.audio.currentTime = analysisStart(item) / 1000; el.audio.play(); } else el.audio.pause(); } const ratio = (currentMs - analysisStart(item)) / Math.max(1,analysisEnd(item)-analysisStart(item)); el.scrubber.value = Math.max(0,Math.min(1000,ratio*1000)); el.playhead.textContent = formatTime(Math.max(analysisStart(item),currentMs)); });
+el.audio.addEventListener("timeupdate", updateOriginalProgress);
 el.scrubber.addEventListener("input", () => { const item = line(); el.audio.currentTime = (analysisStart(item) + Number(el.scrubber.value)/1000*(analysisEnd(item)-analysisStart(item)))/1000; });
 el.previous.addEventListener("click", () => select(activeIndex - 1)); el.next.addEventListener("click", () => select(activeIndex + 1)); el.filter.addEventListener("change", renderList);
 el.notes.addEventListener("input", () => { const item = line(), old = reviewFor(item.line_id); reviews[item.line_id] = { ...old, notes: el.notes.value }; save(); });
