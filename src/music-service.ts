@@ -1,6 +1,9 @@
+import { createHash } from "node:crypto";
+
 import { musicData, type MusicSegment } from "./music-data.js";
 
 const CURSOR_VERSION = musicData.revision;
+const CURSOR_TAG = createHash("sha256").update(CURSOR_VERSION, "utf8").digest("base64url").slice(0, 6);
 const MAX_TOOL_RESPONSE_BYTES = 32 * 1024;
 
 interface CursorPayload {
@@ -27,6 +30,7 @@ export interface CurveTransition {
 export interface SegmentTextOptions {
   prediction?: string;
   previousSegment?: MusicSegment | null;
+  listenerId?: string;
 }
 
 export type SeekTarget =
@@ -42,12 +46,19 @@ function requireSong(songId: string): void {
 }
 
 export function encodeCursor(index: number): string {
-  const payload: CursorPayload = { v: CURSOR_VERSION, song: musicData.song.id, index };
-  return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
+  return `JY1-${CURSOR_TAG}-${index + 1}`;
 }
 
 export function decodeCursor(cursor: string): CursorPayload {
   if (cursor.length > 512) throw new Error("Cursor is too long");
+  const short = /^JY1-([A-Za-z0-9_-]{6})-(\d{1,3})$/.exec(cursor);
+  if (short) {
+    const index = Number(short[2]) - 1;
+    if (short[1] !== CURSOR_TAG || !Number.isInteger(index) || index < 0 || index >= musicData.segments.length) {
+      throw new Error("Cursor does not match the current song revision");
+    }
+    return { v: CURSOR_VERSION, song: musicData.song.id, index };
+  }
   let parsed: unknown;
   try {
     parsed = JSON.parse(Buffer.from(cursor, "base64url").toString("utf8"));
@@ -228,9 +239,11 @@ export function formatSegmentText(
     })
     .join("\n");
   const prediction = options.prediction?.trim();
+  const progress = `${segment.index + 1}/${musicData.segments.length}`;
   return [
     ...(prediction ? ["揭晓前的猜测", prediction, "", "—— 揭晓 ——", ""] : []),
     `《${musicData.song.title}》· ${segment.title}　${formatTime(segment.start_ms)}–${formatTime(segment.end_ms)}`,
+    `欣赏进度 ${progress}${options.listenerId ? `　已为 ${options.listenerId} 记住这里` : ""}`,
     "",
     "歌词",
     lyrics,
@@ -250,7 +263,7 @@ export function formatSegmentText(
     value.completed
       ? "已到达歌曲结尾；可用 music_seek 回听任意片段。"
       : [
-          `继续游标：${value.cursor}`,
+          `续听码：${value.cursor}`,
           "继续前，可以先猜下一段会怎样，并把猜测放进 music_next 的 prediction。",
         ].join("\n"),
   ].join("\n");

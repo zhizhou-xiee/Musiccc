@@ -22,6 +22,7 @@ test("client cursor is deterministic and stateless", () => {
   assert.equal(nextA.segment?.id, "intro");
   assert.deepEqual(nextA, repeated);
   assert.equal(decodeCursor(startB.cursor).index, 0);
+  assert.match(startA.cursor, /^JY1-[A-Za-z0-9_-]{6}-1$/);
 });
 
 test("seek supports sections, lyric lines, time and replay cursors", () => {

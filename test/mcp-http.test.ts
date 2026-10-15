@@ -119,7 +119,11 @@ test("Streamable HTTP initializes, discovers and calls all four tools", async ()
     const catalog = await client.callTool({ name: "music_catalog", arguments: {} });
     assert.equal(catalog.isError, undefined);
 
-    const started = await client.callTool({ name: "music_start", arguments: { song_id: "jieyue" } });
+    const listenerId = "mcp-http-test-listener";
+    const started = await client.callTool({
+      name: "music_start",
+      arguments: { song_id: "jieyue", listener_id: listenerId, restart: true },
+    });
     const startData = started.structuredContent as {
       cursor: string;
       segment: { id: string; melody_contours: Array<{ line_id: string }> };
@@ -131,11 +135,12 @@ test("Streamable HTTP initializes, discovers and calls all four tools", async ()
       name: "music_next",
       arguments: {
         song_id: "jieyue",
-        cursor: startData.cursor,
+        listener_id: listenerId,
         prediction: "我猜清唱之后会有稀疏的伴奏进入。",
       },
     });
     const nextData = next.structuredContent as {
+      cursor: string;
       prediction: string;
       transition: Array<{ previous_tail: number[]; current_head: number[] }>;
       segment: { id: string };
@@ -147,11 +152,52 @@ test("Streamable HTTP initializes, discovers and calls all four tools", async ()
     assert.match(nextText?.text ?? "", /揭晓前的猜测[\s\S]*—— 揭晓 ——/);
     assert.match(nextText?.text ?? "", /上一段的衔接/);
 
+    const resumed = await client.callTool({
+      name: "music_start",
+      arguments: { song_id: "jieyue", listener_id: listenerId },
+    });
+    assert.equal((resumed.structuredContent as { segment: { id: string } }).segment.id, "intro");
+
     const seek = await client.callTool({
       name: "music_seek",
-      arguments: { song_id: "jieyue", target: { kind: "line_id", value: "line-005" } },
+      arguments: {
+        song_id: "jieyue",
+        listener_id: listenerId,
+        target: { kind: "line_id", value: "line-005" },
+      },
     });
     assert.equal((seek.structuredContent as { segment: { id: string } }).segment.id, "verse_1");
+
+    const resumedAfterSeek = await client.callTool({
+      name: "music_start",
+      arguments: { song_id: "jieyue", listener_id: listenerId },
+    });
+    assert.equal(
+      (resumedAfterSeek.structuredContent as { segment: { id: string } }).segment.id,
+      "verse_1",
+    );
+
+    const otherListener = await client.callTool({
+      name: "music_start",
+      arguments: { song_id: "jieyue", listener_id: "mcp-http-other-listener", restart: true },
+    });
+    assert.equal(
+      (otherListener.structuredContent as { segment: { id: string } }).segment.id,
+      "a_cappella",
+    );
+
+    const restoredFromCode = await client.callTool({
+      name: "music_start",
+      arguments: {
+        song_id: "jieyue",
+        listener_id: "mcp-http-restored-listener",
+        resume_cursor: nextData.cursor,
+      },
+    });
+    assert.equal(
+      (restoredFromCode.structuredContent as { segment: { id: string } }).segment.id,
+      "intro",
+    );
   } finally {
     await client.close();
     await new Promise<void>((resolve, reject) =>
