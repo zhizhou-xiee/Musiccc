@@ -23,4 +23,6 @@ Phase 0 结论与待确认项见 [docs/phase-0-assessment.md](docs/phase-0-asses
 
 本地音乐摘要校对器位于 [tools/summary-review](tools/summary-review/README.md)。它把人工歌词、演唱者和乐器粗标与自动声学测量并排展示，支持逐段循环试听、修改摘要、确认状态以及 JSON 导入导出。
 
+本地 MSS 听音事件校对器位于 [tools/mss-review](tools/mss-review/README.md)。它逐条呈现 32 个可溯源音乐事件，支持点状/连续事件循环试听、时间微调、乐器候选与语义字段修订、审核状态及 JSON 导入导出。
+
 `/music` 人类端初版位于 [web/music](web/music/README.md)。页面使用浏览器原生视频控件，并从统一歌曲元数据生成作品署名、演唱者与段落跳转数据。

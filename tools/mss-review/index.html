@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a1016" />
+    <title>《借月》MSS 听音事件校对台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">JIEYUE · MSS EVENT REVIEW</p>
+          <h1>《借月》MSS 听音事件校对台</h1>
+          <p class="lede">逐个试听 32 个音乐事件，确认时间、乐器与描述，再交给小机阅读。</p>
+        </div>
+        <div class="header-actions">
+          <button id="load-audio" class="button primary" type="button">选择母带 MP3</button>
+          <input id="audio-file" type="file" accept="audio/mpeg,audio/mp3,audio/*" hidden />
+          <button id="import-json" class="button" type="button">载入校对稿</button>
+          <input id="review-file" type="file" accept="application/json,.json" hidden />
+          <button id="export-json" class="button" type="button">导出 JSON</button>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-live="polite">
+        <div class="file-state">
+          <span id="file-dot" class="status-dot"></span>
+          <span id="file-status">尚未选择母带；音频只在当前浏览器中读取</span>
+        </div>
+        <div class="progress-copy">
+          <span id="review-count">0 / 32 已确认</span>
+          <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+        </div>
+      </section>
+
+      <main class="workspace">
+        <aside class="event-browser" aria-label="MSS 听音事件列表">
+          <div class="browser-toolbar">
+            <label>
+              <span>显示</span>
+              <select id="review-filter" aria-label="审核状态筛选">
+                <option value="all">全部事件</option>
+                <option value="pending">只看未确认</option>
+                <option value="flagged">只看需复核</option>
+                <option value="verified">只看已确认</option>
+              </select>
+            </label>
+          </div>
+          <div id="event-list" class="event-list"></div>
+          <button id="reset-review" class="reset-button" type="button">重置本机校对进度</button>
+        </aside>
+
+        <section class="review-panel">
+          <div class="event-heading">
+            <div>
+              <div class="heading-meta">
+                <span id="event-position" class="pill">第 1 / 32 个</span>
+                <span id="event-section" class="pill section-pill">前奏</span>
+                <span id="event-status" class="status-label pending">待校对</span>
+              </div>
+              <h2 id="event-title">00:23.851 · texture_state</h2>
+              <p id="event-id" class="muted mono">detail-event-001</p>
+            </div>
+            <div class="step-actions">
+              <button id="previous" class="icon-button" type="button" aria-label="上一个事件">←</button>
+              <button id="next" class="icon-button" type="button" aria-label="下一个事件">→</button>
+            </div>
+          </div>
+
+          <section class="player-card" aria-label="事件试听播放器">
+            <div class="transport">
+              <button id="replay" class="button" type="button">从窗口开头重听</button>
+              <button id="play-pause" class="button primary transport-main" type="button">播放</button>
+              <label class="loop-control"><input id="loop-event" type="checkbox" checked /><span>循环试听窗口</span></label>
+            </div>
+            <div class="scrub-row">
+              <span id="playhead-time">00:22.351</span>
+              <input id="scrubber" type="range" min="0" max="1000" value="0" aria-label="试听窗口进度" />
+              <span id="preview-end-time">00:27.851</span>
+            </div>
+            <p id="preview-note" class="preview-note">点状事件：自动从事件前 1.5 秒试听到后 4 秒。</p>
+            <audio id="audio" preload="metadata"></audio>
+          </section>
+
+          <section class="editor-card">
+            <div class="editor-heading">
+              <div><span class="source-badge draft">人工校对</span><h3>时间与音乐事实</h3></div>
+              <button id="restore-draft" class="text-button" type="button">恢复原始事件</button>
+            </div>
+
+            <div class="time-grid">
+              <fieldset class="time-field">
+                <legend>开始时间（毫秒）</legend>
+                <div class="time-control">
+                  <button class="nudge" data-target="start" data-delta="-100" type="button">−100</button>
+                  <input id="start-ms" type="number" min="0" step="1" inputmode="numeric" />
+                  <button class="nudge" data-target="start" data-delta="100" type="button">+100</button>
+                </div>
+                <span id="start-formatted" class="muted mono"></span>
+              </fieldset>
+              <fieldset class="time-field">
+                <legend>结束时间（毫秒，可留空）</legend>
+                <div class="time-control">
+                  <button class="nudge" data-target="end" data-delta="-100" type="button">−100</button>
+                  <input id="end-ms" type="number" min="0" step="1" inputmode="numeric" placeholder="点状事件" />
+                  <button class="nudge" data-target="end" data-delta="100" type="button">+100</button>
+                </div>
+                <span id="end-formatted" class="muted mono"></span>
+              </fieldset>
+            </div>
+
+            <div class="field-grid">
+              <label><span>事件类型</span><input id="event-type" type="text" /></label>
+              <label><span>确定性</span><input id="certainty" type="text" /></label>
+              <label><span>已辨认乐器（逗号分隔）</span><input id="instruments" type="text" /></label>
+              <label><span>乐器候选（保留不确定性）</span><input id="instrument-candidates" type="text" /></label>
+              <label><span>前景乐器</span><input id="foreground" type="text" /></label>
+              <label><span>功能 / 角色</span><input id="role" type="text" /></label>
+              <label><span>动作（逗号分隔）</span><input id="actions" type="text" /></label>
+              <label><span>奏法（逗号分隔）</span><input id="articulation" type="text" /></label>
+              <label><span>音区</span><input id="register" type="text" /></label>
+              <label><span>运动方向</span><input id="motion" type="text" /></label>
+              <label class="wide"><span>音色（逗号分隔）</span><input id="timbre" type="text" /></label>
+            </div>
+
+            <label class="description-label" for="description">给小机看的事件描述</label>
+            <textarea id="description" rows="4" spellcheck="true"></textarea>
+            <div class="description-footer"><span id="description-length" class="muted">0 字</span><span class="muted">修改会自动保存在当前浏览器</span></div>
+
+            <label class="notes-label" for="review-notes">校对备注（不会进入音乐语义谱正文）</label>
+            <textarea id="review-notes" class="notes" rows="2" placeholder="例如：119.138 秒仍听不清是古筝还是琵琶，保留两个候选"></textarea>
+
+            <div class="decision-row">
+              <button id="mark-pending" class="button subtle" type="button">暂存为待校对</button>
+              <button id="mark-flagged" class="button warning" type="button">标记需复核</button>
+              <button id="mark-verified" class="button success" type="button">确认并到下一个</button>
+            </div>
+          </section>
+
+          <section class="evidence-grid" aria-label="上下文证据">
+            <article class="evidence-card">
+              <div class="card-heading"><span class="source-badge human">人工时间轴</span><h3>附近歌词</h3></div>
+              <div id="lyrics-list" class="lyrics-list"></div>
+            </article>
+            <article class="evidence-card">
+              <div class="card-heading"><span class="source-badge automatic">自动测量</span><h3>所在段落声学特征</h3></div>
+              <div id="feature-list" class="feature-list"></div>
+              <p class="caveat">频谱与响度只作旁证，不能单独证明乐器身份。</p>
+            </article>
+          </section>
+
+          <details class="method-card">
+            <summary>校对边界与导出规则</summary>
+            <p>原始 32 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。确认表示“这条人工听音记录已经复核”，不表示模型听到了原始音频。</p>
+          </details>
+        </section>
+      </main>
+
+      <footer class="shortcut-bar">
+        <span><kbd>Space</kbd> 播放 / 暂停</span><span><kbd>R</kbd> 重听</span><span><kbd>J</kbd> 上一个</span><span><kbd>K</kbd> 下一个</span><span><kbd>V</kbd> 确认并前进</span>
+      </footer>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
