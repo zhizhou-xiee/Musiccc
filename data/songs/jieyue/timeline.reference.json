@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.2.2",
+  "schema_version": "0.2.3",
   "song_id": "jieyue",
   "title": "借月",
   "timeline_timebase": {
@@ -39,9 +39,9 @@
       },
       "manual_timing_corrections": {
         "stored_as": "manual-timing-corrections.json",
-        "sha256": "30a7516eea883c418fd1298462d4161cb619bfb818ecf393928556457d9a651d",
+        "sha256": "281199996abc5db6b07fa976525437c7e59f8bc3eee9385f557608157fd57318",
         "recorded_at": "2026-10-15",
-        "count": 2
+        "count": 4
       }
     }
   },
@@ -1816,7 +1816,7 @@
         }
       ],
       "start_ms": 105670,
-      "end_ms": 107520,
+      "end_ms": 107154,
       "timing": {
         "start": {
           "value_ms": 105670,
@@ -1824,9 +1824,10 @@
           "status": "reference"
         },
         "vocal_end": {
-          "value_ms": 107520,
-          "source": "separated_vocal_estimate",
-          "status": "estimate"
+          "value_ms": 107154,
+          "source": "project_owner_master_listening",
+          "status": "verified",
+          "note": "107.154 秒已经是下一句“也算相见”的“也”，因此“回应时”在 107.154 秒结束。"
         },
         "subtitle_end": {
           "value_ms": 107470,
@@ -1868,13 +1869,14 @@
           "role": "lead"
         }
       ],
-      "start_ms": 107520,
+      "start_ms": 107154,
       "end_ms": 109870,
       "timing": {
         "start": {
-          "value_ms": 107520,
-          "source": "human_waveform_mark",
-          "status": "reference"
+          "value_ms": 107154,
+          "source": "project_owner_master_listening",
+          "status": "verified",
+          "note": "“也算相见”的“也”从 107.154 秒开始；原 107.520 秒开口漏掉首字。"
         },
         "vocal_end": {
           "value_ms": 109870,
@@ -1892,8 +1894,9 @@
           "status": "display_only"
         },
         "start_frame": {
-          "value": 3226,
-          "fps": 30
+          "value": 3215,
+          "fps": 30,
+          "source": "derived_from_verified_start"
         },
         "exception": null
       },
@@ -4892,9 +4895,9 @@
     },
     "targeted_timing_corrections": {
       "stored_as": "manual-timing-corrections.json",
-      "sha256": "30a7516eea883c418fd1298462d4161cb619bfb818ecf393928556457d9a651d",
+      "sha256": "281199996abc5db6b07fa976525437c7e59f8bc3eee9385f557608157fd57318",
       "recorded_at": "2026-10-15",
-      "count": 2
+      "count": 4
     }
   }
 }

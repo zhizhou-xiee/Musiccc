@@ -247,7 +247,7 @@ def main() -> None:
     }
 
     output = {
-        "schema_version": "0.2.2",
+        "schema_version": "0.2.3",
         "song_id": draft["song_id"],
         "title": draft["title"],
         "timeline_timebase": draft["timeline_timebase"],

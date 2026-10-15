@@ -49,6 +49,16 @@ test("project-owner timing correction assigns 直至 to line 013", () => {
   assert.equal(corrected?.timing_status.start, "verified");
 });
 
+test("project-owner timing correction assigns 也 to line 029", () => {
+  const chorus = musicSeek("jieyue", { kind: "line_id", value: "line-029" }).segment;
+  const previous = chorus?.lyrics.find((line) => line.id === "line-028");
+  const corrected = chorus?.lyrics.find((line) => line.id === "line-029");
+  assert.equal(previous?.end_ms, 107_154);
+  assert.equal(previous?.timing_status.end, "verified");
+  assert.equal(corrected?.start_ms, 107_154);
+  assert.equal(corrected?.timing_status.start, "verified");
+});
+
 test("invalid or stale cursors are rejected", () => {
   assert.throws(() => decodeCursor("not-a-cursor"), /Invalid cursor|current song revision/);
   const stale = Buffer.from(JSON.stringify({ v: "old", song: "jieyue", index: 0 })).toString("base64url");

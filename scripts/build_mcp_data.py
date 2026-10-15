@@ -123,7 +123,7 @@ def main() -> None:
 
     output = {
         "schema_version": "1.0.0",
-        "revision": "jieyue-timeline-0.2.2-perception-1.0.0",
+        "revision": "jieyue-timeline-0.2.3-perception-1.0.0",
         "perception_route": "pre_generated_objective_music_summary_plus_numeric_curves",
         "perception_notice": "返回内容来自人工听音标注与离线自动测量，不代表接收模型直接听见了原始音频。",
         "song": {

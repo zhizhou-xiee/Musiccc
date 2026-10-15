@@ -191,7 +191,7 @@
           "id": "line-012",
           "text": "不知路途遥远几许",
           "start_ms": 64870,
-          "end_ms": 69190,
+          "end_ms": 68651,
           "performers": [
             {
               "id": "performer-05",
@@ -203,7 +203,7 @@
         {
           "id": "line-013",
           "text": "直至清辉",
-          "start_ms": 69190,
+          "start_ms": 68651,
           "end_ms": 70450,
           "performers": [
             {
@@ -427,7 +427,7 @@
           "id": "line-028",
           "text": "回应时",
           "start_ms": 105670,
-          "end_ms": 107520,
+          "end_ms": 107154,
           "performers": [
             {
               "id": "performer-09",
@@ -439,7 +439,7 @@
         {
           "id": "line-029",
           "text": "也算相见",
-          "start_ms": 107520,
+          "start_ms": 107154,
           "end_ms": 109870,
           "performers": [
             {

@@ -59,6 +59,16 @@
       "representation_note": "与第二遍同歌词 line-046 的自动相对轮廓相关度为 0.938；优先排查连续试听器在大音程之间制造长滑音，不据此擅自改写候选音高。",
       "contour_bins": 24
     },
+    "line-028": {
+      "status": "pending",
+      "observation": "“回应时”的“应时”在原候选试听中黏连；随后母带复听确认原边界把下一句“也算相见”的“也”并入了本句。",
+      "resolution": "统一时间轴已将 line-028 结束和 line-029 开始共同修订为 107.154 秒。"
+    },
+    "line-029": {
+      "status": "pending",
+      "observation": "原 107.520 秒开口吞掉了“也算相见”的“也”。",
+      "resolution": "母带人工确认开口为 107.154 秒。"
+    },
     "line-065": {
       "status": "needs_correction",
       "observation": "“共此刻”候选需要返工。",

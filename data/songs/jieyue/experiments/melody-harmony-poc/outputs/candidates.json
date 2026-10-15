@@ -1,6 +1,6 @@
 {
   "schema_version": "melody-harmony-poc/0.1.1",
-  "generated_at": "2026-10-15T13:48:20.292585+00:00",
+  "generated_at": "2026-10-15T13:58:48.265581+00:00",
   "song_id": "jieyue",
   "production_integration": "none_review_only",
   "perception_notice": "所有旋律、调性、速度与和弦内容均为离线自动候选，未经人工校对；不代表接收模型直接听见原始音频。",
@@ -19,7 +19,7 @@
       "repository_copy": false,
       "separation": "demucs_htdemucs_two_stems"
     },
-    "timeline_revision": "jieyue-timeline-0.2.2-perception-1.0.0",
+    "timeline_revision": "jieyue-timeline-0.2.3-perception-1.0.0",
     "manual_review_source": "manual-melody-review-observations.json"
   },
   "analysis": {
@@ -4622,9 +4622,9 @@
       "section_title": "Chorus",
       "text": "回应时",
       "start_ms": 105670,
-      "end_ms": 107520,
+      "end_ms": 107154,
       "analysis_start_ms": 105670,
-      "analysis_end_ms": 107520,
+      "analysis_end_ms": 107154,
       "performers": [
         {
           "id": "performer-09",
@@ -4637,136 +4637,140 @@
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
       "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.431,
-      "baseline_midi": 56.8,
+      "voiced_coverage": 0.469,
+      "baseline_midi": 57.0,
       "candidate_range": {
         "lowest_note": "B2",
         "highest_note": "A#3"
       },
       "contour_points": [
         {
-          "time_ms": 105728,
+          "time_ms": 105716,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 105843,
+          "time_ms": 105809,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 105959,
+          "time_ms": 105902,
           "midi": 46.7,
-          "relative_semitones": -10.1,
+          "relative_semitones": -10.3,
           "note": "B2",
           "confidence": 0.651
         },
         {
-          "time_ms": 106075,
-          "midi": 47.2,
-          "relative_semitones": -9.6,
+          "time_ms": 105995,
+          "midi": 47.1,
+          "relative_semitones": -9.9,
           "note": "B2",
           "confidence": 0.686
         },
         {
-          "time_ms": 106190,
+          "time_ms": 106087,
+          "midi": 47.2,
+          "relative_semitones": -9.8,
+          "note": "B2",
+          "confidence": 0.687
+        },
+        {
+          "time_ms": 106180,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 106306,
+          "time_ms": 106273,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 106422,
-          "midi": 56.4,
-          "relative_semitones": -0.4,
-          "note": "G#3",
-          "confidence": 0.686
-        },
-        {
-          "time_ms": 106537,
+          "time_ms": 106366,
           "midi": 57.5,
-          "relative_semitones": 0.7,
+          "relative_semitones": 0.5,
           "note": "A3",
-          "confidence": 0.757
+          "confidence": 0.616
         },
         {
-          "time_ms": 106653,
-          "midi": 56.1,
-          "relative_semitones": -0.7,
-          "note": "G#3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 106768,
+          "time_ms": 106458,
           "midi": 56.45,
-          "relative_semitones": -0.35,
+          "relative_semitones": -0.55,
           "note": "G#3",
           "confidence": 0.722
         },
         {
-          "time_ms": 106884,
-          "midi": 57.1,
+          "time_ms": 106551,
+          "midi": 57.5,
+          "relative_semitones": 0.5,
+          "note": "A3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 106644,
+          "midi": 56.1,
+          "relative_semitones": -0.9,
+          "note": "G#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 106737,
+          "midi": 57.3,
           "relative_semitones": 0.3,
+          "note": "A3",
+          "confidence": 0.756
+        },
+        {
+          "time_ms": 106829,
+          "midi": 56.75,
+          "relative_semitones": -0.25,
+          "note": "A3",
+          "confidence": 0.827
+        },
+        {
+          "time_ms": 106922,
+          "midi": 57.1,
+          "relative_semitones": 0.1,
           "note": "A3",
           "confidence": 0.891
         },
         {
-          "time_ms": 107000,
-          "midi": 57.1,
-          "relative_semitones": 0.3,
+          "time_ms": 107015,
+          "midi": 57.05,
+          "relative_semitones": 0.05,
           "note": "A3",
           "confidence": 0.891
         },
         {
-          "time_ms": 107115,
+          "time_ms": 107108,
           "midi": 56.8,
-          "relative_semitones": 0.0,
+          "relative_semitones": -0.2,
           "note": "A3",
           "confidence": 0.757
-        },
-        {
-          "time_ms": 107231,
-          "midi": 54.0,
-          "relative_semitones": -2.8,
-          "note": "F#3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 107347,
-          "midi": 54.1,
-          "relative_semitones": -2.7,
-          "note": "F#3",
-          "confidence": 0.686
-        },
-        {
-          "time_ms": 107462,
-          "midi": null,
-          "relative_semitones": null,
-          "note": null,
-          "confidence": null
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "pending",
+        "observation": "“回应时”的“应时”在原候选试听中黏连；随后母带复听确认原边界把下一句“也算相见”的“也”并入了本句。",
+        "resolution": "统一时间轴已将 line-028 结束和 line-029 开始共同修订为 107.154 秒。"
+      }
     },
     {
       "line_id": "line-029",
       "section_id": "chorus_1",
       "section_title": "Chorus",
       "text": "也算相见",
-      "start_ms": 107520,
+      "start_ms": 107154,
       "end_ms": 109870,
-      "analysis_start_ms": 107520,
+      "analysis_start_ms": 107154,
       "analysis_end_ms": 109870,
       "performers": [
         {
@@ -4780,127 +4784,131 @@
       "lead_voice_count": 1,
       "method": "demucs_htdemucs_vocals_then_librosa_pyin",
       "pitch_probability_floor": 0.6,
-      "voiced_coverage": 0.557,
-      "baseline_midi": 50.1,
+      "voiced_coverage": 0.521,
+      "baseline_midi": 50.3,
       "candidate_range": {
         "lowest_note": "B2",
-        "highest_note": "E3"
+        "highest_note": "F#3"
       },
       "contour_points": [
         {
-          "time_ms": 107593,
+          "time_ms": 107239,
+          "midi": 54.0,
+          "relative_semitones": 3.7,
+          "note": "F#3",
+          "confidence": 0.757
+        },
+        {
+          "time_ms": 107409,
+          "midi": 54.15,
+          "relative_semitones": 3.85,
+          "note": "F#3",
+          "confidence": 0.651
+        },
+        {
+          "time_ms": 107578,
           "midi": 51.9,
-          "relative_semitones": 1.8,
+          "relative_semitones": 1.6,
           "note": "E3",
           "confidence": 0.686
         },
         {
-          "time_ms": 107740,
+          "time_ms": 107748,
           "midi": 52.0,
-          "relative_semitones": 1.9,
+          "relative_semitones": 1.7,
           "note": "E3",
           "confidence": 0.827
         },
         {
-          "time_ms": 107887,
+          "time_ms": 107918,
           "midi": 52.1,
-          "relative_semitones": 2.0,
+          "relative_semitones": 1.8,
           "note": "E3",
           "confidence": 0.891
         },
         {
-          "time_ms": 108034,
-          "midi": 52.4,
-          "relative_semitones": 2.3,
-          "note": "E3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 108181,
+          "time_ms": 108088,
           "midi": null,
           "relative_semitones": null,
           "note": null,
           "confidence": null
         },
         {
-          "time_ms": 108328,
-          "midi": 46.8,
-          "relative_semitones": -3.3,
+          "time_ms": 108257,
+          "midi": 46.75,
+          "relative_semitones": -3.55,
           "note": "B2",
-          "confidence": 0.757
+          "confidence": 0.722
         },
         {
-          "time_ms": 108475,
-          "midi": 47.0,
-          "relative_semitones": -3.1,
+          "time_ms": 108427,
+          "midi": 46.9,
+          "relative_semitones": -3.4,
           "note": "B2",
           "confidence": 0.827
         },
         {
-          "time_ms": 108622,
-          "midi": 47.1,
-          "relative_semitones": -3.0,
+          "time_ms": 108597,
+          "midi": 47.2,
+          "relative_semitones": -3.1,
           "note": "B2",
           "confidence": 0.891
         },
         {
-          "time_ms": 108768,
-          "midi": 50.85,
-          "relative_semitones": 0.75,
+          "time_ms": 108767,
+          "midi": 50.8,
+          "relative_semitones": 0.5,
           "note": "D#3",
-          "confidence": 0.722
+          "confidence": 0.757
         },
         {
-          "time_ms": 108915,
-          "midi": 50.15,
-          "relative_semitones": 0.05,
-          "note": "D3",
+          "time_ms": 108936,
+          "midi": 50.6,
+          "relative_semitones": 0.3,
+          "note": "D#3",
           "confidence": 0.686
         },
         {
-          "time_ms": 109062,
-          "midi": 50.7,
-          "relative_semitones": 0.6,
-          "note": "D#3",
-          "confidence": 0.722
-        },
-        {
-          "time_ms": 109209,
-          "midi": 49.0,
-          "relative_semitones": -1.1,
+          "time_ms": 109106,
+          "midi": 49.3,
+          "relative_semitones": -1.0,
           "note": "C#3",
           "confidence": 0.757
         },
         {
-          "time_ms": 109356,
-          "midi": 49.7,
-          "relative_semitones": -0.4,
-          "note": "D3",
+          "time_ms": 109276,
+          "midi": 49.3,
+          "relative_semitones": -1.0,
+          "note": "C#3",
           "confidence": 0.616
         },
         {
-          "time_ms": 109503,
-          "midi": 49.7,
+          "time_ms": 109446,
+          "midi": 49.9,
           "relative_semitones": -0.4,
+          "note": "D3",
+          "confidence": 0.651
+        },
+        {
+          "time_ms": 109615,
+          "midi": 50.5,
+          "relative_semitones": 0.2,
           "note": "D3",
           "confidence": 0.757
         },
         {
-          "time_ms": 109650,
-          "midi": 50.65,
-          "relative_semitones": 0.55,
-          "note": "D#3",
-          "confidence": 0.757
-        },
-        {
-          "time_ms": 109797,
-          "midi": 50.1,
-          "relative_semitones": 0.0,
+          "time_ms": 109785,
+          "midi": 49.9,
+          "relative_semitones": -0.4,
           "note": "D3",
           "confidence": 0.827
         }
       ],
-      "manual_observation": null
+      "manual_observation": {
+        "status": "pending",
+        "observation": "原 107.520 秒开口吞掉了“也算相见”的“也”。",
+        "resolution": "母带人工确认开口为 107.154 秒。"
+      }
     },
     {
       "line_id": "line-030",
@@ -11525,17 +11533,17 @@
       "source_line_id": "line-028",
       "target_line_id": "line-053",
       "status": "automatic_unverified",
-      "relation": "possible_recurrence_candidate",
-      "relative_contour_correlation": 0.641,
-      "median_pitch_shift_semitones": -0.71
+      "relation": "strong_recurrence_candidate",
+      "relative_contour_correlation": 0.857,
+      "median_pitch_shift_semitones": -2.76
     },
     {
       "source_line_id": "line-029",
       "target_line_id": "line-054",
       "status": "automatic_unverified",
-      "relation": "possible_recurrence_candidate",
-      "relative_contour_correlation": 0.725,
-      "median_pitch_shift_semitones": 0.35
+      "relation": "strong_recurrence_candidate",
+      "relative_contour_correlation": 0.905,
+      "median_pitch_shift_semitones": -0.2
     }
   ],
   "harmony_windows": [

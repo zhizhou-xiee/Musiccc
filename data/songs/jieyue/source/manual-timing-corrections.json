@@ -20,6 +20,22 @@
       "status": "verified",
       "source": "project_owner_master_listening",
       "note": "“直至清辉”的“直至”位于 68.651–69.190，原 69.190 开口漏掉前两个字。"
+    },
+    {
+      "line_id": "line-028",
+      "field": "vocal_end",
+      "value_ms": 107154,
+      "status": "verified",
+      "source": "project_owner_master_listening",
+      "note": "107.154 秒已经是下一句“也算相见”的“也”，因此“回应时”在 107.154 秒结束。"
+    },
+    {
+      "line_id": "line-029",
+      "field": "start",
+      "value_ms": 107154,
+      "status": "verified",
+      "source": "project_owner_master_listening",
+      "note": "“也算相见”的“也”从 107.154 秒开始；原 107.520 秒开口漏掉首字。"
     }
   ]
 }
