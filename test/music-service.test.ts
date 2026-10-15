@@ -7,6 +7,7 @@ import {
   musicNext,
   musicSeek,
   musicStart,
+  segmentTransition,
 } from "../src/music-service.js";
 
 test("client cursor is deterministic and stateless", () => {
@@ -53,4 +54,23 @@ test("listener text is a compact score rather than an engineering dump", () => {
   assert.match(text, /响度.*[▁▂▃▄▅▆▇█]/);
   assert.match(text, new RegExp(intro.cursor));
   assert.doesNotMatch(text, /confirmed_by_listener|p02-p98|明确未知|自动未校/);
+});
+
+test("prediction is committed before reveal and transition preserves the segment seam", () => {
+  const previous = musicStart("jieyue");
+  const next = musicNext("jieyue", previous.cursor);
+  const prediction = "我猜伴奏会从稀疏处慢慢进入。";
+  const text = formatSegmentText(next, {
+    prediction,
+    previousSegment: previous.segment,
+  });
+  assert.ok(text.indexOf(prediction) < text.indexOf("—— 揭晓 ——"));
+  assert.ok(text.indexOf("—— 揭晓 ——") < text.indexOf("《借月》· 前奏"));
+  assert.match(text, /与上一段的衔接/);
+  assert.match(text, /│/);
+
+  const transition = segmentTransition(previous.segment, next.segment);
+  assert.equal(transition.length, 4);
+  assert.deepEqual(transition[0]?.previous_tail, [41, 0]);
+  assert.deepEqual(transition[0]?.current_head, [31, 42]);
 });

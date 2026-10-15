@@ -117,9 +117,23 @@ test("Streamable HTTP initializes, discovers and calls all four tools", async ()
 
     const next = await client.callTool({
       name: "music_next",
-      arguments: { song_id: "jieyue", cursor: startData.cursor },
+      arguments: {
+        song_id: "jieyue",
+        cursor: startData.cursor,
+        prediction: "我猜清唱之后会有稀疏的伴奏进入。",
+      },
     });
-    assert.equal((next.structuredContent as { segment: { id: string } }).segment.id, "intro");
+    const nextData = next.structuredContent as {
+      prediction: string;
+      transition: Array<{ previous_tail: number[]; current_head: number[] }>;
+      segment: { id: string };
+    };
+    assert.equal(nextData.segment.id, "intro");
+    assert.match(nextData.prediction, /稀疏的伴奏/);
+    assert.equal(nextData.transition.length, 4);
+    const nextText = next.content.find((item) => item.type === "text");
+    assert.match(nextText?.text ?? "", /揭晓前的猜测[\s\S]*—— 揭晓 ——/);
+    assert.match(nextText?.text ?? "", /上一段的衔接/);
 
     const seek = await client.callTool({
       name: "music_seek",

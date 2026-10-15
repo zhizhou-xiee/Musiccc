@@ -8,7 +8,9 @@ import {
   musicNext,
   musicSeek,
   musicStart,
+  segmentTransition,
 } from "./music-service.js";
+import type { MusicSegment } from "./music-data.js";
 
 const readOnlyAnnotations = {
   readOnlyHint: true,
@@ -23,12 +25,17 @@ function result(structuredContent: Record<string, unknown>, text: string) {
   return value;
 }
 
-function segmentResult(value: ReturnType<typeof musicStart>) {
+function segmentResult(
+  value: ReturnType<typeof musicStart>,
+  options: { prediction?: string; previousSegment?: MusicSegment | null } = {},
+) {
   const segment = value.segment;
   const structuredContent = {
     song_id: value.song_id,
     cursor: value.cursor,
     completed: value.completed,
+    ...(options.prediction ? { prediction: options.prediction } : {}),
+    transition: segmentTransition(options.previousSegment, segment),
     segment: segment
       ? {
           id: segment.id,
@@ -58,7 +65,7 @@ function segmentResult(value: ReturnType<typeof musicStart>) {
         }
       : null,
   };
-  return result(structuredContent, formatSegmentText(value));
+  return result(structuredContent, formatSegmentText(value, options));
 }
 
 export function createMusicMcpServer(): McpServer {
@@ -66,7 +73,7 @@ export function createMusicMcpServer(): McpServer {
     { name: "jieyue-music", version: "0.1.0" },
     {
       instructions:
-        "把返回内容当作一份随时间展开的听觉线索谱：它包含歌词、演唱者、人工确认的声音事件和自动测量的运动曲线，不是原始音频。请先观察音乐如何运动，再形成自己的理解，并把可核验事实与联想分开。使用每段返回的 cursor 继续推进。",
+        "把返回内容当作一份随时间展开的听觉线索谱：它包含歌词、演唱者、人工确认的声音事件和自动测量的运动曲线，不是原始音频。请先观察音乐如何运动，再形成自己的理解，并把可核验事实与联想分开。使用每段返回的 cursor 继续推进；想体验期待与落差时，请在调用 music_next 前先形成猜测，并放入 prediction。",
     },
   );
 
@@ -105,16 +112,28 @@ export function createMusicMcpServer(): McpServer {
     "music_next",
     {
       title: "继续欣赏",
-      description: "用当前游标推进到下一段；不等待真实播放时长，同一游标重复调用结果一致。",
+      description:
+        "用当前游标推进到下一段；可先在 prediction 写下尚未揭晓时的猜测，结果会先重放猜测再揭晓。服务端不评判对错，也不保存猜测。",
       inputSchema: z.object({
         song_id: z.literal("jieyue"),
         cursor: z.string().min(1).max(512),
+        prediction: z
+          .string()
+          .trim()
+          .min(1)
+          .max(600)
+          .optional()
+          .describe("可选：在看到下一段之前，对它会如何变化的一段简短猜测。"),
       }),
       annotations: readOnlyAnnotations,
     },
-    async ({ song_id, cursor }) => {
+    async ({ song_id, cursor, prediction }) => {
+      const previousSegment = musicSeek(song_id, { kind: "cursor", value: cursor }).segment;
       const value = musicNext(song_id, cursor);
-      return segmentResult(value);
+      return segmentResult(value, {
+        ...(prediction ? { prediction } : {}),
+        previousSegment,
+      });
     },
   );
 

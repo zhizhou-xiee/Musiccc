@@ -20,6 +20,18 @@ export interface SegmentEnvelope {
   unknown: string[];
 }
 
+export interface CurveTransition {
+  id: string;
+  label: string;
+  previous_tail: number[];
+  current_head: number[];
+}
+
+export interface SegmentTextOptions {
+  prediction?: string;
+  previousSegment?: MusicSegment | null;
+}
+
 export type SeekTarget =
   | { kind: "time_ms"; value: number }
   | { kind: "section_id"; value: string }
@@ -123,7 +135,31 @@ export function musicSeek(songId: string, target: SeekTarget): SegmentEnvelope {
   return envelope(index);
 }
 
-export function formatSegmentText(value: SegmentEnvelope): string {
+export function segmentTransition(
+  previousSegment: MusicSegment | null | undefined,
+  currentSegment: MusicSegment | null | undefined,
+): CurveTransition[] {
+  if (!previousSegment || !currentSegment) return [];
+  return currentSegment.acoustic_curves.flatMap((currentCurve) => {
+    const previousCurve = previousSegment.acoustic_curves.find(
+      (candidate) => candidate.id === currentCurve.id,
+    );
+    if (!previousCurve) return [];
+    return [
+      {
+        id: currentCurve.id,
+        label: currentCurve.label,
+        previous_tail: previousCurve.points.slice(-2).map((point) => point.value),
+        current_head: currentCurve.points.slice(0, 2).map((point) => point.value),
+      },
+    ];
+  });
+}
+
+export function formatSegmentText(
+  value: SegmentEnvelope,
+  options: SegmentTextOptions = {},
+): string {
   const segment = value.segment;
   if (!segment) return `《${musicData.song.title}》已结束。`;
 
@@ -164,7 +200,15 @@ export function formatSegmentText(value: SegmentEnvelope): string {
         `${(curveNames[curve.id] ?? curve.label).padEnd(8, "　")} ${sparkline(curve.points.map((point) => point.value))}`,
     )
     .join("\n");
+  const transition = segmentTransition(options.previousSegment, segment)
+    .map(
+      (curve) =>
+        `${(curveNames[curve.id] ?? curve.label).padEnd(8, "　")} ${sparkline(curve.previous_tail)} │ ${sparkline(curve.current_head)}`,
+    )
+    .join("\n");
+  const prediction = options.prediction?.trim();
   return [
+    ...(prediction ? ["揭晓前的猜测", prediction, "", "—— 揭晓 ——", ""] : []),
     `《${musicData.song.title}》· ${segment.title}　${formatTime(segment.start_ms)}–${formatTime(segment.end_ms)}`,
     "",
     "歌词",
@@ -173,12 +217,18 @@ export function formatSegmentText(value: SegmentEnvelope): string {
     "声音事件",
     observations,
     "",
-    "音乐运动（从左到右，位置越高表示相对值越高）",
+    "音乐运动（全曲共用一把相对尺；从左到右）",
     curves,
+    ...(transition
+      ? ["", "与上一段的衔接（末尾两点 │ 开头两点）", transition]
+      : []),
     "",
     value.completed
       ? "已到达歌曲结尾；可用 music_seek 回听任意片段。"
-      : `继续游标：${value.cursor}`,
+      : [
+          `继续游标：${value.cursor}`,
+          "继续前，可以先猜下一段会怎样，并把猜测放进 music_next 的 prediction。",
+        ].join("\n"),
   ].join("\n");
 }
 
