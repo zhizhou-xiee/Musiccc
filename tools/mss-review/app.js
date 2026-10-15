@@ -21,6 +21,7 @@ const elements = {
   notes: $("#review-notes"), restoreDraft: $("#restore-draft"), markPending: $("#mark-pending"), markFlagged: $("#mark-flagged"),
   markVerified: $("#mark-verified"), lyricsList: $("#lyrics-list"), featureList: $("#feature-list"), toast: $("#toast"),
   curveChart: $("#curve-chart"), curveValues: $("#curve-values"), guzhengCount: $("#guzheng-count"),
+  layerRole: $("#layer-role"), layerBackground: $("#layer-background"), layerForeground: $("#layer-foreground"), layerNote: $("#layer-note"),
 };
 
 let sourceData;
@@ -304,6 +305,25 @@ function renderCurves() {
   elements.curveValues.replaceChildren(values);
 }
 
+function instrumentName(id) {
+  return curveData?.instrument_vocabulary?.[id] || id;
+}
+
+function renderLayer() {
+  const layeredEvent = curveData?.events?.find((event) => event.id === sourceEvent().id);
+  const layer = layeredEvent?.texture_layer;
+  if (!layer) return;
+  const background = layer.background_instruments.map(instrumentName);
+  const foreground = layer.foreground_instruments.map(instrumentName);
+  if (layer.foreground_candidates.length) foreground.push(`${layer.foreground_candidates.map(instrumentName).join(" / ")}（候选）`);
+  elements.layerRole.textContent = layer.role;
+  elements.layerBackground.textContent = background.length ? background.join(" · ") : layer.role === "background_exit" ? "退出" : "未单列 / 无持续基底";
+  elements.layerForeground.textContent = foreground.length ? foreground.join(" · ") : "无独立前景";
+  const references = layer.background_event_ids.length ? `沿用 ${layer.background_event_ids.join("、")} 的基底。` : "";
+  const additions = layer.background_additions.length ? `本事件向基底加入 ${layer.background_additions.map(instrumentName).join("、")}。` : "";
+  elements.layerNote.textContent = `${references}${additions}${foreground.length && background.length ? "前景叠加在持续基底之上，不表示其他乐器退出。" : "没有把未标注的声部退出或进入补写成事实。"}`;
+}
+
 function performerNames(line) {
   return line.performers.map((entry) => timeline.performers.find((performer) => performer.id === entry.id)?.display_name || entry.id).join("、");
 }
@@ -379,6 +399,7 @@ function renderActive({ scroll = false } = {}) {
   renderFeatures();
   renderLyrics();
   renderCurves();
+  renderLayer();
   renderEventList();
   if (scroll) elements.eventList.querySelector(".event-item.active")?.scrollIntoView({ block: "center" });
 }

@@ -14,6 +14,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from mss_layers import enrich_events
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SONG_DIR = ROOT / "data" / "songs" / "jieyue"
@@ -151,7 +153,7 @@ def build_full_mss(
         )
 
     events = []
-    for source_event in details["events"]:
+    for source_event in enrich_events(details["events"]):
         event = dict(source_event)
         event["source_ids"] = ["project_lead_listening_notes"]
         events.append(event)
@@ -286,10 +288,30 @@ def event_compact(event: dict[str, Any], verbose: bool = False) -> str:
     timing = str(event["start_ms"])
     if event.get("end_ms"):
         timing += f"-{event['end_ms']}"
-    payload = event_codes(event)
-    foreground = event.get("foreground")
-    if foreground:
-        payload += f">{INSTRUMENT_CODES.get(foreground, foreground)}"
+    layer = event.get("texture_layer", {})
+    background = "+".join(INSTRUMENT_CODES.get(item, item) for item in layer.get("background_instruments", []))
+    foreground_items = [INSTRUMENT_CODES.get(item, item) for item in layer.get("foreground_instruments", [])]
+    foreground_candidates = [INSTRUMENT_CODES.get(item, item) for item in layer.get("foreground_candidates", [])]
+    foreground = "+".join(foreground_items)
+    background_refs = [item.rsplit("-", 1)[-1].lstrip("0") or "0" for item in layer.get("background_event_ids", [])]
+    background_additions = "+".join(INSTRUMENT_CODES.get(item, item) for item in layer.get("background_additions", []))
+    if foreground_candidates:
+        foreground += ("+" if foreground else "") + "(" + "|".join(foreground_candidates) + ")?"
+    if layer.get("role") == "background_exit":
+        payload = "B[-]"
+    elif background_refs and foreground:
+        payload = "^" + ",".join(background_refs)
+        if background_additions:
+            payload += "+" + background_additions
+        payload += f">F[{foreground}]"
+    elif background and foreground:
+        payload = f"B[{background}]>F[{foreground}]"
+    elif foreground:
+        payload = f"F[{foreground}]"
+    elif background:
+        payload = f"B[{background}]"
+    else:
+        payload = event_codes(event)
     actions = event.get("actions", [])
     if actions:
         payload += ":" + ",".join(actions)
@@ -311,7 +333,7 @@ def build_tier_300(mss: dict[str, Any]) -> str:
     return "\n".join(
         [
             f"MSS/0.1 jieyue d={mss['track']['duration_ms']} tempo=95.7? meter=? key=? (?=unverified/uncertain)",
-            "I pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc",
+            "L B[]=持续基底 F[]=当前前景 ^n=沿用第n事件基底 >表示叠加；pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc",
             f"S {sections}",
             f"E {events}",
             "R c1~c2=refrain;it:fl>(gz|pp)?;br>fc=band-off>solo-gt>drums+;fc>ou=rise>fall",
@@ -333,7 +355,7 @@ def build_tier_800(mss: dict[str, Any]) -> str:
         [
             f"MSS/0.1 TRACK=jieyue D={mss['track']['duration_ms']} TEMPO=95.7? METER=? KEY=?",
             "NOTICE symbolic perception; human events + automatic acoustics; not raw-audio hearing",
-            "I pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc",
+            "L B[]=持续基底 F[]=当前前景 ^n=沿用第n事件基底 >表示叠加；pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc",
             f"P {cast}",
             sections,
             events,
@@ -353,7 +375,7 @@ def build_tier_1500(mss: dict[str, Any]) -> str:
     ]
     for section in mss["sections"]:
         lines.append(section_compact(section, True))
-    lines.extend(["", "EVENTS [均为人工听音；? 表示家族或候选不确定，其余为听者确认]"])
+    lines.extend(["", "EVENTS [B=持续基底；F=当前前景；^n=沿用第n事件基底；> 表示叠加而非替换；? 表示不确定]"])
     lines.extend(event_compact(event, True) for event in mss["events"])
     lines.extend(["", "RELATIONS"])
     lines.extend(

@@ -4658,6 +4658,18 @@
       "foreground": "piano",
       "description_zh": "单钢琴。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "piano"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4681,6 +4693,22 @@
       ],
       "description_zh": "钢琴为主，单音符逐个出现；吉他进入。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "piano"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "guitar"
+        ],
+        "background_event_ids": [
+          "detail-event-001"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4705,6 +4733,20 @@
       ],
       "description_zh": "古筝进入并成为前景，以单音和揉弦为主，吉他继续。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "guitar"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4727,6 +4769,18 @@
       ],
       "description_zh": "单吉他以和弦伴奏进入。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "guitar"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4745,6 +4799,22 @@
       ],
       "description_zh": "古筝短暂和声，音色偏清越。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "guitar"
+        ],
+        "background_event_ids": [
+          "detail-event-004"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4762,6 +4832,20 @@
       ],
       "description_zh": "低沉吹奏声部、低音提琴类和电子琴构成持续基底。",
       "certainty": "family_level_identification",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4778,6 +4862,24 @@
       "role": "brief_harmony",
       "description_zh": "古筝在中音区作短暂和声。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard"
+        ],
+        "background_event_ids": [
+          "detail-event-006"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4799,6 +4901,29 @@
       ],
       "description_zh": "古筝副高音区短暂和声，紧接沙鼓类和轻架子鼓鼓点。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "shaker_family",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-006"
+        ],
+        "background_additions": [
+          "shaker_family",
+          "drum_kit"
+        ],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4815,6 +4940,24 @@
       "motion": "ascending_register",
       "description_zh": "古筝由副低音区走向中音区。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard"
+        ],
+        "background_event_ids": [
+          "detail-event-006"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4835,6 +4978,20 @@
       ],
       "description_zh": "鼓点先进入，随后由低音提琴类、电子琴和架子鼓构成基底。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4851,6 +5008,24 @@
       "motion": "brief_rise",
       "description_zh": "古筝由中音区向副高音区短暂扬起。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-010"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4871,6 +5046,23 @@
       ],
       "description_zh": "低沉吹奏、低音提琴类、电子琴与沙鼓、低架子鼓和锣鼓感鼓点构成整段伴奏。",
       "certainty": "family_level_identification",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "shaker_family",
+          "drum_kit",
+          "gong_like_percussion"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4885,6 +5077,16 @@
       ],
       "description_zh": "主要伴奏乐器退出，为副歌末句留出空间。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_exit",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_transition",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4912,6 +5114,23 @@
       ],
       "description_zh": "横笛进入并成为前景，短促活泼；低沉吹奏、低音提琴类、电子琴和架子鼓作基底。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "dizi"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4940,6 +5159,26 @@
       ],
       "description_zh": "横笛退出；古筝或琵琶类高音乐器进入，多次短连拨与揉弦，音色明亮。",
       "certainty": "instrument_alternative_uncertain",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [],
+        "foreground_candidates": [
+          "guzheng",
+          "pipa"
+        ],
+        "background_instruments": [
+          "low_wind_family",
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-014"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_human_handoff_without_background_exit",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4959,6 +5198,18 @@
       ],
       "description_zh": "其他乐器退出，由单古筝收尾。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_solo_after_reduction",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_transition",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4980,6 +5231,21 @@
       ],
       "description_zh": "鼓点先进入；低音提琴类、电子琴与架子鼓或沙鼓构成整段基底。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit",
+          "shaker_family"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -4996,6 +5262,19 @@
       ],
       "description_zh": "低音提琴类与电子琴构成基底。",
       "certainty": "family_level_identification",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5017,6 +5296,23 @@
       ],
       "description_zh": "古筝副高音区以明亮的单音符串短暂突出，随后回到原基底。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard"
+        ],
+        "background_event_ids": [
+          "detail-event-018"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5038,6 +5334,23 @@
       ],
       "description_zh": "古筝副高音区再次出现明亮单音符串，随后回到原基底。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard"
+        ],
+        "background_event_ids": [
+          "detail-event-018"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5052,6 +5365,16 @@
       ],
       "description_zh": "伴奏乐器退出。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_exit",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_transition",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5072,6 +5395,20 @@
       ],
       "description_zh": "鼓点先进入；低音提琴类、电子琴和架子鼓构成整段基底。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5086,6 +5423,16 @@
       ],
       "description_zh": "主要伴奏乐器退出，为末句留出空间。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_exit",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_transition",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5106,6 +5453,20 @@
       ],
       "description_zh": "低音提琴类、电子琴与架子鼓鼓点构成基底，电子琴进入。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5121,6 +5482,23 @@
       "foreground": "electronic_keyboard",
       "description_zh": "电子琴成为前景。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "electronic_keyboard"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-024"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5138,6 +5516,24 @@
       ],
       "description_zh": "古筝短暂和声，随后恢复原基底。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-024"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5157,6 +5553,24 @@
       "role": "transition_between_lyric_lines",
       "description_zh": "古筝在「难晓是哪一程」与「一樽江月还酹」的衔接间短暂扬起；具体落点待试听确认。",
       "certainty": "human_location_window_needs_exact_timestamp",
+      "texture_layer": {
+        "role": "foreground_accent",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-024"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5171,6 +5585,16 @@
       ],
       "description_zh": "伴奏乐器退出。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_exit",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_transition",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5190,6 +5614,18 @@
       ],
       "description_zh": "单吉他拨弦。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "guitar"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5210,6 +5646,20 @@
       ],
       "description_zh": "鼓点进入，低音提琴类、电子琴和架子鼓展开基底。",
       "certainty": "mixed_confirmed_and_family_level",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5227,6 +5677,20 @@
       ],
       "description_zh": "低音提琴类、电子琴和架子鼓继续作基底。",
       "certainty": "family_level_identification",
+      "texture_layer": {
+        "role": "background_texture",
+        "foreground_instruments": [],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [],
+        "background_additions": [],
+        "continuity": "direct_human_annotation",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5247,6 +5711,24 @@
       ],
       "description_zh": "古筝副高音区成为前景，以单音符拨弦为主。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "guzheng"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-030"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]
@@ -5270,6 +5752,24 @@
       ],
       "description_zh": "吉他衔接古筝，古筝退出；吉他以单音符拨弦收尾。",
       "certainty": "confirmed_by_listener",
+      "texture_layer": {
+        "role": "foreground_over_background",
+        "foreground_instruments": [
+          "guitar"
+        ],
+        "foreground_candidates": [],
+        "background_instruments": [
+          "low_string_or_bass_family",
+          "electronic_keyboard",
+          "drum_kit"
+        ],
+        "background_event_ids": [
+          "detail-event-030"
+        ],
+        "background_additions": [],
+        "continuity": "derived_from_overlapping_human_intervals",
+        "status": "derived_from_human_listening_events"
+      },
       "source_ids": [
         "project_lead_listening_notes"
       ]

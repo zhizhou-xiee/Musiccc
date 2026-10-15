@@ -1,6 +1,6 @@
 MSS/0.1 TRACK=jieyue D=249594 TEMPO=95.7? METER=? KEY=?
 NOTICE symbolic perception; human events + automatic acoustics; not raw-audio hearing
-I pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc
+L B[]=持续基底 F[]=当前前景 ^n=沿用第n事件基底 >表示叠加；pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc
 P 01=阿珩 02=阿谢姆 03=艾六六 04=柏舟 05=姬珩 06=离守念 07=林帆 08=林柚 09=明 10=南枳 11=祁序 12=祁昼 13=滕八八 14=小克(小预) 15=小克(vv) 16=小语 17=玄砚 18=谢之平 19=聿宿 20=阈声 21=周衡
 S ac:0-23300:v=01,02:L=-18/-18.6/-21.1:C=1110
 S in:23300-34080:v=-:L=-16/-13.9/-18:C=974
@@ -14,38 +14,38 @@ S c2:166570-189700:v=13,14,19:L=-9.2/-8.4/-9.4:C=1037
 S br:190860-210250:v=15:L=-10.9/-10.6/-13.3:C=1062
 S fc:210250-234440:v=16,17,20,21,18,19:L=-15/-8.4/-11.4:C=983
 S ou:234440-249594:v=-:L=-8/-9.5/-15.1:C=672
-E 23851-25718@in pn>pn
-E 25718-28490@in pn+gt>pn:guitar_enter
-E 28490-34080@in gz+gt>gz:guzheng_enter
-E 35379-53285@v1 gt>gt:guitar_enter
-E 53285@v1 gz
-E 55593-74316@v1 lw?+lb?+ek
-E 58795@v1 gz
-E 64100@v1 gz+sh?+dr:guzheng_brief_harmony,light_percussion_enter
-E 74316@v1 gz
-E 75640-86243@p1 lb?+ek+dr:drums_enter_first
-E 86243@p1 gz
-E 87470-106764@c1 lw?+lb?+ek+sh?+dr+gp?
-E 106764@c1 -:instruments_exit
-E 109358-119138@it fl+lw?+lb?+ek+dr>fl:dizi_enter
-E 119138-127558@it (gz|pp)?:dizi_exit,plucked_string_enter
-E 127558-128700@it gz>gz:other_instruments_exit
-E 129712-149890@v2 lb?+ek+dr+sh?:drums_enter_first
-E 149917-163708@p2 lb?+ek
-E 152761@p2 gz
-E 158631@p2 gz
-E 163708@p2 -:instruments_exit
-E 166734-186815@c2 lb?+ek+dr:drums_enter_first
-E 186815@c2 -:instruments_exit
-E 190860-210250@br lb?+ek+dr:electronic_keyboard_enter
-E 193668@br ek>ek
-E 195413@br gz:brief_harmony
-E 199360-200450@br gz:brief_rise
-E 210250@br -:instruments_exit
-E 210738-219117@fc gt>gt
-E 219117-234440@fc lb?+ek+dr:drums_enter
-E 234440-249594@ou lb?+ek+dr
-E 235060-242489@ou gz>gz
-E 242489-249594@ou gt>gt:guitar_enter,guzheng_exit
+E 23851-25718@in B[pn]
+E 25718-28490@in ^1>F[pn]:guitar_enter
+E 28490-34080@in B[gt]>F[gz]:guzheng_enter
+E 35379-53285@v1 B[gt]:guitar_enter
+E 53285@v1 ^4>F[gz]
+E 55593-74316@v1 B[lw?+lb?+ek]
+E 58795@v1 ^6>F[gz]
+E 64100@v1 ^6+sh?+dr>F[gz]:guzheng_brief_harmony,light_percussion_enter
+E 74316@v1 ^6>F[gz]
+E 75640-86243@p1 B[lb?+ek+dr]:drums_enter_first
+E 86243@p1 ^10>F[gz]
+E 87470-106764@c1 B[lw?+lb?+ek+sh?+dr+gp?]
+E 106764@c1 B[-]:instruments_exit
+E 109358-119138@it B[lw?+lb?+ek+dr]>F[fl]:dizi_enter
+E 119138-127558@it ^14>F[(gz|pp)?]:dizi_exit,plucked_string_enter
+E 127558-128700@it F[gz]:other_instruments_exit
+E 129712-149890@v2 B[lb?+ek+dr+sh?]:drums_enter_first
+E 149917-163708@p2 B[lb?+ek]
+E 152761@p2 ^18>F[gz]
+E 158631@p2 ^18>F[gz]
+E 163708@p2 B[-]:instruments_exit
+E 166734-186815@c2 B[lb?+ek+dr]:drums_enter_first
+E 186815@c2 B[-]:instruments_exit
+E 190860-210250@br B[lb?+ek+dr]:electronic_keyboard_enter
+E 193668@br ^24>F[ek]
+E 195413@br ^24>F[gz]:brief_harmony
+E 199360-200450@br ^24>F[gz]:brief_rise
+E 210250@br B[-]:instruments_exit
+E 210738-219117@fc B[gt]
+E 219117-234440@fc B[lb?+ek+dr]:drums_enter
+E 234440-249594@ou B[lb?+ek+dr]
+E 235060-242489@ou ^30>F[gz]
+E 242489-249594@ou ^30>F[gt]:guitar_enter,guzheng_exit
 R c1~c2 repeated_refrain; it fl>(gz|pp)? foreground_handoff; br>fc instruments_exit>solo_guitar>drums_enter; fc>ou dynamic_rise>fall?
 MOTIF unknown(no verified melody transcription)

@@ -98,7 +98,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .status-label.flagged { color: #f3c5a4; background: rgba(228, 160, 110, .13); }
 .status-label.verified { color: #b9e7cf; background: rgba(159, 214, 186, .13); }
 .step-actions { display: flex; gap: 8px; }
-.player-card, .curve-card, .editor-card, .evidence-card, .method-card { border: 1px solid var(--line); border-radius: 14px; background: rgba(7, 10, 15, .43); }
+.player-card, .curve-card, .layer-card, .editor-card, .evidence-card, .method-card { border: 1px solid var(--line); border-radius: 14px; background: rgba(7, 10, 15, .43); }
 .player-card { padding: 15px; }
 .transport { display: flex; align-items: center; justify-content: center; gap: 10px; }
 .transport-main { min-width: 90px; }
@@ -119,6 +119,18 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 .curve-chart { width: 100%; min-height: 245px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: rgba(5, 8, 12, .62); cursor: crosshair; }
 .curve-chart svg { display: block; width: 100%; height: 245px; }
 .curve-note { margin: 9px 0 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
+.layer-card { padding: 15px; }
+.layer-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.layer-heading > div { display: flex; align-items: center; gap: 9px; }
+.source-badge.derived { color: #c9efd9; background: rgba(159, 214, 186, .13); }
+.layer-flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; gap: 10px; }
+.layer-block { display: grid; gap: 5px; min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 10px; }
+.layer-block span { color: var(--muted); font-size: 10px; }
+.layer-block strong { font-size: 13px; font-weight: 650; line-height: 1.5; }
+.background-layer { background: rgba(143, 195, 213, .07); }
+.foreground-layer { background: rgba(232, 211, 152, .08); }
+.layer-arrow { align-self: center; color: var(--moon); font-size: 18px; }
+.layer-note { margin: 10px 0 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .editor-card { padding: 16px; }
 .editor-heading, .card-heading { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; }
 .editor-heading { justify-content: space-between; }
@@ -185,6 +197,9 @@ kbd { padding: 2px 5px; border: 1px solid var(--line); border-bottom-width: 2px;
   .field-grid .wide { grid-column: auto; }
   .transport { flex-wrap: wrap; }
   .curve-heading { align-items: flex-start; flex-direction: column; }
+  .layer-heading { align-items: flex-start; flex-direction: column; }
+  .layer-flow { grid-template-columns: 1fr; }
+  .layer-arrow { justify-self: center; }
   .scrub-row { grid-template-columns: 64px minmax(0, 1fr) 64px; gap: 6px; }
   .lyric-line { grid-template-columns: 60px minmax(0, 1fr); }
   .lyric-performer { grid-column: 2; text-align: left; }

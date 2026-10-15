@@ -143,6 +143,21 @@
         "role": {"type": "string"},
         "description_zh": {"type": "string"},
         "certainty": {"type": "string"},
+        "texture_layer": {
+          "type": "object",
+          "required": ["role", "foreground_instruments", "foreground_candidates", "background_instruments", "background_event_ids", "background_additions", "continuity", "status"],
+          "properties": {
+            "role": {"type": "string"},
+            "foreground_instruments": {"type": "array", "items": {"type": "string"}},
+            "foreground_candidates": {"type": "array", "items": {"type": "string"}},
+            "background_instruments": {"type": "array", "items": {"type": "string"}},
+            "background_event_ids": {"type": "array", "items": {"type": "string"}},
+            "background_additions": {"type": "array", "items": {"type": "string"}},
+            "continuity": {"type": "string"},
+            "status": {"const": "derived_from_human_listening_events"}
+          },
+          "additionalProperties": false
+        },
         "source_ids": {"type": "array", "items": {"type": "string"}}
       },
       "additionalProperties": false

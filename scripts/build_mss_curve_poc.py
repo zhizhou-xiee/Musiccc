@@ -22,6 +22,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+from mss_layers import enrich_events
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SONG_DIR = ROOT / "data" / "songs" / "jieyue"
@@ -55,6 +57,15 @@ INSTRUMENT_NAMES_ZH = {
     "electronic_keyboard": "电子琴", "low_wind_family": "低沉吹奏类?",
     "low_string_or_bass_family": "低音弦乐类?", "drum_kit": "架子鼓", "shaker_family": "沙鼓类?",
     "gong_like_percussion": "锣鼓类?",
+}
+
+COMPACT_INSTRUMENT_NAMES_ZH = {
+    **INSTRUMENT_NAMES_ZH,
+    "electronic_keyboard": "电琴",
+    "low_wind_family": "低吹类?",
+    "low_string_or_bass_family": "低音类?",
+    "drum_kit": "鼓组",
+    "shaker_family": "沙鼓?",
 }
 
 ACTION_NAMES_ZH = {
@@ -310,13 +321,29 @@ def curve_payload(
 
 
 def event_code(event: dict[str, Any]) -> str:
-    instruments = [INSTRUMENT_CODES.get(item, item) for item in event.get("instruments", [])]
-    candidates = [INSTRUMENT_CODES.get(item, item) for item in event.get("instrument_candidates", [])]
+    layer = event.get("texture_layer", {})
+    background = "+".join(INSTRUMENT_CODES.get(item, item) for item in layer.get("background_instruments", []))
+    foreground = "+".join(INSTRUMENT_CODES.get(item, item) for item in layer.get("foreground_instruments", []))
+    candidates = [INSTRUMENT_CODES.get(item, item) for item in layer.get("foreground_candidates", [])]
+    background_refs = [item.rsplit("-", 1)[-1].lstrip("0") or "0" for item in layer.get("background_event_ids", [])]
+    background_additions = "+".join(INSTRUMENT_CODES.get(item, item) for item in layer.get("background_additions", []))
     if candidates:
-        instruments.append("(" + "|".join(candidates) + ")?")
-    payload = "+".join(instruments) or "-"
-    if event.get("foreground"):
-        payload += ">" + INSTRUMENT_CODES.get(event["foreground"], event["foreground"])
+        foreground += ("+" if foreground else "") + "(" + "|".join(candidates) + ")?"
+    if layer.get("role") == "background_exit":
+        payload = "B[-]"
+    elif background_refs and foreground:
+        payload = "^" + ",".join(background_refs)
+        if background_additions:
+            payload += "+" + background_additions
+        payload += f">F[{foreground}]"
+    elif background and foreground:
+        payload = f"B[{background}]>F[{foreground}]"
+    elif foreground:
+        payload = f"F[{foreground}]"
+    elif background:
+        payload = f"B[{background}]"
+    else:
+        payload = "-"
     if event.get("actions"):
         payload += ":" + ",".join(event["actions"])
     return payload
@@ -331,6 +358,13 @@ def curve_line(curve: dict[str, Any]) -> str:
     )
 
 
+def event_timing(event: dict[str, Any]) -> str:
+    timing = str(event["start_ms"])
+    if event.get("end_ms"):
+        timing += f"~{event['end_ms']}"
+    return timing
+
+
 def token_proxy(text: str) -> dict[str, int]:
     byte_count = len(text.encode("utf-8"))
     return {
@@ -342,24 +376,19 @@ def token_proxy(text: str) -> dict[str, int]:
 
 
 def build_compact(mss: dict[str, Any]) -> str:
-    sections = ";".join(
-        f"{SECTION_CODES[section['id']]}:{section['start_ms']}-{section['end_ms']}"
-        for section in mss["sections"]
-    )
     events = ";".join(
-        f"{event['start_ms']}@{SECTION_CODES[event['section_id']]}={event_code(event)}"
+        f"{event_timing(event)}@{SECTION_CODES[event['section_id']]}={event_code(event)}"
         for event in mss["events"]
     )
     curve_lines = [curve_line(curve) for curve in mss["curves"]]
     return "\n".join(
         [
             f"MSS/0.2 TRACK=jieyue D={mss['track']['duration_ms']}ms",
-            "NOTICE facts+automatic curves; no emotion/metaphor; not raw-audio hearing",
-            "Q each curve p02..p98=>0..63; kp=adaptive keypoints; ~=missing; L=loudness C=centroid F=flux O=energy-onset",
-            "I pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc",
-            f"S {sections}",
+            "N symbolic facts+automatic? curves; no emotion; not hearing",
+            "Q p02..p98=>q0..63;kp=keypoints;~=missing;L=loud C=centroid F=flux O=onset",
+            "L B[]=持续基底 F[]=当前前景 ^n=沿用第n事件基底 >表示叠加; pn=piano gt=guitar gz=guzheng pp=pipa fl=dizi ek=keyboard lw?=low-wind lb?=low-bass dr=drums sh?=shaker gp?=gong-perc",
             *curve_lines,
-            "G conductor-proxy=[L,dL,F,C] vector; no scalar average; no real conductor data",
+            "G=[L,dL,F,C] vector;not scalar/real gesture",
             f"E {events}",
             "U melody=unknown(mixed master; no reliable separation); meter/key=unknown",
         ]
@@ -381,7 +410,7 @@ def build_curve_natural_baseline(mss: dict[str, Any]) -> str:
 def build_natural_hybrid(mss: dict[str, Any]) -> str:
     """Natural-language wrapper around the same compact evidence as MSS/0.2."""
     lines = [
-        "《借月》客观文字+曲线对照。自动曲线未核验；不含情绪或比喻；不表示模型听到音频。曲线按全曲p02–p98量化为0–63，列稀疏关键点（毫秒:值）。",
+        "客观文字对照。自动曲线未核验；无情绪/比喻；非原音听觉。曲线p02–p98→0–63；列关键点(ms:值)。",
     ]
     for curve in mss["curves"]:
         points = ",".join(f"{time_ms}:{value}" for time_ms, value in curve["sparse_keypoints"])
@@ -389,18 +418,36 @@ def build_natural_hybrid(mss: dict[str, Any]) -> str:
 
     event_parts = []
     for event in mss["events"]:
-        instruments = [INSTRUMENT_NAMES_ZH[item] for item in event.get("instruments", [])]
-        candidates = [INSTRUMENT_NAMES_ZH[item].rstrip("?") for item in event.get("instrument_candidates", [])]
+        layer = event.get("texture_layer", {})
+        background = "+".join(COMPACT_INSTRUMENT_NAMES_ZH[item] for item in layer.get("background_instruments", []))
+        foreground = "+".join(COMPACT_INSTRUMENT_NAMES_ZH[item] for item in layer.get("foreground_instruments", []))
+        candidates = [COMPACT_INSTRUMENT_NAMES_ZH[item].rstrip("?") for item in layer.get("foreground_candidates", [])]
+        background_refs = [item.rsplit("-", 1)[-1].lstrip("0") or "0" for item in layer.get("background_event_ids", [])]
+        background_additions = "+".join(COMPACT_INSTRUMENT_NAMES_ZH[item] for item in layer.get("background_additions", []))
         if candidates:
-            instruments.append("或".join(candidates) + "?")
-        payload = "、".join(instruments)
-        foreground = event.get("foreground")
-        if foreground:
-            payload += f"(前景{INSTRUMENT_NAMES_ZH[foreground]})"
+            foreground += ("、" if foreground else "") + "或".join(candidates) + "?"
+        if layer.get("role") == "background_exit":
+            payload = "基底退出"
+        elif background_refs and foreground:
+            payload = f"#{','.join(background_refs)}基底续"
+            if background_additions:
+                payload += f"+{background_additions}"
+            payload += f"；前景{foreground}"
+        elif background and foreground:
+            payload = f"基底{background}；前景{foreground}"
+        elif foreground:
+            payload = f"前景{foreground}"
+        elif background:
+            payload = f"基底{background}"
+        else:
+            payload = event["type"]
         actions = [ACTION_NAMES_ZH.get(item, item) for item in event.get("actions", [])]
         if actions:
             payload += ("；" if payload else "") + "、".join(actions)
-        event_parts.append(f"{event['start_ms']}:{payload or event['type']}")
+        timing = str(event["start_ms"])
+        if event.get("end_ms"):
+            timing += f"–{event['end_ms']}"
+        event_parts.append(f"{timing}:{payload or event['type']}")
     lines.append("事件=" + ";".join(event_parts))
     lines.append("旋律=未知（混合母带无可靠分离）；拍号/调性=未知。")
     return "\n".join(lines)
@@ -473,7 +520,7 @@ def build_mss(
         for section in timeline["sections"]
         if "audio" in section["media"] and section["start_ms"] < duration
     ]
-    events = [{**event, "source_ids": ["project_lead_listening_notes"]} for event in details["events"]]
+    events = [{**event, "source_ids": ["project_lead_listening_notes"]} for event in enrich_events(details["events"])]
     return {
         "mss_version": "0.2",
         "representation_kind": "objective_events_plus_multivariate_time_series",

@@ -98,6 +98,19 @@
             <p class="curve-note">金色刻线是古筝相关事件，浅色区域是当前事件。点击曲线可跳到最近的听音事件。曲线不包含情绪判断。</p>
           </section>
 
+          <section class="layer-card" aria-label="声部叠层关系">
+            <div class="layer-heading">
+              <div><span class="source-badge derived">事件派生</span><h3>持续基底与当前前景</h3></div>
+              <span id="layer-role" class="pill">background_texture</span>
+            </div>
+            <div class="layer-flow">
+              <div class="layer-block background-layer"><span>持续基底</span><strong id="layer-background">钢琴</strong></div>
+              <div class="layer-arrow" aria-hidden="true">＋</div>
+              <div class="layer-block foreground-layer"><span>当前前景</span><strong id="layer-foreground">钢琴</strong></div>
+            </div>
+            <p id="layer-note" class="layer-note">前景叠加在基底之上，不表示其他乐器退出。</p>
+          </section>
+
           <section class="editor-card">
             <div class="editor-heading">
               <div><span class="source-badge draft">人工校对</span><h3>时间与音乐事实</h3></div>
@@ -167,7 +180,7 @@
 
           <details class="method-card">
             <summary>校对边界与导出规则</summary>
-            <p>原始 33 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。MSS/0.2 的四条曲线来自母带离线测量，不含情绪词；旋律轮廓仍明确标为未知。确认表示“这条人工听音记录已经复核”，不表示模型听到了原始音频。</p>
+            <p>原始 33 个事件不会被网页覆盖。校对稿保留事件 ID、源字段和不确定候选；导出后才形成带审核状态、备注与时间戳的新 JSON。持续基底与当前前景由人工听音事件的重叠区间派生；它避免把“来到前景”误读为“替换伴奏”，但不新增未经听音确认的乐器。MSS/0.2 的四条曲线来自母带离线测量，不含情绪词；旋律轮廓仍明确标为未知。</p>
           </details>
         </section>
       </main>
@@ -177,6 +190,6 @@
       </footer>
     </div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="./app.js?v=20261015-bridge-split"></script>
+    <script type="module" src="./app.js?v=20261015-texture-layers"></script>
   </body>
 </html>
