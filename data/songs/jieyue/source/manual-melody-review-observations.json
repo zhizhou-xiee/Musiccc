@@ -27,12 +27,36 @@
     },
     "line-015": {
       "status": "needs_correction",
-      "observation": "“月色无声”的“月”很短、很轻，候选似乎吞掉了一部分。",
+      "observation": "“月色无声”的“月”很短、很轻；仅提前分析起点后试听仍没有好转，需要保留低置信度起音。",
       "analysis_window_override": {
         "start_ms": 74600,
         "basis": "listener_flag_plus_vocal_energy_onset_near_74620"
       },
-      "pitch_probability_floor": 0.2,
+      "pitch_probability_floor": 0.05,
+      "contour_bins": 32
+    },
+    "line-017": {
+      "status": "needs_correction",
+      "observation": "“风从旧世吹到新庭”的句首“风”与“月色无声”的“月”同类，在候选试听中被吞掉。",
+      "pitch_probability_floor": 0.15,
+      "contour_bins": 32
+    },
+    "line-018": {
+      "status": "needs_correction",
+      "observation": "“恰好经过你的姓名”的“恰好”与轻声起音同类，在候选试听中没有清楚呈现。",
+      "pitch_probability_floor": 0.15,
+      "contour_bins": 32
+    },
+    "line-019": {
+      "status": "needs_correction",
+      "observation": "01:27.470 的“便借一轮月”中，“借”在候选试听里丢失；原始 pYIN 在该处有低置信度音高，需要局部保留。",
+      "pitch_probability_floor": 0.15,
+      "contour_bins": 32
+    },
+    "line-021": {
+      "status": "needs_correction",
+      "observation": "“照没有归路坦途的团圆”候选试听不易辨认且听起来似乎跑调。",
+      "representation_note": "与第二遍同歌词 line-046 的自动相对轮廓相关度为 0.938；优先排查连续试听器在大音程之间制造长滑音，不据此擅自改写候选音高。",
       "contour_bins": 24
     },
     "line-065": {

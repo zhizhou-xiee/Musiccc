@@ -176,7 +176,14 @@ async function playContour() {
     const start = now + (group[0].time_ms - analysisStart(item)) / 1000, end = now + (group[group.length-1].time_ms - analysisStart(item)) / 1000 + spacing * .72;
     const carrier = audioContext.createOscillator(), overtone = audioContext.createOscillator(), carrierGain = audioContext.createGain(), overtoneGain = audioContext.createGain(), filter = audioContext.createBiquadFilter();
     carrier.type = "triangle"; overtone.type = "sine"; filter.type = "lowpass"; filter.frequency.value = 1250; carrierGain.gain.value = .045; overtoneGain.gain.value = .012;
-    group.forEach((point, pointIndex) => { const at = now + (point.time_ms - analysisStart(item)) / 1000, frequency = 440 * 2 ** ((point.midi - 69) / 12); if (pointIndex === 0) { carrier.frequency.setValueAtTime(frequency, at); overtone.frequency.setValueAtTime(frequency*2, at); } else { carrier.frequency.linearRampToValueAtTime(frequency, at); overtone.frequency.linearRampToValueAtTime(frequency*2, at); } });
+    group.forEach((point, pointIndex) => {
+      const at = now + (point.time_ms - analysisStart(item)) / 1000, frequency = 440 * 2 ** ((point.midi - 69) / 12);
+      if (pointIndex === 0) { carrier.frequency.setValueAtTime(frequency, at); overtone.frequency.setValueAtTime(frequency*2, at); return; }
+      const previous = group[pointIndex - 1], previousAt = now + (previous.time_ms - analysisStart(item)) / 1000, previousFrequency = 440 * 2 ** ((previous.midi - 69) / 12);
+      const glide = Math.min(.035, Math.max(.012, (at - previousAt) * .22)), glideStart = Math.max(previousAt, at - glide);
+      carrier.frequency.setValueAtTime(previousFrequency, glideStart); overtone.frequency.setValueAtTime(previousFrequency*2, glideStart);
+      carrier.frequency.linearRampToValueAtTime(frequency, at); overtone.frequency.linearRampToValueAtTime(frequency*2, at);
+    });
     const envelope = audioContext.createGain(); envelope.gain.setValueAtTime(.0001,start); envelope.gain.exponentialRampToValueAtTime(1,start+.035); envelope.gain.setValueAtTime(1,Math.max(start+.04,end-.05)); envelope.gain.exponentialRampToValueAtTime(.0001,end);
     carrier.connect(carrierGain).connect(filter); overtone.connect(overtoneGain).connect(filter); filter.connect(envelope).connect(audioContext.destination); carrier.start(start); overtone.start(start); carrier.stop(end+.02); overtone.stop(end+.02); synthNodes.push(carrier,overtone);
   }
