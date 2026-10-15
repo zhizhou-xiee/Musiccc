@@ -37,4 +37,6 @@ MCP 服务见 [docs/mcp-service.md](docs/mcp-service.md)。四个只读工具已
 
 本地 MSS 听音事件校对器位于 [tools/mss-review](tools/mss-review/README.md)。它逐条呈现 33 个可溯源音乐事件，支持点状/连续事件循环试听、时间微调、乐器候选与语义字段修订、审核状态及 JSON 导入导出。
 
+WAV 母带的旋律 / 和声 PoC 见 [docs/melody-harmony-poc-report.md](docs/melody-harmony-poc-report.md) 与 [实验目录](data/songs/jieyue/experiments/melody-harmony-poc/README.md)。它为 72 句生成带休止的相对旋律候选，验证两遍副歌的重复关系，并将低置信度和弦强制留空；所有结果仍是校对候选，不进入线上 MCP。本地逐句试听工具位于 [tools/melody-review](tools/melody-review/README.md)。
+
 `/music` 人类端初版位于 [web/music](web/music/README.md)。页面使用浏览器原生视频控件，并从统一歌曲元数据生成作品署名、演唱者与段落跳转数据。

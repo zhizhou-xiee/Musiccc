@@ -1,0 +1,7 @@
+librosa==0.11.0
+numpy>=2.0,<3
+soundfile>=0.13,<1
+
+# Optional source separation step (run before this analyzer):
+demucs==4.0.1
+torchcodec>=0.7,<1

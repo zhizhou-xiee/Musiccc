@@ -1,0 +1,39 @@
+# 《借月》旋律 / 和声 PoC 0.1
+
+本实验尝试补上现有 MSS 中明确留空的 `melody_contour` 与 `key`，并验证和弦候选是否足够可靠。它不修改生产 `mcp.json`，也不把自动结果称为乐谱或听觉事实。
+
+## 输入与隐私边界
+
+- 输入母带：负责人提供的 48 kHz、24-bit、双声道 WAV。
+- 人声 / 伴奏：本机使用 Demucs `htdemucs` 二分轨生成。
+- WAV、MP3 和分轨均保留在 Git 仓库之外。
+- 仓库只保存可复现实验脚本、自动候选 JSON 和不含音频的校对工具。
+
+## 生成
+
+先在本机分轨：
+
+```bash
+python -m demucs.separate -n htdemucs --two-stems vocals -o /private/tmp/musiccc-wav-stems /path/to/master.wav
+```
+
+再生成候选：
+
+```bash
+python scripts/analyze_melody_harmony_poc.py \
+  --master /path/to/master.wav \
+  --vocals /path/to/vocals.wav \
+  --accompaniment /path/to/no_vocals.wav
+```
+
+Python 依赖见 `scripts/requirements-melody-poc.txt`。输出为 `outputs/candidates.json`。
+
+## 输出内容
+
+- 72 句歌词各 16 个稀疏旋律候选点，包含休止 / 低置信度空值。
+- 两遍副歌 11 对对应歌词的相对旋律轮廓相关与中位音高差。
+- 全曲调性前五候选。
+- 自动速度候选；本实验不推断拍号。
+- 每四个跟踪拍形成的大小三和弦模板候选。第一、第二候选差距不足 0.08 时强制留空。
+
+所有字段均为 `automatic_unverified` 或 `unknown`。人工流程见 `tools/melody-review/README.md`。

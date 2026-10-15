@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#080d12" />
+    <title>《借月》旋律与和声候选校对台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">JIEYUE · MELODY / HARMONY POC</p>
+          <h1>把旋律的“走法”交给小机之前</h1>
+          <p class="lede">先逐句听母带、看自动候选、听合成轮廓。机器结果不是乐谱，也不会自动进入 MCP。</p>
+        </div>
+        <div class="actions">
+          <button id="choose-audio" class="button primary" type="button">选择母带 WAV / MP3</button>
+          <input id="audio-file" type="file" accept="audio/wav,audio/mpeg,audio/*" hidden />
+          <button id="import-review" class="button" type="button">载入校对稿</button>
+          <input id="review-file" type="file" accept="application/json,.json" hidden />
+          <button id="export-review" class="button" type="button">导出校对稿</button>
+        </div>
+      </header>
+
+      <section class="notice">
+        <span id="audio-dot" class="dot"></span>
+        <span id="audio-status">尚未选择音频；文件只在当前浏览器中读取</span>
+        <strong id="review-progress">0 / 72 已处理</strong>
+      </section>
+
+      <section class="overview">
+        <article>
+          <span>调性候选 · 自动未校对</span>
+          <strong id="key-candidates">载入中…</strong>
+        </article>
+        <article>
+          <span>速度候选 · 自动未校对</span>
+          <strong id="tempo-candidates">载入中…</strong>
+        </article>
+        <article>
+          <span>和弦窗口</span>
+          <strong id="harmony-summary">载入中…</strong>
+        </article>
+        <article>
+          <span>重复副歌关系</span>
+          <strong id="relation-summary">载入中…</strong>
+        </article>
+      </section>
+
+      <main class="workspace">
+        <aside class="browser">
+          <label class="filter-label">显示
+            <select id="filter">
+              <option value="all">全部歌词</option>
+              <option value="pending">只看待校对</option>
+              <option value="verified">只看已确认</option>
+              <option value="needs_correction">只看需修正</option>
+              <option value="unknown">只看无法判断</option>
+              <option value="repeat">只看重复副歌</option>
+            </select>
+          </label>
+          <div id="line-list" class="line-list"></div>
+          <button id="reset-review" class="reset" type="button">重置本机校对进度</button>
+        </aside>
+
+        <section class="panel">
+          <div class="heading">
+            <div>
+              <div class="pills"><span id="position" class="pill">第 1 / 72 句</span><span id="section" class="pill blue">清唱</span><span id="status" class="status pending">待校对</span></div>
+              <h2 id="lyric">水涟涟，风绵绵，月儿弯弯照屋檐。</h2>
+              <p id="line-meta" class="muted"></p>
+            </div>
+            <div class="step"><button id="previous" type="button" aria-label="上一句">←</button><button id="next" type="button" aria-label="下一句">→</button></div>
+          </div>
+
+          <section class="player card">
+            <audio id="audio" preload="metadata"></audio>
+            <div class="transport">
+              <button id="play-original" class="button primary" type="button">播放母带原句</button>
+              <button id="play-contour" class="button" type="button">听合成轮廓</button>
+              <button id="stop" class="button subtle" type="button">停止</button>
+              <label><input id="loop" type="checkbox" /> 循环原句</label>
+            </div>
+            <div class="scrub"><span id="playhead">00:00.000</span><input id="scrubber" type="range" min="0" max="1000" value="0" /><span id="line-end">00:00.000</span></div>
+            <p>“合成轮廓”只是把 pYIN 候选音高哼成纯音，方便发现八度跳错、伴奏串音和断句问题；它不是歌声重建。</p>
+          </section>
+
+          <section class="chart-card card">
+            <div class="card-title"><div><span class="badge automatic">自动测量 · 未校对</span><h3>逐句旋律候选</h3></div><div id="coverage" class="metric"></div></div>
+            <div id="melody-chart" class="chart" role="img" aria-label="相对半音与候选音高曲线"></div>
+            <div id="note-strip" class="note-strip"></div>
+            <p class="caveat">纵轴是相对本句中位音的半音差；空白是休止或置信度不足。多人合唱、和声、滑音和分轨残留都可能让候选失真。</p>
+          </section>
+
+          <section id="relation-card" class="relation-card card">
+            <div class="card-title"><div><span class="badge derived">关系候选</span><h3>重复 / 变奏</h3></div></div>
+            <p id="relation-copy" class="relation-copy">本句暂未建立重复关系。</p>
+          </section>
+
+          <section class="harmony-card card">
+            <div class="card-title"><div><span class="badge automatic">伴奏自动分析</span><h3>本句附近和弦窗口</h3></div></div>
+            <div id="harmony-list" class="harmony-list"></div>
+            <p class="caveat">只显示模板第一、第二候选及差距。差距不足 0.08 时强制留空；即使超过阈值也仍须人工或工程文件核对。</p>
+          </section>
+
+          <section class="review-card card">
+            <div class="card-title"><div><span class="badge human">人工结论</span><h3>这句能不能交给小机？</h3></div></div>
+            <label>校对备注
+              <textarea id="notes" rows="4" placeholder="例如：开头八度识别错误；0:48.9 后混入古筝；旋律走向基本正确但音名不可用。"></textarea>
+            </label>
+            <div class="decisions">
+              <button id="mark-pending" class="button subtle" type="button">仍待校对</button>
+              <button id="mark-unknown" class="button" type="button">无法判断</button>
+              <button id="mark-correction" class="button warning" type="button">需要修正</button>
+              <button id="mark-verified" class="button success" type="button">确认轮廓并前进</button>
+            </div>
+          </section>
+
+          <details class="card method">
+            <summary>方法与边界</summary>
+            <p>母带先经 Demucs htdemucs 二分轨，再以 pYIN 提取候选基频。调性来自全曲 CQT 色度与 Krumhansl 模板相关；和弦来自伴奏色度与 24 个大小三和弦模板。页面不会上传音频，也不会修改候选源文件。只有导出的人工校对稿，才可能在后续审阅后转换成 MSS。</p>
+          </details>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
